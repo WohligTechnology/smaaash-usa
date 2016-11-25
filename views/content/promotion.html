@@ -1,0 +1,108 @@
+<div class="deals-event" scrolldown>
+    <div class="landing-kartbanner" ng-style="{'background':'url('+detailPromotionsInner.banner+')no-repeat'}">
+        <div class="pink-butn" ng-click="scrollDown();">
+            <span>scroll<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+        </div>
+    </div>
+    <div class="snow-bg second">
+        <div class="container">
+            <h2 class="nav-name center">promotions</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="karting1">
+            <div class="slant-row">
+                <div class="slant-col">
+                    <div class="slant-box full-height">
+                        <div ng-bind-html="detailPromotionsInner.description"></div>
+                        <div class="button-set">
+                            <ul class="social-icons list-inline inline-block">
+                                <p class="inline-block">Share</p>
+                                <li>
+                                    <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                </li>
+                                <li><a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                            </ul>
+                            <div class="more inline-block">
+                                <button class="uppercase green">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slant-column pull-right">
+                    <div class="slant-box half-height" ng-if="!formComplete">
+                        <h2>REGISTRATION</h2>
+                        <form class="form registerate" name="registration" ng-submit="formSubmit(formData)">
+                            <div class="form-group relative">
+                                <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
+                                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                <div class="error-msg" ng-show="registration.name.$error.required && registration.name.$touched">Please Enter Your Name </div>
+                            </div>
+                            <div class="form-group relative">
+                                <input type="email" class=" form-control" placeholder="Email ID" name="email" ng-model="formData.email" required>
+                                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                <div class="error-msg" ng-show="registration.email.$error.required && registration.email.$touched">Please Enter Your Email </div>
+                                <div ng-if="exist">Email already exists</div>
+                            </div>
+                            <div class="form-group relative ">
+                                <input type="tel" class="form-control" placeholder="Mobile .No" name="mobile" ng-model="formData.mobile" required only-digits
+                                    maxlength="10">
+                                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                <div class="error-msg" ng-show="registration.mobile.$error.required && registration.mobile.$touched">Please Enter Your Mobile .No </div>
+                            </div>
+                            <div class="form-group relative">
+
+                                <input type="text" class="form-control " placeholder="Date of Birth" uib-datepicker-popup="{{format}}" is-open="popup1.opened"
+                                    datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
+                                    ng-model="formData.dob" />
+                                <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+
+                            </div>
+                            <button type="submit" class=" btn6 btn-default block"><img src="img/new/submit.png" class="img-responsive" alt=""></button>
+                        </form>
+                    </div>
+                    <div ng-if="formComplete">Thank You</div>
+                </div>
+            </div>
+        </div>
+        <div class="karting1">
+            <div class="slant-row">
+                <div class="slant-col">
+                    <div class="slant-box full-height">
+                        <h2>PRIZES</h2>
+                        <div class="prize-name " ng-bind-html="detailPromotionsInner.prize">
+                            </div>
+                        <div class="prize-name text-center " ng-if="detailPromotionsInner.prize === ''" >Nothing to show.</div>
+
+                    </div>
+                </div>
+                <div class="slant-column pull-right">
+                    <div class="slant-box half-height">
+                        <h2>SCHEDULE</h2>
+                        <div class="prize-name " ng-bind-html="detailPromotionsInner.schedule">
+                        </div>
+                        <div class="prize-name text-center " ng-if="detailPromotionsInner.schedule === ''" >Nothing to show.</div>
+
+                        <div class="button-sets">
+                            <button class="uppercase green">Buy Now</button>
+                            <button class="uppercase blue" ng-click="pdfmodal(detailPromotionsInner.pdf);">download</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deals-details ">
+            <div ng-bind-html="detailPromotionsInner.deal"></div>
+            <div class="prize-name text-center " ng-if="detailPromotionsInner.deal === ''" >Nothing to show.</div>
+
+            <div class="button-set ">
+                <div class="more ">
+                    <button class="uppercase brand-orangy ">terms and conditions</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

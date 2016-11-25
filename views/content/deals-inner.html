@@ -1,0 +1,57 @@
+<div class="inner relative pointer">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t_C37-P6g5Y?rel=0&autoplay=1" frameborder="0" allowfullscree=""
+  style="position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;">
+  </iframe>
+   <!-- <iframe id="test" width="560" height="315" ng-class={{cdc}} ng-if="!showthumbimage" src="{{'https://www.youtube.com/embed/'+banner[0].videourl+'?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1'|trusted}}"
+     frameborder="0" allowfullscreen="" style="
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+" class="">
+ </iframe> -->
+   <div class="overlays" ng-if="!showthumbimage" >
+      <a class="pull-right" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
+   </div>
+   <img ng-src="{{banner[0].thumbnail|uploadpath}}" class="img-responsive margin-auto width100" ng-if="showthumbimage && (banner[0].thumbnail || banner[0].thumbnail != '' )&&banner[0].videourl" ng-click="showVid()">
+   <img ng-src="{{banner[0].videourl|youtubethumb}}"  class="img-responsive width100" ng-if="!showthumbimage">
+</div>
+<div class="deals-packages" scrolldown>
+    <div class="landing-kartbanner" ng-style="{'background':'url('+detailDealsInner.banner+')no-repeat'}">
+        <div class="karting-banner"></div>
+        <div class="pink-butn" ng-click="scrollDown();">
+            <span>scroll<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+        </div>
+    </div>
+    <div class="snow-bg second">
+        <div class="container">
+            <h2 class="nav-name center" ng-bind-html="detailDealsInner.hometext"></h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="deals-details">
+            <div ng-bind-html="detailDealsInner.description"></div>
+
+            <div class="button-set">
+                <ul class="social-icons list-inline inline-block">
+                    <p class="inline-block">Share</p>
+                    <li><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li><a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="more inline-block">
+                    <button class="uppercase green">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

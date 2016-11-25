@@ -1,0 +1,110 @@
+<div class="snowy" scrolldown>
+    <div class="landing-kartbanner" auto-height ng-style="{'background':'url('+detailExploreSmaash.banner+')no-repeat'}">
+        <div class="karting-banner"></div>
+        <div class="pink-butn" ng-click="scrollDown();">
+            <span>scroll<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+        </div>
+    </div>
+    <div class="snow-bg second">
+        <div class="container">
+            <h2 class="nav-name center" ng-bind-html="detailExploreSmaash.hometext"></h2>
+        </div>
+         <a href="" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt=""></a> 
+    </div>
+    <div class="container">
+        <div class="karting1">
+            <div class="slant-row">
+                <div class="slant-col">
+                    <div class="slant-box full-height">
+                        <h2>games description</h2>
+                        <p ng-bind-html="detailExploreSmaash.description"></p>
+                    </div>
+                </div>
+                <div class="slant-column pull-right">
+                    <div class="slant-box half-height">
+                        <h2>timings and pricing</h2>
+                        <div ng-bind-html="detailExploreSmaash.timingAndPricing">
+                        </div>
+                        <div ng-if="detailExploreSmaash.timingAndPricing.length == 0">
+                            No Timing Available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kartings">
+            <div class="slant-row">
+                <div class="slant-col">
+                    <div class="slant-box full-height">
+                        <h2>Technology</h2>
+                        <p ng-bind-html="detailExploreSmaash.technology"></p>
+                        <p ng-if="detailExploreSmaash.technology===''">No data Found</p>
+                    </div>
+                </div>
+                <div class="slant-column pull-right">
+                    <div class="slant-box half-height slid">
+                        <h2>deals and packages</h2>
+                        <flex-slider class="carousel" flex-slide="s in deals track by $index" item-width="200" animation="slide" animationLoop="true"
+                            prev-text="" next-text="">
+                            <li>
+
+                                <a ui-sref="deals-inner({id:s._id})">
+                                    <img ng-src="{{s.icon|uploadpath}}" ng-if="s.icon">
+                                </a>
+                            </li>
+                        </flex-slider>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="karting1">
+            <div class="slant-row">
+                <div class="slant-col">
+                    <div class="slant-box full-height slid">
+                        <h2>current events</h2>
+                        <flex-slider class="carousel" flex-slide="s in event track by $index" item-width="200" animation="slide" animationLoop="true"
+                            prev-text="" next-text="">
+                            <li>
+                                <a ui-sref="event-inner({id:s._id})">
+                                    <!-- <a fancybox-box  data-fancybox-type="iframe" href="https://www.youtube.com/embed/KJuYa94JgbY"> -->
+                                    <img ng-src="{{s.icon|uploadpath}}" ng-if="s.icon">
+                                </a>
+                            </li>
+                        </flex-slider>
+                    </div>
+                </div>
+                <div class="slant-column pull-right">
+                    <div class="slant-box half-height slid">
+                        <h2>promotions</h2>
+                        <flex-slider class="carousel" flex-slide="s in promotions track by $index" item-width="200" animation="slide" animationLoop="true"
+                            prev-text="" next-text="">
+                            <li>
+                                <!-- <a fancybox-box  data-fancybox-type="iframe" href="https://www.youtube.com/embed/KJuYa94JgbY"> -->
+                                <a>
+
+                                    <img ng-src="{{s.icon|uploadpath}}" ng-if="s.icon">
+                                </a>
+                            </li>
+                        </flex-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="slidings">
+                <h2 class="title slide-text">gallery</h2>
+                <flex-slider class="carousel" flex-slide="s in detailExploreSmaash.gallery track by $index" item-width="250" animation="slide"
+                    animationLoop="true" prev-text="" next-text="">
+                    <li style="margin-right:10px;">
+                        <a href="{{s.image|uploadpath}}" fancybox-thumb class="fancybox-thumb" rel="fancybox-thumb">
+                            <img ng-src="{{s.image|uploadpath}}">
+                        </a>
+
+                    </li>
+
+                </flex-slider>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="landing-kartbanner">
+    <div class="karting-banner" ng-style="{'background-image':'url('+mySlides4.banner+')'}"></div>
+</div>
+<div class="kart-bg">
+    <div class="container">
+        <h2 class="nav-name center">{{mySlides4.title}}</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="karting1">
+        <div class="slant-row">
+            <div class="slant-col">
+                <div class="slant-box full-height">
+                    <h2>games description</h2>
+                    <p>{{mySlides4.description}}</p>
+                </div>
+            </div>
+            <div class="slant-column pull-right">
+                <div class="slant-box half-height">
+                    <h2>timings and pricing</h2>
+                    <div ng-repeat="data in mySlides4.timing">
+                        <h3 class="brand-ortitle title-text">{{data.type}}</h3>
+                        <p>{{data.description}} <br>{{data.weekdayPrice}}/- Workdays | {{data.weekendPrice}}/- Weekends</p>
+                    </div>
+                    <div ng-if="mySlides4.timing.length == 0">
+                        No Timing Available
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kartings">
+        <div class="slant-row">
+            <div class="slant-col">
+                <div class="slant-box full-height">
+                    <h2>Technology</h2>
+                    <p>{{mySlides4.technology}}</p>
+                </div>
+            </div>
+            <div class="slant-column pull-right">
+                <div class="slant-box half-height">
+                    <h2>deals and packages</h2>
+                    <p>{{mySlides4.deal}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="karting1">
+        <div class="slant-row">
+            <div class="slant-col">
+                <div class="slant-box full-height">
+                    <h2>current events</h2>
+                    <p>{{mySlides4.currentEvent}}</p>
+                </div>
+            </div>
+            <div class="slant-column pull-right">
+                <div class="slant-box half-height">
+                    <h2>promotions</h2>
+                    <p>{{mySlides4.promotion}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="slidings">
+            <h2 class="title slide-text">gallery</h2>
+            <flex-slider class="carousel" flex-slide="s in mySlides4.gallery track by $index" item-width="250" animation="slide" animationLoop="true"
+                prev-text="" next-text="">
+                <li>
+                    <a href="{{s}}" fancybox-box>
+                        <img ng-src="{{s.image|uploadpath}}">
+                    </a>
+                </li>
+            </flex-slider>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="parties">
+    <a href="" class="close text-uppercase " ng-click="$dismiss();"><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
+    <div class="party-gallery">
+        <flex-slider flex-slide="s in mySlides" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+          {{s}}
+          <li>
+                <div class="video-main">dhhhdh
+                    <img ng-src="{{s.image | uploadpath}}" alt="" class="img-responsive">
+                </div>
+            </li>
+        </flex-slider>
+    </div>
+    <div class="image-nav">
+        <flex-slider class="carousel marglef relative" flex-slide="s in galleryData" animation="slide" animation-loop="false" item-width="135"
+            as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+            <li>
+                <a href="">
+                    <div class="row">
+
+                        <img ng-src="{{s.image |uploadpath}}" alt="">
+
+
+                    </div>
+                </a>
+
+            </li>
+        </flex-slider>
+    </div>
+</div>

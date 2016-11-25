@@ -1,0 +1,406 @@
+<div class="blog events1 attractions">
+    <div class="backg-eve">
+        <div class="container">
+            <h2 class="nav-name center ">blog</h2>
+        </div>
+    </div>
+     <div class="forms brand-blue">
+    <div class="container">
+      <div class="search-green">
+        <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
+        <div class="microscope">
+          <img src="img/new/bino.png" class="img-responsive" alt="" ng-click="goTOSearch(filter)">
+        </div>
+      </div>
+      <!-- <div class="game-type inline-block">
+        <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <select class="form-control" ng-model="filter.gameFor" ng-change="goTOSearch(filter)">
+               <option ng-selected="true" value="0">All </option>
+               <option value="1">Male</option>
+               <option value="2">Female</option>
+               <option value="3">Children</option>
+            </select>
+      </div> -->
+      <!-- <div class="game-type inline-block">
+        <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <select class="form-control" ng-model="filter.gameType" ng-change="goTOSearch(filter)">
+               <option ng-selected="true" value="0">Featured </option>
+               <option value="1">All</option>
+               <option value="2">VR</option>
+               <option value="3">Sports</option>
+               <option value="4">Arcade</option>
+               <option value="5">Others</option>
+            </select>
+      </div> -->
+    </div>
+  </div>
+    <div class="container">
+        <div class="new">
+ <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                   <div class="col-md-12">
+                    <div class=" relative margno">
+                          <div class="news">
+                 <h3 class="margin0 bluey  pointer">{{blogInside.blogDetail
+.name}}</h3>
+                 <span><i class="fa fa-calendar" aria-hidden="true"></i> {{blogInside.blogDetail.date | date :'d MMM, y'}}</span>
+                 <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{blogInside.blogDetail.date | date :'h:mm a'}}</span>
+                 <div class="city-share">
+ <!-- <p class="pull-left">Mumbai</p> -->
+ <ul class="social-icons list-inline inline-block pull-right">
+                                    <p class="inline-block">Share</p>
+                                    <li>
+                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                               <li><a href=""><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                 </div>
+               <div class="clearfix"></div>
+             </div>
+             <div class="detail">
+                 <div class="first-img">
+                     <img ng-src="{{blogInside.blogDetail.image | uploadpath}}" class="img-responsive" alt="">
+                 </div>
+                 <div class="first-imgdetail">
+                     <p ></p>
+                 </div>
+                 <!-- <div class="first-img">
+                     <img src="img/new/newdeals.png" class="img-responsive" alt="">
+                 </div>
+                 <div class="first-imgdetail">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde velit atque sed tenetur nostrum, est, maiores harum dignissimos quas soluta aperiam debitis doloremque iusto blanditiis, neque, repudiandae dolorum consequuntur expedita!</p>
+                 </div>
+                 <div class="first-img">
+                     <img src="img/new/newdeals.png" class="img-responsive" alt="">
+                 </div>
+                 <div class="first-imgdetail">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde velit atque sed tenetur nostrum, est, maiores harum dignissimos quas soluta aperiam debitis doloremque iusto blanditiis, neque, repudiandae dolorum consequuntur expedita!</p>
+                 </div> -->
+             </div>
+             <!-- <div class="more-detail">
+ <h4 class="greeny">Cricket at Smaaash</h4>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ducimus atque laborum impedit ipsam nulla nobis vel quia suscipit recusandae odit velit, blanditiis possimus. Quibusdam eligendi nulla officiis cum debitis.</p>
+             <div class="comment">
+                 <div class="comment-symbols clearfix">
+<div class="symbols pull-left">
+    <span><i class="fa fa-2x fa-heart-o" aria-hidden="true"></i></span>
+    <span><i class="fa fa-2x fa-commenting-o" aria-hidden="true"></i></span>
+    <span><i class="fa  fa-heart" aria-hidden="true"></i> 15660 Likes</span>
+</div>
+ <ul class="social-icons list-inline inline-block pull-right city-share">
+                                    <p class="inline-block">Share</p>
+                                    <li>
+                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                               <li><a href=""><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                 </div>
+
+
+                                <div class="user-comments">
+                                    <div class="first-comment">
+                                        <div class="cams">
+                 <div class="row">
+                                            <div class="col-md-1 col-sm-1 col-xs-4">
+                                                <img src="img/phone-aunty.png" class="img-responsive" alt="">
+                                            </div>
+<div class="col-md-11 col-sm-11 col-xs-8">
+    <p>Lorem ipsum dolor sit amet architecto debitis, quas, quidem modi ducimus veniam, ut, necessitatibus nesciunt quibusdam. Enim, vero corporis deserunt tenetur cumque.</p>
+<div class="symbols">
+<span>Like</span>
+<span>Reply</span>
+ <span><i class="fa fa-calendar" aria-hidden="true"></i> 14 Jan,2016</span>
+ <span><i class="fa fa-clock-o" aria-hidden="true"></i> 01:20 p.m</span>
+
+</div>
+</div>
+                                        </div>
+                                        </div>
+
+
+                                            <div class="cam">
+                                                 <div class="row">
+    <div class="col-md-1 col-sm-1 col-xs-4">
+                                                    <img src="img/phone-aunty.png" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="col-md-11 col-sm-11 col-xs-8">
+
+    <p>Write a comment</p>
+<div class="symbols ab ">
+<span><i class="fa fa-camera" aria-hidden="true"></i></span>
+<span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+</div>
+                                            </div>
+
+                                            </div>
+                                       <button type="submit" class="pull-right">POST</button>
+                                       <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+             </div>
+             </div> -->
+             <div class="blog-slider">
+                 <div class="blog-directions clearfix">
+<span class="pull-left">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+Previous Blog
+</span>
+<span class="pull-right">
+
+Next Blog
+  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+</span>
+                 </div>
+      <flex-slider class="carousel marglef relative" flex-slide="s in blogInside.previousNextBlog" animation="slide" animation-loop="false" item-width="250"
+            as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+            <li class="left">
+                <a href="">
+
+  <div class="row">
+      <div class="col-md-4">
+<img ng-src="{{s.image | uploadpath}}" alt="">
+      </div>
+      <div class="col-md-8">
+          <!-- <p>Mumbai</p> -->
+<p class="uppercase" ng-bind-html="s.description | htmlToPlaintext | shorten :40"></p>
+      </div>
+  </div>
+                </a>
+
+            </li>
+
+            </li>
+
+        </flex-slider>
+             </div>
+             <div class="may-like">
+                 <h4>You May Also Like</h4>
+                 <div class="row">
+                   <div class="col-md-6" ng-repeat=" data in blogInside.youMayLike">
+                    <div class="race-eve relative margno">
+                        <div class="img-bg">
+                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                        </div>
+                                   <div class="new-detail">
+                 <h3 class="margin0 bluey  pointer">{{data.name}}</h3>
+                 <span><i class="fa fa-calendar" aria-hidden="true"></i> {{data.date | date :'d MMM, y'}}</span>
+                 <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{data.date | date : 'h:mm a'}}</span>
+                         <div class="button-set">
+                                <ul class="social-icons list-inline inline-block">
+                                    <p class="inline-block">Share</p>
+                                    <li>
+                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="more inline-block">
+
+
+                                    <button class="uppercase greeny" ng-click="imagesmodal();">know more</button>
+
+                                </div>
+
+                            </div>
+                                               <div class="love">
+                <button class="uppercase" ><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>like</button>
+              </div>
+             </div>
+                    </div>
+                </div>
+                      <!-- <div class="col-md-6">
+                    <div class="race-eve relative margno">
+                        <div class="img-bg">
+                            <img src="img/new/newdeals.png" class="img-responsive" alt="">
+                        </div>
+                                   <div class="new-detail">
+                 <h3 class="margin0 bluey  pointer">smaash cricket</h3>
+                 <span><i class="fa fa-calendar" aria-hidden="true"></i> 14 Jan,2016</span>
+                 <span><i class="fa fa-clock-o" aria-hidden="true"></i> 01:20 p.m</span>
+                         <div class="button-set">
+                                <ul class="social-icons list-inline inline-block">
+                                    <p class="inline-block">Share</p>
+                                    <li>
+                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="more inline-block">
+
+
+                                    <button class="uppercase greeny" ng-click="imagesmodal();">know more</button>
+
+                                </div>
+
+                            </div>
+                                               <div class="love">
+                <button class="uppercase" ><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>like</button>
+              </div>
+             </div>
+                    </div>
+                </div> -->
+                </div>
+             </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <h2 class="title center">popular blogs</h2>
+            <div class="row">
+                <div class="col-md-12" ng-repeat="data in blogInside.popularBlog">
+      <div class="race-eve relative margno ">
+                        <div class="img-bg">
+                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                        </div>
+                        <div class="button-bg">
+                             <img src="img/buy.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="race-text">
+
+                            <div class="min-h">
+                                <h3 class="margin0 brand-white">{{data.name}}</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                     <!-- <div class="row">
+                <div class="col-md-12">
+      <div class="race-eve relative margno ">
+                        <div class="img-bg">
+                            <img src="img/new/newdeals.png" class="img-responsive" alt="">
+                        </div>
+                         <div class="button-bg">
+                             <img src="img/buy.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="race-text">
+
+                            <div class="min-h">
+                                <h3 class="margin0 brand-white">promotions</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                     <div class="row">
+                <div class="col-md-12">
+      <div class="race-eve relative margno ">
+                        <div class="img-bg">
+                            <img src="img/new/newdeals.png" class="img-responsive" alt="">
+                        </div>
+                         <div class="button-bg">
+                             <img src="img/buy.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="race-text">
+
+                            <div class="min-h">
+                                <h3 class="margin0 brand-white">promotions</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+               <div class="social-media">
+                   <div class="social-icos">
+                         <div class="row">
+            <div class="col-md-12 ">
+                <div class="facebook brand-green inline-block fb-mobile">
+                    <h2 class="brand-white">Facebook</h2>
+                    <div class="wdgett text-center">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSmaaashLive%2F&tabs=timeline&width=340&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=199489793739917"
+                            width="340" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
+                </div>
+            </div>
+            </div>
+                   </div>
+       <div class="social-icos">
+            <div class="row">
+            <div class="col-md-12">
+                <div class="facebook brand-red inline-block fb-mobile">
+                    <h2 class="brand-white">Twitter</h2>
+                    <div class="twitter-wdget ">
+                        <div class="wdget text-center">
+                            <a class="twitter-timeline" href="https://twitter.com/SmaaashLive">Tweets by SmaaashLive</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+             <div class="social-icos">
+            <div class="row">
+            <div class="col-md-12">
+                <div class=" facebook brand-pink inline-block fb-mobile">
+                    <h2 class="brand-white">Instagram</h2>
+                    <div class="wdget">
+                        <iframe src="//lightwidget.com/widgets/540f7576f94f54419988e766fce81e6a.html" id="lightwidget_540f7576f9" name="lightwidget_540f7576f9"
+                            scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+<div class="social-ico">
+     <h2 class=" center">Social Media</h2>
+    <ul class="list-inline">
+        <li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+    </ul>
+    <ul class="list-inline">
+        <li><a href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+</div>
+
+<!-- <div class="ad">
+    <img src="img/profile/avatar.png" class="img-responsive" alt="">
+</div> -->
+
+    </div>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>

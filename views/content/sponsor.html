@@ -1,0 +1,64 @@
+<div class="events1 sponsors">
+   <div class="backg-eve">
+      <div class="container">
+         <h2 class="nav-name center">sponsorship and alliances</h2>
+      </div>
+   </div>
+   <div class="container">
+      <div class="new">
+             <ul class="tabs-about  list-inline">
+    <li><a ui-sref="about" class="uppercase">about</a></li>
+    <li><a ui-sref="leader"  class="uppercase">leader</a></li>
+    <li><a ui-sref="benefit" class="uppercase">benefit</a></li>
+    <li><a ui-sref="sponsor" class="uppercase">sponsor</a></li>
+  </ul>
+         <div class="row" ng-repeat="datas in sponsor1">
+            <div class="col-md-4 col-sm-4" ng-repeat="data in datas">
+               <div class="karting-championship  marginbot">
+                  <div class="brand-orangy relative">
+                     <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="cmo">
+                  </div>
+                  <div class="new-detail">
+                     <div class="heading">
+                        <h3 class="margin0 brand-ortitle">{{data.name}}</h3>
+                        <h3 class="margin0 brand-ortitle" ng-if="!data.name">No name</h3>
+                     </div>
+                     <div class="para-text">
+                        <p ng-hide="moreDesc[data._id]">{{data.content | htmlToPlaintext | shorten :130}}</p>
+                        <p ng-show="moreDesc[data._id]">{{myDesc | htmlToPlaintext }}</p>
+                        <p ng-if="!data.content">No description.</p>
+                     </div>
+                     <span class="greeny pull-right" ng-if="data.content.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">Read More</span>
+                     <span class="greeny pull-right" ng-if="data.content.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id)">Read Less</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="partners">
+         <h3>our esteemed partners</h3>
+         <ul class="list-inline">
+            <li ng-repeat="data in esteem">
+               <a href=""><img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="layer"></a>
+            </li>
+         </ul>
+      </div>
+      <div class="contacts">
+         <h3>contact details</h3>
+         <p>For further information regarding Sponsorship and Alliances, feel free to get in touch with us</p>
+         <div class="row">
+            <div class="col-md-3" ng-repeat="data in contact">
+               <h3>{{data.name}}</h3>
+               <span>{{data.city.name}}</span>
+               <div class="telephone">
+                  <p class="margin0"><i class="fa fa-phone" aria-hidden="true"></i><span>Telephone</span><a href="tel:+91 9971670476">{{data.mobile}} </a></p>
+               </div>
+               <div class="email">
+                  <p class="margin0"><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span><a href="mailto:jaydeep.ray@smaaash.in">{{data.email}}</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</div>

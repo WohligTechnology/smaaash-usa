@@ -1,0 +1,82 @@
+<div class="confirm-order">
+   <div class="bg">
+      <div class="container">
+         <h2 class="nav-name center ">confirm your order</h2>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="comic-pane">
+               <div class="cmic-image">
+                  <div class="comic-image">
+                     <span class="cimg">
+                          <img src="img/confirm/smile.png" class="img-responsive" alt="Sachin">
+                        </span>
+                  </div>
+               </div>
+               <div class="text-infom">
+                  <div class="text">
+                     <div class="info center">
+                        <h2 class="title">sachin tendulkar</h2>
+                        <p class="capitalize">order no: 1458022568</p>
+                        <p class="capitalize">order amount: 10,000</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin0">
+               <div class="ronaldo">
+                  <figure>
+                     <img src="img/confirm/ronaldo.png" class="img-responsive" alt="corporate parties">
+                  </figure>
+                  <h2 class="title">corporate parties</h2>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6" >
+            <form name="formBilling" class="form" ng-submit="formSubmit(billingForm)" ng-if="!formComplete">
+               <h2 class="title">billing information</h2>
+               <div class="form-group">
+                  <input type="text" class="form-control" ng-model="billingForm.name" name="name" placeholder="Name" required aplha-only>
+                  <div class="error-msg" ng-show="formBilling.name.$error.required && formBilling.name.$touched">Please enter your name.</div>
+               </div>
+               <div class="form-group">
+                  <textarea class="form-control resize" ng-model="billingForm.address" placeholder="Address" rows="3" name="address" required aplha-only></textarea>
+                  <div class="error-msg" ng-show="formBilling.address.$error.required && formBilling.address.$touched">Please enter your address.</div>
+               </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" name="country" ng-model="billingForm.country" placeholder="Country" required aplha-only>
+                  <div class="error-msg" ng-show="formBilling.country.$error.required && formBilling.country.$touched">Please enter your country name.</div>
+               </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" name="state" ng-model="billingForm.state" placeholder="State" required aplha-only>
+                  <div class="error-msg" ng-show="formBilling.state.$error.required && formBilling.state.$touched">Please enter your state name.</div>
+               </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" name="city" ng-model="billingForm.city" placeholder="City" required  aplha-only>
+                  <div class="error-msg" ng-show="formBilling.city.$error.required  && formBilling.city.$touched">Please enter your city name.</div>
+               </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" name="pincode" ng-model="billingForm.pincode" placeholder="Pincode" required only-Digits >
+                  <div class="error-msg" ng-show="formBilling.pincode.$error.required && formBilling.pincode.$touched">Please enter pincode.</div>
+               </div>
+               <div class="form-group">
+                  <input type="tel" class="form-control" name="mobile" ng-model="billingForm.mobile" placeholder="Mobile" required only-Digits maxlength="10" >
+                  <div class="error-msg" ng-show="formBilling.mobile.$error.required && formBilling.mobile.$touched">Please enter your mobile number.</div>
+               </div>
+               <div class="form-group">
+                  <input type="email" class="form-control" name="email" ng-model="billingForm.email" placeholder="Email Id" required>
+                  <!-- <div class="error-msg" ng-show="formBilling.email.$error.required  &amp; formBilling.email.$touched">Please enter your email.</div> -->
+                  <div class="error-msg" ng-show="formBilling.email.$error.required && formBilling.email.$touched">Please Enter Your email </div>
+               </div>
+
+               <button type="submit"  class="btn title brand-green btn1 btn-default "><span class="brand-white">next</span></button>
+            </form>
+
+         </div>
+         <div>
+
+         </div>
+      </div>
+   </div>

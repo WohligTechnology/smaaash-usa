@@ -1,0 +1,192 @@
+<div class="footers" ng-controller="footerctrl">
+  <div class="container">
+    <div class="footers-list">
+      <div class="row foot">
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 1 }"></i></span>
+              <h4 class="bold title pointer" ui-sref="attractions({id:attrctionId})" ng-click="footer(1)">EXPLORE SMAAASH </h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 1">
+              <li><a ui-sref="attractions({id:attrctionId})">Attractions</a></li>
+              <li><a ui-sref="drink-party({id:drinkandPartyId})">Food &amp; Beverages</a></li>
+              <li><a ui-sref="dealsp({id:dealsandpackagesId})">Deals &amp; Packages</a></li>
+              <li><a ui-sref="promotion({id:promotionId})">Promotions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 2 }"></i></span>
+              <h4 class="bold title pointer" ui-sref="host-party({id:hostpartyId})" ng-click="footer(2)">HOST A PARTY</h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 2">
+              <li><a ui-sref="birthday-parties">Birthday Parties</a></li>
+              <li><a ui-sref="corporate-parties">Corporate Parties</a></li>
+              <li><a ui-sref="kitty-parties">Kitty Parties</a></li>
+              <li><a ui-sref="wedding-parties">Pre-Wedding Parties</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>
+              <h4 class="bold title pointer" ui-sref="buy" ng-click="footer(3)">BUY ONLINE</h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 3">
+              <li><a href="">Packages</a></li>
+              <li><a href="">Pay Advance</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 4 }"></i></span>
+              <h4 class="bold title pointer" ui-sref="stars" ng-click="footer(4)">STARS AT SMAAASH</h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 4">
+              <li><a ui-sref="stars">Sachin Tendulkar</a></li>
+              <li><a ui-sref="stars">Imran Khan</a></li>
+              <li><a ui-sref="stars">Darren Sammy</a></li>
+              <li><a ui-sref="stars">Harbhajan Singh</a></li>
+              <li><a ui-sref="stars">Virat Kohli</a></li>
+              <li><a ui-sref="stars">Mumbai Indians</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 5 }"></i></span>
+              <h4 class="bold title pointer" ui-sref="event({id:eventId})"  ng-click="footer(5)">EVENTS &amp; CHALLENGES</h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 5">
+              <li><a href="">SMAAASH CRICKET CARNIVAL</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 6 }"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="sponsor" >Sponsorship &amp; Alliance</h4>
+            </div>
+              <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 7 }"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="benefit" >Benefits</h4>
+            </div>
+             <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="blog" >Blog</h4>
+            </div>
+             <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="about" >About Us</h4>
+            </div>
+             <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="leader" >Leadership</h4>
+            </div>
+            <div class="clearfix">
+
+              <h4 class="bold title pointer" ui-sref="customizepackage">Customize Package</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+         
+           
+          </div>
+        </div>
+      </div>
+      <div class="row foot">
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+ 
+            
+           
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+             
+           
+            
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+              
+          
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 11 }"></i></span>
+              <h4 class="bold title" ng-click="footer(11)">download app</h4>
+            </div>
+            <ul class="foot-list foot-data app" ng-show="showFooter == 11">
+              <li class="icons"><a href=""><i class="fa fa-android  fa-2x" title="Android"  target="_blank" aria-hidden="true"></i></a></li>
+              <li class="icons"><a href=""><i class="fa fa-apple  fa-2x" title="Apple" target="_blank" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 12 }"></i></span>
+              <h4 class="bold title pointer" ui-sref="contact" ng-click="footer(12)">Contact us</h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 12">
+              <li><a ui-sref="contact">Bengaluru</a></li>
+              <li><a ui-sref="contact">Hyderabad</a></li>
+              <li><a ui-sref="contact">Gurgaon</a></li>
+              <li><a ui-sref="contact">Mumbai</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing no-flex no-width mobile">
+          <div class="foot-menu foot-list">
+            <h4 class="bold title">follow smaaash</h4>
+            <ul class="foot-list">
+              <li class="icons"><a href=""><i class="fa fa-facebook-square fa-2x" title="Facebook" target="_blank"aria-hidden="true"></i></a></li>
+              <li class="icons"><a href=""><i class="fa fa-twitter-square  fa-2x" title="Twitter" target="_blank" aria-hidden="true"></i></a></li>
+              <li class="icons"><a href=""><i class="fa fa-instagram  fa-2x" title="Instagram" target="_blank" aria-hidden="true"></i></a></li>
+              <li class="icons"><a href=""><i class="fa fa-youtube-square  fa-2x" title="Youtube" target="_blank" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="foot-list">
+            <h4 class="bold title">hashtags</h4>
+            <p class=""><a href="" class="hash">#Lorem #Ipsum #issimply #dummy #text #printing</a></p>
+          </div>
+        </div>
+        <div class="col col-flexing no-flex width mobiles">
+          <ul class="foot-list">
+            <li>
+              <a ui-sref="home">
+                <img src="img/home/logo.png" class="img-responsive" alt="Smaaash">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="foots-list">
+        <ul class="justified-li text-center">
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li>© 2016 SMAAASH</li>
+          <li><a href="http://ting.in/" target="_blank">Designed by Ting</a></li>
+        </ul>
+      </div>
+      <div class="foot-cards">
+        <img src="img/home/cards.png" alt="Visa cards">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="carts">
+    <div class="bg">
+        <div class="container">
+            <h2 class="nav-name center ">My Wishlist cart</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th class="text-center uppercase ">Sr.No</th>
+                        <th class="text-center  uppercase ">Name of page</th>
+                        <th class="text-center uppercase ">remove</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="data in showWishList.wishList">
+                    <td class="text-center border-left">
+                        <img ng-if="data.exploresmash.image" ng-src="{{data.exploresmash.image|uploadpath}}" class="img-responsive" alt="">
+                        <img ng-if="data.exploresmash.homeimage" ng-src="{{data.exploresmash.homeimage|uploadpath}}" class="img-responsive" alt="">
+                        <img ng-if="data.exploresmash.homeimage && data.exploresmash.image" ng-src="{{data.exploresmash.homeimage|uploadpath}}" class="img-responsive"
+                            alt="">
+                        <p class="mt10 uppercase" ng-bind-html="data.exploresmash.hometext"></p>
+                    </td>
+                    <td class="text-center">{{data.pageName[0]}}</td>
+                    <td class="text-center border-right">
+                        <div class="remove">
+                            <button class="uppercase" ng-click="removeFromWishList(data._id)">remove</button>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

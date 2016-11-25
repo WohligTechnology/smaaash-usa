@@ -1,0 +1,1341 @@
+.margin5 {
+  margin-bottom: 5px;
+}
+
+@media (max-width: $screen-xs-max) {
+  .updates{
+    margin-top: 15px;
+  }
+  .blog{
+  p,span{
+    font-size: 12px;
+  }
+  .new-detail {
+    height: 300px !important;
+}
+.city-share{
+  margin-top: 5px;
+.fa{
+  font-size: 14px;
+}
+}
+.symbols{
+  .fa-2x{
+     font-size: 1em;
+  }
+}
+.symbols,.social-icons{
+  float: none !important;
+    display: block;
+    text-align: center;
+   
+}
+
+
+}
+
+.blog{
+  .button-set{
+    .social-icons{
+      display: block;
+    text-align: center;
+    }
+    .more{
+      display: block;
+    margin-top: 20px;
+    text-align: center;
+    }
+  }
+}
+
+.symbols span {
+    margin: 0 5px;
+    font-size: 12px;
+}
+  .image-chefing {
+    margin-top: 0px;
+  }
+  //event-inner
+  .deals-event .karting1 .slant-column:before,
+  .deals-event .karting1 .slant-col:before {
+    height: 332px;
+  }
+  .deals-event .karting1 .full-height,
+  .deals-event .karting1 .half-height {
+    height: 300px;
+  }
+  //new pages
+  .height {
+    height: auto;
+  }
+  .helping {
+    .text-right {
+      text-align: center;
+    }
+  }
+  .help-form .entry-form .form-group {
+    width: 100% !important;
+  }
+  .custom .starter {
+    text-align: center;
+    .form-control {
+      width: 100%;
+    }
+    a {
+      top: 61px;
+    }
+    .required {
+      top: 52px;
+    }
+    .solution {
+      .required {
+        top: 52px;
+        left: 93%;
+      }
+      a {
+        top: 54px;
+        left: 93%;
+      }
+    }
+  }
+  //new profile
+  .profile-point {
+    .profile-details,
+    .profile-detail {
+      margin-bottom: 15px;
+      height: 250px;
+    }
+  }
+  .tab li.active-tab:after {
+    display: none;
+  }
+  .reward-table {
+    margin-top: 0;
+  }
+  .tab {
+    margin-top: 20px;
+  }
+  .w30,
+  .w46,
+  .w92 {
+    width: 100% !important;
+  }
+  //
+  .checker {
+    margin: 0;
+  }
+  .stars {
+    .new-detail {
+      height: auto !important;
+    }
+    .load-more {
+      font-size: 20px;
+    }
+  }
+  .marginleft,
+  .marg {
+    margin-left: 0 !important;
+  }
+  .divider,
+  .or {
+    display: none;
+  }
+  .more {
+    button {
+      margin-left: 0 !important;
+    }
+  }
+  .form-content {
+    top: -880px;
+  }
+  .game-type {
+    width: auto !important;
+    margin: 10px auto !important;
+    display: block;
+  }
+  .search-green {
+    width: 100% !important;
+    margin: 10px auto !important;
+    display: block
+  }
+  .packages {
+    .slant-col,
+    .slant-column {
+      width: 100%;
+      transform: skew(0);
+      &:before {
+        transform: skew(0);
+      }
+      .slant-box {
+        transform: skew(0);
+      }
+      .blue-package {
+        width: 80%;
+      }
+    }
+    .slant-column {
+      margin-top: 15px;
+    }
+  }
+  .landing-banner .inner-banner {
+    background-image: url("../img/home/mbanner.png");
+  }
+  .accounts {
+    .table {
+      margin-top: 0;
+      td {
+        font-size: 11px;
+      }
+      th {
+        font-size: 10px;
+      }
+    }
+    .table-responsive {
+      border: none;
+    }
+  }
+  .carts {
+    .table {
+      td {
+        font-size: 11px;
+      }
+      th {
+        font-size: 10px;
+      }
+    }
+    .remove {
+      margin-top: 55px;
+    }
+  }
+  .whats-new,
+  .host-party,
+  .drink,
+  .event,
+  .dealings {
+    .social-icons,
+    .more {
+      width: 100%;
+      text-align: center;
+    }
+    .more {
+      button {
+        margin-left: 0;
+      }
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 12px;
+    }
+    .love {
+      text-align: center;
+    }
+    .new {
+      .karting-championship {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .drink,
+  .event {
+    .button-sets {
+      button {
+        width: 100%;
+      }
+      button+button {
+        margin: 10px auto;
+      }
+    }
+    .restaurants {
+      top: 0;
+    }
+    .reviews {
+      width: 100%;
+      text-align: center;
+    }
+    .trip {
+      width: 44%;
+      text-align: center;
+    }
+    .total-reviews {
+      width: 50%;
+      text-align: center;
+      margin-left: 0;
+    }
+    .zomato,
+    .rate {
+      span {
+        text-decoration: none;
+      }
+    }
+  }
+  .zomato-reviews,
+  .tripadvisor-reviews {
+    display: block !important;
+    text-align: center;
+    margin-top: 10px!important;
+  }
+  .attractions,
+  .stars {
+    .new-detail {
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+    .button-set {
+      button {
+        font-size: 10px;
+      }
+    }
+    .karting-championship {
+      margin-bottom: 15px;
+    }
+    .love {
+      text-align: center;
+      button {
+        padding: 10px 35px;
+      }
+    }
+  }
+  .host-party {
+    .form {
+      margin-bottom: 0;
+    }
+    .packagings {
+      .slant-col {
+        transform: skew(0);
+        &:before {
+          left: 0;
+          transform: skew(0);
+        }
+        .slant-box {
+          transform: skew(0);
+          padding: 0!important;
+        }
+      }
+      .slant-column {
+        margin-top: 15px;
+        transform: skew(0);
+        .slant-box {
+          transform: skew(0);
+        }
+        &:before {
+          right: 0;
+          transform: skew(0);
+        }
+        .customize-layer {
+          right: 0;
+        }
+        .chef {
+          left: 0;
+        }
+      }
+    }
+  }
+  .side-buttons {
+    top: 19%;
+  }
+  .connect-button,
+  .live-chat {
+    padding: 0;
+    img {
+      width: 25%;
+      margin: 0 auto;
+    }
+    p {
+      text-align: center;
+      font-size: 10px;
+      margin: 0px;
+    }
+  }
+  .live-chat {
+    padding: 3px 7px;
+  }
+  .host-party {
+    .more {
+      button {
+        margin-left: 0;
+      }
+    }
+  }
+  .side-menu {
+    width: 270px !important;
+    top: 5%;
+    height: 500px;
+    overflow: scroll;
+  }
+  .side {
+    top: 40%;
+  }
+  .close-it {
+    left: 0px;
+    a {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  .login-signup {
+    background-position: center;
+    .form-group {
+      margin-bottom: 5px;
+    }
+    .form-control {
+      height: 35px;
+    }
+  }
+  .slant-col {
+    @include transform(skew(0deg));
+    width: 100%;
+    float: none;
+    &:before {
+      content: none;
+    }
+  }
+  .slant-box {
+    @include transform(skew(0deg));
+    padding: 15px !important;
+  }
+  .slant-col+.slant-col {
+    margin-top: 20px;
+  }
+  .slant-box {
+    h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+    h3 {
+      font-size: 16px;
+      margin: 0;
+    }
+    p {
+      font-size: 11px;
+      margin: 0;
+    }
+  }
+  .karting1 {
+    .slant-box {
+      p {
+        font-size: 12px;
+      }
+    }
+    .slant-col {
+      width: 100% !important;
+      transform: skew(0deg);
+      margin-bottom: 10px;
+      &:before {
+        height: 236px;
+        transform: skew(0deg);
+      }
+    }
+    .full-height,
+    .half-height,
+    .slant-box {
+      height: 203px;
+      transform: skew(0deg);
+    }
+    .slant-column {
+      width: 100% !important;
+      transform: skew(0deg);
+      &:before {
+        height: 235px;
+        transform: skew(0deg);
+      }
+    }
+  }
+  .articles,
+  .kartings {
+    .slant-row {
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+    .slant-box {
+      p {
+        font-size: 12px;
+      }
+    }
+    .slant-col {
+      width: 100%;
+      transform: skew(0deg);
+      margin-bottom: 10px;
+      &:before {
+        height: 236px;
+        transform: skew(0deg);
+      }
+    }
+    .full-height,
+    .half-height {
+      height: 203px;
+      transform: skew(0deg);
+    }
+    .slant-column {
+      width: 100%;
+      transform: skew(0deg);
+      &:before {
+        height: 235px;
+        transform: skew(0deg);
+      }
+      .slant-box {
+        height: 203px;
+        transform: skew(0deg);
+      }
+    }
+  }
+  .smaaash-cities .tick {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+  }
+  //*footer starts*//
+  .foot {
+    display: block;
+  }
+  .no-flex {
+    display: inline;
+    width: auto;
+  }
+  .mobile-inlineblock {
+    display: inline-block;
+  }
+  .mobile-50,
+  .mobiles-50 {
+    width: 50%;
+    float: left;
+    margin-bottom: 5px;
+  }
+  .mobiles-50 {
+    width: 100%;
+  }
+  .menu-opened .smaash-menu {
+    height: 500px;
+    overflow-y: scroll;
+    padding: 20px 0;
+  }
+  .cut {
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  .justified-li {
+    display: block;
+    li {
+      text-decoration: underline;
+      padding-top: 12px;
+      display: block;
+      text-align: left;
+    }
+  }
+  .foot-cards {
+    display: none;
+  }
+  .foots-list {
+    padding: 0;
+  }
+  .footers-list {
+    .col-flexing {
+      width: 49%;
+      display: inline-block;
+      @include flex(auto);
+    }
+  }
+  //*footer ends*//
+  .reversing,
+  .reversed {
+    .slant-in {
+      .mover {
+        top: 40px;
+      }
+    }
+  }
+  .reverse {
+    .form {
+      .form-group,
+      .btn {
+        width: 100%;
+        margin: 10px auto;
+      }
+    }
+  }
+  .tripadvisor-reviews ul {
+    border-left: none;
+  }
+  .cdsROW.narrow {
+    width: auto;
+  }
+  .pad0 {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .divider,
+  .or {
+    display: none;
+  }
+  .whats-new,
+  .drink,
+  .event,
+  .dealings {
+    .new {
+      .new-detail {
+        h3 {
+          font-size: 20px;
+        }
+        p,
+        span {
+          font-size: 12px;
+        }
+        .love {
+          text-align: center;
+          button {
+            padding: 10px 5px;
+          }
+        }
+      }
+    }
+  }
+  .drink,
+  .event {
+    .restaurants {
+      top: 0;
+    }
+    .reviews {
+      width: 100%;
+      text-align: center;
+    }
+    .trip {
+      width: 44%;
+      text-align: center;
+    }
+    .total-reviews {
+      width: 50%;
+      text-align: center;
+      margin-left: 0;
+    }
+    .button-sets {
+      button {
+        width: 100%;
+      }
+      button+button {
+        margin: 10px auto;
+      }
+    }
+    .more {
+      button {
+        margin-left: 30px;
+      }
+    }
+  }
+  .attractions,
+  .stars {
+    h3 {
+      font-size: 20px !important;
+    }
+    .new-detail {
+      height: 400px;
+      p {
+        margin: 10px 0;
+        span {
+          height: 20px;
+        }
+      }
+      .button-set {
+        height: 150px;
+        button {
+          width: 100%;
+        }
+        button+button {
+          margin-top: 5px;
+        }
+      }
+      .love {
+        button {
+          padding: 5px 35px;
+        }
+      }
+    }
+  }
+  .stars {
+    .new-detail {
+      height: auto;
+    }
+    .checker {
+      margin: 0 5px;
+    }
+  }
+  .host-party {
+    h3 {
+      font-size: 20px;
+    }
+    .special,
+    .packagings {
+      .chef {
+        left: 0;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    p,
+    span {
+      font-size: 12px;
+    }
+    .love {
+      button {
+        padding: 10px 35px!important;
+      }
+    }
+    .blue-package {
+      width: 80%;
+    }
+  }
+  .corporate,
+  .birthday,
+  .prewedding,
+  .kitty {
+    margin-top: -8px;
+    .banner-info {
+      top: 25px;
+      right: 40px;
+      .banner-text {
+        h2 {
+          font-size: 16px;
+        }
+        p,
+        span {
+          font-size: 14px;
+          letter-spacing: normal;
+        }
+      }
+      .banner-buttons {
+        .btn1 {
+          margin: 0 4px;
+          span {
+            margin: 0 2px 0 0;
+            padding: 3px 6px;
+            font-size: 12px;
+          }
+        }
+        .btn2 {
+          span {
+            margin: 0 2px 0 0;
+            padding: 3px 6px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .banner-butons {
+    margin-top: 10px;
+    width: 114px;
+    position: absolute;
+    right: 10%;
+    .btn {
+      padding: 2px 12px;
+      border-color: transparent;
+    }
+    button {
+      span {
+        font-size: 8px;
+      }
+    }
+  }
+  .facebook {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .landing-kartbanner {
+    min-height: 767px;
+  }
+  .dropdowns {
+    .woman-menu {
+      display: none;
+    }
+    .menu {
+      right: 0;
+    }
+    .cities {
+      top: 41px;
+      left: 25px;
+    }
+    .logo-smaash {
+      display: inline-block;
+      height: 40px;
+      margin-top: 5px;
+      img {
+        width: 40%;
+      }
+    }
+  }
+  //*confirm-order*//
+  .cimg {
+    display: block;
+    transform: skew(-10deg);
+    width: 135px;
+    height: 135px;
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+  }
+  //*confirm-order*//
+  //*karting*//
+  .karting1 {
+    .slant-box {
+      h2 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+    .slant-col:before {
+      width: 25px;
+      height: 282px;
+      top: -2px;
+      left: 1px;
+    }
+    .full-height,
+    .half-height {
+      height: 250px;
+    }
+    .slant-column:before {
+      width: 25px;
+      height: 281px;
+      position: absolute;
+      right: 0;
+      top: 1px;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+  }
+  .articles,
+  .kartings {
+    .slant-box {
+      h2 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+    .slant-col:before {
+      width: 25px;
+      height: 283px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+      border-bottom: 1px solid #000;
+    }
+    .full-height,
+    .half-height {
+      height: 250px!important;
+    }
+    .slant-column:before {
+      width: 25px;
+      height: 282px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  //*karting*//
+  //*explore*//
+  .smash-gaming .gaming:before {
+    content: "";
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    left: 202px;
+    transform: skew(3deg);
+    background-color: #2a3890;
+  }
+  //*explore*//
+  .smash-gaming .gaming:before {
+    content: "";
+    width: 32px;
+    height: 100%;
+  }
+  .gaming:before {
+    content: "";
+    width: 32px;
+    height: 100%;
+  }
+  .corporate .banner-info {
+    top: 50px;
+    .banner-text {
+      h2 {
+        font-size: 20px;
+      }
+      p,
+      span {
+        font-size: 12px;
+      }
+    }
+    .banner-buttons {
+      .btn1 {
+        span {
+          margin: 0 2px 0 0;
+          padding: 6px 15px;
+          font-size: 14px;
+        }
+      }
+      .btn2 {
+        span {
+          margin: 0 2px 0 0;
+          padding: 6px 15px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .chef-img {
+    height: 150px;
+    img {
+      width: auto;
+      position: static;
+      top: 0;
+    }
+  }
+  .karting1 .slant-box,
+  .kartings.slant-box {
+    margin: 30px 0 0 0;
+  }
+  .fb-mobile {
+    width: 100%;
+    text-align: center;
+    height: 460px;
+    margin-bottom: 15px;
+  }
+  .purple-butn {
+    width: 40px;
+    height: 40px;
+    left: 45%;
+    top: 110px;
+    padding-top: 10px;
+    font-size: 12px;
+  }
+  .corporate,
+  .birthday,
+  .prewedding,
+  .kitty {
+    .banner-info {
+      top: 25px;
+      right: 40px;
+      .banner-text {
+        h2 {
+          font-size: 16px;
+        }
+        p,
+        span {
+          font-size: 10px;
+        }
+      }
+      .banner-buttons {
+        .btn1 {
+          margin: 0 4px;
+          span {
+            margin: 0 2px 0 0;
+            padding: 3px 6px;
+            font-size: 10px;
+          }
+        }
+        .btn2 {
+          span {
+            margin: 0 2px 0 0;
+            padding: 3px 6px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  .dropdowns {
+    .woman-menu {
+      display: none;
+    }
+    .menu {
+      right: 0;
+    }
+    .cities {
+      top: 41px;
+      left: 25px;
+    }
+    .logo-smaash {
+      display: inline-block;
+      height: 40px;
+      margin-top: 5px;
+      width: 40%;
+      img {
+        width: auto;
+      }
+    }
+  }
+  .smaaash-cities {
+    width: 260px;
+    height: 500px;
+    margin-top: 40px;
+    overflow-x: scroll;
+    h2 {
+      font-size: 16px;
+      padding-top: 0;
+    }
+    p {
+      font-size: 12px;
+    }
+    .cross {
+      width: 20px;
+      height: 20px;
+      right: 10px;
+    }
+    .city-types {
+      padding: 0 0 15px;
+    }
+    .list {
+      li {
+        margin: 5px;
+        a {
+          img {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+  .no-flex {
+    display: block;
+  }
+  .gaming .anti-scew,
+  .smaaash-gaming .anti-scew {
+    transform: skew(0deg);
+  }
+  .gaming,
+  .smaaash-gaming {
+    transform: skew(0deg);
+    &:before {
+      display: none;
+    }
+  }
+  .smash-gaming .gaming {
+    transform: skew(0deg);
+  }
+  .smash-gaming .gaming:before {
+    display: none;
+  }
+  .smash-gaming .gaming .anti-scew {
+    transform: skew(0deg);
+  }
+  .cimg {
+    display: block;
+    transform: skew(-10deg);
+    width: 135px;
+    height: 135px;
+    position: absolute;
+    left: -8px;
+    bottom: 0;
+    img {
+      width: auto;
+    }
+  }
+  .articles .slant-col:before {
+    width: 20px;
+    height: 283px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    border-bottom: 1px solid #000;
+  }
+  .reversed .full-height,
+  .reversing .full-height {
+    height: auto !important;
+  }
+  .full-heights {
+    height: 300px !important;
+  }
+  .games {
+    .col-flexing+.col-flexing {
+      padding-left: 0;
+    }
+  }
+  .smaash-menu {
+    .nav-name {
+      margin: 0;
+      padding: 40px 25px;
+      font-size: 30px;
+    }
+  }
+  .no-width {
+    vertical-align: middle;
+  }
+  .width {
+    .foot-list {
+      width: auto;
+      li.bold {
+        font-size: 12px;
+      }
+    }
+  }
+  .footers-list {
+    .col-flexing {
+      width: 100%;
+      padding: 0;
+      display: block;
+    }
+  }
+  .footers-list {
+    .mobile {
+      width: 65%;
+      display: inline-block;
+    }
+    .mobiles {
+      width: 30%;
+      display: inline-block;
+    }
+  }
+  .footers-list {
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak,
+    .ng-hide:not(.ng-hide-animate) {
+      display: none !important;
+    }
+    ul.foot-list.foot-data.ng-hide {
+      height: 0;
+      @include transition(all 300ms linear);
+      &.app {
+        height: 0;
+      }
+    }
+    ul.foot-list.foot-data {
+      height: 110px;
+      overflow: hidden;
+      @include transition(all 300ms linear);
+      &.app {
+        height: 50px;
+      }
+    }
+    .icon {
+      display: block;
+    }
+    .foot {
+      &:first-child {
+        padding-bottom: 0;
+      }
+      &:nth-child(2) {
+        padding-top: 0;
+      }
+    }
+  }
+  .backg,
+  .kart-bg,
+  .bg,
+  .events1 .backg-eve {
+    .nav-name,
+    .contact .backg {
+      padding: 40px 0 0;
+      height: 80px;
+      font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 462px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  .no-flex {
+    display: block;
+  }
+  .gaming .anti-scew,
+  .smaaash-gaming .anti-scew {
+    transform: skew(0deg);
+  }
+  .gaming,
+  .smaaash-gaming {
+    transform: skew(0deg);
+    &:before {
+      display: none;
+    }
+  }
+  .smash-gaming .gaming {
+    transform: skew(0deg);
+  }
+  .smash-gaming .gaming:before {
+    display: none;
+  }
+  .smash-gaming .gaming .anti-scew {
+    transform: skew(0deg);
+  }
+  .cimg {
+    display: block;
+    transform: skew(-10deg);
+    width: 135px;
+    height: 100px;
+    img {
+      width: auto;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 460px) and (-webkit-min-device-pixel-ratio: 2) {
+  .corporate,
+  .birthday,
+  .prewedding,
+  .kitty {
+    margin-top: -8px;
+    .banner-info {
+      top: 25px;
+      right: 40px;
+      .banner-text {
+        h2 {
+          font-size: 12px;
+        }
+        p,
+        span {
+          font-size: 7px;
+          letter-spacing: normal;
+        }
+      }
+      .banner-buttons {
+        .btn1 {
+          margin: 0 4px;
+          span {
+            margin: 0 2px 0 0;
+            padding: 3px 6px;
+            font-size: 10px;
+          }
+        }
+        .btn2 {
+          span {
+            margin: 0 2px 0 0;
+            padding: 3px 6px;
+            font-size: 7px;
+          }
+        }
+      }
+    }
+    img {
+      height: 300px;
+    }
+  }
+  .banner-butons {
+    margin-top: 10px;
+    width: 114px;
+    position: absolute;
+    right: 10%;
+    .btn {
+      padding: 2px 12px;
+      border-color: transparent;
+    }
+    button {
+      span {
+        font-size: 8px;
+      }
+    }
+  }
+  .top {
+    margin: -8px 0;
+  }
+  .dropdowns {
+    .cities {
+      top: 41px;
+      left: 25px;
+      padding: 8px;
+    }
+  }
+  .smaash-menu .nav-name {
+    font-size: 20px;
+  }
+  .foot-list {
+    li.bold {
+      font-size: 10px;
+    }
+  }
+  .no-width {
+    width: 165px;
+  }
+  .width {
+    width: 100px;
+  }
+  .full-height {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .fb_iframe_widget iframe {
+    width: 289px;
+    height: 375px;
+  }
+  .comic-image {
+    width: 28%;
+    height: 133px;
+    position: absolute;
+    left: 14px;
+  }
+  .comic-image:before {
+    content: "";
+    dislay: block;
+    position: absolute;
+    height: 131px;
+    width: 45px;
+    left: -14px;
+    top: 0;
+  }
+  .cimg {
+    display: block;
+    transform: skew(-10deg);
+    width: 135px;
+    height: 100px;
+    img {
+      width: 65%;
+    }
+  }
+  .text {
+    width: 59%;
+    height: 131px;
+    right: 13px;
+    top: 0;
+    .info {
+      .title {
+        font-size: 20px;
+      }
+    }
+  }
+  .text:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 130px;
+    width: 60px;
+    right: -14px;
+    top: -2px;
+  }
+  .city-types {
+    .list {
+      li {
+        a {
+          img {
+            width: 83%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+  .landing-kartbanner {
+    min-height: 400px;
+  }
+}

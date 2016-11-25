@@ -1,0 +1,51 @@
+<div class="whats-new">
+   <div class="backg-deal">
+      <div class="container">
+         <h2 class="nav-name center ">whats new</h2>
+      </div>
+   </div>
+   <div class="container">
+      <div class="new">
+         <div class="row" ng-repeat="data in SingleExploreSmaaash1">
+            <div class="col-md-4 col-sm-4" ng-repeat="d in data">
+               <div class="karting-championship">
+                  <div class="img-bg">
+                     <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="">
+                  </div>
+                  <div class="new-detail">
+                     <div class="min-he">
+                        <h3 class="margin0 height80" ng-bind-html="d.hometext"></h3>
+                     </div>
+
+                     <div class="min-h">
+                        <p ng-hide="moreDesc[d._id]">{{d.description | htmlToPlaintext|shorten:130}}</p>
+                        <p ng-show="moreDesc[d._id]">{{myDesc|htmlToPlaintext}}</p>
+                        <div ng-if="!d.description">No description</div>
+                     </div>
+
+                     <span class="capitalize greeny" ng-if="d.description.length > 130 && !moreDesc[d._id]" ng-click="readMore(d._id)">read more</span>
+                     <span class="capitalize greeny" ng-if="d.description.length > 130 && moreDesc[d._id]" ng-click="readMore(d._id)">read less</span>
+                     <div class="button-set">
+                        <ul class="social-icons list-inline inline-block">
+                           <p class="inline-block">Share</p>
+                           <li><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                           <li><a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                           <li><a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <div class="more inline-block">
+                           <a href={{d.sublink}} target="_blank">
+                              <button class="uppercase green" ng-disabled="!d.sublink">know more</button>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="love">
+                        <button class="uppercase" ng-click="addedToWishList(d._id);"><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}"></i>would love to try</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</div>

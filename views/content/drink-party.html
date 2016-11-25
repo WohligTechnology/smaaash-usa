@@ -1,0 +1,90 @@
+<div class="drink">
+    <div class="backg">
+        <div class="container">
+            <h2 class="nav-name center">eat &#44; drink &amp; party</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="new">
+            <div class="row" ng-repeat="data2 in drinkParty">
+                <div class="col-md-4 col-sm-4" ng-repeat="data in data2">
+                    <div class="karting-championship relative">
+                        <div class="img-bg">
+                            <img ng-src="{{data.homeimage|uploadpath}}" class="img-responsive" alt="">
+                        </div>
+                        <div class="restaurants">
+                            <span>restaurants</span>
+                        </div>
+                        <div class="new-detail">
+                            <div class="min-h">
+                                <h3 class="margin0 uppercase" ng-bind-html="data.hometext"></h3>
+                            </div>
+                            <div class="button-sets">
+                                <button class="uppercase large green" ng-click="bookings();">Book Now</button>
+                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>
+                            </div>
+                            <div class="min-h">
+                                <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
+                                <p ng-show="moreDesc[data._id]">{{myDesc| htmlToPlaintext}}</p>
+
+                                <div ng-if="!data.description">No description</div>
+
+                                <span class="capitalize greeny" ng-if="data.description.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">read more</span>
+                                <span class="capitalize greeny" ng-if="data.description.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id)">read less</span>
+                            </div>
+                            <div class="zomato-reviews">
+                                <div class="widget_wrap" style="width:auto;height:auto;">
+                                    <a href="https://www.zomato.com/mumbai/smaaash-lower-parel?utm_source=referral-widget-43839&utm_medium=review_badge&utm_campaign=widget-business"
+                                        target="_newtab"><img src="https://www.zomato.com/widgets/review_badge?badge_type=rating_large&res_id=43839&widget_lang=en"></a>
+                                </div>
+
+                            </div>
+                            <div class="tripadvisor-reviews">
+                                <div id="TA_cdsratingsonlynarrow538" class="TA_cdsratingsonlynarrow">
+                                    <ul id="4rNor49RNs" class="TA_links UJgkHXwRXLq">
+                                        <li id="bmppvPsvl" class="lryYtmp">
+                                            <a target="_blank" href="https://www.tripadvisor.in/"><img src="https://www.tripadvisor.in/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png"
+                                                    alt="TripAdvisor" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="button-set">
+                                <ul class="social-icons list-inline inline-block">
+                                    <p class="inline-block">Share</p>
+                                    <li>
+                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="more inline-block">
+
+
+                                    <button class="uppercase green" ng-click="getGallery(data._id);">Gallery</button>
+
+                                </div>
+                            </div>
+                            <div class="love">
+                                <a href={{data.sublink}} target="_blank">
+                                    <button class="uppercase" ng-disabled="!data.sublink">know more</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+
+
+<div class="host-pop"  >
+   <a href="" class="close text-uppercase brand-white" ng-click="$dismiss();"><img src="img/new/close-popup.png" class="img-responsive" alt=""></a>
+<div class="get-call">
+  <h3 class="text-center">We have sent You one time password please enter it within 5 mins</h3>
+  <form  class="form" ng-submit="customerSignup(signupData)">
+    <div class="form-group relative">
+                        <input type="text" class=" form-control" placeholder="Please Enter OTP here" ng-model="signupData.OTP" required>
+                        <!--<span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>-->
+                     </div>
+                     <div ng-if="wrongOtp" class="text-center"> Invalid OTP or OTP got Expired</div>
+                     <div ng-if="custExist" class="text-center"> Customer Already Exists</div>
+
+     <button type="submit" class=" btn-default block" ><img src="img/new/submit.png" class="img-responsive" alt=""></button>
+       <button type="button" class=" btn-default block" ng-click="signupGenerateOtp(signupData);">Resend OTP</button>
+  </form>
+
+</div>
+
+</div>

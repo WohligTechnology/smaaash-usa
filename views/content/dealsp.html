@@ -1,0 +1,39 @@
+<div class="deals2">
+    <div class="backg-deal">
+        <div class="container">
+            <h2 class="nav-name center ">Deals &amp; Packages</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="new">
+              <div class="row" ng-repeat="data in SingleDealsPackages">
+        <div class="col-md-4 col-sm-4" ng-repeat="d in data" >
+
+          <div class="karting-championship">
+            <div class="brand-blue relative  pointer">
+              <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" ui-sref="deals-inner({id:d._id})">
+              <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+                class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="d.video"></a>
+            </div>
+            <div class="new-detail">
+              <div class="views inline-block">
+                <button class="uppercase bluey" ui-sref="deals-inner({id:d._id})">view</button>
+              </div>
+              <div class="min-h">
+                <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ui-sref="deals-inner({id:d._id})"></h3>
+                  <p class="" ng-bind-html="d.description |htmlToPlaintext | shorten :140"></p>
+              </div>
+              <div class="button-set">
+                <button class="uppercase blue">buy now</button>
+              </div>
+              <div class="love">
+                <button class="uppercase" ng-click="addedToWishList(d._id);"><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>would love to try</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-if="msg" class="text-center">No Options Available As Per Your Criteria.</div>
+      </div>
+        </div>
+    </div>
+</div>

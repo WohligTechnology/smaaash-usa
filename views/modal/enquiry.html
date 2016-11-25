@@ -1,0 +1,23 @@
+<div class="enquiry-form brand-purple">
+  <div ng-if="!formComplete">
+   <h2 class="uppercase title brand-white">enquiry</h2>
+   <a href="" class="close text-uppercase brand-white" ng-click="$dismiss();">close</a>
+   <form  class=" form enquires" name="enquiryForm" ng-submit="formSubmit(enquiryData)">
+      <div class="form-group">
+         <input type="text" class="form-control" placeholder="User Name" name="name"  ng-model="enquiryData.name" required>
+         <div class="error-msg" ng-show="enquiryForm.name.$error.required && enquiryForm.name.$touched">Please Enter Your User Name</div>
+      </div>
+      <div class="form-group">
+         <input type="email" class="form-control" placeholder="Email Id" name="email" ng-model="enquiryData.email" required>
+         <div class="error-msg" ng-show="enquiryForm.email.$error.required && enquiryForm.email.$touched">Please Enter Your Email ID</div>
+      </div>
+      <div class="form-group">
+         <input type="text" class="form-control" placeholder="Mobile no." name="mobile" ng-model="enquiryData.mobile" required>
+         <div class="error-msg" ng-show="enquiryForm.mobile.$error.required && enquiryForm.mobile.$touched">Please enter your mobile no. </div>
+      </div>
+      <textarea placeholder="Comment" ng-model="enquiryData.comment"></textarea>
+    <button  type="submit" name="button"><img src="img/new/go.png" alt=""></button>
+   </form>
+   </div>
+   <div ng-if="formComplete" class="text-center"> Thank You.</div>
+</div>

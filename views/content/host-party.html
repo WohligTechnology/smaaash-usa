@@ -1,0 +1,187 @@
+<div class="host-party">
+  <div class="smaash-drops hidden-xs">
+    <div class="slidings">
+      <flex-slider class="carousel" flex-slide="s in hostPartySlider track by $index" manual-controls=".custom-pagination li" animation="slide"
+        animationLoop="true" direction-nav="false">
+        <li>
+          <img ng-src="{{s.image|uploadpath}}">
+        </li>
+      </flex-slider>
+      <ul class="custom-pagination list-inline">
+        <li ng-repeat="s in hostPartySlider track by $index">{{s.order}}</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="smaash-drops hidden-lg hidden-md hidden-sm">
+    <div class="slidings">
+      <flex-slider class="carousel" flex-slide="s in mySlides10 track by $index" manual-controls=".custom-pagination li" animation="slide"
+        animationLoop="true" direction-nav="false">
+        <li>
+          <img ng-src="{{s}}">
+        </li>
+      </flex-slider>
+      <ul class="custom-pagination list-inline">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="container relative">
+    <div class="form-content">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 hidden-xs"></div>
+        <div class="col-md-4  col-sm-4  hidden-xs"></div>
+        <div class="col-md-4  col-sm-4 col-xs-12">
+          <div class="practice">
+            <form class="form" name="user" ng-submit="assistanceLogin(formData)" ng-if="!formCompleteAssistance">
+              <h3 class="text-center">Need assistance?</h3>
+              <div class="form-group relative">
+                <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name </div>
+              </div>
+              <div class="form-group relative">
+                <input type="email" class=" form-control" placeholder="Email ID" name="email" ng-model="formData.email" required>
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <div class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email ID </div>
+              </div>
+              <div class="form-group relative ">
+                <input type="tel" class="form-control" placeholder="Mobile .No" name="mobile" ng-model="formData.mobile" required only-digits
+                  maxlength="10" minlength="10">
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <div class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please enter your mobile no. </div>
+              </div>
+              <div class="form-group relative">
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <select name="categorydata" class="form-control" ng-model="formData.occasion" required>
+                           <option ng-selected="true" value="">Please select occasion</option>
+                           <option value="bParty">Birthday Party</option>
+                           <option value="dParty">Drink Party</option>
+                           <option value="CorporateParty">Corporate Parties</option>
+                           <option value="kittyParty">Kitty Parties</option>
+                           <option value="PreWeddingParty">Pre-Wedding Parties</option>
+                        </select>
+
+              </div>
+              <div class="form-group ">
+                <div class="radio">
+                  <input type="radio" id="radio4" name="assistancefor" value="Adults" ng-model="formData.assistancefor" required>
+                  <label for="radio4">
+                              <span></span> Adults</label>
+                  <input type="radio" id="radio3" name="assistancefor" value="Children" ng-model="formData.assistancefor" required>
+                  <label for="radio3">
+                              <span></span> Children</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <select name="categorydata" class="form-control" ng-model="formData.noofpeople" required>
+                           <option ng-selected="true" value="">Please select no. Of people</option>
+                           <option value="1-5">1-5</option>
+                           <option value="6-10">6-10</option>
+                           <option value="21-50">21-50</option>
+                           <option value="51-above">51-Above</option>
+                        </select>
+
+              </div>
+              <div class="form-group">
+
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
+                  ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
+                <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+              </div>
+              <button type="submit" class=" btn6 btn-default block" ng-disabled="user.$invalid"><img src="img/new/submit.png" class="img-responsive" alt=""></button>
+            </form>
+            <div class="submit-thank" ng-if="formCompleteAssistance">
+              <p class="text-center">Thank You</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="packagings ">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="slant-col relative ">
+            <div class="slant-box full-height">
+              <div class="special">
+                <img src="img/newest/party.jpg" class="img-responsive" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="image-chefing pointer" ui-sref="customizepackage">
+            <img src="img/newest/chefing.jpg" class="img-responsive" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="new">
+      <div class="row" ng-repeat="datas in SingleHostParty">
+        <div class="col-md-4 col-sm-4" ng-repeat="data in datas">
+          <div class="karting-championship">
+            <div class="brand-blue relative ">
+              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="">
+            </div>
+            <div class="new-details">
+              <div class="min-h ">
+                <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25"></h3>
+              </div>
+              <div class="min-h">
+                <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
+                <p ng-show="moreDesc[data._id]">{{myDesc | htmlToPlaintext}}</p>
+                <p ng-if="!data.description"> No data found</p>
+                <span class="capitalize bluey" ng-if="data.description.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">read more</span>
+                <span class="capitalize bluey" ng-if="data.description.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id,$index)">read less</span>
+              </div>
+
+
+
+              <div class="button-set">
+                <ul class="social-icons list-inline inline-block">
+                  <p class="inline-block">Share</p>
+                  <li><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                  <li><a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                  <li><a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="more inline-block ">
+                  <button class="uppercase " ng-click="direct();"><i class="fa fa-phone" aria-hidden="true"></i>connect</button>
+                </div>
+              </div>
+              <div class="love " >
+                <a ui-sref="parties({id:data._id})">
+                  <button class="uppercase blue">VIEW DETAIL</button>
+                </a>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="packages">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="img/newest/partya.jpg" class="img-responsive" alt="party">
+        </div>
+        <div class="col-md-6">
+          <div class="chef-img pointer" ui-sref="customizepackage">
+            <img src="img/newest/chefs.jpg" class="img-responsive" alt="">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

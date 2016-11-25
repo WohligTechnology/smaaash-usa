@@ -1,0 +1,22 @@
+<div class="backdroped dialog-contents">
+    <div class="smaaash-cities">
+        <h2 class="title center brand-white">select your city</h2>
+        <a class="cross">
+            <i class="fa fa-2x fa-times" aria-hidden="true"></i>
+        </a>
+        <div class="city-types">
+            <ul class="list">
+                <li ng-repeat="city in getCities">
+                    <a ng-click="getCityName(city)"><img ng-src="{{city.image|uploadpath}}" class="img-responsive" alt=""></a>
+                </li>
+                 <li>
+                                <a href="">
+                                    <img src="img/nav/ludhiana.png" alt=""> cccc
+                                </a>
+                            </li>
+            </ul>
+            <p class="text-center">{{currentdate|date:'h:mm a'}} &#8739 {{currentdate|englishNumeralDate}} &#8739 YOUR CURRENT CITY IS {{cityData.name}}</p>
+        </div>
+
+    </div>
+</div>

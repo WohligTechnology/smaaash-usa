@@ -1,0 +1,14 @@
+<div class="smaaash-cities" id="citypopup">
+    <h2 class="title center brand-white">select your city</h2>
+    <a class="cross" href="">
+        <i class="fa fa-2x fa-times" aria-hidden="true"></i>
+    </a>
+    <div class="city-types">
+        <ul class="list">
+            <li ng-repeat="city in getCity">
+
+                <a ng-click="getCityName(city)"><img ng-src="{{city.image|uploadpath}}" class="img-responsive" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</div>

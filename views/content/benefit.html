@@ -1,0 +1,36 @@
+<div class="events1 sponsors">
+    <div class="backg-eve">
+        <div class="container">
+            <h2 class="nav-name center">benefit from us</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="new">
+               <ul class="tabs-about  list-inline">
+    <li><a ui-sref="about" class="uppercase">about</a></li>
+    <li><a ui-sref="leader"  class="uppercase">leader</a></li>
+    <li><a ui-sref="benefit" class="uppercase">benefit</a></li>
+    <li><a ui-sref="sponsor" class="uppercase">sponsor</a></li>
+  </ul>
+            <div class="row">
+              <div ng-if="benefits.length===0" class="center">Nothing to show.</div>
+                <div class="col-md-4 col-sm-4" ng-repeat="data in benefits">
+                    <div class="karting-championship  marginbot">
+                        <div class="brand-blue relative">
+                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="cmo">
+
+                        </div>
+                        <div class="new-detail">
+                            <div class="heading">
+                                <h3 class="margin0 bluey" ng-bind-html="data.name"></h3>
+                            </div>
+                            <div class="para-text">
+                                <p ng-bind-html="data.description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

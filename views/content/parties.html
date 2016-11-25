@@ -1,0 +1,24 @@
+<div class="kitty">
+  <figure>
+    <img src="img/KittyParty.jpg" class="img-responsive" alt="image" / ng-if="party.hostAPartyType==='57e1429c3da62fae1dfc560c'">
+      <img ng-src="img/Host.jpg" class="img-responsive" alt="image" / ng-if="party.hostAPartyType==='57d6a09dbd5eb9846074b419'">
+        <img src="img/weddings.jpg" class="img-responsive" alt="image" / ng-if="party.hostAPartyType==='57d6a027bd5eb9846074b418'">
+          <img src="img/corporate/corporate.jpg" class="img-responsive" alt="image" / ng-if="party.hostAPartyType==='57e142483da62fae1dfc55f2'">
+  </figure>
+  <div class="container">
+    <div class="banner-info">
+      <div class="banner-text">
+        <h2 class="title brand-white" ng-bind-html="party.hometext">kitty parties</h2>
+        <p class="brand-white title-text texts" ng-bind-html="party.description | htmlToPlaintext"></p>
+      </div>
+      <div class="banner-buttons hidden-xs">
+        <button type="button" ui-sref="confirm-order" class="btn title brand-green btn1 btn-default"><span class="brand-white" >buy<i class="fa fa-shopping-cart" aria-hidden="true"></i></span></button>
+        <button type="button" class="btn title brand-purple btn2 btn-default"><span class="brand-white" ng-click="kittyParty()">enquiry<i class="fa fa-envelope-o" aria-hidden="true"></i></span></button>
+      </div>
+      <div class="banner-butons hidden-md hidden-sm hidden-lg">
+        <button type="button" ui-sref="confirm-order" class="btn title brand-green btn1 btn-default"><span class="brand-white" >buy<i class="fa fa-shopping-cart" aria-hidden="true"></i></span></button>
+        <button type="button" class="btn title brand-purple btn2 btn-default"><span class="brand-white" ng-click="kittyParty()">enquiry<i class="fa fa-envelope-o" aria-hidden="true"></i></span></button>
+      </div>
+    </div>
+  </div>
+</div>

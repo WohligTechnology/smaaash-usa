@@ -1,0 +1,20 @@
+<div class="reset-password forgots enquiry-form">
+     <a href="" class="close text-uppercase brand-white" ng-click="closeModal1();"><img src="img/new/close-popup.png" class="img-responsive" alt=""></a>
+      <h2 class="title center brand-white">forgot password</h2>
+<p>Enter your Email Id and Mobile Number to help us identify you</p>
+   <form  class="form" name="enquiryForm" ng-submit="formSubmit(credentialstoReset)">
+      <div class="form-group">
+         <input type="email" class="form-control" placeholder="Email address" ng-model="credentialstoReset.CustomerEmail" required>
+        
+      </div>
+      <div class="form-group">
+         <input type="text" class="form-control" placeholder="Mobile Number" ng-model="credentialstoReset.CustomerMobileNo" required>
+
+      </div>
+
+         <div class="text-center" ng-if="invalidEmail">Please Enter Valid Email Id and Mobile Number.</div>
+      <button type="submit" name="button"><img src="img/new/go.png" alt=""></button>
+
+   </form>
+<a  ng-click="getMenus(); closeModal1()">Return to sign in</a>
+</div>

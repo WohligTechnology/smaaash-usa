@@ -1,0 +1,57 @@
+
+<div class="side-menu menu-out">
+<div class="close-it">
+    <a href="" class="text-uppercase" ng-click="$dismiss();"><img src="img/menu.png" class="img-responsive" alt=""></a>
+</div>
+<div class="login-signup relative">
+  <div class="row">
+  <div class="col-md-6">
+  <div class="login">
+    <h3 class="uppercase">login</h3>
+    <form class="form" name="loginForm">
+      <div class="form-group">
+      <input type="email" class="form-control"  placeholder="User Id" >
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control"  placeholder="Password" >
+      </div>
+        <button type="button" class="btn btn-default brand-yellow"><span class="uppercase">login</span></button>
+    </form>
+    <button type="button" class="butn relative"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with facebook</button>
+    <button type="button" class="buton relative "><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with  Google</button>
+  </div>
+  </div>
+  <div class="divider"></div>
+  <div class="or">
+    <span><img src="img/or.png" class="img-responsive" alt=""></span>
+  </div>
+  <div class="col-md-6">
+  <div class="signup">
+    <h3 class="uppercase">sign up</h3>
+    <form class="form" name="signUpForm" >
+      <div class="form-group">
+
+      <input type="text" class="form-control" ng-model="userData.name"  placeholder="User Name" name="name" required>
+      <div class="error-msg" ng-show="signUpForm.name.$error.required && signUpForm.name.$touched">Please Enter Your User Name</div>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" ng-model="userData.email"  placeholder="Email ID" name="email" required>
+        <div class="error-msg" ng-show="signUpForm.email.$error.required && signUpForm.email.$touched">Please Enter Your Email ID</div>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control"ng-model="userData.password"  placeholder="Password" name="password" required>
+        <div class="error-msg" ng-show="signUpForm.password.$error.required && signUpForm.password.$touched">Please Enter Your Password</div>
+      </div>
+      <div class="form-group">
+        <input type="password" ng-model="userData.password" class="form-control"  placeholder="Re-Enter Password" name="confirmPassword" required >
+        <div class="error-msg" ng-show="signUpForm.confirmPassword.$error.required && signUpForm.confirmPassword.$touched">Please Re-Enter Your Password</div>
+      </div>
+        <button type="button" class="btn4  btn-default brand-blue"><span class="uppercase brand-white">sign up</span></button>
+    </form>
+    <!-- <button type="button" class="butn relative"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with facebook</button>
+    <button type="button" class="buton relative "><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with  Google</button> -->
+  </div>
+  </div>
+  </div>
+</div>
+</div>

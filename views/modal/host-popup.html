@@ -1,0 +1,34 @@
+<div class="host-pop"  ng-hide="submitform">
+   <a href="" class="close text-uppercase brand-white" ng-click="$dismiss();"><img src="img/new/close-popup.png" class="img-responsive" alt=""></a>
+<div class="get-call">
+  <h3 class="text-center">give us your details and we will call you back</h3>
+  <form  class="form" ng-submit="submitHostPopup(formData)" name="user">
+    <div class="form-group relative">
+                        <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required aplha-Only>
+                        <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                          <!-- <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name </div> -->
+                     </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Mobile no." name="mobile" ng-model="formData.mobile"  maxlength="10" Only-digits required minlength="10">
+       <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+         <!-- <div class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please Enter Your Mobile No. </div> -->
+    </div>
+     <button type="submit" class=" btn-default block" ><img src="img/new/submit.png" class="img-responsive" alt=""></button>
+     <!-- <button type="submit" class=" btn-default block" ng-click="direction()"><img src="img/new/submit.png" class="img-responsive" alt=""></button> -->
+  </form>
+</div>
+
+</div>
+<div class="host-pop hosts-pop" ng-show="submitform">
+  <a href="" class="close text-uppercase brand-white" ng-click="$dismiss();"><img src="img/new/close-popup.png" class="img-responsive" alt=""></a>
+<div class="get-call">
+  <h3 class="text-center">thank you</h3>
+  <p class="text-center">our executive will revert shortly</p>
+  <p>we'll get back to you soon</p>
+ <div class="checkout text-center">
+  <span>Check Out</span>
+     <button type="submit" class=" btn-default" ><img src="img/new/pay.png" class="img-responsive" alt=""></button>
+     <!-- <button type="submit" class=" btn-default" ng-click="direction()"><img src="img/new/pay.png" class="img-responsive" alt=""></button> -->
+</div>
+</div>
+</div>
