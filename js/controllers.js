@@ -599,22 +599,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $scope.message = false;
             }
-            if (data.value) {
-                console.log($scope.objectfilter.pagenumber);
-                if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
-                    _.each(data.data.data, function(n) {
-                        // console.log(n);
-                        $scope.stars.push(n)
-                    });
-                    if (data.data.totalpages === $scope.objectfilter.pagenumber) {
-                        $scope.noviewmore = false;
-                    }
-                } else {
-                    console.log("in else last array");
-                    $scope.noviewmore = false;
-                }
-            }
+            // if (data.value) {
+            //     console.log($scope.objectfilter.pagenumber);
+            //     if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
+            //         _.each(data.data.data, function(n) {
+            //             // console.log(n);
+            //             $scope.stars.push(n)
+            //         });
+            //         if (data.data.totalpages === $scope.objectfilter.pagenumber) {
+            //             $scope.noviewmore = false;
+            //         }
+            //     } else {
+            //         console.log("in else last array");
+            //         $scope.noviewmore = false;
+            //     }
+            // }
             // TemplateService.removeLoader();
+          $scope.stars = data.data.data
         })
     };
 
@@ -2889,6 +2890,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             }
         }
+        $scope.GenrateOneTimePass=function(signupData){
+          $scope.modalOtp.close();
+          $scope.signupData.OTP="";
+          $scope.signupGenerateOtp(signupData);
+        }
 
         $scope.customerSignup = function(signupData) {
             console.log("signupData", signupData);
@@ -2994,7 +3000,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.otp = function() {
-            $uibModal.open({
+          $scope.modalOtp=  $uibModal.open({
                 animation: true,
                 templateUrl: "views/modal/otp.html",
                 scope: $scope,
