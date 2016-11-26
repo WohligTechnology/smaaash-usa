@@ -8,16 +8,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     var openL = {};
-    $scope.openpops = function() {
-        openL = ngDialog.open({
-            template: 'views/content/popup.html',
-            className: 'smaaash-cities ',
-            className: 'backdroped',
-            scope: $scope,
-            closeByEscape: true
-        });
+    // $scope.openpops = function() {
+    //     openL = ngDialog.open({
+    //         template: 'views/content/popup.html',
+    //         className: 'smaaash-cities ',
+    //         className: 'backdroped',
+    //         scope: $scope,
+    //         closeByEscape: true
+    //     });
 
-    };
+    // };
 
     TemplateService.removeLoaderOn(4);
 
@@ -53,9 +53,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.$on('$viewContentLoaded', function() {
-        if (!$.jStorage.get("popupShow")) {
-            $scope.openpops();
-        }
+        // if (!$.jStorage.get("popupShow")) {
+        //     $scope.openpops();
+        // }
         $(window).scroll(function() {
             var scroller = $(document).scrollTop();
             var height = $(window).height() - 40;

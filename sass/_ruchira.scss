@@ -1606,7 +1606,7 @@ ul {
         width: 76px;
       }
       .race-text {
-        background-color: #000;
+        background-color: #fff;
         padding: 15px 10px 0;
         h3 {
           font-family: $body-font;
@@ -2611,6 +2611,28 @@ button {
 
 .whites {
   border-top: 1px solid #fff;
+}
+
+.blacks{
+  border: 1px solid #ccc;
+  border-top:none;
+}
+.texting{
+  position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 385px;
+    p{
+      text-align: center!important;
+    }
+}
+.babes{
+  background-image: url("../img/avatar/babes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 442px;
+  background-position: center;
 }
 
 .reversed {
