@@ -2535,19 +2535,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 })
 
-.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal) {
+.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal,$state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog");
     $scope.menutitle = NavigationService.makeactive("Blog");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+        $scope.myUrl = window.location.href;
 
+        // $scope.goto=function(data._id){
+        //   console.log("im in");
+        // $state.go('blog-inside',{id:data._id});
+        // }
     NavigationService.getPopularBlog(function(data) {
         console.log("data", data);
         $scope.popularblogs = data.data;
     });
-    //
-
 
     $scope.objectfilter = {};
     $scope.objectfilter.pagenumber = 0;
@@ -2557,7 +2560,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.noviewmore1 = false;
     $scope.blogs = [];
     $scope.notAvailable = false;
+    if ($stateParams.search) {
+      $scope.objectfilter.search = $stateParams.search;
+    }else {
+       $stateParams.search ={};
+    }
     $scope.fetchData = function() {
+
         $scope.objectfilter.pagenumber = $scope.objectfilter.pagenumber + 1;
         NavigationService.getBlog($scope.objectfilter, function(data) {
             console.log(data.data.totalpages);
@@ -2596,33 +2605,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.blogs = [];
         $scope.noviewmore = true;
         $scope.objectfilter.city = $scope.objectfilter._id;
-
         $scope.objectfilter.pagenumber = $scope.objectfilter.pagenumber + 1;
         NavigationService.getBlog($scope.objectfilter, function(data) {
             console.log("$scope.objectfilter", $scope.objectfilter);
             console.log(data.data.totalpages);
-
             if (data.data.data.length === 0) {
                 $scope.message = true;
             } else {
                 $scope.message = false;
             }
-            if (data.value) {
-                console.log($scope.objectfilter.pagenumber);
-                if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
-                    _.each(data.data.data, function(n) {
-                        // console.log(n);
-                        $scope.blogs.push(n)
-                    });
-                    if (data.data.totalpages === $scope.objectfilter.pagenumber) {
-                        $scope.noviewmore = false;
-                    }
-                } else {
-                    console.log("in else last array");
-                    $scope.noviewmore = false;
-                }
-            }
-            // TemplateService.removeLoader();
+            $scope.blogs  =data.data.data;
             console.log("blogs", $scope.blogs);
         })
     };

@@ -98,17 +98,22 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'PromotionCtrl'
     })
 
-       .state('blog', {
-        url: "/blog",
-        templateUrl: "views/template.html",
-        controller: 'BlogCtrl'
-    })
+    .state('blog', {
+     url: "/blog",
+     templateUrl: "views/template.html",
+     controller: 'BlogCtrl'
+  })
+    .state('blogs', {
+     url: "/blogs/:search",
+     templateUrl: "views/template.html",
+     controller: 'BlogCtrl'
+  })
 
-           .state('blog-inside', {
-        url: "/blog-inside/:id",
-        templateUrl: "views/template.html",
-        controller: 'BlogInsideCtrl'
-    })
+        .state('blog-inside', {
+     url: "/blog-inside/:id",
+     templateUrl: "views/template.html",
+     controller: 'BlogInsideCtrl'
+  })
 
     .state('deals-inner', {
         url: "/deals-inner/:id",

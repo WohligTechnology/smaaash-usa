@@ -7,9 +7,9 @@
      <div class="forms brand-blue">
     <div class="container">
       <div class="search-green">
-        <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
+        <input type="text" class="form-control" placeholder="Search" ng-model="searchFilter" >
         <div class="microscope">
-          <img src="img/new/bino.png" class="img-responsive" alt="" ng-click="goTOSearch(filter)">
+          <img src="img/new/bino.png" class="img-responsive" alt="" ui-sref="blogs({search:searchFilter})">
         </div>
       </div>
       <!-- <div class="game-type inline-block">
@@ -72,90 +72,9 @@
                  <div class="first-imgdetail">
                      <p ></p>
                  </div>
-                 <!-- <div class="first-img">
-                     <img src="img/new/newdeals.png" class="img-responsive" alt="">
-                 </div>
-                 <div class="first-imgdetail">
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde velit atque sed tenetur nostrum, est, maiores harum dignissimos quas soluta aperiam debitis doloremque iusto blanditiis, neque, repudiandae dolorum consequuntur expedita!</p>
-                 </div>
-                 <div class="first-img">
-                     <img src="img/new/newdeals.png" class="img-responsive" alt="">
-                 </div>
-                 <div class="first-imgdetail">
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde velit atque sed tenetur nostrum, est, maiores harum dignissimos quas soluta aperiam debitis doloremque iusto blanditiis, neque, repudiandae dolorum consequuntur expedita!</p>
-                 </div> -->
-             </div>
-             <!-- <div class="more-detail">
- <h4 class="greeny">Cricket at Smaaash</h4>
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ducimus atque laborum impedit ipsam nulla nobis vel quia suscipit recusandae odit velit, blanditiis possimus. Quibusdam eligendi nulla officiis cum debitis.</p>
-             <div class="comment">
-                 <div class="comment-symbols clearfix">
-<div class="symbols pull-left">
-    <span><i class="fa fa-2x fa-heart-o" aria-hidden="true"></i></span>
-    <span><i class="fa fa-2x fa-commenting-o" aria-hidden="true"></i></span>
-    <span><i class="fa  fa-heart" aria-hidden="true"></i> 15660 Likes</span>
-</div>
- <ul class="social-icons list-inline inline-block pull-right city-share">
-                                    <p class="inline-block">Share</p>
-                                    <li>
-                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                               <li><a href=""><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
-                                </ul>
-                 </div>
-
-
-                                <div class="user-comments">
-                                    <div class="first-comment">
-                                        <div class="cams">
-                 <div class="row">
-                                            <div class="col-md-1 col-sm-1 col-xs-4">
-                                                <img src="img/phone-aunty.png" class="img-responsive" alt="">
-                                            </div>
-<div class="col-md-11 col-sm-11 col-xs-8">
-    <p>Lorem ipsum dolor sit amet architecto debitis, quas, quidem modi ducimus veniam, ut, necessitatibus nesciunt quibusdam. Enim, vero corporis deserunt tenetur cumque.</p>
-<div class="symbols">
-<span>Like</span>
-<span>Reply</span>
- <span><i class="fa fa-calendar" aria-hidden="true"></i> 14 Jan,2016</span>
- <span><i class="fa fa-clock-o" aria-hidden="true"></i> 01:20 p.m</span>
-
-</div>
-</div>
-                                        </div>
-                                        </div>
-
-
-                                            <div class="cam">
-                                                 <div class="row">
-    <div class="col-md-1 col-sm-1 col-xs-4">
-                                                    <img src="img/phone-aunty.png" class="img-responsive" alt="">
-                                            </div>
-                                            <div class="col-md-11 col-sm-11 col-xs-8">
-
-    <p>Write a comment</p>
-<div class="symbols ab ">
-<span><i class="fa fa-camera" aria-hidden="true"></i></span>
-<span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-</div>
-                                            </div>
-
-                                            </div>
-                                       <button type="submit" class="pull-right">POST</button>
-                                       <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
 
              </div>
-             </div> -->
+
              <div class="blog-slider">
                  <div class="blog-directions clearfix">
 <span class="pull-left">
@@ -215,7 +134,7 @@ Next Blog
                                         <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
                                     </li>
                                 </ul>
-                                <div class="more inline-block">
+                                <div class="more inline-block" ui-sref="blog-inside({id:data._id})">
 
 
                                     <button class="uppercase greeny" ng-click="imagesmodal();">know more</button>
@@ -223,9 +142,9 @@ Next Blog
                                 </div>
 
                             </div>
-                                               <div class="love">
+                <!-- <div class="love">
                 <button class="uppercase" ><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>like</button>
-              </div>
+              </div> -->
              </div>
                     </div>
                 </div>
@@ -290,7 +209,7 @@ Next Blog
                         </div>
                         <div class="race-text">
 
-                            <div class="min-h">
+                            <div class="min-h" ui-sref="blog-inside({id:data._id})">
                                 <h3 class="margin0 brand-white">{{data.name}}</h3>
 
                             </div>
