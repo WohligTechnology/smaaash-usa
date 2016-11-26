@@ -463,15 +463,14 @@ background-image: none;
 
 .logo-smaash {
     @include position( absolute,
-    10px null null 20px);
+    -30px null null 20px);
     z-index: 999;
-    height: $menu-height - 10px;
+    height: 150px;
     img {
         width: auto;
         height: 100%;
     }
 }
-
 .content {
     min-height: 450px;
 }

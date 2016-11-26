@@ -117,9 +117,8 @@
 
         <div class="container relative">
             <a class="logo-smaash" ui-sref="home">
-                <img src="img/home/logo.png" alt="Smaaash" ng-if="cityData.smaaashLogo === ''
-                || showlogo">
-                <img ng-src="{{cityData.smaaashLogo | uploadpath}}" alt="Smaaash">
+                <img src="img/home/log.png" alt="Smaaash">
+                <!--<img ng-src="{{cityData.smaaashLogo | uploadpath}}" alt="Smaaash">-->
             </a>
 
 
@@ -259,7 +258,7 @@
             </div>
         </div>
     </div>
-    <div class="side" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
+    <!--<div class="side" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
         <div class="live-chat" id="axe">
             <div class="orange-rays"></div>
             <div class="cities" ng-click="toggleCity()">
@@ -269,7 +268,7 @@
             </div>
 
         </div>
-    </div>
+    </div>-->
 
 </div>
 <div  ng-show="template.isLoader"  style="text-align:center";>

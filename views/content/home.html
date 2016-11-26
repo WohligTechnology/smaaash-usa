@@ -1,4 +1,4 @@
-<div class="inner relative pointer">
+<!--<div class="inner relative pointer">
 
    <iframe id="test" width="560" height="315" ng-class={{cdc}} ng-if="!showthumbimage" ng-src="{{'https://www.youtube.com/embed/'+banner[0].videourl+'?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1'|trusted}}"
      frameborder="0" allowfullscreen="" style="
@@ -12,15 +12,6 @@
 " class="">
 
    </iframe>
-   <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/t_C37-P6g5Y?rel=0&autoplay=1" frameborder="0" allowfullscree=""
-     style="position: absolute;
-       left: 0;
-       top: 0;
-       right: 0;
-       bottom: 0;
-       width: 100%;
-       height: 100%;">
-     </iframe> -->
    <div class="overlays" ng-if="!showthumbimage" >
       <a class="pull-right" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
    </div>
@@ -30,21 +21,15 @@
 
 
 
-</div>
-<div class="landing-banner" ng-if="banner[0].homebanner && !banner[0].videourl">
+</div>-->
+<!--<div class="landing-banner" ng-if="banner[0].homebanner && !banner[0].videourl">
    <div  class="inner" auto-height ng-style="{'background':'url('+banner[0].homebanner+')no-repeat'}" mozallowfullscreen="" allowfullscreen="" scrolling="auto">
    </div>
 
-</div>
-
-<div class="container">
+</div>-->
 
 
-   <div class="purple-butn" ng-click="scrollToHome();">
-      <span>scroll<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-   </div>
-</div>
-<div class="smaash-drops" id="toHome">
+<div class="smaash-drops" >
    <div class="slidings">
       <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
          <li>
@@ -60,9 +45,16 @@
 
    </div>
 </div>
+<div class="container">
+
+
+   <div class="purple-butn" ng-click="scrollToHome();">
+      <span>scroll<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+   </div>
+</div>
 <div class="new-slider">
    <div class="container">
-      <div class="gallery">
+      <div class="gallery" id="toHome">
          <div class="slidings">
             <div class="headings clearfix">
                <h2 class="title slide-text pull-left">what's new</h2>
