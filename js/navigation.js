@@ -220,10 +220,13 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
         getOne: function(callback) {
-            var data = {
+            if($.jStorage.get("loginDetail")!= null){
+  var data = {
                 _id: $.jStorage.get("loginDetail").data._id,
 
             };
+            }
+          
             $http({
                 url: adminurl + 'signup/getOne',
                 method: 'POST',

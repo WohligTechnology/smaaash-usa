@@ -3,6 +3,15 @@
    <h2 class="uppercase title brand-white">enquiry</h2>
    <a href="" class="close text-uppercase brand-white" ng-click="$dismiss();">close</a>
    <form  class=" form enquires" name="enquiryForm" ng-submit="formSubmit(enquiryData)">
+       <!--<div class="form-group">
+        <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <select class="form-control" >
+               <option ng-selected="true" value="0">Select City</option>
+               <option value="1">Mumbai</option>
+               <option value="2">Ludhiana</option>
+               <option value="3">Noida</option>
+            </select>
+      </div>     -->
       <div class="form-group">
          <input type="text" class="form-control" placeholder="User Name" name="name"  ng-model="enquiryData.name" required>
          <div class="error-msg" ng-show="enquiryForm.name.$error.required && enquiryForm.name.$touched">Please Enter Your User Name</div>
@@ -15,7 +24,16 @@
          <input type="text" class="form-control" placeholder="Mobile no." name="mobile" ng-model="enquiryData.mobile" required>
          <div class="error-msg" ng-show="enquiryForm.mobile.$error.required && enquiryForm.mobile.$touched">Please enter your mobile no. </div>
       </div>
-      <textarea placeholder="Comment" ng-model="enquiryData.comment"></textarea>
+       <div class="form-group">
+        <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <select class="form-control" >
+               <option ng-selected="true" value="0">Party For</option>
+               <option value="1">20-100 people</option>
+               <option value="2">50-1000 people</option>
+               <option value="3">150-1500 people</option>
+            </select>
+      </div>
+      <!--<textarea placeholder="Comment" ng-model="enquiryData.comment"></textarea>-->
     <button  type="submit" name="button"><img src="img/new/go.png" alt=""></button>
    </form>
    </div>

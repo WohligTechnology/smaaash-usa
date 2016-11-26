@@ -1078,6 +1078,15 @@ img.fancybox-image {
             outline: 0;
         }
     }
+    select{
+        -webkit-appearance: none;
+    }
+    a{
+        position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #000;
+    }
 }
 
 .margno {
