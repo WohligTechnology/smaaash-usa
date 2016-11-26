@@ -226,7 +226,7 @@ var navigationservice = angular.module('navigationservice', [])
 
             };
             }
-          
+
             $http({
                 url: adminurl + 'signup/getOne',
                 method: 'POST',
@@ -509,16 +509,31 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-        // confirmOrder: function(billingForm, callback) {
-        //
-        //     $http({
-        //         url: adminurl + 'signup/save',
-        //         method: 'POST',
-        //
-        //         data: billingForm
-        //
-        //     }).success(callback);
-        // },
+        signupProfile: function(callback) {
+          var data = {
+              _id: $.jStorage.get("loginDetail").data._id,
+            };
+            $http({
+                url: adminurl + 'signup/profile',
+                method: 'POST',
+
+                data: data
+
+            }).success(callback);
+        },
+        updateProfile: function(callback) {
+          // var data = {
+          //     _id: $.jStorage.get("loginDetail").data._id,
+          //   };
+            $http({
+                url: adminurl + 'signup/updateProfile',
+                method: 'POST',
+
+                data: data
+
+            }).success(callback);
+        },
+
         getSponsors: function(callback) {
 
             $http({

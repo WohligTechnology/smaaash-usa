@@ -7,9 +7,9 @@
   <div class="forms brand-blue">
     <div class="container">
       <div class="search-green">
-        <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
+        <input type="text" class="form-control" placeholder="Search" ng-model="filter.search" ng-change="goTOSearch(filter)">
         <div class="microscope">
-          <img src="img/new/bino.png" class="img-responsive" alt="" ng-click="goTOSearch(filter)">
+          <img src="img/new/bino.png" class="img-responsive" alt="" >
         </div>
       </div>
       <div class="game-type inline-block">
