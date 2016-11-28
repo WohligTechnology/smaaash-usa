@@ -7,23 +7,12 @@
 
 
 
-  
-    <div class="landing-kartbanner" scrolldown>
+
+    <div class="landing-kartbanner" scrolldown ng-style="{'background':'url('+detailExploreSmaash.banner+')no-repeat'}">
         <div class="inner relative pointer auto-height ">
 
-   <!--<iframe id="test" width="560" height="315" ng-class={{cdc}} ng-if="!showthumbimage" ng-src="{{'https://www.youtube.com/embed/'+banner[0].videourl+'?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1'|trusted}}"
-     frameborder="0" allowfullscreen="" style="
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-" class="">
 
-   </iframe>-->
-   <iframe width="640" height="360" src="https://www.youtube.com/embed/fA1FdqRFV4U?autoplay=1" frameborder="0" allowfullscreen
+   <iframe  ng-if="startVideo && detailExploreSmaash.video" width="640" height="360" ng-src="{{'https://www.youtube.com/embed/'+detailExploreSmaash.video+'?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1'|trusted}}" frameborder="0" allowfullscreen
      style="position: absolute;
        left: 0;
        top: 0;
@@ -31,7 +20,7 @@
        bottom: 0;
        width: 100%;
        height: 100vh;">
-     </iframe> 
+     </iframe>
    <div class="overlays">
      <!--ng-click="vidFalse();"-->
       <a class="pull-right" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
@@ -52,7 +41,7 @@
         <div class="container">
             <h2 class="nav-name center" ng-bind-html="detailExploreSmaash.hometext"></h2>
         </div>
-         <a href="" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt=""></a>
+         <a href="" class="pink-button" ng-click="startVid()"><img src="img/home/button.png" class="img-responsive" alt=""></a>
     </div>
     <div class="container ">
         <div class="second">
