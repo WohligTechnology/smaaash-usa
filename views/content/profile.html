@@ -11,7 +11,7 @@
                <div class="row">
                   <div class="col-md-4 col-sm-4 col-xs-12">
                      <div class="profile-details">
-                      <img ng-src="{{userprofile.profilePic | uploadprofilepicture}}" alt="">
+                    <img ng-src="{{userprofile.profilePic | uploadprofilepicture}}" alt="" >
                      </div>
                   </div>
                   <!-- <div>
@@ -29,7 +29,7 @@
                         <div class="badge">
                            <img src="img/profile/silver.png" class="img-responsive" alt="">
                         </div>
-                        <p>amrit bamrah</p>
+                        <p>{{userprofile.CustomerName}}</p>
                         <p class="inline-block">33500</p>
                         <p class="inline-block"> points</p>
 
@@ -269,7 +269,7 @@
                </div>
                <div class="points" ng-show="tab=='team'">
                   <div class="row">
-                     <div class="col-md-3 col-sm-3 col-xs-6">
+                     <div class="col-md-3 col-sm-3  hidden-xs">
 
                      </div>
 
@@ -322,12 +322,15 @@
                      </div>
 
                   </div>
-                  <form class="point-form" >
+                  <div class="reseting">
+<p class="uppercase text-center mt10 pointer" ui-sref="reset">do you want to reset your password?</p>
+                  </div>
+                  <form class="point-form" ng-if="!formComplete" >
                      <label class="item w92">
                         <input type="text" readonly placeholder="Amrit Bamrah" class=" form-control" ng-model="userprofile.CustomerName">
                      </label>
                      <label class="item w30">
-                        <input type="text" placeholder="1-01-94" class=" editing form-control" ng-model="userprofile.dob">
+                        <input type="date" placeholder="1-01-94" class=" editing form-control" ng-model="userprofile.dob">
                      </label>
                      <label class="item w30">
                         <input type="text" placeholder="Female" class="arrows-down editing form-control" ng-model="userprofile.gender">
@@ -341,13 +344,14 @@
                      <label class="item w46">
                         <input type="text" placeholder="400009" class="editing form-control" ng-model="userprofile.pincode">
                      </label>
-                     <button type="button" name="button" ng-click="submitUserProfile(userprofile)">
+                     <button type="button" class="butts" name="button" ng-click="submitUserProfile(userprofile)">
                        <a href="" name="button" class="go full-width">
                           <img src="img/profile/update.png" alt="" class="img-responsive">
                        </a>
                      </button>
 
                   </form>
+                  <h3 ng-if="formComplete" class="text-center">Profile Updated Successfully</h3>
                </div>
                <div class="wishlist" ng-show="tab=='wishlist'">
                   <div class="carts">

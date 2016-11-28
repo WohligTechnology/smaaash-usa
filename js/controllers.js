@@ -1129,7 +1129,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
 
-    if ($.jStorage.get("loginDetail") != null && $.jStorage.get("customizeobj") === null) {
+    // if ($.jStorage.get("loginDetail") != null && $.jStorage.get("customizeobj") === null) {
         NavigationService.getOne(function(data) {
             // delete data.data._id;
             console.log("data", data.data);
@@ -1138,15 +1138,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("data.data", data.data);
 
         });
-    }
-    NavigationService.getOne(function(data) {
-        // delete data.data._id;
-        console.log("data", data.data);
-        $scope.customizeformData.mobile = data.data.CustomerMobile;
-        $scope.customizeformData.email = data.data.CustomerEmail;
-        console.log("data.data", data.data);
-
-    });
+    // }
+    // NavigationService.getOne(function(data) {
+    //     delete data.data._id;
+    //     console.log("data", data.data);
+    //     $scope.customizeformData.mobile = data.data.CustomerMobile;
+    //     $scope.customizeformData.email = data.data.CustomerEmail;
+    //     console.log("data.data", data.data);
+    //
+    // });
     if ($.jStorage.get("customizeobj") != null) {
         $scope.customizeformData.email = $.jStorage.get("customizeobj").email;
         $scope.customizeformData.mobile = $.jStorage.get("customizeobj").mobile;
@@ -1689,23 +1689,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             animation: true,
             templateUrl: "views/modal/avatar.html",
             scope: $scope,
+           windowClass:'widths'
         })
     };
+
     $scope.userprofile={};
-    // NavigationService.signupProfile(function(data){
-    //   console.log("data",data);
-    //       $scope.userprofile.CustomerName=data.data.CustomerName ;
-    //       $scope.userprofile.CustomerEmail=data.data.CustomerEmail ;
-    //       $scope.userprofile.dob=data.data.dob ;
-    //       $scope.userprofile.pincode=data.data.pincode ;
-    //       $scope.userprofile.CustomerMobile=data.data.CustomerMobile ;
-    //       $scope.userprofile.gender=data.data.gender ;
-    //       $scope.userprofile.profilePic=data.data.profilePic ;
-    // })
+    NavigationService.signupProfile(function(data){
+      console.log("data",data);
+      $scope.userprofile=data.data ;
+      console.log("data.data.dob",data.data.dob);
+      $scope.userprofile.dob = new Date(data.data.dob);
+    });
+
+    $scope.getAvtar=function(avtar){
+        if (avtar) {
+        $scope.userprofile.profilePic=avtar;
+      }
+
+    }
+$scope.formComplete=false;
 $scope.submitUserProfile=function(userprofile){
   console.log("im in");
   console.log("userprofile",userprofile);
-  // NavigationService.
+  NavigationService.updateProfile(userprofile,function(data){
+    console.log("data",data);
+    if (data.value === true) {
+      $scope.formComplete=true;
+      $timeout(function () {
+$scope.formComplete=false;
+      }, 2000);
+    }
+  })
 }
 
     $scope.getUser = function() {
@@ -1905,7 +1919,6 @@ $scope.submitUserProfile=function(userprofile){
     };
 
 })
-
 .controller('EventsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("events-challenges");
