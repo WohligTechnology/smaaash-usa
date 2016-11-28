@@ -235,16 +235,7 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-        // login: function(userData, callback) {
-        //
-        //     $http({
-        //         url: adminurl + 'signup/login',
-        //         method: 'POST',
-        //
-        //         data: userData
-        //
-        //     }).success(callback);
-        // },
+    
         eventInnerForm: function(userData, callback) {
             $http({
                 url: adminurl + 'enquiry/save',
