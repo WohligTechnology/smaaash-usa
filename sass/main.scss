@@ -950,11 +950,11 @@ background-image: none;
 //*footer ends*//
 .landing-kartbanner {
     position: relative;
-    background-image: url("../img/new/banner.png");
+    // background-image: url("../img/new/banner.png");
     background-repeat: no-repeat;
     background-position: center;
     margin-top: -38px;
-    min-height: 767px;
+    min-height: 675px;
     background-size: cover!important;
     .karting-banner {
         max-width: 1170px;
@@ -1107,7 +1107,7 @@ img.fancybox-image {
   }
 
 .overlays {
-    height: 300px;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.0);
     a {
         margin-right: 20px;
