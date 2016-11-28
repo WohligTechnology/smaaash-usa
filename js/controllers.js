@@ -1129,24 +1129,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
 
-    // if ($.jStorage.get("loginDetail") != null && $.jStorage.get("customizeobj") === null) {
-        NavigationService.getOne(function(data) {
+    if ($.jStorage.get("loginDetail") != null && $.jStorage.get("customizeobj") === null) {
+          NavigationService.getOne(function(data) {
             // delete data.data._id;
-            console.log("data", data.data);
+            // console.log("data", data.data);
             $scope.customizeformData.mobile = data.data.CustomerMobile;
             $scope.customizeformData.email = data.data.CustomerEmail;
-            console.log("data.data", data.data);
+            // console.log("data.data", data.data);
+          });
+    }
 
-        });
-    // }
-    // NavigationService.getOne(function(data) {
-    //     delete data.data._id;
-    //     console.log("data", data.data);
-    //     $scope.customizeformData.mobile = data.data.CustomerMobile;
-    //     $scope.customizeformData.email = data.data.CustomerEmail;
-    //     console.log("data.data", data.data);
-    //
-    // });
     if ($.jStorage.get("customizeobj") != null) {
         $scope.customizeformData.email = $.jStorage.get("customizeobj").email;
         $scope.customizeformData.mobile = $.jStorage.get("customizeobj").mobile;
