@@ -5,14 +5,14 @@
    <form  class="form" name="enquiryForm" ng-submit="formSubmit(credentialstoReset)">
       <div class="form-group">
          <input type="email" class="form-control" placeholder="Email address" ng-model="credentialstoReset.CustomerEmail" required>
-        
+
       </div>
       <div class="form-group">
          <input type="text" class="form-control" placeholder="Mobile Number" ng-model="credentialstoReset.CustomerMobileNo" required>
 
       </div>
 
-         <div class="text-center" ng-if="invalidEmail">Please Enter Valid Email Id and Mobile Number.</div>
+         <div class="text-center error" ng-if="invalidEmail">Please Enter Valid Email Id and Mobile Number.</div>
       <button type="submit" name="button"><img src="img/new/go.png" alt=""></button>
 
    </form>

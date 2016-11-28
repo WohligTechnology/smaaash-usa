@@ -1,6 +1,7 @@
 // JavaScript Document
 $.jStorage.set("city", "Mumbai");
 $.jStorage.set("cityid", "577f4d106b78e0bc03724800");
+  $.jStorage.set("branchId", "17");
 // if (!$.jStorage.get("city")) {
 //     $.holdReady(false);
 //
