@@ -509,10 +509,10 @@
   .mobiles-50 {
     width: 100%;
   }
-  .menu-opened .smaash-menu {
+    .menu-opened .smaash-menu {
     height: 500px;
     overflow-y: scroll;
-    padding: 20px 0;
+   padding: 0 20px 0 0;
   }
   .cut {
     float: right;
@@ -1338,4 +1338,17 @@
   .landing-kartbanner {
     min-height: 400px;
   }
+  .avatar{
+  .avatars,.avatarss,.avatars1,.avatarss1,.avatars2,.avatarss2{
+    height: 100px;
+ 
+  }
+}
+
+     .widths{
+      width: 87%;
+    }
+    .host-pop{
+      width: auto;
+    }
 }
