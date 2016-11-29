@@ -325,19 +325,39 @@
                   <div class="reseting">
 <p class="uppercase text-center mt10 pointer" ui-sref="reset">do you want to reset your password?</p>
                   </div>
-                  <form class="point-form" ng-if="!formComplete" >
+                  <div class="custom">
+                    <div class="forms">
+        <form class="point-form" ng-if="!formComplete" >
                      <label class="item w92">
                         <input type="text" readonly placeholder="Amrit Bamrah" class=" form-control" ng-model="userprofile.CustomerName">
                      </label>
-                     <label class="item w30">
-                        <input type="date" placeholder="1-01-94" class=" editing form-control" ng-model="userprofile.dob">
-                     </label>
-                     <label class="item w30">
+                       <div class="game-type form-group inline-block w30">
+
+                <input type="text"  placeholder="D.O.B" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
+                  ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
+                <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+              </div>
+                     <!--<label class="item w30">
+                        <input type="text" placeholder="1-01-94" class=" editing form-control" ng-model="userprofile.dob">
+                     </label>-->
+                        <div class="form-group w30 inline-block ">
+                <select class="form-control editing arrows-down">
+                           <option ng-selected="true" value="">Gender</option>
+                           <option value="Male">Male</option>
+                           <option value="Female">Female</option>
+                           <option value="Other">Other</option>
+                        </select>
+
+              </div>
+                     <!--<label class="item w30">
                         <input type="text" placeholder="Female" class="arrows-down editing form-control" ng-model="userprofile.gender">
-                     </label>
-                     <label class="item w30">
+                     </label>-->
+                     <div class="form-group inline-block w92">
+<label class="item w92">
                         <input type="tel" readonly placeholder="+91 98200 98200" class="form-control" readonly ng-model="userprofile.CustomerMobile">
                      </label>
+                     </div>
+                     
                      <label class="item w46">
                         <input type="email" readonly placeholder="amrit_bhamrah@gmail.com" class=" form-control" ng-model="userprofile.CustomerEmail">
                      </label>
@@ -352,6 +372,9 @@
 
                   </form>
                   <h3 ng-if="formComplete" class="text-center">Profile Updated Successfully</h3>
+                    </div>
+                  </div>
+          
                </div>
                <div class="wishlist" ng-show="tab=='wishlist'">
                   <div class="carts">
