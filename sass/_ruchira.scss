@@ -3146,3 +3146,37 @@ button {
 padding: 20px;
 }
 }
+
+.points {
+    padding-top: 30px;
+    .point-form {
+        padding: 20px 0;
+        select{
+            -webkit-appearance: none;
+        }
+        .form-control{
+             border-radius: 5px;
+        }
+        .down{
+                position: absolute;
+    top: 10px;
+    right: 10px;
+        }
+        .editing {
+            border-radius: 5px;
+            background:  rgba(204, 204, 204, 0.31) url("../img/profile/pen.png") no-repeat 95% 50%;      
+        }
+        .arrows-down {
+            background: rgba(204, 204, 204, 0.31) url("../img/profile/arrow.png") no-repeat 95% 50%;     
+        }
+        .w92 {
+            width: 92%;
+        }
+        .w30 {
+            width: 29%;
+        }
+        .w46 {
+            width: 46%;
+        }
+    }
+}

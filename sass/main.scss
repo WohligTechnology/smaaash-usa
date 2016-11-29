@@ -1488,7 +1488,7 @@ img.fancybox-image {
 }
 
 .avatar {
-    padding: 25px 0px 10px;
+    padding: 25px 10px 10px;
     .close {
         @include position (absolute, -24px -24px null null);
         opacity: 1;
@@ -1496,7 +1496,47 @@ img.fancybox-image {
     background-image:url("../img/profile/about-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
+    .avatars,.avatarss,.avatars1,.avatarss1,.avatars2,.avatarss2{
+      background-image: url("../img/avatar/usvirat.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: 200px;
+    background-color: #01a69a;
+    border: 1px solid #fff;
+    box-sizing: border-box;
 }
+
+.avatars1{
+    background-image: url("../img/avatar/flyman.png");
+}
+
+.avatars2{
+    background-image: url("../img/avatar/smaillady.png");
+}
+
+.avatarss{
+    background-image: url("../img/avatar/sach.png");
+}
+.avatarss1{
+ background-image: url("../img/avatar/flylady.png");
+}
+
+.avatarss2{
+ background-image: url("../img/avatar/smileman.png");
+}
+    .row-flex {
+        @include display(flex);
+        width: 100%;
+    }
+    .col-flex {
+        @include flex(1);
+        display: block;
+        width: 50%;
+    }
+}
+
 
 .profile-point {
     padding-top: 15px;
@@ -1545,29 +1585,6 @@ img.fancybox-image {
     }
     .profile-detail p:last-child {
         font-size: 20px;
-    }
-}
-
-.points {
-    padding-top: 30px;
-    .point-form {
-        padding: 20px 0;
-        .editing {
-            border-radius: 5px;
-            background: url("../img/profile/pen.png") no-repeat 95% 50%;
-        }
-        .arrows-down {
-            background: url("../img/profile/arrow.png") no-repeat 95% 50%;
-        }
-        .w92 {
-            width: 92%;
-        }
-        .w30 {
-            width: 30%;
-        }
-        .w46 {
-            width: 46%;
-        }
     }
 }
 
@@ -1842,6 +1859,12 @@ border-bottom: 2px solid #000;
     }
  }
 
+.butts {
+    background-color: transparent;
+    border: transparent;
+    display: block;
+    margin: 0 auto;
+}
 
 @import "ruchira";
 @import "mobile";

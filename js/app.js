@@ -265,27 +265,6 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
 });
 
 
-
-// firstapp.directive('img', function ($compile, $parse) {
-//     return {
-//         restrict: 'E',
-//         replace: false,
-//         link: function ($scope, element, attrs) {
-//             var $element = $(element);
-//             if (!attrs.noloading) {
-//                 $element.after("<img src='img/loading.gif' class='loading' />");
-//                 var $loading = $element.next(".loading");
-//                 $element.load(function () {
-//                     $loading.remove();
-//                     $(this).addClass("doneLoading");
-//                 });
-//             } else {
-//                 $($element).addClass("doneLoading");
-//             }
-//         }
-//     };
-// });
-
 firstapp.directive('fancyboxBox', function ($document) {
     return {
         restrict: 'EA',
@@ -343,33 +322,7 @@ firstapp.directive('fancyboxThumb', function ($document) {
             }
         };
     })
-    // firstapp.directive('fancyboxThumb', function ($document) {
-    //     $(".fancybox-thumb").fancybox({
-    //         prevEffect: 'none',
-    //         nextEffect: 'none',
-    //         helpers: {
-    //             title: {
-    //                 type: 'outside'
-    //             },
-    //             thumbs: {
-    //                 width: 50,
-    //                 height: 50
-    //             }
-    //         }
-    //     });
 
-
-
-//     iframe.setAttribute('allowFullScreen', '');
-//     $('.fancybox').fancybox({
-// 	afterLoad: function(e) {
-// 		$(e.inner).find('iframe').attr({
-// 			'webkitallowfullscreen': true,
-// 			'mozallowfullscreen': true
-// 		});
-// 	}
-// });
-// });
 
 firstapp.directive('autoHeight', function ($compile, $parse) {
     return {
@@ -396,15 +349,7 @@ firstapp.directive('noDrag', function ($compile, $parse) {
         }
     };
 });
-// firstapp.filter('serverimage', function() {
-//     return function(input) {
-//         if (input) {
-//             return imgurl + input;
-//         } else {
-//             return "";
-//         }
-//     };
-// });
+
 
 firstapp.directive('imageonload', function() {
     return {
@@ -622,29 +567,7 @@ firstapp.filter('youtubethumb', function () {
         }
     };
 });
-// firstapp.filter('youtubethumb', function() {
-//     return function(input, onlyid) {
-//         if (input) {
-//             console.log(input);
-//             var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-//             console.log(videoid);
-//             if (videoid != null) {
-//                 console.log('tgyuhj', videoid);
-//                 if (onlyid == false) {
-//                     return "http://img.youtube.com/vi/" + videoid[1] + "/hqdefault.jpg";
-//                 } else if (onlyid == true) {
-//                     return videoid[1];
-//                 }
-//             } else {
-//                 return input;
-//                 console.log('1 else', input);
-//             }
-//         } else {
-//             return input;
-//             console.log('2 else', input);
-//         }
-//     };
-// });
+
 firstapp.filter('rawHtml', ['$sce',
     function ($sce) {
         return function (val) {
@@ -658,24 +581,7 @@ firstapp.filter('trusted', ['$sce', function ($sce) {
         return $sce.trustAsResourceUrl(url);
     };
 }]);
-// firstapp.filter('cut', function() {
-//     return function(value, wordwise, max, tail) {
-//         if (!value) return '';
-//
-//         max = parseInt(max, 10);
-//         if (!max) return value;
-//         if (value.length <= max) return value;
-//         value = value.substr(0, max);
-//         if (wordwise) {
-//             var lastspace = value.lastIndexOf(' ');
-//             if (lastspace != -1) {
-//                 value = value.substr(0, lastspace);
-//             }
-//         }
-//
-//         return value + (tail || ' …');
-//     };
-// });
+
 
 firstapp.filter('shorten', function () {
     return function (value, limit) {
