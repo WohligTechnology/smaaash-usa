@@ -2297,6 +2297,13 @@ $scope.formComplete=false;
     };
 })
 
+.controller('ThankCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("thank");
+    $scope.menutitle = NavigationService.makeactive("Thank");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+})
 
 .controller('ResetCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
     //Used to name the .html file

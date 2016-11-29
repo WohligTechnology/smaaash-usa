@@ -74,6 +74,12 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'DealspCtrl'
     })
 
+ .state('thank', {
+        url: "/thank-you",
+        templateUrl: "views/template.html",
+        controller: 'ThankCtrl'
+    })
+
     .state('drink-party', {
         url: "/drink-party/:id",
         templateUrl: "views/template.html",

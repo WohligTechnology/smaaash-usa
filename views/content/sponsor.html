@@ -15,13 +15,13 @@
          <div class="row" ng-repeat="datas in sponsor1">
             <div class="col-md-4 col-sm-4" ng-repeat="data in datas">
                <div class="karting-championship  marginbot">
-                  <div class="brand-orangy relative">
+                  <div class="brand-blue relative">
                      <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="cmo">
                   </div>
                   <div class="new-detail">
                      <div class="heading">
-                        <h3 class="margin0 brand-ortitle">{{data.name}}</h3>
-                        <h3 class="margin0 brand-ortitle" ng-if="!data.name">No name</h3>
+                        <h3 class="margin0 bluey">{{data.name}}</h3>
+                        <h3 class="margin0 bluey" ng-if="!data.name">No name</h3>
                      </div>
                      <div class="para-text">
                         <p ng-hide="moreDesc[data._id]">{{data.content | htmlToPlaintext | shorten :130}}</p>
@@ -37,9 +37,46 @@
       </div>
       <div class="partners">
          <h3>our esteemed partners</h3>
-         <ul class="list-inline">
-            <li ng-repeat="data in esteem">
-               <a href=""><img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="layer"></a>
+         <ul class="list-inline text-center">
+             <li>
+             <a href=""><img src="img/sponsors/1.jpg" class="img-responsive" alt=""></a>
+            </li>
+             <li>
+             <a href=""><img src="img/sponsors/2.jpg" class="img-responsive" alt=""></a>
+            </li>
+             <li>
+             <a href=""><img src="img/sponsors/3.jpg" class="img-responsive" alt=""></a>
+            </li>
+             <li>
+             <a href=""><img src="img/sponsors/4.jpg" class="img-responsive" alt=""></a>
+            </li>
+             <li>
+             <a href=""><img src="img/sponsors/5.jpg" class="img-responsive" alt=""></a>
+            </li>
+             <li>
+             <a href=""><img src="img/sponsors/6.jpg" class="img-responsive" alt=""></a>
+            </li>
+
+             <li>
+             <a href=""><img src="img/sponsors/9.jpg" class="img-responsive" alt=""></a>
+            </li>
+              <li>
+             <a href=""><img src="img/sponsors/10.jpg" class="img-responsive" alt=""></a>
+            </li>
+              <li>
+             <a href=""><img src="img/sponsors/11.jpg" class="img-responsive" alt=""></a>
+            </li>
+              <li>
+             <a href=""><img src="img/sponsors/12.jpg" class="img-responsive" alt=""></a>
+            </li>
+              <li>
+             <a href=""><img src="img/sponsors/13.jpg" class="img-responsive" alt=""></a>
+            </li>
+              <li>
+             <a href=""><img src="img/sponsors/12.jpg" class="img-responsive" alt=""></a>
+            </li>
+              <li>
+             <a href=""><img src="img/sponsors/14.jpg" class="img-responsive" alt=""></a>
             </li>
          </ul>
       </div>

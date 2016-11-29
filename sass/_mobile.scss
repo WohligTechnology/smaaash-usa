@@ -902,6 +902,12 @@
 }
 
 @media (max-width:480px) {
+  .race,.race-eve{
+  margin-bottom: 20px;
+}
+    .texting{
+    width: 250px;
+  }
   .chef-img {
     height: 150px;
     img {
@@ -975,10 +981,10 @@
       left: 25px;
     }
     .logo-smaash {
-      display: inline-block;
-      height: 40px;
-      margin-top: 5px;
-      width: 40%;
+         display: inline-block;
+    height: 80px;
+    margin-top: 30px;
+    width: 40%;
       img {
         width: auto;
       }
@@ -1337,19 +1343,18 @@
     }
   }
   .landing-kartbanner {
-    min-height: 400px;
+    min-height: 665px;
   }
-  .avatar{
+
+  //avatar
+.avatar{
   .avatars,.avatarss,.avatars1,.avatarss1,.avatars2,.avatarss2{
     height: 100px;
- 
+
   }
 }
 
      .widths{
       width: 87%;
-    }
-    .host-pop{
-      width: auto;
     }
 }
