@@ -588,7 +588,9 @@ firstapp.directive('onlyDigits', function () {
         }
     };
 });
+
 firstapp.directive('scrolldown', function ($compile, $parse) {
+
     return {
         restrict: 'EA',
         replace: false,
@@ -596,6 +598,7 @@ firstapp.directive('scrolldown', function ($compile, $parse) {
             var $element = $(element);
             // var windowHeight = $(window).height();
             $scope.scrollDown = function () {
+                $scope.startVideo=false;
                 $('html,body').animate({
                         scrollTop: $(".second").offset().top
                     },

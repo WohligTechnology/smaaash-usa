@@ -1,4 +1,5 @@
 <div class="reset-password enquiry-forms" ng-if="!passUpdated">
+
       <h2 class="title center brand-white">reset password</h2>
 <p class="text-center">You have requested to reset the password for: <span style="font-style:italic;">{{loggedInUser}}</span></p>
    <form  class="form" name="enquiryForm" ng-submit="formSubmit(credentials)">
@@ -13,6 +14,6 @@
       <button type="submit" name="button"><img src="img/new/go.png" alt=""></button>
    </form>
 
-</div>
 
-<div ng-if ="passUpdated" class="text-center">Your password has been changed Successfully !</div>
+</div>
+<h3 ng-if ="passUpdated" class="text-center">Your password has been changed Successfully !</h3>
