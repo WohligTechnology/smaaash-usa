@@ -902,6 +902,12 @@
 }
 
 @media (max-width:480px) {
+  .host-pop{
+   width: 65%;
+    h3{
+      font-size: 14px;
+    }
+  }
   .race,.race-eve{
   margin-bottom: 20px;
 }
@@ -1251,6 +1257,25 @@
         font-size: 8px;
       }
     }
+        .btn2{
+                &:active{
+        background-color: $brand-purple;
+      }
+               &:active{
+                 &:focus{
+background-color: $brand-purple;
+ outline: 0;
+                 }
+
+      }
+        &:focus{
+        background-color: $brand-purple;
+        outline: 0;
+      }
+        &:hover{
+        background-color: $brand-purple;
+      }
+    }
   }
   .top {
     margin: -8px 0;
@@ -1294,7 +1319,7 @@
   }
   .comic-image:before {
     content: "";
-    dislay: block;
+    display: block;
     position: absolute;
     height: 131px;
     width: 45px;
