@@ -1341,11 +1341,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, 500);
     };
     TemplateService.removeLoaderOn(1);
-  
+
 
 $scope.startVid=function(){
-  $scope.startVideo=!$scope.startVideo;
-}
+$scope.startVideo=!$scope.startVideo;
+  }
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailExploreSmaash = data.data;
         console.log("$scope.detailExploreSmaash", $scope.detailExploreSmaash);
