@@ -104,6 +104,7 @@
     .profile-detail {
       margin-bottom: 15px;
       height: 250px;
+      overflow: hidden;
     }
   }
   .tab li.active-tab:after {
@@ -117,7 +118,7 @@
   }
   .w30,
   .w46,
-  .w92 {
+  .w92,.w90 {
     width: 100% !important;
   }
   //
