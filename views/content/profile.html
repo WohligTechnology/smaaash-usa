@@ -334,15 +334,15 @@
                        <div class="game-type form-group inline-block w30">
 
                 <input type="text"  placeholder="D.O.B" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
-                  ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
+                  ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="userprofile.dob" />
                 <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
               </div>
                      <!--<label class="item w30">
                         <input type="text" placeholder="1-01-94" class=" editing form-control" ng-model="userprofile.dob">
                      </label>-->
                         <div class="form-group w30 inline-block ">
-                <select class="form-control editing arrows-down">
-                           <option ng-selected="true" value="">Gender</option>
+                <select class="form-control editing arrows-down" ng-model="userprofile.gender">
+                           <option  ng-if="!userprofile.gender" ng-selected="true" value="">Gender</option>
                            <option value="Male">Male</option>
                            <option value="Female">Female</option>
                            <option value="Other">Other</option>
@@ -357,7 +357,7 @@
                         <input type="tel" readonly placeholder="+91 98200 98200" class="form-control" readonly ng-model="userprofile.CustomerMobile">
                      </label>
                      </div>
-                     
+
                      <label class="item w46">
                         <input type="email" readonly placeholder="amrit_bhamrah@gmail.com" class=" form-control" ng-model="userprofile.CustomerEmail">
                      </label>
@@ -374,7 +374,7 @@
                   <h3 ng-if="formComplete" class="text-center">Profile Updated Successfully</h3>
                     </div>
                   </div>
-          
+
                </div>
                <div class="wishlist" ng-show="tab=='wishlist'">
                   <div class="carts">
