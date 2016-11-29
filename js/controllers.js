@@ -2947,6 +2947,8 @@ $scope.formComplete=false;
 
         $scope.formComplete = false;
         $scope.userData = {};
+        $scope.userData.IsOTPValidation="0";
+        $scope.userData.OTP="";
         $scope.valid = false;
         $scope.userLogin = function(userData) {
             if (userData) {

@@ -201,7 +201,7 @@ var navigationservice = angular.module('navigationservice', [])
         VerifyCustomerLogin: function(userData, callback) {
 
             $http({
-                url: adminurl + 'signup/VerifyCustomerLoginWeb',
+                url: adminurl + 'signup/VerifyCustomerLogin',
                 method: 'POST',
 
 
@@ -235,7 +235,7 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-    
+
         eventInnerForm: function(userData, callback) {
             $http({
                 url: adminurl + 'enquiry/save',
