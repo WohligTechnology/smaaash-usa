@@ -148,6 +148,16 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
+        rechargeCard: function(rechargeOnline, callback) {
+
+            $http({
+                url: adminurl + 'signup/RechargeCard',
+                method: 'POST',
+
+                data: rechargeOnline
+
+            }).success(callback);
+        },
 
         getTypes: function(callback) {
             $http({

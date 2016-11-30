@@ -1662,6 +1662,24 @@ $scope.startVideo=!$scope.startVideo;
     $scope.menutitle = NavigationService.makeactive("Recharge");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.rechargeOnline = {};
+    $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
+    $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
+    $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:82/signup/returnUrlFunction";
+
+    $scope.submitRecharge = function(rechargeOnline) {
+        console.log("rechargeOnline", rechargeOnline);
+        NavigationService.rechargeCard(rechargeOnline, function(data) {
+            console.log("data", data);
+        })
+
+    }
+
+
+
+
+
 })
 
 
