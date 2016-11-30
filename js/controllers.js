@@ -1684,7 +1684,7 @@ $scope.startVideo=!$scope.startVideo;
             animation: true,
             templateUrl: "views/modal/avatar.html",
             scope: $scope,
-           windowClass:'widths'
+        //    windowClass:'widths'
         })
     };
 

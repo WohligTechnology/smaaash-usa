@@ -452,9 +452,9 @@ margin: 20px auto;
 
 .recharge-main{
 background-image: none;
-.fa-inr{
+.dollar{
     position: absolute;
-    top: 14px;
+    top: 11px;
     left: 6px;
 }
 }
@@ -1098,13 +1098,21 @@ img.fancybox-image {
 }
 
 .overlay,
-.overlays {
+.overlays,.overlayings {
     @include position (absolute, 0px 0px 0px 0px);
      z-index: 999;
     display: block;
     height: 600px;
     background: rgba(0, 0, 0, 0.0);
   }
+// .overlayings{
+//   height: 100vh;
+//    @include position (absolute, 90px 0px 0px 0px);
+//     background: rgba(0, 0, 0, 0.0);
+//     a {
+//         margin-right: 20px;
+//     }
+// }
 
 .overlays {
     height: 100vh;
