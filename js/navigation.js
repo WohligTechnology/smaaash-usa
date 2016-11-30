@@ -125,6 +125,18 @@ var navigationservice = angular.module('navigationservice', [])
                 data: data
             }).success(callback);
         },
+        GetCustomerBookingDetails: function(custId, callback) {
+            var data = {
+                CustID: custId
+            };
+            $http({
+                url: adminurl + 'signup/GetCustomerBookingDetails',
+                method: 'POST',
+
+                data: data
+
+            }).success(callback);
+        },
         getPartyInside: function(id, callback) {
             var data = {
                 _id: id,

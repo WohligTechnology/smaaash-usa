@@ -1702,38 +1702,38 @@ $scope.startVideo=!$scope.startVideo;
             animation: true,
             templateUrl: "views/modal/avatar.html",
             scope: $scope,
-        //    windowClass:'widths'
+            windowClass: 'widths'
         })
     };
 
-    $scope.userprofile={};
-    NavigationService.signupProfile(function(data){
-      console.log("data",data);
-      $scope.userprofile=data.data ;
-      console.log("data.data.dob",data.data.dob);
-      $scope.userprofile.dob = new Date(data.data.dob);
+    $scope.userprofile = {};
+    NavigationService.signupProfile(function(data) {
+        console.log("data", data);
+        $scope.userprofile = data.data;
+        console.log("data.data.dob", data.data.dob);
+        $scope.userprofile.dob = new Date(data.data.dob);
     });
 
-    $scope.getAvtar=function(avtar){
+    $scope.getAvtar = function(avtar) {
         if (avtar) {
-        $scope.userprofile.profilePic=avtar;
-      }
+            $scope.userprofile.profilePic = avtar;
+        }
 
     }
-$scope.formComplete=false;
-$scope.submitUserProfile=function(userprofile){
-  console.log("im in");
-  console.log("userprofile",userprofile);
-  NavigationService.updateProfile(userprofile,function(data){
-    console.log("data",data);
-    if (data.value === true) {
-      $scope.formComplete=true;
-      $timeout(function () {
-$scope.formComplete=false;
-      }, 2000);
+    $scope.formComplete = false;
+    $scope.submitUserProfile = function(userprofile) {
+        console.log("im in");
+        console.log("userprofile", userprofile);
+        NavigationService.updateProfile(userprofile, function(data) {
+            console.log("data", data);
+            if (data.value === true) {
+                $scope.formComplete = true;
+                $timeout(function() {
+                    $scope.formComplete = false;
+                }, 2000);
+            }
+        })
     }
-  })
-}
 
     $scope.getUser = function() {
         NavigationService.getUser(function(data) {
@@ -1744,6 +1744,92 @@ $scope.formComplete=false;
         });
     }
     $scope.getUser();
+    $scope.CustID = "202";
+    $scope.customerBookingDetails = {
+        "GetCustomerBookingDetails": {
+            "CustomerBooking": [{
+                "Status": 1,
+                "Message": "Get Booking Data",
+                "BranchName": "Mumbai",
+                "PackageName": "Travel Agents - WeekDay",
+                "PackagePhoto": "http://192.168.0.41/Smaaash/Upload/ImageNotFound.jpg",
+                "BookingDate": "22-11-2016",
+                "VisitDate": "30-11-2016",
+                "CNRNo": 511,
+                "PayableAmount": 999,
+                "IsCustomerCard": 1
+            }, {
+                "Status": 1,
+                "Message": "Get Booking Data",
+                "BranchName": "Mumbai",
+                "PackageName": "Travel Agents - WeekDay",
+                "PackagePhoto": "http://192.168.0.41/Smaaash/Upload/ImageNotFound.jpg",
+                "BookingDate": "22-11-2016",
+                "VisitDate": "01-12-2016",
+                "CNRNo": 510,
+                "PayableAmount": 999,
+                "IsCustomerCard": 1
+            }],
+            "CustomerCardRecharge": [{
+                "Status": 1,
+                "Message": "Get Card Recharge Data",
+                "BranchName": "Mumbai",
+                "CustomerName": "piyush",
+                "RechargeDate": "26-11-2016",
+                "RechargeID": 3,
+                "RechargeAmt": 2000
+            }, {
+                "Status": 1,
+                "Message": "Get Card Recharge Data",
+                "BranchName": "Mumbai",
+                "CustomerName": "piyush",
+                "RechargeDate": "26-11-2016",
+                "RechargeID": 2,
+                "RechargeAmt": 100
+            }, {
+                "Status": 1,
+                "Message": "Get Card Recharge Data",
+                "BranchName": "Mumbai",
+                "CustomerName": "piyush",
+                "RechargeDate": "26-11-2016",
+                "RechargeID": 1,
+                "RechargeAmt": 500
+            }]
+        }
+    }
+
+
+    $scope.bookingDetails = [];
+    $scope.custBooking = $scope.customerBookingDetails.GetCustomerBookingDetails.CustomerBooking;
+    $scope.CustCardRecharge = $scope.customerBookingDetails.GetCustomerBookingDetails.CustomerCardRecharge;
+    $scope.bookingDetails = $scope.custBooking.concat($scope.CustCardRecharge);
+    _.each($scope.bookingDetails, function(value) {
+        if (value.Message === "Get Booking Data") {
+            value.objtype = "Booking";
+        } else if (value.Message === "Get Card Recharge Data") {
+            value.objtype = "Recharge";
+        };
+
+    });
+    $scope.msg = false;
+    $scope.CustID = $.jStorage.get("loginDetail").data.CustomerID;
+    NavigationService.GetCustomerBookingDetails($scope.CustID, function(data) {
+            if (data.value === true) {
+          $scope.custBooking = data.GetCustomerBookingDetails.CustomerBooking;
+          $scope.CustCardRecharge = data.GetCustomerBookingDetails.CustomerCardRecharge;
+          $scope.bookingDetails = $scope.custBooking.concat($scope.CustCardRecharge);
+          _.each($scope.bookingDetails, function(value) {
+              if (value.Message === "Get Booking Data") {
+                  value.objtype = "Booking";
+              } else if (value.Message === "Get Card Recharge Data") {
+                  value.objtype = "Recharge";
+              };
+
+          });
+        } else if (data.value === false) {
+            $scope.msg = true;
+        }
+    })
     $scope.tab = "design";
     $scope.classa = 'active';
     $scope.classb = '';
@@ -1930,6 +2016,101 @@ $scope.formComplete=false;
         $scope.snapshotData = imgBase64;
         console.log("$scope.snapshotData", $scope.snapshotData);
     };
+
+    //calender
+
+    $scope.today = function() {
+        $scope.dt = new Date();
+    };
+    $scope.today();
+
+    $scope.clear = function() {
+        $scope.dt = null;
+    };
+
+    $scope.inlineOptions = {
+        customClass: getDayClass,
+        minDate: new Date(),
+        showWeeks: true
+    };
+
+    $scope.dateOptions = {
+        dateDisabled: disabled,
+        formatYear: 'yy',
+        maxDate: new Date(2020, 5, 22),
+        minDate: new Date(),
+        startingDay: 1
+    };
+
+    // Disable weekend selection
+    function disabled(data) {
+        var date = data.date,
+            mode = data.mode;
+        return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    }
+
+    $scope.toggleMin = function() {
+        $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
+        $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
+    };
+
+    $scope.toggleMin();
+
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+
+    $scope.open2 = function() {
+        $scope.popup2.opened = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+        $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+    $scope.popup1 = {
+        opened: false
+    };
+
+    $scope.popup2 = {
+        opened: false
+    };
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var afterTomorrow = new Date();
+    afterTomorrow.setDate(tomorrow.getDate() + 1);
+    $scope.events = [{
+        date: tomorrow,
+        status: 'full'
+    }, {
+        date: afterTomorrow,
+        status: 'partially'
+    }];
+
+    function getDayClass(data) {
+        var date = data.date,
+            mode = data.mode;
+        if (mode === 'day') {
+            var dayToCheck = new Date(date).setHours(0, 0, 0, 0);
+
+            for (var i = 0; i < $scope.events.length; i++) {
+                var currentDay = new Date($scope.events[i].date).setHours(0, 0, 0, 0);
+
+                if (dayToCheck === currentDay) {
+                    return $scope.events[i].status;
+                }
+            }
+        }
+
+        return '';
+    }
+
+
 
 })
 .controller('EventsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {

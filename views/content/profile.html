@@ -169,7 +169,7 @@
                   </div>
                </div>
                <div class="reward-table carts" ng-show="tab=='trim'">
-                  <div class="table-responsive">
+                  <div class="table-responsive" ng-if="!msg">
                      <table class="table">
                         <thead>
                            <tr>
@@ -179,7 +179,18 @@
                               <th class="text-center uppercase border-right">value in rs</th>
                            </tr>
                         </thead>
-                        <tr>
+                        <tr ng-repeat ="data in bookingDetails">
+                           <td class="text-center border-left" ng-if="data.objtype === 'Booking' ">{{data.CNRNo}}</td>
+                           <td class="text-center border-left"  ng-if="data.objtype === 'Recharge' ">{{data.RechargeID}}</td>
+                           <td class="text-center" ng-if="data.objtype === 'Booking' ">{{data.objtype}}</td>
+                           <td class="text-center" ng-if="data.objtype === 'Recharge' ">{{data.objtype}}</td>
+                           <td class="text-center"> -</td>
+                           <td class="text-center border-right" ng-if="data.objtype === 'Recharge' ">{{data.RechargeAmt}}</td>
+                           <td class="text-center border-right" ng-if="data.objtype === 'Booking' ">{{data.PayableAmount}}</td>
+
+                        </tr>
+
+                        <!-- <tr>
                            <td class="text-center border-left">1080000900</td>
                            <td class="text-center">social share</td>
                            <td class="text-center">70</td>
@@ -255,17 +266,11 @@
                            <td class="text-center">70</td>
                            <td class="text-center border-right">+35</td>
 
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
+                        </tr> -->
 
                      </table>
                   </div>
+                  <div class="text-center" ng-if="msg">No orders found</div>
                </div>
                <div class="points" ng-show="tab=='team'">
                   <div class="row">
@@ -341,8 +346,8 @@
                         <input type="text" placeholder="1-01-94" class=" editing form-control" ng-model="userprofile.dob">
                      </label>-->
                         <div class="form-group w30 inline-block ">
-                <select class="form-control editing arrows-down" ng-model="userprofile.gender">
-                           <option  ng-if="!userprofile.gender" ng-selected="true" value="">Gender</option>
+                <select class="form-control editing arrows-down" ng-model="userprofile.gender" >
+                           <option ng-selected="true" value="" ng-if="!userprofile.gender">Gender</option>
                            <option value="Male">Male</option>
                            <option value="Female">Female</option>
                            <option value="Other">Other</option>
@@ -352,7 +357,7 @@
                      <!--<label class="item w30">
                         <input type="text" placeholder="Female" class="arrows-down editing form-control" ng-model="userprofile.gender">
                      </label>-->
-                     <div class="form-group inline-block w90">
+                     <div class="form-group inline-block w92">
 <label class="item w92">
                         <input type="tel" readonly placeholder="+91 98200 98200" class="form-control" readonly ng-model="userprofile.CustomerMobile">
                      </label>
