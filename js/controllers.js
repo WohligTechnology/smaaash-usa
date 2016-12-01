@@ -964,19 +964,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.removeLoader();
 
     });
-    $scope.kittyParty = function() {
-        $scope.modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: "views/modal/enquiry.html",
-            scope: $scope
 
-        })
-    };
     $scope.enquiryData = {};
+    $scope.enquiryData.hostAPartyType=""
     $scope.formSubmit = function(enquiryData) {
         if (enquiryData) {
             enquiryData.city = $.jStorage.get("cityid");
             NavigationService.eventInnerForm(enquiryData, function(data) {
+              console.log("enquiryData",enquiryData);
                 if (data.value === true) {
                     $scope.formComplete = true;
                     console.log("in in if ");
@@ -993,6 +988,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }
     }
+    $scope.kittyParty = function(hostAPartyType) {
+      console.log("hostAPartyType",hostAPartyType);
+      $scope.enquiryData.hostAPartyType=hostAPartyType;
+        $scope.modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: "views/modal/enquiry.html",
+            scope: $scope
+
+        })
+    };
 })
 
 .controller('CustomizePackageCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -1536,6 +1541,8 @@ $scope.startVideo=!$scope.startVideo;
         $scope.SingleHostParty1 = data.data;
         $scope.SingleHostParty = _.chunk(data.data, 3);
         $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
+
+        console.log("$scope.content",$scope.content);
         $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
         $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
         $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
