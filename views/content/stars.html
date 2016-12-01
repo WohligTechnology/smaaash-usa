@@ -3,8 +3,13 @@
     <div class="container">
       <h2 class="nav-name center">media and gallery</h2>
     </div>
+    <ul class="tabs-about  list-inline">
+      <li><a   class="uppercase" ng-click="selectMediaGal('media')">Media</a></li>
+      <li><a  class="uppercase"  ng-click="selectMediaGal('gallery')">Gallery</a></li>
+    </ul>
   </div>
-  <div class="forms brand-blue">
+
+  <div class="forms brand-blue" ng-if="!showgalMedia">
     <div class="container">
       <div class="search-green">
         <input type="text" class="form-control" placeholder="Search" ng-model="objectfilter.search" ng-change="fetchSearchedData()">
@@ -20,13 +25,7 @@
                <option ng-repeat="data in allCity" value="{{data._id}}">{{data.name}}</option>
               </select>
       </div>
-      <div class="game-type inline-block">
-        <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-        <select class="form-control" ng-model="selectMediaGal" ng-change="selectMediaGal()">
-<option ng-selected="true" value="gallery" ng-if="!showgalMedia">Gallery </option>
-               <option  value="media" >Media</option>
-              </select>
-      </div>
+
 
     </div>
 
@@ -59,7 +58,7 @@
     </div>
   </div>
 
-  <div class="loading">
+  <div class="loading" ng-if="!showgalMedia">
     <p class=" load-more text-center margin0 pointer" ng-click="fetchData()" ng-if="noviewmore && stars.length>0">Load More...</p>
 
   </div>
