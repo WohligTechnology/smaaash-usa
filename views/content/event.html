@@ -23,7 +23,7 @@
                 <h3 class="margin0 bluey pointer" ng-bind-html="data.hometext | shorten :20" ui-sref="event-inner({id:data._id})"></h3>
                  <p class=""  ng-bind-html="data.description | htmlToPlaintext | shorten :130"></p>
               </div>
-              <div class="button-set">
+              <div class="button-set" ng-if="data.showBuyNow">
                 <button class="uppercase blue">buy now</button>
               </div>
               <div class="love">
