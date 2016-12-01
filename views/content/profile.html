@@ -270,7 +270,7 @@
 
                      </table>
                   </div>
-                  <div class="text-center" ng-if="msg">No orders found</div>
+                  <h3 class="text-center" ng-if="msg">No orders found.</h3>
                </div>
                <div class="points" ng-show="tab=='team'">
                   <div class="row">
@@ -382,7 +382,7 @@
 
                </div>
                <div class="wishlist" ng-show="tab=='wishlist'">
-                  <div class="carts">
+                  <div class="carts"  ng-if="showWishList.wishList.length >0">
 
                      <div class="table-responsive">
                         <table class="table ">
@@ -412,6 +412,7 @@
                      </div>
 
                   </div>
+                  <h3 class="text-center" ng-if="showWishList.wishList.length === 0">Your wishlist is empty.</h3>
                </div>
             </div>
          </div>

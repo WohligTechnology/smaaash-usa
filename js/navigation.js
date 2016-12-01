@@ -1,5 +1,6 @@
-var adminurl = "http://104.155.129.33:82/"; //server
-// var adminurl = "http://192.168.0.104:1337/";
+// var adminurl = "http://104.155.129.33:82/"; //India server
+var adminurl = "http://104.155.129.33:94/"; //US server
+// var adminurl = "http://192.168.0.104:1337/"; //local
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 // var pdfpath = imgurl + "readFile?file=";

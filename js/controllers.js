@@ -1664,8 +1664,11 @@ $scope.startVideo=!$scope.startVideo;
     $scope.navigation = NavigationService.getnav();
 
     $scope.rechargeOnline = {};
-    $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
-    $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
+    if ($.jStorage.get("loginDetail")!= null) {
+      $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
+      $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
+    }
+    
     $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:82/signup/returnUrlFunction";
 
     $scope.submitRecharge = function(rechargeOnline) {
