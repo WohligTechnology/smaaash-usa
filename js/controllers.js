@@ -25,7 +25,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.currentdate = new Date();
-  
+
     $scope.showVid = function() {
         $scope.showthumbimage = !$scope.showthumbimage;
 
@@ -118,8 +118,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (n.image) {
                 n.ordering = i;
                 i++;
+                  $scope.hideBanner=false;
             }
-              $scope.hideBanner=false;
+
 
         });
       }
