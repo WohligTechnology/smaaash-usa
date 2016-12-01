@@ -37,7 +37,20 @@
       </div>
       <div class="partners">
          <h3>our esteemed partners</h3>
-         <ul class="list-inline text-center">
+          <flex-slider flex-slide="datas in rowdata track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
+         <li>
+           <div class="row" ng-repeat="data in datas track by $index">
+             <div class="col-md-3" ng-repeat="d in data track by $index">
+ <a href="">
+               <img src="{{d.img}}">
+            </a>
+             </div>
+           </div>
+           
+
+         </li>
+      </flex-slider>
+         <!--<ul class="list-inline text-center">
              <li>
              <a href=""><img src="img/sponsors/1.jpg" class="img-responsive" alt=""></a>
             </li>
@@ -78,7 +91,7 @@
               <li>
              <a href=""><img src="img/sponsors/14.jpg" class="img-responsive" alt=""></a>
             </li>
-         </ul>
+         </ul>-->
       </div>
       <div class="contacts">
          <h3>contact details</h3>

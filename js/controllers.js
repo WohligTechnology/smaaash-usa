@@ -383,6 +383,62 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }).content;
     };
 
+$scope.rowdata=[
+    {
+img:'../img/sponsors/1.jpg'
+},
+{
+img:'../img/sponsors/2.jpg'
+},
+    {
+img:'../img/sponsors/3.jpg'
+},
+    {
+img:'../img/sponsors/4.jpg'
+}
+,
+    {
+img:'../img/sponsors/5.jpg'
+}
+,
+    {
+img:'../img/sponsors/6.jpg'
+}
+,
+    {
+img:'../img/sponsors/9.jpg'
+}
+,
+    {
+img:'../img/sponsors/10.jpg'
+}
+,
+    {
+img:'../img/sponsors/11.jpg'
+}
+,
+    {
+img:'../img/sponsors/12.jpg'
+}
+,
+    {
+img:'../img/sponsors/13.jpg'
+}
+,
+    {
+img:'../img/sponsors/14.jpg'
+}];
+
+            $scope.rowdata = _.chunk($scope.rowdata, 4);
+            for (var i = 0; i < $scope.rowdata.length; i++) {
+                $scope.rowdata[i] = _.chunk($scope.rowdata[i], 4);
+                console.log($scope.rowdata);
+            }
+            console.log("this is client");
+            console.log("88",$scope.rowdata);
+        // })
+
+
 
 })
 

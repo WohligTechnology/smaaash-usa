@@ -447,7 +447,9 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
 
         },
-
+  getClients: function (callback) {
+            $http.get(adminurl + "getClients").success(callback);
+        },
         getLeader: function(callback) {
             $http({
                 url: adminurl + 'leader/getAllLeader',
