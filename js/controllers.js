@@ -111,9 +111,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log("data",data);
       if (data.value === true) {
         $scope.mySlides = data.data;
-
-        // console.log("$scope.mySlides", $scope.mySlides);
-        var i = 1;
+          var i = 1;
         _.each($scope.mySlides, function(n) {
             if (n.image) {
                 n.ordering = i;
