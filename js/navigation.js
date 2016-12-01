@@ -302,6 +302,19 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
+        getcustomizeCityFun: function(id,custCityId, callback) {
+            var data = {
+                _id: id,
+                city:custCityId
+            };
+            $http({
+                url: adminurl + 'exploresmash/getSingleExploreSmaaash',
+                method: 'POST',
+                withCredentials: true,
+                data: data
+
+            }).success(callback);
+        },
       searchExploreSmaaash: function(filter, callback) {
         if(filter){
           filter.city=$.jStorage.get("cityid");

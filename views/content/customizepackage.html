@@ -45,7 +45,7 @@
                         </div>
                         <div class="game-type inline-block">
                               <a href=""><i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                              <select class="form-control" ng-model="customizeformData.city" name="city">
+                              <select class="form-control" ng-model="customizeformData.city" name="city" ng-change="customizeCityFun(customizeformData.city);">
                   <option ng-selected="true" value="">Select</option>
                   <option ng-repeat="data in allCity" value="{{data._id}}">{{data.name}}</option>
                </select>
@@ -65,7 +65,7 @@
                                           <div class="karting-championship  marginbot">
                                                 <div class="brand-blue relative height">
                                                       <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="">
-                                                      <a ng-if="data.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{data.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+                                                      <a ng-if="data.video" fancybox-box data-fancybox-type="iframe" href="http://www.youtube.com/embed/{{data.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                                                             class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="data.video"></a>
                                                 </div>
                                                 <div class="new-detail">
