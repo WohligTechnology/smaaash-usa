@@ -1,8 +1,8 @@
 
-<div class="default">
+<div class="default" ng-if="hideBanner">
       <img src="img/new/banner.png" class="img-responsive">
 </div>
-<div class="smaash-drops" >
+<div class="smaash-drops" ng-if="!hideBanner">
    <div class="slidings">
       <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
          <li>

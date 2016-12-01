@@ -25,17 +25,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.currentdate = new Date();
-    // $scope.showVideo = {};
-    // $scope.showVideo = false;
+
     $scope.showVid = function() {
         $scope.showthumbimage = !$scope.showthumbimage;
 
     };
-    // $scope.showVidFalse = function() {
-    //     $scope.showthumbimage = true;
-    //     $scope.$apply();
-    //     console.log("im in");
-    // };
+
     var fired = false;
     $scope.onScrollStopVideo = function() {
         window.addEventListener("scroll", function() {
@@ -111,17 +106,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     };
     $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
+      $scope.hideBanner=true;
     NavigationService.getSlider(function(data) {
+      console.log("data",data);
+      if (data.value === true) {
         $scope.mySlides = data.data;
-        // console.log("$scope.mySlides", $scope.mySlides);
-        var i = 1;
+          var i = 1;
         _.each($scope.mySlides, function(n) {
             if (n.image) {
                 n.ordering = i;
                 i++;
+                  $scope.hideBanner=false;
             }
 
+
         });
+      }
+
         TemplateService.removeLoader();
     });
 
