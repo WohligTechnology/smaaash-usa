@@ -13,7 +13,7 @@
             </select>
       </div>     -->
       <div class="form-group">
-         <input type="text" class="form-control" placeholder="User Name" name="name"  ng-model="enquiryData.name" required>
+         <input type="text" class="form-control" placeholder=" Name" name="name"  ng-model="enquiryData.name" required>
          <div class="error-msg" ng-show="enquiryForm.name.$error.required && enquiryForm.name.$touched">Please Enter Your User Name</div>
       </div>
       <div class="form-group">
@@ -32,6 +32,12 @@
                <option value="2">50-1000 people</option>
                <option value="3">150-1500 people</option>
             </select>
+      </div>
+      <div class="form-group">
+         <input type="text" class="form-control" placeholder="Company Name" name="company" ng-model="enquiryData.company" >
+      </div>
+        <div class="form-group">
+         <input type="text" class="form-control" placeholder="Event Date" name="eventdate" ng-model="enquiryData.eventdate" >
       </div>
       <!--<textarea placeholder="Comment" ng-model="enquiryData.comment"></textarea>-->
     <button  type="submit" name="button"><img src="img/new/go.png" alt=""></button>
