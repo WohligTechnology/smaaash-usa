@@ -1874,19 +1874,13 @@ border-bottom: 2px solid #000;
     margin: 0 auto;
 }
 
-// .partners{
-//     li{
-//         padding: 0;
-//         a{
-//      display: inline-block;
-//     height: 50px;
-//     width: 80px;
-//     img{
-//         width: 100%;
-//     }
-//         }
-//     }
-// }
+.partners{
+    .flex-control-nav{
+        bottom:0;
+    } 
+  }
+    
+
 
 @import "ruchira";
 @import "mobile";
