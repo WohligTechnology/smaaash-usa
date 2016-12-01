@@ -628,7 +628,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.allCity = data.data;
         console.log("allCity", $scope.allCity);
         // TemplateService.removeLoader();
-    })
+    });
+    $scope.showgalMedia=false;
+    $scope.selectMediaGal=function(){
+      $scope.showgalMedia=!$scope.showgalMedia;
+
+    }
 
 })
 
