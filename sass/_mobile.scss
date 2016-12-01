@@ -902,6 +902,14 @@
 }
 
 @media (max-width:480px) {
+  .sponsors{
+    .tabs-about li {
+      padding: 0 5px;
+      a{
+      font-size: 12px;
+    }
+  }
+  }
   .host-pop{
    width: 65%;
     h3{

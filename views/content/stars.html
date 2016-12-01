@@ -3,10 +3,7 @@
     <div class="container">
       <h2 class="nav-name center">media and gallery</h2>
     </div>
-    <ul class="tabs-about  list-inline">
-      <li><a   class="uppercase" ng-click="selectMediaGal('media')">Media</a></li>
-      <li><a  class="uppercase"  ng-click="selectMediaGal('gallery')">Gallery</a></li>
-    </ul>
+   
   </div>
 
   <div class="forms brand-blue" ng-if="!showgalMedia">
@@ -30,8 +27,13 @@
     </div>
 
   </div>
+  
   <div class="new" ng-if="!showgalMedia">
     <div class="container">
+       <ul class="tabs-about  list-inline">
+      <li><a   class="uppercase" ng-click="selectMediaGal('media')">Media</a></li>
+      <li><a  class="uppercase"  ng-click="selectMediaGal('gallery')">Gallery</a></li>
+    </ul>
       <h3 class="uppercase">gallery</h3>
       <div class="row">
         <div ng-if="stars.length === 0" class="text-center">Nothing Available</div>
