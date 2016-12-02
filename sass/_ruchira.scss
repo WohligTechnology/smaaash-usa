@@ -1157,9 +1157,9 @@ $brand-white:#fff !default;
     }
   }
 }
-.purple-butn{
-  top:75%;
-}
+// .purple-butn{
+//   top:75%;
+// }
 .pink-butn {
   background-color: $brand-pink;
 }
@@ -3199,4 +3199,10 @@ padding: 20px;
             width: 46%;
         }
     }
+}
+
+.amount{
+  position: absolute;
+  top: 11px;
+  left: 5px;
 }

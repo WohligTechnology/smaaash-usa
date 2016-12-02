@@ -81,7 +81,11 @@
     .form-control {
       width: 100%;
     }
-    a {
+    a { .col-flexing {
+    flex: 1;
+    display: block;
+    width: 50%;
+}
       top: 61px;
     }
     .required {
@@ -644,7 +648,8 @@
         }
       }
       .button-set {
-        height: 150px;
+        padding: 0;
+        // height: 150px;
         button {
           width: 100%;
         }
@@ -768,7 +773,8 @@
       height: 40px;
       margin-top: 5px;
       img {
-        width: 40%;
+       width: 30%;
+    height: auto;
       }
     }
   }
@@ -899,6 +905,77 @@
       }
     }
   }
+
+.reverse{
+  .slant-col{
+    width: 100%;
+  }
+  .brand-yellow{
+    margin-top: 15px;
+  }
+}
+.updates,.race,.race-eve{
+  margin-top: 15px;
+}
+.purple-butn{
+     top: 250px;
+}
+
+.events1 .new-detail ,.deals2{
+    min-height: 455px;
+.love{
+  button{
+    padding: 10px;
+  }
+}
+}
+.sponsors{
+  .new-detail{
+    min-height: 255px !important;
+  }
+}
+.host-party{
+  .new-details{
+    min-height: 401px;
+  }
+  .chef-img img{
+    top:-40px;
+  }
+}
+.drink{
+   .new-detail{
+    min-height: 615px !important;
+  }
+  .tripadvisor-reviews ul{
+    border:none;
+  }
+}
+.amount{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.bg-prop{
+  height: 100px;
+}
+.nav-name{
+  padding: 20px 0;
+    font-size: 20px;
+}
+.menu-opened .smaash-menu{
+  overflow: scroll;
+}
+
+.blog{
+  .more{
+    margin-top: 20px;
+  }
+  .race-text{
+  padding: 0;
+}
+} 
+
+
 }
 
 @media (max-width:480px) {
@@ -1001,6 +1078,7 @@
     width: 40%;
       img {
         width: auto;
+        height: 100%;
       }
     }
   }
