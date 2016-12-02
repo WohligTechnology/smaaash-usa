@@ -73,9 +73,9 @@
 
                                 </div>
                             </div>
-                            <div class="love">
+                            <div class="love" ng-if="data.sublink">
                                 <a href={{data.sublink}} target="_blank">
-                                    <button class="uppercase" ng-disabled="!data.sublink">know more</button>
+                                    <button class="uppercase" ng-if="data.sublink">know more</button>
                                 </a>
                             </div>
                         </div>
