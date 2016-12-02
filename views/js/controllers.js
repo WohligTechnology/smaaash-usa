@@ -605,7 +605,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     };
     TemplateService.removeLoaderOn(2);
-      $scope.query = "";
     $scope.objectfilter = {};
     $scope.objectfilter.pagenumber = 0;
     $scope.objectfilter.pagesize = 6;
@@ -698,8 +697,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.showgalMedia = false;
         }
     }
-
-
 
 })
 
@@ -1794,14 +1791,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.submitRecharge = function(rechargeOnline) {
         console.log("rechargeOnline", rechargeOnline);
         if (rechargeOnline && $.jStorage.get("loginDetail") === null) {
-          console.log("in if");
             $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/wishlistsigup.html',
                 scope: $scope
             });
         } else if (rechargeOnline && $.jStorage.get("loginDetail") != null) {
-          console.log("in else");
             NavigationService.rechargeCard(rechargeOnline, function(data) {
                 console.log("data", data);
             })
@@ -1809,6 +1804,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
     }
+
+
 
 
 
