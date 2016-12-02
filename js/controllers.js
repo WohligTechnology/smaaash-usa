@@ -1399,10 +1399,13 @@ img:'img/sponsors/14.jpg'
         $uibModal.open({
             animation: true,
             templateUrl: "views/modal/enquiry.html",
-            scope: $scope
+            scope: $scope,
+
 
         })
     };
+
+   
 })
 
 .controller('SportsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
