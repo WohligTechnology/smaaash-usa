@@ -7,15 +7,15 @@
                 <div class="rows mobile-inlineblock margin5">
                     <div class="col-flexing mobile-50 ">
                         <div class="promotions bg-prop">
-                            <a ui-sref="promotion({id:promotionId})" class="text-center">
-                                <h3 class="nav-name"><span class="block">promotions</span></h3>
+                            <a ui-sref="about" class="text-center">
+                                <h3 class="nav-name"><span class="block">about us</span></h3>
                             </a>
                         </div>
                     </div>
-                    <div class="col-flexing mobile-50 " ng-show="userLoginDetails==null">
+                    <div class="col-flexing mobile-50 ">
                         <div class="registration bg-prop">
                             <a class="text-center">
-                                <h3 class="nav-name" ng-click="getMenus();"><span class="block">registration</span></h3>
+                                <h3 class="nav-name"><span class="block">careers</span></h3>
                             </a>
                         </div>
                     </div>
@@ -23,6 +23,13 @@
                         <div class="buy bg-prop" ui-sref="buy">
                             <a class="text-center">
                                 <h3 class="nav-name "><span class="block">buy online</span></h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-flexing mobile-50 ">
+                        <div class="host bg-prop" ui-sref="">
+                            <a class="text-center">
+                                <h3 class="nav-name "><span class="block">media</span></h3>
                             </a>
                         </div>
                     </div>
@@ -68,7 +75,7 @@
                     <div class="col-flexing mobile-50  ">
                         <div class="exploring bg-prop ">
                             <a ui-sref="attractions({id:attraId})" class="text-center">
-                                <h3 class="nav-name "><span class="block">explore </span>smaaash</h3>
+                                <h3 class="nav-name "><span class="block">attractions</span></h3>
                             </a>
                         </div>
                     </div>
@@ -96,7 +103,7 @@
                     <div class="col-flexing mobile-50">
                         <div class="starts bg-prop">
                             <a ui-sref="stars" class="text-center">
-                                <h3 class="nav-name "><span class="block">media &amp;</span>gallery</h3>
+                                <h3 class="nav-name "><span class="block">stars at smaaash</span></h3>
                             </a>
                         </div>
                     </div>
@@ -129,7 +136,14 @@
                     <img src="img/home/woman.png" class="img-responsive" alt="woman-menu">
                 </figure>
             </div>
-
+        <div class="contactss-img">
+ <img src="img/phone-aunty.png" class="img-responsive" alt="">
+        </div>
+            
+            <div class="contactss">
+               
+                <a href="tel:+022-25633010">022- 25633010</a>
+            </div>
             <div class="backdroped" ng-if="city" ng-click="toggleCity()">
                 <div class="smaaash-cities">
                     <h2 class="title center brand-white">select your city</h2>

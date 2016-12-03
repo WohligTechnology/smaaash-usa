@@ -3206,3 +3206,24 @@ padding: 20px;
   top: 11px;
   left: 5px;
 }
+
+.contactss{
+  position: absolute;
+    top: 40px;
+    right: 30%;
+    color: #000;
+    background-color: #fc5626;
+    // background-image: url("../img/phone-aunty.png");
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #000;
+    a{
+      color: #000;
+    }
+}
+.contactss-img{
+position: absolute;
+    top: 0;
+    right: 25%;
+    z-index: 999;
+}
