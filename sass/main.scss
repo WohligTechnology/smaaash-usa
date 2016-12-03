@@ -840,7 +840,7 @@ background-image: none;
     padding: 20px 0;
     margin: 0;
     li{
-        padding: 0 10px;
+       padding: 0 7px;
     border-right: 2px solid #000;
     a{
         font-size: 16px;
@@ -1389,6 +1389,14 @@ img.fancybox-image {
         p{
             right:10px;
         }
+                .flexslider{
+            li{
+                a{
+                    display: block;
+    height: 335px;
+                }
+            }
+        }
     }
 }
 .updates{
@@ -1399,6 +1407,7 @@ img.fancybox-image {
         p{
             right:25px;
         }
+
 }
 }
 
@@ -1675,6 +1684,9 @@ img.fancybox-image {
         img{
             margin: 0 auto;
         }
+    }
+    .race-eve{
+        margin-bottom: 10px;
     }
     .race-text{
         @include position (absolute, null 0px 0px 0px);
