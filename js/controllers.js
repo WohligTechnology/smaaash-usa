@@ -316,17 +316,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
 $scope.buyOnline=[{
-img:'img/karting/tuesdaybogo.jpg',
-text:'tuesday bogo'
+img:'img/karting/timber.jpg',
+text:' timber wolves'
 },{
-img:'img/karting/happyhours.jpg',
-text:'happy hours'
+img:'img/karting/timber.jpg',
+text:' timber wolves'
 },{
-img:'img/karting/studentoffer.jpg',
-text:'student offer'
+img:'img/karting/timber.jpg',
+text:' timber wolves'
 },{
-img:'img/karting/studentoffer.jpg',
-text:'student offer'
+img:'img/karting/timber.jpg',
+text:' timber wolves'
 }
 ];
 

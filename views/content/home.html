@@ -132,7 +132,7 @@
                <h2 class="title slide-text pull-left">Official Hangout</h2>
                <!--<p class="pull-right margin33 uppercase border-bot">view all</p>-->
             </div>
-            <flex-slider class="carousel" flex-slide="s in buyOnline track by $index" item-width="280" animation="slide" animationLoop="true" prev-text="" next-text="">
+            <flex-slider class="carousel" flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" animationLoop="true" prev-text="" next-text="">
                <li>
 
                   <div class="race relative margno" ui-sref="buy">
@@ -221,18 +221,12 @@
    <div class="slant-row reverse mt15">
       <div class="slant-col ">
          <div class="slant-in  brand-green">
-            <div class="slant-box half-height">
-               <div class="heading clearfix">
-                  <h2 class="title slide-text pull-left brand-white margno">FOOD AND BEVERAGES</h2>
-                  <p class="pull-right  capitalize brand-white" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p>
-               </div>
-               <div class="colored-slider">
-                  <flex-slider class="carousel" flex-slide="s in foodBeverages track by $index" item-width="240" animation="slide" animationLoop="true" prev-text="" next-text="">
+            <flex-slider class="carousel" flex-slide="s in foodBeverages track by $index" item-width="240" animation="slide" animationLoop="true" prev-text="" next-text="">
                      <li>
                         <div class="img-bg">
                            <a ui-sref="drink-party({id:s.type._id})">
                               <figure>
-                                 <img ng-src="{{s.image|uploadpath}}">
+                                 <img src="{{s.image|uploadpath}}">
                               </figure>
 
                            </a>
@@ -241,8 +235,15 @@
 
                      </li>
                   </flex-slider>
+            <!--<div class="slant-box half-height">
+               <div class="heading clearfix">
+                  <h2 class="title slide-text pull-left brand-white margno">FOOD AND BEVERAGES</h2>
+                  <p class="pull-right  capitalize brand-white" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p>
                </div>
-            </div>
+               <div class="colored-slider">
+                 
+               </div>
+            </div>-->
          </div>
          <div class="slant-in brand-red">
             <div class="slant-box half-height">
