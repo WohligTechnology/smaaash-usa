@@ -31,7 +31,7 @@
          <div class="slidings">
             <div class="headings clearfix">
                <h2 class="title slide-text pull-left">Smaaash at a glance</h2>
-               <p class="pull-right margin33" ui-sref="whats-new({id:whatsnew[0].type._id})">View All</p>
+               <!--<p class="pull-right margin33" ui-sref="whats-new({id:whatsnew[0].type._id})">View All</p>-->
             </div>
             <flex-slider class="carousel" flex-slide="s in whatsnew track by $index" item-width="280" animation="slide" animationLoop="true" prev-text="" next-text="">
                <li>
@@ -139,7 +139,7 @@
                      <div class="img-bg">
                         <a href="#">
                            <figure>
-                              <img ng-src="{{s.image|uploadpath}}" class="img-responsive" alt="">
+                              <img src="{{s.img}}" class="img-responsive" alt="">
                            </figure>
 
                         </a>
@@ -147,8 +147,7 @@
                      <!--<a href="" class="buy-button"><img src="img/buy.png" class="img-responsive" alt=""></a>-->
                      <div class="race-text whites blacks">
                         <div class="min-hiss">
-                           <h3 class="margin0 pointer" ng-bind-html="s.hometext"> </h3>
-                           <h3 ng-if="!s.hometext">No data found</h3>
+                           <h3 class="margin0 pointer"> {{s.text}}</h3>
                         </div>
                      </div>
                   </div>

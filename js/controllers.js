@@ -175,7 +175,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // console.log("deals", $scope.deals);
             $scope.events = $scope.content["Events"];
             $scope.foodBeverages = $scope.content["Food and Beverages"];
-            $scope.buyOnline = $scope.content["Buy Online"];
+            // $scope.buyOnline = $scope.content["Buy Online"];
             $scope.promotion = $scope.content["Promotions"];
 
 
@@ -314,6 +314,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, "script", "twitter-wjs");
         }, 100);
     });
+
+$scope.buyOnline=[{
+img:'img/karting/tuesdaybogo.jpg',
+text:'tuesday bogo'
+},{
+img:'img/karting/happyhours.jpg',
+text:'happy hours'
+},{
+img:'img/karting/studentoffer.jpg',
+text:'student offer'
+},{
+img:'img/karting/studentoffer.jpg',
+text:'student offer'
+}
+];
+
+
+
+
+
+
+
+
+
+
 })
 
 .controller('CorporateCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal) {
