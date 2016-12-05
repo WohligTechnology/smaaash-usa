@@ -9,7 +9,7 @@
 <div class="forms brand-blue" >
     <div class="container">
       <div class="search-green">
-        <input type="text" class="form-control" placeholder="Search" ng-model="objectfilter.search" ng-change="fetchSearchedData()">
+        <input type="text" class="form-control" placeholder="Search" ng-model="mediaObject.search" ng-change="fetchSearchedData()">
         <div class="microscope ">
           <img src="img/new/bino.png" class="img-responsive" alt="" >
         </div>
@@ -17,7 +17,7 @@
 
       <div class="game-type inline-block">
         <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-        <select class="form-control" ng-model="objectfilter.city" ng-change="fetchSearchedData()">
+        <select class="form-control" ng-model="mediaObject.city" ng-change="fetchSearchedData()">
                <!-- <option ng-selected="true" >Select </option> -->
                <option ng-repeat="data in allCity" value="{{data._id}}">{{data.name}}</option>
               </select>
@@ -31,7 +31,8 @@
     <div class="container">
       <h3 class="uppercase">media</h3>
       <div class="row">
-        <div class="col-md-4 col-sm-4" ng-repeat="d in mediagallery | filter:query">
+          <div ng-if="mediagallery.length === 0" class="text-center">Nothing Available</div>
+        <div class="col-md-4 col-sm-4" ng-repeat="d in mediagallery">
           <div class="karting-championship">
             <div class="brand-blue relative pointer" fancybox-box href="{{d.image|uploadpath}}">
               <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="">
@@ -42,6 +43,9 @@
                 <button class="uppercase bluey" fancybox-box href="{{d.image|uploadpath}}">view</button>
 
               </div>
+              <h3 class="margin0 bluey">{{d.title}}</h3>
+              <p ng-bind-html="d.text | htmlToPlaintext"></p>
+
 
 
             </div>
@@ -52,4 +56,12 @@
 
     </div>
   </div>
+  <div class="loading" >
+    <p class=" load-more text-center margin0 pointer" ng-click="fetchData()" ng-if="noviewmore && mediagallery.length>0">Load More...</p>
+
+  </div>
+  <!-- <div class="loading" >
+    <p class=" load-more text-center margin0 pointer" >Load More...</p>
+
+  </div> -->
   </div>

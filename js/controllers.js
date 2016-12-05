@@ -638,11 +638,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
     };
 
-    NavigationService.getMediaGallery(function(data) {
-        $scope.mediagallery = data.data;
-        console.log("$scope.mediagallery", $scope.mediagallery);
-        TemplateService.removeLoader();
-    });
+    // NavigationService.getMediaGallery(function(data) {
+    //     $scope.mediagallery = data.data;
+    //     console.log("$scope.mediagallery", $scope.mediagallery);
+    //     TemplateService.removeLoader();
+    // });
     NavigationService.getCity(function(data) {
         $scope.allCity = data.data;
         console.log("allCity", $scope.allCity);
@@ -660,11 +660,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Media");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-        NavigationService.getMediaGallery(function(data) {
-        $scope.mediagallery = data.data;
-        console.log("$scope.mediagallery", $scope.mediagallery);
-        TemplateService.removeLoader();
-    });
+
     NavigationService.getCity(function(data) {
         $scope.allCity = data.data;
         console.log("allCity", $scope.allCity);
@@ -675,11 +671,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.mediaObject.pagesize = 6;
     $scope.mediaObject.city = $.jStorage.get("cityid");
     $scope.noviewmore = true;
-    $scope.medias = [];
+    $scope.mediagallery = [];
     $scope.notAvailable = false;
     $scope.fetchData = function() {
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
-        NavigationService.getStars($scope.mediaObject, function(data) {
+        NavigationService.getMediaGallery($scope.mediaObject, function(data) {
             console.log(data.data.totalpages);
             console.log("getStars", data.data);
             if (data.data.data.length === 0) {
@@ -692,7 +688,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
                     _.each(data.data.data, function(n) {
                         // console.log(n);
-                        $scope.medias.push(n)
+                        $scope.mediagallery.push(n)
                     });
                     if (data.data.totalpages === $scope.mediaObject.pagenumber) {
                         $scope.noviewmore = false;
@@ -710,12 +706,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.fetchSearchedData = function() {
         $scope.mediaObject.pagenumber = 0;
         $scope.mediaObject.pagesize = 6;
-        $scope.medias = [];
+        $scope.mediagallery = [];
         $scope.noviewmore = true;
         $scope.mediaObject.city = $scope.mediaObject.city;
 
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
-        NavigationService.getStars($scope.mediaObject, function(data) {
+        NavigationService.getMediaGallery($scope.mediaObject, function(data) {
             console.log("$scope.mediaObject", $scope.mediaObject);
             console.log(data.data.totalpages);
 
@@ -725,7 +721,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.message = false;
             }
 
-            $scope.medias = data.data.data
+            $scope.mediagallery = data.data.data
         })
     };
 
@@ -1504,8 +1500,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.startVideo = !$scope.startVideo;
         // $scope.startVideo = true;
         // console.log("in startVideo scrollDown",$scope.startVideo);
-    };
-  
+    }
+    var fired = false;
+    $scope.onScrollStopVideo = function() {
+        window.addEventListener("scroll", function() {
+            if (document.body.scrollTop >= 700) {
+                $scope.startVideo = false;
+                $timeout(function() {
+                    $scope.startVideo = false;
+                }, 2000);
+                fired = true;
+            }
+        }, true)
+    }
+    $scope.onScrollStopVideo();
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailExploreSmaash = data.data;
         console.log("$scope.detailExploreSmaash", $scope.detailExploreSmaash);

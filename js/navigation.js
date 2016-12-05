@@ -287,7 +287,7 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-      
+
         getSingleExploreSmaaash: function(id, callback) {
             var data = {
                 _id: id,
@@ -415,11 +415,13 @@ var navigationservice = angular.module('navigationservice', [])
                 data: data
             }).success(callback);
         },
-        getMediaGallery: function(callback) {
+        getMediaGallery: function(mediaObj,callback) {
             $http({
-                url: adminurl + 'mediagallery/getAllMediaGallery',
+                url: adminurl + 'mediagallery/findLimited',
                 method: 'POST',
+                data:mediaObj,
                 withCredentials: true
+
             }).success(callback);
         },
 
