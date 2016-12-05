@@ -1501,23 +1501,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.startVid = function() {
-        // $scope.startVideo = !$scope.startVideo;
-        $scope.startVideo = true;
-        console.log("in startVideo scrollDown",$scope.startVideo);
+        $scope.startVideo = !$scope.startVideo;
+        // $scope.startVideo = true;
+        // console.log("in startVideo scrollDown",$scope.startVideo);
     };
-    var fired = false;
-    $scope.onScrollStopVideo = function() {
-        window.addEventListener("scroll", function() {
-            if (document.body.scrollTop >= 700) {
-                $scope.startVideo = false;
-                $timeout(function() {
-                    $scope.startVideo = false;
-                }, 2000);
-                fired = true;
-            }
-        }, true)
-    }
-    $scope.onScrollStopVideo();
+  
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailExploreSmaash = data.data;
         console.log("$scope.detailExploreSmaash", $scope.detailExploreSmaash);
