@@ -75,13 +75,15 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
     })
 
  .state('thank', {
-        url: "/thank-you",
+        url: "/thankyou",
+        // url: "/thankyou/:orderno/:cnrno/:amount/:paymentfor",
         templateUrl: "views/template.html",
         controller: 'ThankCtrl'
     })
 
-     .state('sorry', {
+.state('sorry', {
         url: "/sorry",
+            // url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
         templateUrl: "views/template.html",
         controller: 'SorryCtrl'
     })

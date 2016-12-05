@@ -1830,7 +1830,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
     }
 
-    $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:82/signup/returnUrlFunction";
+    $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:94/signup/returnUrlFunction";
 
     $scope.submitRecharge = function(rechargeOnline) {
         console.log("rechargeOnline", rechargeOnline);
