@@ -287,17 +287,7 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-        getHomeBanner: function(callback) {
-            var data = {
-                city: $.jStorage.get("cityid")
-            };
-            $http({
-                url: adminurl + 'configtwo/getAll',
-                method: 'POST',
-                withCredentials: true,
-                data: data
-            }).success(callback);
-        },
+      
         getSingleExploreSmaaash: function(id, callback) {
             var data = {
                 _id: id,
