@@ -315,19 +315,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, 100);
     });
 
-    $scope.buyOnline = [{
-        img: 'img/karting/timber.jpg',
+    $scope.buyOnlines = [{
+        img: 'img/karting/1.jpg',
+        text: ' minneosta mynx '
+    }, {
+        img: 'img/karting/2.jpg',
         text: ' timber wolves'
     }, {
-        img: 'img/karting/timber.jpg',
+        img: 'img/karting/3.jpg',
         text: ' timber wolves'
     }, {
-        img: 'img/karting/timber.jpg',
-        text: ' timber wolves'
-    }, {
-        img: 'img/karting/timber.jpg',
+        img: 'img/karting/4.jpg',
         text: ' timber wolves'
     }];
+
+        $scope.buyOnline = [{
+        img: 'img/karting/happyhours.jpg',
+        text: ' happyhours  '
+    }, {
+        img: 'img/karting/2.jpg',
+        text: ' timber wolves'
+    }, {
+        img: 'img/karting/3.jpg',
+        text: ' timber wolves'
+    }, {
+        img: 'img/karting/4.jpg',
+        text: ' timber wolves'
+    }];
+
 
 
 
