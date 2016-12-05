@@ -33,7 +33,27 @@
                <h2 class="title slide-text pull-left">Smaaash at a glance</h2>
                <!--<p class="pull-right margin33" ui-sref="whats-new({id:whatsnew[0].type._id})">View All</p>-->
             </div>
-            <flex-slider class="carousel" flex-slide="s in whatsnew track by $index" item-width="280" animation="slide" animationLoop="true" prev-text="" next-text="">
+             <div class="row" >
+                  <div class="col-md-3" ng-repeat="s in buyOnline track by $index">
+                       
+                  <div class="race relative margno" ui-sref="buy">
+                     <div class="img-bg">
+                        <a href="#">
+                           <figure>
+                              <img src="{{s.img}}" class="img-responsive" alt="">
+                           </figure>
+
+                        </a>
+                     </div>
+                     <div class="race-text whites blacks">
+                        <div class="min-hiss">
+                           <h3 class="margin0 pointer"> {{s.text}}</h3>
+                        </div>
+                     </div>
+                  </div> 
+                  </div>
+            </div>
+            <!--<flex-slider class="carousel" flex-slide="s in whatsnew track by $index" item-width="280" animation="slide" animationLoop="true" prev-text="" next-text="">
                <li>
                   <div class="race relative margno">
                      <div class="img-bg">
@@ -54,7 +74,7 @@
                   </div>
 
                </li>
-            </flex-slider>
+            </flex-slider>-->
          </div>
       </div>
    </div>
@@ -130,9 +150,28 @@
          <div class="slidings">
             <div class="headings clearfix">
                <h2 class="title slide-text pull-left">Official Hangout</h2>
-               <!--<p class="pull-right margin33 uppercase border-bot">view all</p>-->
             </div>
-            <flex-slider class="carousel" flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" animationLoop="true" prev-text="" next-text="">
+            <div class="row" >
+                  <div class="col-md-3" ng-repeat="s in buyOnline track by $index">
+                       
+                  <div class="race relative margno" ui-sref="buy">
+                     <div class="img-bg">
+                        <a href="#">
+                           <figure>
+                              <img src="{{s.img}}" class="img-responsive" alt="">
+                           </figure>
+
+                        </a>
+                     </div>
+                     <div class="race-text whites blacks">
+                        <div class="min-hiss">
+                           <h3 class="margin0 pointer"> {{s.text}}</h3>
+                        </div>
+                     </div>
+                  </div> 
+                  </div>
+            </div>
+            <!--<flex-slider class="carousel" flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" animationLoop="true" prev-text="" next-text="">
                <li>
 
                   <div class="race relative margno" ui-sref="buy">
@@ -144,7 +183,6 @@
 
                         </a>
                      </div>
-                     <!--<a href="" class="buy-button"><img src="img/buy.png" class="img-responsive" alt=""></a>-->
                      <div class="race-text whites blacks">
                         <div class="min-hiss">
                            <h3 class="margin0 pointer"> {{s.text}}</h3>
@@ -153,7 +191,7 @@
                   </div>
 
                </li>
-            </flex-slider>
+            </flex-slider>-->
          </div>
       </div>
    </div>
@@ -220,14 +258,14 @@
    </div>
    <div class="slant-row reverse mt15">
       <div class="slant-col ">
-         <div class="slant-in  brand-green">
-            <flex-slider class="carousel" flex-slide="s in foodBeverages track by $index" item-width="240" animation="slide" animationLoop="true" prev-text="" next-text="">
+         <div class="slant-in  brand-green ">
+            <flex-slider class="carousel half-height" flex-slide="s in foodBeverages track by $index"  animation="slide" animationLoop="true" prev-text="" next-text="">
                      <li>
                         <div class="img-bg">
                            <a ui-sref="drink-party({id:s.type._id})">
-                              <figure>
+                              
                                  <img src="{{s.image|uploadpath}}">
-                              </figure>
+                            
 
                            </a>
                         </div>

@@ -1375,6 +1375,25 @@ img.fancybox-image {
     background: url("../img/new/ahead.png")no-repeat;
     background-size: contain;
 }
+.reverse{
+.slant-in{
+    .flex-direction-nav {
+       
+        .flex-next
+        {  display: block;
+    height: 40px;
+    width: 40px;
+            &:before {
+             content: "";
+    @include square(100%);
+    background: url("../img/home/arrow.png")no-repeat;
+    background-size: contain;
+        }
+        }
+}
+}
+}
+
 
 .updated,.updates {
     .slant-box {
