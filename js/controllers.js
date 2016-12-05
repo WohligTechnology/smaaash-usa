@@ -2073,6 +2073,7 @@ text:' timber wolves'
                 getuserWishList();
             });
         };
+        // $scope.
         // $scope.click=false;
         $scope.takePic = function() {
             // $scope.click=!$scope.click;
