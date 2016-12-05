@@ -138,6 +138,15 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
+        GetCustomerBalance: function(detailsForBal, callback) {
+            $http({
+                url: adminurl + 'signup/GetCustomerBalance',
+                method: 'POST',
+
+                data: detailsForBal
+
+            }).success(callback);
+        },
         getPartyInside: function(id, callback) {
             var data = {
                 _id: id,

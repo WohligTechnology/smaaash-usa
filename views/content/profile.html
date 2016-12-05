@@ -30,8 +30,8 @@
                            <img src="img/profile/silver.png" class="img-responsive" alt="">
                         </div>
                         <p>{{userprofile.CustomerName}}</p>
-                        <p class="inline-block">33500</p>
-                        <p class="inline-block"> points</p>
+                        <p class="inline-block">{{redemablePoints}}</p>
+                        <p class="inline-block" ng-if="redemablePoints"> points</p>
 
                      </div>
                   </div>
