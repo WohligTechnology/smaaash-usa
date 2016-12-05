@@ -138,15 +138,12 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-        GetCustomerBalance: function(custId, callback) {
-            var data = {
-                CustID: custId
-            };
+        GetCustomerBalance: function(detailsForBal, callback) {
             $http({
                 url: adminurl + 'signup/GetCustomerBalance',
                 method: 'POST',
 
-                data: data
+                data: detailsForBal
 
             }).success(callback);
         },

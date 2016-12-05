@@ -2073,7 +2073,12 @@ text:' timber wolves'
                 getuserWishList();
             });
         };
-        // $scope.
+        $scope.detailsForBal={};
+        $scope.detailsForBal.CardNo="cardnumber";
+        $scope.detailsForBal.MobileNo=$.jStorage.get("loginDetail").data.CustomerMobile;
+        NavigationService.GetCustomerBalance($scope.detailsForBal,function(data){
+        console.log("GetCustomerBalance",data);
+      })
         // $scope.click=false;
         $scope.takePic = function() {
             // $scope.click=!$scope.click;
