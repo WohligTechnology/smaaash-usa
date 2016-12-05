@@ -688,7 +688,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
                     _.each(data.data.data, function(n) {
                         // console.log(n);
-                        $scope.mediagallery.push(n)
+                        $scope.mediagallery.push(n);
+
                     });
                     if (data.data.totalpages === $scope.mediaObject.pagenumber) {
                         $scope.noviewmore = false;
