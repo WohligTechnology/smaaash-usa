@@ -2075,12 +2075,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.detailsForBal.CardNo = "cardnumber";
         $scope.detailsForBal.MobileNo = $.jStorage.get("loginDetail").data.CustomerMobile;
         NavigationService.GetCustomerBalance($scope.detailsForBal, function(data) {
-                if (data.value) {
-                    console.log("data in if", data.data);
-                    $scope.redemablePoints = data.data.CustomerBalance[0].RedemablePoints;
-                } else {}
-            })
-    
+            if (data.value) {
+                console.log("data in if", data.data);
+                $scope.redemablePoints = data.data.CustomerBalance[0].RedemablePoints;
+            } else {}
+        })
+
 
         $scope.today = function() {
             $scope.dt = new Date();
