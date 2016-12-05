@@ -6,7 +6,7 @@
 
   </div>
 
-  <div class="forms brand-blue" ng-if="!showgalMedia">
+  <div class="forms brand-blue" >
     <div class="container">
       <div class="search-green">
         <input type="text" class="form-control" placeholder="Search" ng-model="objectfilter.search" ng-change="fetchSearchedData()">
@@ -49,7 +49,7 @@
     </div>
 
   </div> -->
-  <div class="new" ng-if="!showgalMedia">
+  <div class="new" >
     <div class="container">
 
       <h3 class="uppercase" ng-if="stars.length>0">gallery</h3>
@@ -78,10 +78,10 @@
     </div>
   </div>
 
-  <div class="loading" ng-if="!showgalMedia">
+  <div class="loading" >
     <p class=" load-more text-center margin0 pointer" ng-click="fetchData()" ng-if="noviewmore && stars.length>0">Load More...</p>
 
   </div>
 
- 
+
 </div>
