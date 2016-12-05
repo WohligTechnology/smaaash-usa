@@ -20,20 +20,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     // };
 
-$scope.buyOnline=[{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-},{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-},{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-},{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-}
-];
+
 
 
 
@@ -171,10 +158,6 @@ text:' timber wolves'
         _id: $.jStorage.get("cityid"),
         name: $.jStorage.get("city")
     };
-
-
-
-
 
 
     NavigationService.getHomeContent(function(data) {
