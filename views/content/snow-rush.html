@@ -1,18 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-    <div class="landing-kartbanner" scrolldown ng-style="{'background':'url('+detailExploreSmaash.banner+')no-repeat'}">
+<div class="landing-kartbanner" scrolldown ng-style="{'background':'url('+detailExploreSmaash.banner+')no-repeat'}">
         <div class="inner relative pointer auto-height ">
 
 
-   <iframe  ng-if="startVideo && detailExploreSmaash.video" width="640" height="360" ng-src="{{'https://www.youtube.com/embed/'+detailExploreSmaash.video+'?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1'|trusted}}" frameborder="0" allowfullscreen
+   <iframe  ng-if="startVideo && detailExploreSmaash.video && !stopVideo" width="640" height="360" ng-src="{{'https://www.youtube.com/embed/'+detailExploreSmaash.video+'?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1'|trusted}}" frameborder="0" allowfullscreen
      style="position: absolute;
        left: 0;
        top: 0;
@@ -25,8 +15,6 @@
      <!--ng-click="vidFalse();"-->
       <a class="pull-right" ><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
    </div>
-   <!--<img ng-src="{{banner[0].thumbnail|uploadpath}}" class="img-responsive margin-auto width100" ng-if="showthumbimage && (banner[0].thumbnail || banner[0].thumbnail != '' )&&banner[0].videourl" ng-click="showVid()">
-   <img ng-src="{{banner[0].videourl|youtubethumb}}"  class="img-responsive width100" ng-if="!showthumbimage">-->
 
 
 
@@ -103,7 +91,7 @@
                             prev-text="" next-text="">
                             <li>
                                 <a ui-sref="event-inner({id:s._id})">
-                                   
+
                                     <img ng-src="{{s.icon|uploadpath}}" ng-if="s.icon">
                                 </a>
                             </li>
@@ -116,7 +104,7 @@
                         <flex-slider class="carousel" flex-slide="s in promotions track by $index" item-width="200" animation="slide" animationLoop="true"
                             prev-text="" next-text="">
                             <li>
-                               
+
                                 <a>
 
                                     <img ng-src="{{s.icon|uploadpath}}" ng-if="s.icon">
