@@ -7,7 +7,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-      TemplateService.removeLoaderOn(4);
+    TemplateService.removeLoaderOn(4);
     var openL = {};
     // $scope.openpops = function() {
     //     openL = ngDialog.open({
@@ -124,7 +124,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
 
-      TemplateService.removeLoader();
+        TemplateService.removeLoader();
     });
 
 
@@ -138,7 +138,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.getCities = {};
     NavigationService.getCity(function(data) {
         $scope.getCities = data.data;
-      TemplateService.removeLoader();
+        TemplateService.removeLoader();
     });
 
     $scope.getCityName = function(cityname) {
@@ -180,7 +180,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         } else {}
-  TemplateService.removeLoader();
+        TemplateService.removeLoader();
     });
 
 
@@ -315,21 +315,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, 100);
     });
 
-$scope.buyOnline=[{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-},{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-},{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-},{
-img:'img/karting/timber.jpg',
-text:' timber wolves'
-}
-];
-
+    $scope.buyOnline = [{
+        img: 'img/karting/timber.jpg',
+        text: ' timber wolves'
+    }, {
+        img: 'img/karting/timber.jpg',
+        text: ' timber wolves'
+    }, {
+        img: 'img/karting/timber.jpg',
+        text: ' timber wolves'
+    }, {
+        img: 'img/karting/timber.jpg',
+        text: ' timber wolves'
+    }];
 
 
 
@@ -630,7 +628,7 @@ text:' timber wolves'
         }
     };
     TemplateService.removeLoaderOn(2);
-      $scope.query = "";
+    $scope.query = "";
     $scope.objectfilter = {};
     $scope.objectfilter.pagenumber = 0;
     $scope.objectfilter.pagesize = 6;
@@ -1819,14 +1817,14 @@ text:' timber wolves'
     $scope.submitRecharge = function(rechargeOnline) {
         console.log("rechargeOnline", rechargeOnline);
         if (rechargeOnline && $.jStorage.get("loginDetail") === null) {
-          console.log("in if");
+            console.log("in if");
             $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/wishlistsigup.html',
                 scope: $scope
             });
         } else if (rechargeOnline && $.jStorage.get("loginDetail") != null) {
-          console.log("in else");
+            console.log("in else");
             NavigationService.rechargeCard(rechargeOnline, function(data) {
                 console.log("data", data);
             })
@@ -2073,114 +2071,16 @@ text:' timber wolves'
                 getuserWishList();
             });
         };
-        $scope.detailsForBal={};
-        $scope.detailsForBal.CardNo="cardnumber";
-        $scope.detailsForBal.MobileNo=$.jStorage.get("loginDetail").data.CustomerMobile;
-        NavigationService.GetCustomerBalance($scope.detailsForBal,function(data){
-        console.log("GetCustomerBalance",data);
-      })
-        // $scope.click=false;
-        $scope.takePic = function() {
-            // $scope.click=!$scope.click;
-            console.log("inim");
-            $uibModal.open({
-                animation: true,
-                templateUrl: "views/modal/profilepic.html",
-                scope: $scope
-            });
-        }
-
-        var _video = null,
-            patData = null;
-
-        $scope.patOpts = {
-            x: 0,
-            y: 0,
-            w: 25,
-            h: 25
-        };
-
-        // Setup a channel to receive a video property
-        // with a reference to the video element
-        // See the HTML binding in main.html
-        $scope.channel = {};
-
-        $scope.webcamError = false;
-        $scope.onError = function(err) {
-            $scope.$apply(
-                function() {
-                    $scope.webcamError = err;
-                }
-            );
-        };
-
-        $scope.onSuccess = function() {
-            // The video element contains the captured camera data
-            _video = $scope.channel.video;
-            $scope.$apply(function() {
-                $scope.patOpts.w = _video.width;
-                $scope.patOpts.h = _video.height;
-                //$scope.showDemos = true;
-            });
-        };
-
-        $scope.onStream = function(stream) {
-            // You could do something manually with the stream.
-        };
-
-        $scope.makeSnapshot = function(data) {
-            if (_video) {
-                console.log("_videosrc", _video);
-                var patCanvas = document.querySelector('#snapshot');
-                if (!patCanvas) return;
-
-                patCanvas.width = _video.width;
-                patCanvas.height = _video.height;
-                var ctxPat = patCanvas.getContext('2d');
-
-                var idata = getVideoData($scope.patOpts.x, $scope.patOpts.y, $scope.patOpts.w, $scope.patOpts.h);
-                ctxPat.putImageData(idata, 0, 0);
-
-                sendSnapshotToServer(patCanvas.toDataURL());
-
-                patData = idata;
-                console.log("patData", patData);
-
-
-                // $scope.downloadSnapshot();
-            }
-        };
-
-        /**
-         * Redirect the browser to the URL given.
-         * Used to download the image by passing a dataURL string
-         */
-        $scope.downloadSnapshot = function downloadSnapshot(dataURL) {
-            window.location.href = dataURL;
-        };
-
-        var getVideoData = function getVideoData(x, y, w, h) {
-            var hiddenCanvas = document.createElement('canvas');
-            hiddenCanvas.width = _video.width;
-            hiddenCanvas.height = _video.height;
-            var ctx = hiddenCanvas.getContext('2d');
-            ctx.drawImage(_video, 0, 0, _video.width, _video.height);
-            return ctx.getImageData(x, y, w, h);
-        };
-
-
-        /**
-         * This function could be used to send the image data
-         * to a backend server that expects base64 encoded images.
-         *
-         * In this example, we simply store it in the scope for display.
-         */
-        var sendSnapshotToServer = function sendSnapshotToServer(imgBase64) {
-            $scope.snapshotData = imgBase64;
-            console.log("$scope.snapshotData", $scope.snapshotData);
-        };
-
-        //calender
+        $scope.detailsForBal = {};
+        $scope.detailsForBal.CardNo = "cardnumber";
+        $scope.detailsForBal.MobileNo = $.jStorage.get("loginDetail").data.CustomerMobile;
+        NavigationService.GetCustomerBalance($scope.detailsForBal, function(data) {
+                if (data.value) {
+                    console.log("data in if", data.data);
+                    $scope.redemablePoints = data.data.CustomerBalance[0].RedemablePoints;
+                } else {}
+            })
+    
 
         $scope.today = function() {
             $scope.dt = new Date();
