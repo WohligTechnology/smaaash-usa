@@ -1392,6 +1392,11 @@ img.fancybox-image {
         }
 }
 }
+.flexslider{
+    .flex-control-nav{
+        display: none;
+    }
+}
 }
 
 
@@ -1428,6 +1433,20 @@ img.fancybox-image {
         }
 
 }
+}
+.lmchange{
+     h2,p {
+            position: absolute;
+            z-index: 99;
+            top: 20px;
+        }
+        h2{
+              left: 10px;
+        }
+        p{
+            right:10px;
+        }  
+    
 }
 
 .carousel-text {
@@ -1922,11 +1941,6 @@ border-bottom: 2px solid #000;
     }
     }
   }
-
- .clsDatePicker {
-    z-index: 100000;
-}   
-
 
 @import "ruchira";
 @import "mobile";

@@ -80,6 +80,12 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'ThankCtrl'
     })
 
+     .state('sorry', {
+        url: "/sorry",
+        templateUrl: "views/template.html",
+        controller: 'SorryCtrl'
+    })
+
     .state('drink-party', {
         url: "/drink-party/:id",
         templateUrl: "views/template.html",

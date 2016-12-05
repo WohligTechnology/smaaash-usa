@@ -2584,6 +2584,15 @@ text:' timber wolves'
     $scope.navigation = NavigationService.getnav();
 })
 
+.controller('SorryCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("sorry");
+    $scope.menutitle = NavigationService.makeactive("Sorry");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+})
+
+
 .controller('ResetCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("reset");
