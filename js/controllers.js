@@ -726,6 +726,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
+.controller('MediaCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("media");
+    $scope.menutitle = NavigationService.makeactive("Media");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+        NavigationService.getMediaGallery(function(data) {
+        $scope.mediagallery = data.data;
+        console.log("$scope.mediagallery", $scope.mediagallery);
+        TemplateService.removeLoader();
+    });
+    NavigationService.getCity(function(data) {
+        $scope.allCity = data.data;
+        console.log("allCity", $scope.allCity);
+        // TemplateService.removeLoader();
+    });
+})
+
 .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("wedding-parties");

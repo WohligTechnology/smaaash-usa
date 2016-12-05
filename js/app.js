@@ -147,6 +147,13 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'StarsCtrl'
     })
 
+       .state('media', {
+        url: "/media",
+        templateUrl: "views/template.html",
+        controller: 'MediaCtrl'
+    })
+
+
     .state('wedding-parties', {
         url: "/wedding-parties",
         templateUrl: "views/template.html",
