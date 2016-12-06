@@ -250,19 +250,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, "script", "twitter-wjs");
         }, 100);
     });
-
+  
     $scope.buyOnlines = [ {
         img: 'img/new/sky.jpg',
-        text: ' sky karting  '
+        text: ' sky karting  ',
+        id :'57bc4b2aeb9c91f1025a3b55'
     },{
         img: 'img/new/parties.jpg',
-        text: ' parties'
+        text: ' parties',
+          id :'57bc4b10eb9c91f1025a3b54'
     }, {
         img: 'img/new/food.jpg',
-        text: ' food and beverages'
+        text: ' food and beverages',
+          id :'57bc4b48eb9c91f1025a3b57'
     }, {
         img: 'img/new/virtual.jpg',
-        text: 'virtual reality'
+        text: 'virtual reality',
+        id :'57bc4b2aeb9c91f1025a3b55'
     }];
 
         $scope.buyOnline = [{
