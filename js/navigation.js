@@ -189,13 +189,7 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
 
-        getUser: function(callback) {
-            $http({
-                url: adminurl + 'user/getall',
-                method: 'POST',
-                withCredentials: true
-            }).success(callback);
-        },
+      
 
 
 
