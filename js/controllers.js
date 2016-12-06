@@ -1079,7 +1079,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.removeLoaderOn(1);
     NavigationService.getPartyInside($stateParams.id, function(data) {
         $scope.party = data.data;
-        console.log("$scope.party", $scope.party);
+
         TemplateService.removeLoader();
 
     });
@@ -1090,10 +1090,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (enquiryData) {
             enquiryData.city = $.jStorage.get("cityid");
             NavigationService.eventInnerForm(enquiryData, function(data) {
-                console.log("enquiryData", enquiryData);
+
                 if (data.value === true) {
                     $scope.formComplete = true;
-                    console.log("in in if ");
+
                     $timeout(function() {
                         $scope.modalInstance.close();
                         $scope.formComplete = false;
@@ -1101,14 +1101,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
                     }, 2000);
                 } else {
-                    console.log("in else");
+
                 }
             })
 
         }
     }
     $scope.kittyParty = function(hostAPartyType) {
-        console.log("hostAPartyType", hostAPartyType);
+
         $scope.enquiryData.hostAPartyType = hostAPartyType;
         $scope.modalInstance = $uibModal.open({
             animation: true,
@@ -1251,7 +1251,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.goToGames = function(val, data) {
         data.selected = !data.selected;
         $scope.customizeformData.games = _.map(_.filter($scope.customizepackage, "selected"), "_id");
-        console.log("wdehjhwd", $scope.customizeformData.games);
+
 
     };
 
@@ -1294,10 +1294,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.selectmainCourse = false;
                 NavigationService.custom($scope.customizeformData, function(data) {
                     if (data.value === true) {
-                        console.log("customizeformDataNormal", data);
+
                         $scope.showThank = true;
                         $scope.emailExist = false;
-                        console.log("datain if", data);
+
                         $.jStorage.set("customizeobj", data.data);
                         $scope.customizeformData = {};
                         $scope.customizeformData.games = [];
@@ -1348,7 +1348,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getSingleExploreSmaaash(id, function(data) {
             $scope.customizepackage = data.data;
 
-            console.log("$scope.customizepackage", $scope.customizepackage);
+
             _.each($scope.customizepackage, function(data) {
                 data.gameforarray = [];
                 var index = _.findIndex($scope.customizeformData.games, {
@@ -1377,11 +1377,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     $scope.customizeExploreSmaaash();
     $scope.customizeCityFun = function(custCityId) {
-        console.log("custCityId", custCityId);
+
         NavigationService.getcustomizeCityFun(id, custCityId, function(data) {
             $scope.customizepackage = data.data;
 
-            console.log("$scope.customizepackage", $scope.customizepackage);
+
             _.each($scope.customizepackage, function(data) {
                 data.gameforarray = [];
                 var index = _.findIndex($scope.customizeformData.games, {
@@ -1423,7 +1423,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.removeLoaderOn(1);
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.parties = data.data;
-        console.log("$scope.parties", $scope.parties);
+
         TemplateService.removeLoader();
     });
     $scope.birthdayParty = function() {
@@ -1510,7 +1510,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.scrollDown1 = function () {
         $scope.startVideo=false;
-        console.log("in startVideo scrollDown",$scope.startVideo);
+
         $('html,body').animate({
                 scrollTop: $(".second").offset().top
             },
@@ -1538,9 +1538,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.onScrollStopVideo();
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailExploreSmaash = data.data;
-        console.log("$scope.detailExploreSmaash", $scope.detailExploreSmaash);
+
         $scope.detailExploreSmaash.banner = $filter('uploadpath')($scope.detailExploreSmaash.banner);
-        console.log($scope.detailExploreSmaash.multipleattraction);
+
         var attractions = [];
         _.each($scope.detailExploreSmaash.multipleattraction, function(multi) {
             _.each(multi.attraction, function(attr) {
@@ -1549,7 +1549,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 attractions.push(attr);
             })
         })
-        console.log(attractions);
+
         $scope.content = _.groupBy(attractions, 'type');
         $scope.event = $scope.content['57bd4e71a86ee9fa6770d4b2'];
         $scope.deals = $scope.content['57bc4b5aeb9c91f1025a3b58'];
@@ -1660,12 +1660,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.formCompleteAssistance = false;
     $scope.assistanceLogin = function(formData) {
-        console.log("formData", formData);
+
         if (formData) {
             formData.city = $.jStorage.get("cityid");
             NavigationService.assistanceLoginSignup(formData, function(data) {
-                console.log("in nav", formData);
-                console.log("assistanceLogin", data);
+
                 if (data.value == true) {
                     $scope.formCompleteAssistance = true;
                     $timeout(function() {
@@ -1685,8 +1684,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.SingleHostParty1 = data.data;
         $scope.SingleHostParty = _.chunk(data.data, 3);
         $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
-
-        console.log("$scope.content", $scope.content);
         $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
         $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
         $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
@@ -1696,7 +1693,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.readMore = function(id) {
-        console.log(id);
+
         $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
         $scope.myDesc = _.find($scope.SingleHostParty1, function(n) {
             return n._id == id;
@@ -1831,7 +1828,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (formDatapop) {
             formDatapop.city = $.jStorage.get("cityid");
             NavigationService.hostGetCall(formDatapop, function(data) {
-                console.log("data", data);
+
                 if (data.value === true) {
                     $scope.submitform = true;
                     $scope.formData = {};
@@ -1865,16 +1862,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:94/signup/returnUrlFunction";
 
     $scope.submitRecharge = function(rechargeOnline) {
-        console.log("rechargeOnline", rechargeOnline);
+
         if (rechargeOnline && $.jStorage.get("loginDetail") === null) {
-            console.log("in if");
+
             $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/wishlistsigup.html',
                 scope: $scope
             });
         } else if (rechargeOnline && $.jStorage.get("loginDetail") != null) {
-            console.log("in else");
+
             NavigationService.rechargeCard(rechargeOnline, function(data) {
                 console.log("data", data);
             })
@@ -1913,9 +1910,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.userprofile = {};
         NavigationService.signupProfile(function(data) {
-            console.log("data", data);
+
             $scope.userprofile = data.data;
-            console.log("data.data.dob", data.data.dob);
+
             $scope.userprofile.dob = new Date(data.data.dob);
         });
 
@@ -1927,10 +1924,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.formComplete = false;
         $scope.submitUserProfile = function(userprofile) {
-            console.log("im in");
-            console.log("userprofile", userprofile);
+
+
             NavigationService.updateProfile(userprofile, function(data) {
-                console.log("data", data);
+
                 if (data.value === true) {
                     $scope.formComplete = true;
                     $timeout(function() {
@@ -2118,7 +2115,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.detailsForBal.MobileNo = $.jStorage.get("loginDetail").data.CustomerMobile;
         NavigationService.GetCustomerBalance($scope.detailsForBal, function(data) {
             if (data.value) {
-                console.log("data in if", data.data);
+
                 $scope.redemablePoints = data.data.CustomerBalance[0].RedemablePoints;
             } else {}
         })
@@ -2238,12 +2235,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
             $scope.events10 = data.data;
             $scope.events = _.chunk(data.data, 3);
-            console.log("$scope.events", $scope.events);
+
             $scope.readMore = function(id) {
 
-                console.log("3333333", id);
+
                 $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-                console.log($scope.moreDesc);
+
                 $scope.myDesc = _.find($scope.events10, function(n) {
                     return n._id == id;
 
@@ -2276,10 +2273,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.drinkParty = _.chunk(data.data, 3);
         $scope.readMore = function(id) {
 
-            console.log(id);
+
             $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-            console.log($scope.moreDesc);
-            console.log("  $scope.moreDesc[id]", $scope.moreDesc[id]);
+
             $scope.myDesc = _.find($scope.drinkParty1, function(n) {
                 return n._id == id;
 
@@ -2307,7 +2303,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     };
     $scope.bookings = function() {
-        console.log("in in");
+
         $uibModal.open({
             animation: true,
             templateUrl: "views/modal/bookings.html",
@@ -2330,11 +2326,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // })
 
     $scope.getGallery = function(gid) {
-        console.log("aaa", gid);
+
         NavigationService.getFoodGallery(gid, function(data) {
             if (data.value) {
                 $scope.mySlides = data.data.gallery;
-                console.log("$scope.galleryData", $scope.mySlides);
+
                 if ($scope.mySlides.length > 0) {
                     $uibModal.open({
                         animation: true,
@@ -2342,7 +2338,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         scope: $scope
                     });
                 } else {
-                    console.log("no data");
+
                 }
 
 
@@ -2375,12 +2371,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.moreDesc = {};
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.SingleDealsPackages = data.data;
-        console.log("$scope.SingleDealsPackages", $scope.SingleDealsPackages);
+
         $scope.readMore = function(id, indexid) {
 
-            console.log(id);
+
             $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-            console.log($scope.moreDesc);
+
             $scope.myDesc = _.find($scope.SingleDealsPackages, function(n) {
                 return n._id == id;
                 // console.log($scope.myDesc);
@@ -2392,7 +2388,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         if ($.jStorage.get("loginDetail") == null) {
 
-            console.log("am in if");
+
             $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/wishlistsigup.html',
@@ -2402,7 +2398,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         } else {
             NavigationService.wishList(id, function(data) {
 
-                console.log("wishlist", data);
+
             })
         }
 
@@ -2449,7 +2445,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.myUrl = window.location.href;
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailDealsInner = data.data;
-        console.log("$scope.detailDealsInner", $scope.detailDealsInner);
+
         $scope.detailDealsInner.banner = $filter('uploadpath')($scope.detailDealsInner.banner);
         TemplateService.removeLoader();
     });
@@ -2560,16 +2556,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.exist = false;
     $scope.formData.varstatus = "eventRegistration";
     $scope.formSubmit = function() {
-        console.log("formData", $scope.formData);
+
         if ($scope.formData) {
             NavigationService.eventInnerForm($scope.formData, function(data) {
 
                 if (data.data.value === false) {
                     $scope.exist = true;
                     $scope.formComplete = false;
-                    console.log("iminelseif", data);
+
                 } else {
-                    console.log("iminif", data);
+
                     $scope.formComplete = true;
                     $scope.exist = false;
                     $timeout(function() {
@@ -2583,12 +2579,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailEventsInner = data.data;
-        console.log("$scope.detailEventsInner", $scope.detailEventsInner);
         $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
         TemplateService.removeLoader();
     })
     $scope.pdfmodal = function(pdf) {
-        console.log("im in");
+
         $scope.pdfdata = pdf;
         if ($scope.pdfdata) {
             $uibModal.open({
@@ -2632,10 +2627,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.loggedInUser = $.jStorage.get("loginDetail").data.CustomerName;
     }
     $scope.formSubmit = function(credentials) {
-        console.log("credentials", credentials);
+
         NavigationService.CustomerResetPassword(credentials, function(data) {
-            console.log("credentials", credentials);
-            console.log("data", data);
+
             if (data.value === true) {
                 $scope.passUpdated = true;
                 $timeout(function() {
@@ -2659,7 +2653,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
-        console.log("data", data);
+
         $scope.promotion = _.chunk(data.data, 3);
         TemplateService.removeLoader();
     });
@@ -2862,9 +2856,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if (data.data.value === false) {
                     $scope.exist = true;
                     $scope.formComplete = false;
-                    console.log("iminelseif", data);
+
                 } else {
-                    console.log("iminif", data);
+
                     $scope.formComplete = true;
                     $scope.exist = false;
                     $timeout(function() {
@@ -2891,7 +2885,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // $state.go('blog-inside',{id:data._id});
     // }
     NavigationService.getPopularBlog(function(data) {
-        console.log("data", data);
+
         $scope.popularblogs = data.data;
     });
 

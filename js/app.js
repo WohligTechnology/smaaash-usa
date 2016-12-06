@@ -516,7 +516,7 @@ firstapp.filter('uploadpath', function () {
 
 firstapp.filter('uploadprofilepicture', function () {
     return function (input, width, height, style) {
-        console.log("input",input);
+      
         var other = "";
         if (width && width != "") {
             other += "&width=" + width;
@@ -613,7 +613,7 @@ firstapp.filter('youtubethumb', function() {
         if (input) {
 
             var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-          
+
             if (videoid != null) {
                 console.log('tgyuhj', videoid);
                 if (onlyid == false) {
