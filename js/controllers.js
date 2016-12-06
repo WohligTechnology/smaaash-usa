@@ -250,7 +250,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, "script", "twitter-wjs");
         }, 100);
     });
-  
+
     $scope.buyOnlines = [ {
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
@@ -347,7 +347,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.moreDesc = {};
     NavigationService.getSponsors(function(data) {
-        console.log("data", data.data);
         $scope.sponsor = data.data.sponsor;
         $scope.sponsor1 = _.chunk(data.data.sponsor, 3);
         $scope.esteem = data.data.esteem;
@@ -391,11 +390,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.rowdata = _.chunk($scope.rowdata, 4);
     for (var i = 0; i < $scope.rowdata.length; i++) {
         $scope.rowdata[i] = _.chunk($scope.rowdata[i], 4);
-        console.log($scope.rowdata);
+
     }
-    console.log("this is client");
-    console.log("88", $scope.rowdata);
-    // })
+
 
 
 
@@ -413,75 +410,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.events = _.chunk(data.data, 3);
         TemplateService.removeLoader();
     });
-    $scope.isInWishlist = function(id) {
-        var indexF = _.findIndex($scope.userwishlist, function(key) {
-            return key.exploresmash._id == id;
-        })
-        if (indexF !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    if ($.jStorage.get("loginDetail") != null) {
-        function showWishList() {
-            NavigationService.showWishList(function(data) {
-                $scope.userwishlist = data.data.wishList;
-                console.log("$scope.userwishlist", $scope.userwishlist);
-            })
-        };
-        showWishList();
-    }
-
-    $scope.addedToWishList = function(id) {
-        console.log("id", id);
-        if ($.jStorage.get("loginDetail") == null) {
-            console.log("am in if");
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if ($.jStorage.get("loginDetail") != null) {
-            var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                console.log(id, '////////');
-                return key.exploresmash._id === id;
-            });
-            console.log("findIndex", findIndex);
-            if (findIndex !== -1) {
-                constraints = _.find($scope.userwishlist, function(key) {
-                    return key.exploresmash._id === id;
-                });
-                console.log(constraints);
-                NavigationService.removeFromWishList(constraints._id, function(data) {
-                    console.log(data, 'removed data');
-                    if (data.value) {
-                        showWishList();
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/removeWishlist.html',
-                            scope: $scope
-                        });
-                    };
-
-                });
-            } else {
-                NavigationService.addToWishList(id, function(data) {
-                    console.log("wishlist", data);
-                    if (data.value) {
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/wishlist.html',
-                            scope: $scope
-                        });
-                    }
-                    showWishList();
-                });
-            }
-
-        }
-
-    };
+    // $scope.isInWishlist = function(id) {
+    //     var indexF = _.findIndex($scope.userwishlist, function(key) {
+    //         return key.exploresmash._id == id;
+    //     })
+    //     if (indexF !== -1) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // if ($.jStorage.get("loginDetail") != null) {
+    //     function showWishList() {
+    //         NavigationService.showWishList(function(data) {
+    //             $scope.userwishlist = data.data.wishList;
+    //             console.log("$scope.userwishlist", $scope.userwishlist);
+    //         })
+    //     };
+    //     showWishList();
+    // }
+    //
+    // $scope.addedToWishList = function(id) {
+    //     console.log("id", id);
+    //     if ($.jStorage.get("loginDetail") == null) {
+    //         console.log("am in if");
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/wishlistsigup.html',
+    //             scope: $scope
+    //         });
+    //     } else if ($.jStorage.get("loginDetail") != null) {
+    //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
+    //             console.log(id, '////////');
+    //             return key.exploresmash._id === id;
+    //         });
+    //         console.log("findIndex", findIndex);
+    //         if (findIndex !== -1) {
+    //             constraints = _.find($scope.userwishlist, function(key) {
+    //                 return key.exploresmash._id === id;
+    //             });
+    //             console.log(constraints);
+    //             NavigationService.removeFromWishList(constraints._id, function(data) {
+    //                 console.log(data, 'removed data');
+    //                 if (data.value) {
+    //                     showWishList();
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/removeWishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 };
+    //
+    //             });
+    //         } else {
+    //             NavigationService.addToWishList(id, function(data) {
+    //                 console.log("wishlist", data);
+    //                 if (data.value) {
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/wishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 }
+    //                 showWishList();
+    //             });
+    //         }
+    //
+    //     }
+    //
+    // };
 })
 
 .controller('DealspCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams) {
@@ -496,75 +493,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.removeLoader();
     });
 
-    if ($.jStorage.get("loginDetail") != null) {
-        function showWishList() {
-            NavigationService.showWishList(function(data) {
-                $scope.userwishlist = data.data.wishList;
-                console.log("$scope.userwishlist", $scope.userwishlist);
-            })
-        };
-        showWishList();
-    }
-    $scope.isInWishlist = function(id) {
-        var indexF = _.findIndex($scope.userwishlist, function(key) {
-            return key.exploresmash._id == id;
-        })
-        if (indexF !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    $scope.addedToWishList = function(id) {
-        console.log("id", id);
-        if ($.jStorage.get("loginDetail") == null) {
-            console.log("am in if");
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if ($.jStorage.get("loginDetail") != null) {
-            var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                console.log(id, '////////');
-                return key.exploresmash._id === id;
-            });
-            console.log("findIndex", findIndex);
-            if (findIndex !== -1) {
-                constraints = _.find($scope.userwishlist, function(key) {
-                    return key.exploresmash._id === id;
-                });
-                console.log(constraints);
-                NavigationService.removeFromWishList(constraints._id, function(data) {
-                    console.log(data, 'removed data');
-                    if (data.value) {
-                        showWishList();
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/removeWishlist.html',
-                            scope: $scope
-                        });
-                    };
-
-                });
-            } else {
-                NavigationService.addToWishList(id, function(data) {
-                    console.log("wishlist", data);
-                    if (data.value) {
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/wishlist.html',
-                            scope: $scope
-                        });
-                    }
-                    showWishList();
-                });
-            }
-
-        }
-
-    };
+    // if ($.jStorage.get("loginDetail") != null) {
+    //     function showWishList() {
+    //         NavigationService.showWishList(function(data) {
+    //             $scope.userwishlist = data.data.wishList;
+    //             console.log("$scope.userwishlist", $scope.userwishlist);
+    //         })
+    //     };
+    //     showWishList();
+    // }
+    // $scope.isInWishlist = function(id) {
+    //     var indexF = _.findIndex($scope.userwishlist, function(key) {
+    //         return key.exploresmash._id == id;
+    //     })
+    //     if (indexF !== -1) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    //
+    // $scope.addedToWishList = function(id) {
+    //     console.log("id", id);
+    //     if ($.jStorage.get("loginDetail") == null) {
+    //         console.log("am in if");
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/wishlistsigup.html',
+    //             scope: $scope
+    //         });
+    //     } else if ($.jStorage.get("loginDetail") != null) {
+    //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
+    //             console.log(id, '////////');
+    //             return key.exploresmash._id === id;
+    //         });
+    //         console.log("findIndex", findIndex);
+    //         if (findIndex !== -1) {
+    //             constraints = _.find($scope.userwishlist, function(key) {
+    //                 return key.exploresmash._id === id;
+    //             });
+    //             console.log(constraints);
+    //             NavigationService.removeFromWishList(constraints._id, function(data) {
+    //                 console.log(data, 'removed data');
+    //                 if (data.value) {
+    //                     showWishList();
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/removeWishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 };
+    //
+    //             });
+    //         } else {
+    //             NavigationService.addToWishList(id, function(data) {
+    //                 console.log("wishlist", data);
+    //                 if (data.value) {
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/wishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 }
+    //                 showWishList();
+    //             });
+    //         }
+    //
+    //     }
+    //
+    // };
 })
 
 .controller('StarsCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -797,7 +794,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.SingleExploreSmaaash = data.data;
         $scope.SingleExploreSmaaash1 = _.chunk(data.data, 3);
-        // console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
         TemplateService.removeLoader();
     });
     $scope.readMore = function(id, indexid) {
@@ -807,75 +803,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             return n._id == id;
         }).description;
     };
-    $scope.isInWishlist = function(id) {
-        var indexF = _.findIndex($scope.userwishlist, function(key) {
-            return key.exploresmash._id == id;
-        })
-        if (indexF !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    if ($.jStorage.get("loginDetail") != null) {
-        function showWishList() {
-            NavigationService.showWishList(function(data) {
-                $scope.userwishlist = data.data.wishList;
-                console.log("$scope.userwishlist", $scope.userwishlist);
-            })
-        };
-        showWishList();
-    }
-
-    $scope.addedToWishList = function(id) {
-        console.log("id", id);
-        if ($.jStorage.get("loginDetail") == null) {
-            console.log("am in if");
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if ($.jStorage.get("loginDetail") != null) {
-            var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                console.log(id, '////////');
-                return key.exploresmash._id === id;
-            });
-            console.log("findIndex", findIndex);
-            if (findIndex !== -1) {
-                constraints = _.find($scope.userwishlist, function(key) {
-                    return key.exploresmash._id === id;
-                });
-                console.log(constraints);
-                NavigationService.removeFromWishList(constraints._id, function(data) {
-                    console.log(data, 'removed data');
-                    if (data.value) {
-                        showWishList();
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/removeWishlist.html',
-                            scope: $scope
-                        });
-                    };
-
-                });
-            } else {
-                NavigationService.addToWishList(id, function(data) {
-                    console.log("wishlist", data);
-                    if (data.value) {
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/wishlist.html',
-                            scope: $scope
-                        });
-                    }
-                    showWishList();
-                });
-            }
-
-        }
-
-    };
+    // $scope.isInWishlist = function(id) {
+    //     var indexF = _.findIndex($scope.userwishlist, function(key) {
+    //         return key.exploresmash._id == id;
+    //     })
+    //     if (indexF !== -1) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // if ($.jStorage.get("loginDetail") != null) {
+    //     function showWishList() {
+    //         NavigationService.showWishList(function(data) {
+    //             $scope.userwishlist = data.data.wishList;
+    //             console.log("$scope.userwishlist", $scope.userwishlist);
+    //         })
+    //     };
+    //     showWishList();
+    // }
+    //
+    // $scope.addedToWishList = function(id) {
+    //     console.log("id", id);
+    //     if ($.jStorage.get("loginDetail") == null) {
+    //         console.log("am in if");
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/wishlistsigup.html',
+    //             scope: $scope
+    //         });
+    //     } else if ($.jStorage.get("loginDetail") != null) {
+    //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
+    //             console.log(id, '////////');
+    //             return key.exploresmash._id === id;
+    //         });
+    //         console.log("findIndex", findIndex);
+    //         if (findIndex !== -1) {
+    //             constraints = _.find($scope.userwishlist, function(key) {
+    //                 return key.exploresmash._id === id;
+    //             });
+    //             console.log(constraints);
+    //             NavigationService.removeFromWishList(constraints._id, function(data) {
+    //                 console.log(data, 'removed data');
+    //                 if (data.value) {
+    //                     showWishList();
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/removeWishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 };
+    //
+    //             });
+    //         } else {
+    //             NavigationService.addToWishList(id, function(data) {
+    //                 console.log("wishlist", data);
+    //                 if (data.value) {
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/wishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 }
+    //                 showWishList();
+    //             });
+    //         }
+    //
+    //     }
+    //
+    // };
 })
 
 
@@ -975,75 +971,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    if ($.jStorage.get("loginDetail") != null) {
-        function showWishList() {
-            NavigationService.showWishList(function(data) {
-                $scope.userwishlist = data.data.wishList;
-                console.log("$scope.userwishlist", $scope.userwishlist);
-            })
-        };
-        showWishList();
-    }
-
-
-
-    $scope.isInWishlist = function(id) {
-        var indexF = _.findIndex($scope.userwishlist, function(key) {
-            return key.exploresmash._id == id;
-        })
-        if (indexF !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    $scope.addedToWishList = function(id) {
-        if ($.jStorage.get("loginDetail") == null) {
-            console.log("am in if");
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if ($.jStorage.get("loginDetail") != null) {
-            var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                console.log(id, '////////');
-                return key.exploresmash._id === id;
-            });
-            console.log("findIndex", findIndex);
-            if (findIndex !== -1) {
-                console.log("findIndex", findIndex);
-                constraints = _.find($scope.userwishlist, function(key) {
-                    return key.exploresmash._id === id;
-                });
-                console.log(constraints);
-                NavigationService.removeFromWishList(constraints._id, function(data) {
-                    console.log(data, 'removed data');
-                    if (data.value) {
-                        showWishList();
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/removeWishlist.html',
-                            scope: $scope
-                        });
-                    };
-
-                });
-            } else {
-                NavigationService.addToWishList(id, function(data) {
-                    console.log("wishlist", data);
-                    if (data.value) {
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/wishlist.html',
-                            scope: $scope
-                        });
-                    }
-                    showWishList();
-                });
-            }
-        }
-    };
+    // if ($.jStorage.get("loginDetail") != null) {
+    //     function showWishList() {
+    //         NavigationService.showWishList(function(data) {
+    //             $scope.userwishlist = data.data.wishList;
+    //             console.log("$scope.userwishlist", $scope.userwishlist);
+    //         })
+    //     };
+    //     showWishList();
+    // }
+    //
+    //
+    //
+    // $scope.isInWishlist = function(id) {
+    //     var indexF = _.findIndex($scope.userwishlist, function(key) {
+    //         return key.exploresmash._id == id;
+    //     })
+    //     if (indexF !== -1) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // $scope.addedToWishList = function(id) {
+    //     if ($.jStorage.get("loginDetail") == null) {
+    //         console.log("am in if");
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/wishlistsigup.html',
+    //             scope: $scope
+    //         });
+    //     } else if ($.jStorage.get("loginDetail") != null) {
+    //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
+    //             console.log(id, '////////');
+    //             return key.exploresmash._id === id;
+    //         });
+    //         console.log("findIndex", findIndex);
+    //         if (findIndex !== -1) {
+    //             console.log("findIndex", findIndex);
+    //             constraints = _.find($scope.userwishlist, function(key) {
+    //                 return key.exploresmash._id === id;
+    //             });
+    //             console.log(constraints);
+    //             NavigationService.removeFromWishList(constraints._id, function(data) {
+    //                 console.log(data, 'removed data');
+    //                 if (data.value) {
+    //                     showWishList();
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/removeWishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 };
+    //
+    //             });
+    //         } else {
+    //             NavigationService.addToWishList(id, function(data) {
+    //                 console.log("wishlist", data);
+    //                 if (data.value) {
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/wishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 }
+    //                 showWishList();
+    //             });
+    //         }
+    //     }
+    // };
 })
 
 .controller('AccountCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -2277,7 +2273,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.moreDesc = {};
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.drinkParty1 = data.data;
-        console.log("data", data.data);
         $scope.drinkParty = _.chunk(data.data, 3);
         $scope.readMore = function(id) {
 
@@ -2668,76 +2663,76 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.promotion = _.chunk(data.data, 3);
         TemplateService.removeLoader();
     });
-    $scope.isInWishlist = function(id) {
-        var indexF = _.findIndex($scope.userwishlist, function(key) {
-            return key.exploresmash._id == id;
-        })
-        if (indexF !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    if ($.jStorage.get("loginDetail") != null) {
-        function showWishList() {
-            NavigationService.showWishList(function(data) {
-                $scope.userwishlist = data.data.wishList;
-                console.log("$scope.userwishlist", $scope.userwishlist);
-            })
-        };
-        showWishList();
-    }
-
-
-    $scope.addedToWishList = function(id) {
-        console.log("id", id);
-        if ($.jStorage.get("loginDetail") == null) {
-            console.log("am in if");
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if ($.jStorage.get("loginDetail") != null) {
-            var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                console.log(id, '////////');
-                return key.exploresmash._id === id;
-            });
-            console.log("findIndex", findIndex);
-            if (findIndex !== -1) {
-                constraints = _.find($scope.userwishlist, function(key) {
-                    return key.exploresmash._id === id;
-                });
-                console.log(constraints);
-                NavigationService.removeFromWishList(constraints._id, function(data) {
-                    console.log(data, 'removed data');
-                    if (data.value) {
-                        showWishList();
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/removeWishlist.html',
-                            scope: $scope
-                        });
-                    };
-
-                });
-            } else {
-                NavigationService.addToWishList(id, function(data) {
-                    console.log("wishlist", data);
-                    if (data.value) {
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/wishlist.html',
-                            scope: $scope
-                        });
-                    }
-                    showWishList();
-                });
-            }
-
-        }
-
-    };
+    // $scope.isInWishlist = function(id) {
+    //     var indexF = _.findIndex($scope.userwishlist, function(key) {
+    //         return key.exploresmash._id == id;
+    //     })
+    //     if (indexF !== -1) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // if ($.jStorage.get("loginDetail") != null) {
+    //     function showWishList() {
+    //         NavigationService.showWishList(function(data) {
+    //             $scope.userwishlist = data.data.wishList;
+    //             console.log("$scope.userwishlist", $scope.userwishlist);
+    //         })
+    //     };
+    //     showWishList();
+    // }
+    //
+    //
+    // $scope.addedToWishList = function(id) {
+    //     console.log("id", id);
+    //     if ($.jStorage.get("loginDetail") == null) {
+    //         console.log("am in if");
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/wishlistsigup.html',
+    //             scope: $scope
+    //         });
+    //     } else if ($.jStorage.get("loginDetail") != null) {
+    //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
+    //             console.log(id, '////////');
+    //             return key.exploresmash._id === id;
+    //         });
+    //         console.log("findIndex", findIndex);
+    //         if (findIndex !== -1) {
+    //             constraints = _.find($scope.userwishlist, function(key) {
+    //                 return key.exploresmash._id === id;
+    //             });
+    //             console.log(constraints);
+    //             NavigationService.removeFromWishList(constraints._id, function(data) {
+    //                 console.log(data, 'removed data');
+    //                 if (data.value) {
+    //                     showWishList();
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/removeWishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 };
+    //
+    //             });
+    //         } else {
+    //             NavigationService.addToWishList(id, function(data) {
+    //                 console.log("wishlist", data);
+    //                 if (data.value) {
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/wishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 }
+    //                 showWishList();
+    //             });
+    //         }
+    //
+    //     }
+    //
+    // };
 
 })
 
@@ -2967,74 +2962,74 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
     };
 
-    if ($.jStorage.get("loginDetail") != null) {
-        function showWishList() {
-            NavigationService.showWishList(function(data) {
-                $scope.userwishlist = data.data.wishList;
-                console.log("$scope.userwishlist", $scope.userwishlist);
-            })
-        };
-        showWishList();
-    }
-    $scope.isInWishlist = function(id) {
-        var indexF = _.findIndex($scope.userwishlist, function(key) {
-            return key.exploresmash._id == id;
-        })
-        if (indexF !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    $scope.addedToWishList = function(id) {
-        console.log("id", id);
-        if ($.jStorage.get("loginDetail") == null) {
-            console.log("am in if");
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if ($.jStorage.get("loginDetail") != null) {
-            var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                console.log(id, '////////');
-                return key.exploresmash._id === id;
-            });
-            console.log("findIndex", findIndex);
-            if (findIndex !== -1) {
-                constraints = _.find($scope.userwishlist, function(key) {
-                    return key.exploresmash._id === id;
-                });
-                console.log(constraints);
-                NavigationService.removeFromWishList(constraints._id, function(data) {
-                    console.log(data, 'removed data');
-                    if (data.value) {
-                        showWishList();
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/removeWishlist.html',
-                            scope: $scope
-                        });
-                    };
-
-                });
-            } else {
-                NavigationService.addToWishList(id, function(data) {
-                    console.log("wishlist", data);
-                    if (data.value) {
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/wishlist.html',
-                            scope: $scope
-                        });
-                    }
-                    showWishList();
-                });
-            }
-
-        }
-
-    };
+    // if ($.jStorage.get("loginDetail") != null) {
+    //     function showWishList() {
+    //         NavigationService.showWishList(function(data) {
+    //             $scope.userwishlist = data.data.wishList;
+    //             console.log("$scope.userwishlist", $scope.userwishlist);
+    //         })
+    //     };
+    //     showWishList();
+    // }
+    // $scope.isInWishlist = function(id) {
+    //     var indexF = _.findIndex($scope.userwishlist, function(key) {
+    //         return key.exploresmash._id == id;
+    //     })
+    //     if (indexF !== -1) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // $scope.addedToWishList = function(id) {
+    //     console.log("id", id);
+    //     if ($.jStorage.get("loginDetail") == null) {
+    //         console.log("am in if");
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/wishlistsigup.html',
+    //             scope: $scope
+    //         });
+    //     } else if ($.jStorage.get("loginDetail") != null) {
+    //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
+    //             console.log(id, '////////');
+    //             return key.exploresmash._id === id;
+    //         });
+    //         console.log("findIndex", findIndex);
+    //         if (findIndex !== -1) {
+    //             constraints = _.find($scope.userwishlist, function(key) {
+    //                 return key.exploresmash._id === id;
+    //             });
+    //             console.log(constraints);
+    //             NavigationService.removeFromWishList(constraints._id, function(data) {
+    //                 console.log(data, 'removed data');
+    //                 if (data.value) {
+    //                     showWishList();
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/removeWishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 };
+    //
+    //             });
+    //         } else {
+    //             NavigationService.addToWishList(id, function(data) {
+    //                 console.log("wishlist", data);
+    //                 if (data.value) {
+    //                     $uibModal.open({
+    //                         animation: true,
+    //                         templateUrl: 'views/modal/wishlist.html',
+    //                         scope: $scope
+    //                     });
+    //                 }
+    //                 showWishList();
+    //             });
+    //         }
+    //
+    //     }
+    //
+    // };
 
 
 })
