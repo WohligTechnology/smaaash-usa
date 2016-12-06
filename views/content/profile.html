@@ -177,7 +177,7 @@
                               <th class="text-center uppercase border-left">transcation id</th>
                               <th class="text-center  uppercase ">type</th>
                               <th class="text-center uppercase ">points earned</th>
-                              <th class="text-center uppercase border-right">value in rs</th>
+                              <th class="text-center uppercase border-right">value in Dollars</th>
                            </tr>
                         </thead>
                         <tr ng-repeat ="data in bookingDetails">
@@ -186,8 +186,8 @@
                            <td class="text-center" ng-if="data.objtype === 'Booking' ">{{data.objtype}}</td>
                            <td class="text-center" ng-if="data.objtype === 'Recharge' ">{{data.objtype}}</td>
                            <td class="text-center"> -</td>
-                           <td class="text-center border-right" ng-if="data.objtype === 'Recharge' ">{{data.RechargeAmt}}</td>
-                           <td class="text-center border-right" ng-if="data.objtype === 'Booking' ">{{data.PayableAmount}}</td>
+                           <td class="text-center border-right" ng-if="data.objtype === 'Recharge' ">${{data.RechargeAmt}}</td>
+                           <td class="text-center border-right" ng-if="data.objtype === 'Booking' ">${{data.PayableAmount}}</td>
 
                         </tr>
 
