@@ -1956,7 +1956,7 @@ ul {
 .side {
  position: fixed;
     top: 20%;
-    right: 0px;
+    right: -20px;
     z-index: 9999;
 }
 
@@ -1991,7 +1991,9 @@ ul {
     background-position: 100% 100%;
   }
 }
-
+.connect-button{
+  transform: rotate(90deg);
+}
 .live-chat {
   display: block;
   background-color: $brand-green;
@@ -2640,7 +2642,7 @@ button {
     }
 }
 .babes{
-  background-image: url("../img/avatar/babes.jpg");
+  background-image: url("../img/avatar/about.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 442px;
