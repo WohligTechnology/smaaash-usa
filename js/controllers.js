@@ -2037,7 +2037,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tab = "design";
         $scope.classa = 'active';
         $scope.classb = '';
-        $scope.classc = '';
+        $scope.classc = 'active';
         $scope.classd = '';
         $scope.classe = '';
 
@@ -2046,7 +2046,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (a == 1) {
                 $scope.classa = 'active-tab';
                 $scope.classb = '';
-                $scope.classc = '';
+                $scope.classc = 'active-tab';
                 $scope.classd = '';
                 $scope.classe = '';
 

@@ -52,9 +52,9 @@
                      <!-- <li class="tab-item  relative col-flex {{classa}}" ng-click="tabchange('design',1)">
                         <p class="text-uppercase">reward points</p>
                      </li> -->
-                     <li class="tab-item  relative  col-flex {{classb}}" ng-click="tabchange('trim',2)">
+                     <li class="tab-item  relative  col-flex {{classb}}" ng-click="tabchange('design',2)">
 
-                        <p class="text-uppercase"> order</p>
+                        <p class="text-uppercase"> orders</p>
 
                      </li>
                      <li class="tab-item   relative  col-flex {{classc}}" ng-click="tabchange('team',3)">
@@ -168,9 +168,10 @@
                      </table>
                   </div>
                </div> -->
-               <div class="reward-table carts" ng-show="tab=='trim'">
-                  <div class="table-responsive" ng-if="!msg">
-                     <table class="table">
+               <div class="reward-table carts" ng-show="tab=='design'">
+               <!-- <div class="reward-table carts" ng-show="tab=='trim'"> -->
+                  <div class="table-responsive">
+                     <table class="table"  ng-if="!msg">
                         <thead>
                            <tr>
                               <th class="text-center uppercase border-left">transcation id</th>
@@ -190,87 +191,12 @@
 
                         </tr>
 
-                        <!-- <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
 
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr>
-                        <tr>
-                           <td class="text-center border-left">1080000900</td>
-                           <td class="text-center">social share</td>
-                           <td class="text-center">70</td>
-                           <td class="text-center border-right">+35</td>
-
-                        </tr> -->
 
                      </table>
+                     <h3 class="text-center" ng-if="msg">No orders found.</h3>
                   </div>
-                  <h3 class="text-center" ng-if="msg">No orders found.</h3>
+
                </div>
                <div class="points" ng-show="tab=='team'">
                   <div class="row">
