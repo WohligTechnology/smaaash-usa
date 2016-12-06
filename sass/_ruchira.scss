@@ -1157,9 +1157,9 @@ $brand-white:#fff !default;
     }
   }
 }
-// .purple-butn{
-//   top:75%;
-// }
+.purple-butn{
+  top:70%;
+}
 .pink-butn {
   background-color: $brand-pink;
 }
@@ -3208,24 +3208,16 @@ padding: 20px;
 }
 
 .contactss{
-  position: absolute;
-    top: 40px;
-    right: 30%;
-    color: #000;
-    background-color: #fc5626;
-    // background-image: url("../img/phone-aunty.png");
+ position: absolute;
+    top: 24px;
+    right: 23%;
     padding: 10px 20px;
     cursor: pointer;
-    border: 2px solid #000;
     a{
       color: #000;
+      font-family: "American Purpose";
+    font-size: 20px;
     }
-}
-.contactss-img{
-position: absolute;
-    top: 0;
-    right: 25%;
-    z-index: 999;
 }
 //time-begin
 .gallery{

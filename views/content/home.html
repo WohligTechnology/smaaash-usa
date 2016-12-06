@@ -151,7 +151,7 @@
             <div class="headings clearfix">
                <h2 class="title slide-text pull-left">Official Hangout</h2>
             </div>
-            <div class="row" >
+            <div class="row hidden-xs hidden-sm " >
                   <div class="col-md-3" ng-repeat="s in buyOnline track by $index">
 
                   <div class="race relative margno" >
@@ -171,7 +171,8 @@
                   </div>
                   </div>
             </div>
-            <!--<flex-slider class="carousel" flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" animationLoop="true" prev-text="" next-text="">
+            <div class="hidden-md visible-xs visible-sm">
+                      <flex-slider class="carousel " flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" animationLoop="true" prev-text="" next-text="">
                <li>
 
                   <div class="race relative margno" ui-sref="buy">
@@ -191,7 +192,9 @@
                   </div>
 
                </li>
-            </flex-slider>-->
+            </flex-slider>
+            </div>
+        
          </div>
       </div>
    </div>
