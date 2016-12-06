@@ -611,9 +611,9 @@ firstapp.filter('rmvStartEndSpace', function () {
 firstapp.filter('youtubethumb', function() {
     return function(input, onlyid) {
         if (input) {
-            console.log(input);
+
             var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-            console.log(videoid);
+          
             if (videoid != null) {
                 console.log('tgyuhj', videoid);
                 if (onlyid == false) {

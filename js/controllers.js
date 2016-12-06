@@ -87,8 +87,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
     $scope.hideBanner = true;
     NavigationService.getSlider(function(data) {
-        console.log("data", data);
-        if (data.value === true) {
+          if (data.value === true) {
             $scope.mySlides = data.data;
             var i = 1;
             _.each($scope.mySlides, function(n) {
@@ -1939,7 +1938,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             })
         }
 
-      
+
         $scope.CustID = "202";
         $scope.customerBookingDetails = {
             "GetCustomerBookingDetails": {
