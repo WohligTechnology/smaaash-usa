@@ -2601,6 +2601,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Thank");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.orderNo=$stateParams.orderno;
+    $scope.amount=$stateParams.amount;
+    $scope.cnrNo=$stateParams.cnrno;
+    $scope.paymentFor=$stateParams.paymentfor;
 })
 
 .controller('SorryCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
@@ -2609,6 +2613,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sorry");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.orderNo=$stateParams.orderno;
+    $scope.amount=$stateParams.amount;
+    $scope.cnrNo=$stateParams.cnrno;
+    $scope.paymentFor=$stateParams.paymentfor;
 })
 
 
