@@ -180,7 +180,7 @@
         <div class="connect-button" id="axis" ng-click="getMenus();">
 
             <div class="orange-rays"></div>
-            <img src="img/connect.png" class="img-responsive rotate360cw" alt="">
+            <!--<img src="img/connect.png" class="img-responsive rotate360cw" alt="">-->
             <p class="uppercase brand-white text-center">login</p>
         </div>
 
@@ -276,17 +276,13 @@
             </div>
         </div>
     </div>
-    <!--<div class="side" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
+    <div class="side" ui-sref="buy" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
         <div class="live-chat" id="axe">
             <div class="orange-rays"></div>
-            <div class="cities" ng-click="toggleCity()">
-                <span>{{cityData.name || 'Choose City'}}
-                   <i class="fa fa-chevron-down"></i>
-               </span>
-            </div>
+     <p class="uppercase brand-white text-center">buy now</p>
 
         </div>
-    </div>-->
+    </div>
 
 </div>
 <div  ng-show="template.isLoader"  style="text-align:center";>
