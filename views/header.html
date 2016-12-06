@@ -33,13 +33,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-flexing mobile-50 ">
+                    <!-- <div class="col-flexing mobile-50 ">
                         <div class="cart bg-prop">
                             <a class="text-center">
                                 <h3 class="nav-name" ng-click="myCart();"><span class="block">my cart</span></h3>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-flexing mobile-50" ng-hide="userLoginDetails === null">
                         <div class="account bg-prop">
                             <a class="text-center">
@@ -144,7 +144,10 @@
             <div class="contactss">
                
                 <a href="tel:+022-25633010">Contact us: 022- 25633010</a>
-            </div>
+
+        </div>
+
+
             <div class="backdroped" ng-if="city" ng-click="toggleCity()">
                 <div class="smaaash-cities">
                     <h2 class="title center brand-white">select your city</h2>
@@ -205,10 +208,10 @@
 
                             </form>
                             <div ng-if="formComplete">
-                                <p class="text-center" >Thank You</p>
+                                <h4 class="text-center" >Thank You</h4>
                             </div>
-                            <button type="button" class="butn relative"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with facebook</button>
-                            <button type="button" class="buton relative "><span><i class="fa fa-google-plus" aria-hidden="true"></i></span>login with Google</button>
+                            <!-- <button type="button" class="butn relative"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with facebook</button>
+                            <button type="button" class="buton relative "><span><i class="fa fa-google-plus" aria-hidden="true"></i></span>login with Google</button> -->
                        <a href="" class="forgot" ng-click="resets();getMenus();">Forgot password?</a>
                        <!-- <div ng-if="incorrect">Please ente v </div> -->
                        <!-- <a href="" class="forgot" ng-click="resets();getMenus();closeModal();">Forgot password?</a> -->
@@ -239,14 +242,14 @@
 
                                     <div class="error-msg" ng-show="signUp.mobile.$error.required && signUp.mobile.$touched">Please enter your mobile no. </div>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <select name="categorydata" class="form-control" ng-model="signupData.CustomerAddress" required>
                               <option ng-selected="true" value="">Please select city</option>
                               <option value="{{d._id}}" ng-repeat="d in getCity">{{d.name}}</option>
 
                            </select>
                                     <div class="error" ng-if="validCity">Please select valid city.</div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Password" name="password" required ng-model="signupData.CustomerPassword"
                                         minlength="8" ng-maxlength="14">
