@@ -54,8 +54,9 @@
 
 
       <h3 class="uppercase" ng-if="stars.length>0">stars at smaaash</h3>
-      <div class="row">
-        <div ng-if="stars.length === 0" class="text-center">Nothing Available</div>
+        <h4 ng-if="stars.length === 0" class="text-center">Loading ...</h4>
+      <div class="row" ng-repeat ="data in stars">
+
         <!-- <div ng-if="notAvailable" class="text-center">Nothing Available</div> -->
         <div class="col-md-4 col-sm-4" ng-repeat="d in data">
           <div class="karting-championship">

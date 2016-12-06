@@ -7,7 +7,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    TemplateService.removeLoaderOn(3);
+    TemplateService.removeLoaderOn(2);
     var openL = {};
   $scope.currentdate = new Date();
 
@@ -95,13 +95,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     n.ordering = i;
                     i++;
                     $scope.hideBanner = false;
-                }
 
+                }
+    TemplateService.removeLoader();
 
             });
         }
 
-        TemplateService.removeLoader();
+
     });
 
 
@@ -125,8 +126,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.events = $scope.content["Events"];
             $scope.foodBeverages = $scope.content["Food and Beverages"];
             $scope.promotion = $scope.content["Promotions"];
+              TemplateService.removeLoader();
           } else {}
-        TemplateService.removeLoader();
+
     });
 
 
