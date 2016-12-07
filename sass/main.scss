@@ -1368,6 +1368,11 @@ img.fancybox-image {
     height: 50px;
     width: 50px;
 }
+.mover .flexslider .flex-direction-nav .flex-next {
+    display: block;
+    height: 50px;
+    width: 50px;
+}
 
 .flex-direction-nav a.flex-prev:before {
     content: "";
@@ -1945,13 +1950,13 @@ border-bottom: 2px solid #000;
   .about{
      
       .full-height {
-    height: 181px;
+    height: 250px;
     overflow: hidden;
     border: 2px solid #000;
     padding: 10px 20px !important;
 }
 .half-height {
-     height: 181px;
+     height: 250px;
     overflow: hidden;
     border: 2px solid #000;
     padding: 10px 20px !important;
