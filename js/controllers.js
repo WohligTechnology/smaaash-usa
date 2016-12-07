@@ -2930,6 +2930,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.value) {
                 console.log($scope.objectfilter.pagenumber);
                 if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
+                  data.data.data = _.chunk(data.data.data,2);
                     _.each(data.data.data, function(n) {
                         // console.log(n);
                         $scope.blogs.push(n);
@@ -2963,6 +2964,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $scope.message = false;
             }
+              data.data.data = _.chunk(data.data.data,2);
             $scope.blogs = data.data.data;
             console.log("blogs", $scope.blogs);
         })
