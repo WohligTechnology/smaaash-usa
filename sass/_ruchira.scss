@@ -1122,15 +1122,27 @@ $brand-white:#fff !default;
 }
 
 //*karting,*about**//
-.owner {
-  height: 233px;
-  margin-top: -27px;
-  margin-left: -19px;
-  background-image: url("../img/karting/About.png");
+// .owner {
+//   height: 233px;
+//   margin-top: -27px;
+//   margin-left: -19px;
+//   background-image: url("../img/karting/About.png");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-color: #f6e9fd;
+//   background-position: 0 -31px;
+// }
+
+
+.abouts,.chief{
+  background-image: url("../img/karting/black.png");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  background-color: #f6e9fd;
-  background-position: 0 -31px;
+}
+
+.chief{
+background-image: url("../img/karting/about.png");
 }
 
 .purple-butn,
@@ -1164,48 +1176,12 @@ $brand-white:#fff !default;
   background-color: $brand-pink;
 }
 
-.articles {
-  .slant-col {
-    &.brand-black {
-      &:before {
-        background-color: #000;
-      }
-    }
-  }
-}
-
-.articles {
-  .slant-col {
-    &.brand-orange {
-      &:before {
-        background-color: #E62D09;
-      }
-    }
-  }
-}
-
 .bg-black {
   background-color: #000;
   padding: 5px 0;
 }
 
-.articles {
-  .slant-col {
-    &.brand-sachin {
-      &:before {
-        background-color: #008244;
-      }
-    }
-  }
-}
 
-.articles {
-  .owners {
-    margin-left: 4px;
-    margin-right: 18px;
-    margin-top: 28px;
-  }
-}
 
 .whats-new,
 .host-party,
