@@ -793,21 +793,7 @@ background-image: none;
     }
 }
 
-.reverse {
-    .mover {
-        bottom: 0;
-    }
-    .brand-red {
-        .half-height {
-            height: 151px;
-        }
-    }
-    .brand-green {
-        .half-height {
-            height: 271px;
-        }
-    }
-}
+
 
 .colored-slider {
     margin-top: 30px;
@@ -1410,7 +1396,7 @@ img.fancybox-image {
         h2,p {
             position: absolute;
             z-index: 99;
-            top: 20px;
+            top: 10px;
         }
         h2{
               left: 10px;
@@ -1963,6 +1949,39 @@ border-bottom: 2px solid #000;
     // margin-top: 10px;
 }
   }
+
+  .reverse {
+    .updated{
+    .flexslider{
+        li{
+            a{
+                display: block;
+   height: 271px;
+                img{
+                    height: 100%;
+                }
+            }
+        }
+    }
+    }
+    .mover {
+        bottom: 0;
+      
+    }
+    .brand-red {
+        .half-height {
+            height: 151px;
+            margin-top: 20px;
+        }
+    }
+
+    .brand-green {
+        .half-height {
+            height: 271px;
+            margin-top: 20px;
+        }
+    }
+}
 
 @import "ruchira";
 @import "mobile";

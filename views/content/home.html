@@ -54,7 +54,7 @@
                      </div>
                      <div class="race-text whites blacks">
                         <div class="min-hiss">
-                           <h3 class="margin0 pointer"> {{s.text}}</h3>
+                           <h3 class="margin0 pointer text-center"> {{s.text}}</h3>
                         </div>
                      </div>
                   </div>
@@ -178,7 +178,7 @@
                      </div>
                      <div class="race-text whites blacks">
                         <div class="min-hiss">
-                           <h3 class="margin0 pointer"> {{s.text}}</h3>
+                           <h3 class="margin0 pointer text-center"> {{s.text}}</h3>
                         </div>
                      </div>
                   </div>
@@ -301,8 +301,42 @@
      </div>
    </div>-->
    <div class="slant-row reverse mt15">
-      <div class="slant-col">
-         <div class="slant-in  brand-green lmchange">
+      <div class="slant-col updated">
+               <div class="slant-box pad0 relative">
+                 <!--<h2 class="title slide-text pull-left brand-white margno">FOOD AND BEVERAGES</h2>
+            <p class="pull-right pointer capitalize brand-white" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p>-->
+               <p class=" capitalize brand-white border-bot" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p>
+               <h2 class="brand-white ">FOOD AND BEVERAGES</h2>
+               <div class="mover extra">
+                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in foodBeverages track by $index" slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
+                     <li>
+                        <a ui-sref="drink-party({id:s.type._id})"">
+                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                        </a>
+                        <!--<a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>-->
+                     </li>
+                     <!--<li ng-if="s.hostAPartyType ==='57d6a027bd5eb9846074b418'">
+                        <a ui-sref="parties({id:s._id})">
+                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                        </a>
+                     </li>
+                     <li ng-if="s.hostAPartyType ==='57e142483da62fae1dfc55f2'">
+                        <a ui-sref="parties({id:s._id})">
+                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                        </a>
+                        <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
+                     </li>
+                     <li ng-if="s.hostAPartyType ==='57e1429c3da62fae1dfc560c'">
+                        <a ui-sref="parties({id:s._id})">
+                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                        </a>
+                     </li>-->
+                  </flex-slider>
+                  <div ng-if="!hostParty">Loading...</div>
+               </div>
+
+            </div>
+         <!--<div class="slant-in  brand-green lmchange">
             <h2 class="title slide-text pull-left brand-white margno">FOOD AND BEVERAGES</h2>
             <p class="pull-right pointer capitalize brand-white" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p>
             <flex-slider class="carousel half-height" flex-slide="s in foodBeverages track by $index" animation="slide" animationLoop="true" prev-text="" next-text="">
@@ -319,7 +353,7 @@
 
                </li>
             </flex-slider>
-         </div>
+         </div>-->
          <div class="slant-in brand-red">
             <div class="slant-box half-height">
                <h2 class="title slide-text brand-white">be the first to know</h2>
