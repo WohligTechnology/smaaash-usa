@@ -95,7 +95,7 @@
                <p class=" capitalize brand-white border-bot" ui-sref="attractions({id:attraction[0].type._id})">view all</p>
                <h2 class="brand-white ">attractions</h2>
                <div class="mover extra">
-                  <flex-slider ng-if="attraction" class="carousel relative" item-margin="0" flex-slide="s in attraction track by $index" animation="slide" animationLoop="true" prev-text="" next-text="">
+                  <flex-slider ng-if="attraction" class="carousel relative" item-margin="0" flex-slide="s in attraction track by $index"  slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
                      <li>
                         <a>
                            <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ui-sref="attractions({id:s.type._id})">
@@ -119,7 +119,7 @@
                <p class=" capitalize brand-white border-bot" ui-sref="host-party({id:hostParty[0].type._id})">view all</p>
                <h2 class="brand-white ">Host A Party</h2>
                <div class="mover extra" ng-if="hostParty">
-                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in hostParty track by $index" animation="slide" animationLoop="true" prev-text="" next-text="">
+                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in hostParty track by $index" slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
                      <li>
                         <!-- <li ng-if="s.hostAPartyType ==='57d6a09dbd5eb9846074b419'"> -->
                         <a ui-sref="host-party({id:s.type._id})">
