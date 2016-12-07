@@ -3047,6 +3047,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Blog Inside");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.myUrl = window.location.href;
     $scope.myBlogslides = [
         'img/karting/blue.png',
         // 'img/karting/star.png',
