@@ -1942,6 +1942,23 @@ border-bottom: 2px solid #000;
     }
   }
 
+  .about{
+     
+      .full-height {
+    height: 181px;
+    overflow: hidden;
+    border: 2px solid #000;
+    padding: 10px 20px !important;
+}
+.half-height {
+     height: 181px;
+    overflow: hidden;
+    border: 2px solid #000;
+    padding: 10px 20px !important;
+    // margin-top: 10px;
+}
+  }
+
 @import "ruchira";
 @import "mobile";
 @import "fancybox-override";
