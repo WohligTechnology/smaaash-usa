@@ -54,6 +54,21 @@
                 </div>
             </div>
         </div>
+        <div class="gallery">
+            <div class="slidings">
+                <h2 class="title slide-text">gallery</h2>
+                <flex-slider class="carousel" flex-slide="s in detailExploreSmaash.gallery track by $index" item-width="250" animation="slide"
+                    animationLoop="true" prev-text="" next-text="">
+                    <li style="margin-right:10px;">
+                        <a href="{{s.image|uploadpath}}" fancybox-thumb class="fancybox-thumb" rel="fancybox-thumb">
+                            <img ng-src="{{s.image|uploadpath}}">
+                        </a>
+
+                    </li>
+
+                </flex-slider>
+            </div>
+        </div>
         </div>
 
         <!--<div class="kartings">
@@ -114,21 +129,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="gallery">
-            <div class="slidings">
-                <h2 class="title slide-text">gallery</h2>
-                <flex-slider class="carousel" flex-slide="s in detailExploreSmaash.gallery track by $index" item-width="250" animation="slide"
-                    animationLoop="true" prev-text="" next-text="">
-                    <li style="margin-right:10px;">
-                        <a href="{{s.image|uploadpath}}" fancybox-thumb class="fancybox-thumb" rel="fancybox-thumb">
-                            <img ng-src="{{s.image|uploadpath}}">
-                        </a>
-
-                    </li>
-
-                </flex-slider>
-            </div>
         </div>-->
+        
     </div>
 </div>
