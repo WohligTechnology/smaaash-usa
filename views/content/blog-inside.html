@@ -1,18 +1,18 @@
 <div class="blog events1 attractions">
-    <div class="backg-eve">
-        <div class="container">
-            <h2 class="nav-name center ">blog</h2>
-        </div>
-    </div>
-     <div class="forms brand-blue">
-    <div class="container">
-      <div class="search-green">
-        <input type="text" class="form-control" placeholder="Search" ng-model="searchFilter" >
-        <div class="microscope">
-          <img src="img/new/bino.png" class="img-responsive" alt="" ui-sref="blogs({search:searchFilter})">
-        </div>
+   <div class="backg-eve">
+      <div class="container">
+         <h2 class="nav-name center ">blog</h2>
       </div>
-      <!-- <div class="game-type inline-block">
+   </div>
+   <div class="forms brand-blue">
+      <div class="container">
+         <div class="search-green">
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchFilter">
+            <div class="microscope">
+               <img src="img/new/bino.png" class="img-responsive" alt="" ui-sref="blogs({search:searchFilter})">
+            </div>
+         </div>
+         <!-- <div class="game-type inline-block">
         <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
         <select class="form-control" ng-model="filter.gameFor" ng-change="goTOSearch(filter)">
                <option ng-selected="true" value="0">All </option>
@@ -21,7 +21,7 @@
                <option value="3">Children</option>
             </select>
       </div> -->
-      <!-- <div class="game-type inline-block">
+         <!-- <div class="game-type inline-block">
         <a href=""><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
         <select class="form-control" ng-model="filter.gameType" ng-change="goTOSearch(filter)">
                <option ng-selected="true" value="0">Featured </option>
@@ -32,123 +32,123 @@
                <option value="5">Others</option>
             </select>
       </div> -->
-    </div>
-  </div>
-    <div class="container">
-        <div class="new">
- <div class="row">
-        <div class="col-md-8">
-            <div class="row">
-                   <div class="col-md-12">
-                    <div class=" relative margno">
-                          <div class="news">
-                 <h3 class="margin0 bluey  pointer">{{blogInside.blogDetail
+      </div>
+   </div>
+   <div class="container">
+      <div class="new">
+         <div class="row">
+            <div class="col-md-8">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class=" relative margno">
+                        <div class="news">
+                           <h3 class="margin0 bluey  pointer">{{blogInside.blogDetail
 .name}}</h3>
-                 <span><i class="fa fa-calendar" aria-hidden="true"></i> {{blogInside.blogDetail.date | date :'d MMM, y'}}</span>
-                 <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{blogInside.blogDetail.date | date :'h:mm a'}}</span>
-                 <div class="city-share">
- <!-- <p class="pull-left">Mumbai</p> -->
- <ul class="social-icons list-inline inline-block pull-right">
-                                    <p class="inline-block">Share</p>
-                                    <li>
-                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                               <li><a href=""><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
-                                </ul>
-                 </div>
-               <div class="clearfix"></div>
-             </div>
-             <div class="detail">
-                 <div class="first-img">
-                     <img ng-src="{{blogInside.blogDetail.image | uploadpath}}" class="img-responsive" alt="">
-                 </div>
-                 <div class="first-imgdetail">
-                     <p ng-bind-html="blogInside.blogDetail.description"></p>
-                 </div>
+                           <span><i class="fa fa-calendar" aria-hidden="true"></i> {{blogInside.blogDetail.date | date :'d MMM, y'}}</span>
+                           <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{blogInside.blogDetail.date | date :'h:mm a'}}</span>
+                           <div class="city-share">
+                              <!-- <p class="pull-left">Mumbai</p> -->
+                              <ul class="social-icons list-inline inline-block pull-right">
+                                 <p class="inline-block">Share</p>
+                                 <li>
+                                    <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                 </li>
+                                 <li>
+                                    <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                 </li>
+                                 <li>
+                                    <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                 </li>
+                                 <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                 <li><a href=""><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                           <div class="clearfix"></div>
+                        </div>
+                        <div class="detail">
+                           <div class="first-img">
+                              <img ng-src="{{blogInside.blogDetail.image | uploadpath}}" class="img-responsive" alt="">
+                           </div>
+                           <div class="first-imgdetail">
+                              <p ng-bind-html="blogInside.blogDetail.description"></p>
+                           </div>
 
-             </div>
+                        </div>
 
-             <div class="blog-slider">
-                 <div class="blog-directions clearfix">
-<span class="pull-left">
+                        <div class="blog-slider">
+                           <div class="blog-directions clearfix">
+                              <span class="pull-left">
     <i class="fa fa-chevron-left" aria-hidden="true"></i>
 Previous Blog
 </span>
-<span class="pull-right">
+                              <span class="pull-right">
 
 Next Blog
   <i class="fa fa-chevron-right" aria-hidden="true"></i>
 </span>
-                 </div>
-      <flex-slider class="carousel marglef relative" flex-slide="s in blogInside.previousNextBlog track by $index" animation="slide" animation-loop="false" item-width="250"
-            as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
-            <li class="left">
-                <a href="">
+                           </div>
+                           <flex-slider class="carousel marglef relative" flex-slide="s in blogInside.previousNextBlog track by $index" animation="slide" animation-loop="false" item-width="250" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text=""
+                             slider-id="carousel" animation-loop="false">
+                              <li class="left">
+                                 <a href="">
 
-  <div class="row">
-      <div class="col-md-4">
-<img ng-src="{{s.image | uploadpath}}" alt="">
-      </div>
-      <div class="col-md-8">
-          <!-- <p>Mumbai</p> -->
-<p class="uppercase" ng-bind-html="s.description | htmlToPlaintext | shorten :40"></p>
-      </div>
-  </div>
-                </a>
+                                    <div class="row">
+                                       <div class="col-md-4">
+                                          <img ng-src="{{s.image | uploadpath}}" alt="">
+                                       </div>
+                                       <div class="col-md-8">
+                                          <!-- <p>Mumbai</p> -->
+                                          <p class="uppercase" ng-bind-html="s.description | htmlToPlaintext | shorten :40"></p>
+                                       </div>
+                                    </div>
+                                 </a>
 
-            </li>
+                              </li>
 
-            </li>
+                              </li>
 
-        </flex-slider>
-             </div>
-             <div class="may-like">
-                 <h4>You May Also Like</h4>
-                 <div class="row">
-                   <div class="col-md-6" ng-repeat=" data in blogInside.youMayLike">
-                    <div class="race-eve relative pointer margno">
-                        <div class="img-bg">
-                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                           </flex-slider>
                         </div>
-                                   <div class="new-detail">
-                 <h3 class="margin0 bluey  pointer">{{data.name}}</h3>
-                 <span><i class="fa fa-calendar" aria-hidden="true"></i> {{data.date | date :'d MMM, y'}}</span>
-                 <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{data.date | date : 'h:mm a'}}</span>
-                         <div class="button-set">
-                                <ul class="social-icons list-inline inline-block">
-                                    <p class="inline-block">Share</p>
-                                    <li>
-                                        <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="more inline-block" ui-sref="blog-inside({id:data._id})">
+                        <div class="may-like">
+                           <h4>You May Also Like</h4>
+                           <div class="row">
+                              <div class="col-md-6" ng-repeat=" data in blogInside.youMayLike">
+                                 <div class="race-eve relative pointer margno">
+                                    <div class="img-bg">
+                                       <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="new-detail">
+                                       <h3 class="margin0 bluey  pointer">{{data.name}}</h3>
+                                       <span><i class="fa fa-calendar" aria-hidden="true"></i> {{data.date | date :'d MMM, y'}}</span>
+                                       <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{data.date | date : 'h:mm a'}}</span>
+                                       <div class="button-set">
+                                          <ul class="social-icons list-inline inline-block">
+                                             <p class="inline-block">Share</p>
+                                             <li>
+                                                <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                             </li>
+                                             <li>
+                                                <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                             </li>
+                                             <li>
+                                                <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                                             </li>
+                                          </ul>
+                                          <div class="more inline-block" ui-sref="blog-inside({id:data._id})">
 
 
-                                    <button class="uppercase greeny" ng-click="imagesmodal();">know more</button>
+                                             <button class="uppercase greeny" ng-click="imagesmodal();">know more</button>
 
-                                </div>
+                                          </div>
 
-                            </div>
-                <!-- <div class="love">
+                                       </div>
+                                       <!-- <div class="love">
                 <button class="uppercase" ><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>like</button>
               </div> -->
-             </div>
-                    </div>
-                </div>
-                      <!-- <div class="col-md-6">
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- <div class="col-md-6">
                     <div class="race-eve relative margno">
                         <div class="img-bg">
                             <img src="img/new/newdeals.png" class="img-responsive" alt="">
@@ -184,40 +184,40 @@ Next Blog
              </div>
                     </div>
                 </div> -->
-                </div>
-             </div>
+                           </div>
+                        </div>
 
 
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
+
             </div>
 
-        </div>
 
+            <div class="col-md-3">
 
-        <div class="col-md-3">
-
-            <h2 class="title center">popular blogs</h2>
-            <div class="row">
-                <div class="col-md-12" ng-repeat="data in blogInside.popularBlog">
-      <div class="race-eve relative margno ">
+               <h2 class="title center">popular blogs</h2>
+               <div class="row">
+                  <div class="col-md-12" ng-repeat="data in blogInside.popularBlog">
+                     <div class="race-eve relative margno ">
                         <div class="img-bg" ui-sref="blog-inside({id:data._id})">
-                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                           <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
                         </div>
                         <div class="button-bg">
-                             <img src="img/buy.png" class="img-responsive" alt="">
+                           <img src="img/buy.png" class="img-responsive" alt="">
                         </div>
                         <div class="race-text">
 
-                            <div class="min-h" ui-sref="blog-inside({id:data._id})" >
-                                <h3 class="margin0 brand-white">{{data.name}}</h3>
+                           <div class="min-h" ui-sref="blog-inside({id:data._id})">
+                              <h3 class="margin0 brand-white">{{data.name}}</h3>
 
-                            </div>
+                           </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-                     <!-- <div class="row">
+                     </div>
+                  </div>
+               </div>
+               <!-- <div class="row">
                 <div class="col-md-12">
       <div class="race-eve relative margno ">
                         <div class="img-bg">
@@ -297,29 +297,29 @@ Next Blog
             </div>
             </div>
         </div>-->
-<div class="social-ico">
-     <h2 class=" center">Social Media</h2>
-    <ul class="list-inline">
-        <li><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a></li>
-    <li><a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a></li>
-        <li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-        <li><a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-2x fa-google-plus-square" aria-hidden="true"></i></li>
+               <div class="social-ico">
+                  <h2 class=" center">Social Media</h2>
+                  <ul class="list-inline">
+                     <li><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a></li>
+                     <li><a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a></li>
+                     <li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                     <li><a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-2x fa-google-plus-square" aria-hidden="true"></i></li>
     </ul>
     <ul class="list-inline">
         <li><a href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-        <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-    </ul>
-</div>
+                     <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
 
-<!-- <div class="ad">
+               <!-- <div class="ad">
     <img src="img/profile/avatar.png" class="img-responsive" alt="">
 </div> -->
 
-    </div>
+            </div>
 
-        </div>
-    </div>
-    </div>
+         </div>
+      </div>
+   </div>
 
 </div>
 </div>
