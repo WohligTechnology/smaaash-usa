@@ -3060,7 +3060,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.blogInside = data.data;
         console.log("  $scope.blogInside", $scope.blogInside);
-    })
+
+          console.log("  $scope.blogInside", $scope.blogInside);
+        var foundindex = _.result(_.findIndex($scope.blogInside.popularBlog, function(obj) {
+          console.log("obj",obj);
+      return obj._id === $stateParams.id;
+  }), 'index');
+
+
+        console.log("foundindex",foundindex);
+        console.log("***********",$stateParams.id);
+        console.log("$scope.blogInside.popularBlog",$scope.blogInside.popularBlog);
+          });
+
 
 })
 
