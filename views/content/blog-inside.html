@@ -201,7 +201,7 @@ Next Blog
             <div class="row">
                 <div class="col-md-12" ng-repeat="data in blogInside.popularBlog">
       <div class="race-eve relative margno ">
-                        <div class="img-bg">
+                        <div class="img-bg" ui-sref="blog-inside({id:data._id})">
                             <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
                         </div>
                         <div class="button-bg">
@@ -209,7 +209,7 @@ Next Blog
                         </div>
                         <div class="race-text">
 
-                            <div class="min-h" ui-sref="blog-inside({id:data._id})">
+                            <div class="min-h" ui-sref="blog-inside({id:data._id})" >
                                 <h3 class="margin0 brand-white">{{data.name}}</h3>
 
                             </div>

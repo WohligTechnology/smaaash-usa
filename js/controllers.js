@@ -9,7 +9,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(2);
     var openL = {};
-  $scope.currentdate = new Date();
+    $scope.currentdate = new Date();
 
 
     var fired = false;
@@ -87,7 +87,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
     $scope.hideBanner = true;
     NavigationService.getSlider(function(data) {
-          if (data.value === true) {
+        if (data.value === true) {
             $scope.mySlides = data.data;
             var i = 1;
             _.each($scope.mySlides, function(n) {
@@ -97,7 +97,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.hideBanner = false;
 
                 }
-    TemplateService.removeLoader();
+                TemplateService.removeLoader();
 
             });
         }
@@ -126,8 +126,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.events = $scope.content["Events"];
             $scope.foodBeverages = $scope.content["Food and Beverages"];
             $scope.promotion = $scope.content["Promotions"];
-              TemplateService.removeLoader();
-          } else {}
+            TemplateService.removeLoader();
+        } else {}
 
     });
 
@@ -251,42 +251,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, 100);
     });
 
-    $scope.buyOnlines = [ {
+    $scope.buyOnlines = [{
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
-        id :'57bc4b2aeb9c91f1025a3b55'
-    },{
+        id: '57bc4b2aeb9c91f1025a3b55'
+    }, {
         img: 'img/new/parties.jpg',
         text: ' parties',
-          id :'57bc4b10eb9c91f1025a3b54'
+        id: '57bc4b10eb9c91f1025a3b54'
     }, {
         img: 'img/new/food.jpg',
         text: ' food and beverages',
-          id :'57bc4b48eb9c91f1025a3b57'
+        id: '57bc4b48eb9c91f1025a3b57'
     }, {
         img: 'img/new/virtual.jpg',
         text: 'virtual reality',
-        id :'57bc4b2aeb9c91f1025a3b55'
+        id: '57bc4b2aeb9c91f1025a3b55'
     }];
 
-        $scope.buyOnline = [{
+    $scope.buyOnline = [{
         img: 'img/karting/1.jpg',
         text: ' Minnesota Lynx',
-        id:'583420a69f3f2cd049f2cb0e'
+        id: '583420a69f3f2cd049f2cb0e'
     }, {
         img: 'img/karting/2.jpg',
         text: ' Minnesota Vikings',
-        id:'583421099f3f2cd049f2cb28'
+        id: '583421099f3f2cd049f2cb28'
     }, {
         img: 'img/karting/3.jpg',
         text: ' Minnesota Timberwolves',
-        id:'5847a24762aaa336cbd301bd'
+        id: '5847a24762aaa336cbd301bd'
     }, {
         img: 'img/karting/4.jpg',
         text: ' Minnesota Wild',
-        id:'5847a43562aaa336cbd3027a'
+        id: '5847a43562aaa336cbd3027a'
     }];
-
 
 
 
@@ -606,10 +605,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log($scope.objectfilter.pagenumber);
                 if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
 
-                  if (data.data.data) {
-                    data.data.data=_.chunk(data.data.data,3)
+                    if (data.data.data) {
+                        data.data.data = _.chunk(data.data.data, 3)
 
-                  }
+                    }
                     _.each(data.data.data, function(n) {
                         // console.log(n);
                         $scope.stars.push(n)
@@ -645,7 +644,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.message = false;
             }
             if (data.data.data) {
-              data.data.data=_.chunk(data.data.data,3)
+                data.data.data = _.chunk(data.data.data, 3)
 
             }
 
@@ -691,7 +690,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.fetchData = function() {
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
         NavigationService.getMediaGallery($scope.mediaObject, function(data) {
-          console.log("data",data.data);
+            console.log("data", data.data);
             console.log(data.data.totalpages);
             console.log("getStars", data.data);
             if (data.data.data.length === 0) {
@@ -702,14 +701,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.value) {
                 console.log($scope.mediaObject.pagenumber);
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
-                  if (data.data.data) {
-                    data.data.data=_.chunk(data.data.data,3);
-                      _.each(data.data.data, function(n) {
-                          // console.log(n);
-                          $scope.mediagallery.push(n);
+                    if (data.data.data) {
+                        data.data.data = _.chunk(data.data.data, 3);
+                        _.each(data.data.data, function(n) {
+                            // console.log(n);
+                            $scope.mediagallery.push(n);
 
-                      });
-                  }
+                        });
+                    }
 
                     if (data.data.totalpages === $scope.mediaObject.pagenumber) {
                         $scope.noviewmore = false;
@@ -742,7 +741,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.message = false;
             }
             if (data.data.data) {
-              data.data.data=_.chunk(data.data.data,3);
+                data.data.data = _.chunk(data.data.data, 3);
 
             }
             // if (data.data.data.length === 1) {
@@ -1510,10 +1509,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, 500);
     };
     TemplateService.removeLoaderOn(1);
-// $scope.startVideo={};
+    // $scope.startVideo={};
 
-    $scope.scrollDown1 = function () {
-        $scope.startVideo=false;
+    $scope.scrollDown1 = function() {
+        $scope.startVideo = false;
 
         $('html,body').animate({
                 scrollTop: $(".second").offset().top
@@ -2605,10 +2604,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Thank");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.orderNo=$stateParams.orderno;
-    $scope.amount=$stateParams.amount;
-    $scope.cnrNo=$stateParams.cnrno;
-    $scope.paymentFor=$stateParams.paymentfor;
+    $scope.orderNo = $stateParams.orderno;
+    $scope.amount = $stateParams.amount;
+    $scope.cnrNo = $stateParams.cnrno;
+    $scope.paymentFor = $stateParams.paymentfor;
 })
 
 .controller('SorryCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
@@ -2617,10 +2616,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sorry");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.orderNo=$stateParams.orderno;
-    $scope.amount=$stateParams.amount;
-    $scope.cnrNo=$stateParams.cnrno;
-    $scope.paymentFor=$stateParams.paymentfor;
+    $scope.orderNo = $stateParams.orderno;
+    $scope.amount = $stateParams.amount;
+    $scope.cnrNo = $stateParams.cnrno;
+    $scope.paymentFor = $stateParams.paymentfor;
 })
 
 
@@ -2930,7 +2929,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.value) {
                 console.log($scope.objectfilter.pagenumber);
                 if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
-                  data.data.data = _.chunk(data.data.data,2);
+                    data.data.data = _.chunk(data.data.data, 2);
                     _.each(data.data.data, function(n) {
                         // console.log(n);
                         $scope.blogs.push(n);
@@ -2964,7 +2963,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $scope.message = false;
             }
-              data.data.data = _.chunk(data.data.data,2);
+            data.data.data = _.chunk(data.data.data, 2);
             $scope.blogs = data.data.data;
             console.log("blogs", $scope.blogs);
         })
@@ -3057,22 +3056,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/karting/shikar.png'
     ];
     NavigationService.getDetailBlog($stateParams.id, function(data) {
-
         $scope.blogInside = data.data;
-        console.log("  $scope.blogInside", $scope.blogInside);
-
-          console.log("  $scope.blogInside", $scope.blogInside);
-        var foundindex = _.result(_.findIndex($scope.blogInside.popularBlog, function(obj) {
-          console.log("obj",obj);
-      return obj._id === $stateParams.id;
-  }), 'index');
-
-
-        console.log("foundindex",foundindex);
-        console.log("***********",$stateParams.id);
-        console.log("$scope.blogInside.popularBlog",$scope.blogInside.popularBlog);
-          });
-
+        var findIndex = _.findIndex($scope.blogInside.popularBlog, function(val) {
+            return val._id === $stateParams.id;
+        });
+        if (findIndex >= 0) {
+            $scope.blogInside.popularBlog.splice(findIndex, 1);
+        } else {
+            $scope.blogInside.popularBlog = data.data.popularBlog;
+        }
+    });
 
 })
 
@@ -3247,8 +3240,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         console.log('m false');
                         $scope.pass = false;
                     }
-                }
-                 else {
+                } else {
                     console.log("im in else");
                     $scope.validCity = true;
                 }
