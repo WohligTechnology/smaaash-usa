@@ -61,8 +61,8 @@
         <div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
-              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 5 }"></i></span>
-              <h4 class="bold title pointer" ui-sref="event({id:eventId})"  ng-click="footer(5)">EVENTS &amp; CHALLENGES</h4>
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 5 }" ng-click="footer(5)"></i></span>
+              <h4 class="bold title pointer" ui-sref="event({id:eventId})"  >EVENTS &amp; CHALLENGES</h4>
             </div>
             <ul class="foot-list foot-data" ng-show="showFooter == 5">
               <li><a href="">SMAAASH CRICKET CARNIVAL</a></li>
@@ -128,8 +128,8 @@
         <div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
-              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 11 }"></i></span>
-              <h4 class="bold title" ng-click="footer(11)">download app</h4>
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 11 }" ng-click="footer(11)"></i></span>
+              <h4 class="bold title" >download app</h4>
             </div>
             <ul class="foot-list foot-data app" ng-show="showFooter == 11">
               <li class="icons"><a href=""><i class="fa fa-android  fa-2x" title="Android"  target="_blank" aria-hidden="true"></i></a></li>
@@ -140,10 +140,12 @@
         <div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
-              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 12 }"></i></span>
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 12 }"></i></span>-->
               <h4 class="bold title pointer" ui-sref="contact" ng-click="footer(12)">Contact us</h4>
             </div>
-            <!--<ul class="foot-list foot-data" ng-show="showFooter == 12">
+            <!--
+             
+              <ul class="foot-list foot-data" ng-show="showFooter == 12">
               <li><a ui-sref="contact">Bengaluru</a></li>
               <li><a ui-sref="contact">Hyderabad</a></li>
               <li><a ui-sref="contact">Gurgaon</a></li>
