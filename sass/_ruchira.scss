@@ -1122,16 +1122,15 @@ $brand-white:#fff !default;
 }
 
 //*karting,*about**//
-// .owner {
-//   height: 233px;
-//   margin-top: -27px;
-//   margin-left: -19px;
-//   background-image: url("../img/karting/About.png");
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-color: #f6e9fd;
-//   background-position: 0 -31px;
-// }
+.owner {
+  // height: 233px;
+  // margin-top: -27px;
+  // margin-left: -19px;
+  background-image: url("../img/karting/about.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 
 .abouts,.chief{
@@ -1840,7 +1839,7 @@ ul {
   }
   .form-control {
     background-color: #fff!important;
-    color: #ccc;
+    color: #000;
     border: 2px solid #ccc;
   }
   .butn,

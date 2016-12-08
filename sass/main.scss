@@ -1982,6 +1982,13 @@ border-bottom: 2px solid #000;
         }
     }
 }
+//input
+input[type="email"].form-control::-webkit-input-placeholder,input[type="text"].form-control::-webkit-input-placeholder,input[type="password"].form-control::-webkit-input-placeholder { 
+  color: #000;
+}
+
+
+
 
 @import "ruchira";
 @import "mobile";
