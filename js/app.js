@@ -272,7 +272,12 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         templateUrl: "views/template.html",
         controller: 'RechargeCtrl'
     })
-
+    
+    .state('careers', {
+        url: "/careers",
+        templateUrl: "views/template.html",
+        controller: 'CareersCtrl'
+    })
 
 
     .state('confirm-order', {

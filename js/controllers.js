@@ -1894,7 +1894,13 @@ TemplateService.removeLoaderOn(3);
 
 
 })
-
+.controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("careers");
+    $scope.menutitle = NavigationService.makeactive("Careers");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+})
 
 .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
