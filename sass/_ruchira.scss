@@ -729,7 +729,7 @@ $brand-white:#fff !default;
   button {
     border-radius: 10px;
     border: none;
-    padding: 10px 40px;
+    padding: 10px 30px;
     color: #fff;
     margin-right: 10px;
     &:focus {
@@ -1126,7 +1126,7 @@ $brand-white:#fff !default;
   // height: 233px;
   // margin-top: -27px;
   // margin-left: -19px;
-  background-image: url("../img/karting/about.png");
+  background-image: url("../img/corporate/shripal.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1134,14 +1134,14 @@ $brand-white:#fff !default;
 
 
 .abouts,.chief{
-  background-image: url("../img/karting/black.png");
+  background-image: url("../img/corporate/logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .chief{
-background-image: url("../img/karting/about.jpg");
+background-image: url("../img/corporate/mall.jpg");
 }
 
 .purple-butn,
@@ -2834,6 +2834,9 @@ button {
         .views {
           button {
             border-color: $brand-darkblue;
+            a{
+              color: $brand-darkblue;
+            }
           }
         }
         .bluey {
@@ -2858,6 +2861,9 @@ button {
         .views {
           button {
             border-color: $brand-orangy;
+             a{
+              color: $brand-orangy;
+            }
           }
         }
         .bluey {
@@ -2882,6 +2888,9 @@ button {
         .views {
           button {
             border-color: $brand-pink;
+             a{
+              color: $brand-pink;
+            }
           }
         }
         .bluey {
@@ -2906,6 +2915,9 @@ button {
         .views {
           button {
             border-color: $brand-green;
+              a{
+              color: $brand-green;
+            }
           }
         }
         .bluey {
@@ -2930,6 +2942,9 @@ button {
         .views {
           button {
             border-color: $brand-blue;
+            a{
+              color: $brand-blue;
+            }
           }
         }
         .bluey {
@@ -2954,6 +2969,9 @@ button {
         .views {
           button {
             border-color: $brand-purple;
+            a{
+              color: $brand-purple;
+            }
           }
         }
         .bluey {

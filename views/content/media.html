@@ -42,9 +42,12 @@
               <a href="" class="pink-button" ng-if="d.url"><img src="img/home/button.png" class="img-responsive" alt=""></a>
             </div>
             <div class="new-detail">
-              <div class="views inline-block">
-                <button class="uppercase bluey" fancybox-box href="{{d.image|uploadpath}}">view</button>
+              <div class="views inline-block" >
+                <button class="uppercase bluey">
+                  <a href="http://smaaashusa.com/document.html">view
+                    </a></button>
               </div>
+              <!--fancybox-box href="{{d.image|uploadpath}}"-->
               <h3 class="margin0 bluey">{{d.title}}</h3>
             <p ng-bind-html="d.text | htmlToPlaintext"></p>
 
