@@ -5,7 +5,7 @@
    <div class="slidings">
       <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
          <li>
-            <a href="">
+            <a href="{{s.url}}">
                <img ng-src="{{s.image|uploadpath}}">
             </a>
 
@@ -374,6 +374,7 @@
       <div class="slant-col brand-yellow pull-right">
          <div class="slant-box full-height full-heights babes pointer" ui-sref="about">
             <div class="texting">
+               <h2 class="brand-white ">about us</h2>
             </div>
          </div>
       </div>

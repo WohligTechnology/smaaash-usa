@@ -2608,13 +2608,8 @@ button {
 }
 .texting{
   position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 385px;
-    p{
-      text-align: center!important;
-    }
+   top: 10px;
+    left: 10px;
 }
 .babes{
   background-image: url("../img/avatar/about.jpg");
@@ -2693,6 +2688,7 @@ button {
     .col-md-4:nth-of-type(1){
       .brand-blue {
         background-color: $brand-darkblue;
+        border:2px solid $brand-darkblue; 
       }
        .new-detail {
         border-color: $brand-darkblue;
@@ -2714,6 +2710,7 @@ button {
     .col-md-4:nth-of-type(2){
       .brand-blue {
           background-color: $brand-orangy;
+           border:2px solid $brand-orangy; 
       }
            .new-detail {
         border-color: $brand-orangy;
@@ -2735,6 +2732,7 @@ button {
     .col-md-4:nth-of-type(3){
       .brand-blue {
         background-color: $brand-pink;
+          border:2px solid $brand-pink; 
       }
            .new-detail {
         border-color: $brand-pink;
@@ -2759,6 +2757,7 @@ button {
     .col-md-4:nth-of-type(1){
      .brand-blue {
         background-color: $brand-green;
+        border:2px solid  $brand-green; 
       }
         .new-detail {
         border-color: $brand-green;
@@ -2780,6 +2779,7 @@ button {
     .col-md-4:nth-of-type(2){
     .brand-blue {
         background-color: $brand-blue;
+         border:2px solid   $brand-blue; 
       }
       .new-detail {
         border-color: $brand-blue;
@@ -2801,6 +2801,7 @@ button {
     .col-md-4:nth-of-type(3){
     .brand-blue {
         background-color: $brand-purple;
+         border:2px solid  $brand-purple; 
       }
           .new-detail {
         border-color: $brand-purple;
@@ -2971,7 +2972,13 @@ button {
 
 
 .blog{
+   .img-bg{
+      border:2px solid  $brand-blue;
+    }
   .col-md-6:nth-child(2){
+    .img-bg{
+      border:2px solid  $brand-green;
+    }
   .new-detail{
  border-color: $brand-green;
  .bluey {
@@ -2987,6 +2994,9 @@ button {
 
   }
       .col-md-6:nth-child(3){
+            .img-bg{
+      border:2px solid  $brand-purple;
+    }
         .new-detail{
  border-color: $brand-purple;
  .bluey {
@@ -3001,6 +3011,9 @@ button {
 
   }
         .col-md-6:nth-child(4){
+                     .img-bg{
+      border:2px solid  $brand-orange;
+    }
         .new-detail{
  border-color: $brand-orange;
  .bluey {
@@ -3016,6 +3029,7 @@ button {
   }
 
 }
+
 
 .drink {
   .new-detail {
@@ -3068,6 +3082,9 @@ button {
 .race {
   transition: all 600ms ease;
   margin-right: 10px;
+  .img-bg{
+    border: 1px solid #ccc;
+  }
 }
 
 //glypicon

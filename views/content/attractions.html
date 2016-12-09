@@ -52,12 +52,12 @@
               </div>
               <div class="min-h">
                 <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ui-sref="snow-rush({id:d._id})"></h3>
-                <p ng-hide="d.gameforarray==''">Game For:
+                <!--<p ng-hide="d.gameforarray==''">Game For:
                   <span class="bluey capitalize">
                              <span ng-repeat="per in d.gameforarray track by $index">{{per}} <span ng-if="$index<d.gameforarray.length-2">|</span>
                   <span ng-if="$index==d.gameforarray.length-2">&</span> </span>
                   </span>
-                </p>
+                </p>-->
                 <p class="" ng-bind-html="d.description | htmlToPlaintext | shorten :140"></p>
               </div>
               <div class="button-set" ng-if="showBuyNow">
