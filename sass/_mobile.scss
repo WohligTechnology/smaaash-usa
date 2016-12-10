@@ -981,6 +981,9 @@
 }
 
 @media (max-width:480px) {
+  .side {
+    right: -43px;
+  }
   .updated .slant-box h2, .updates .slant-box h2{
     font-size: 16px;
   }
