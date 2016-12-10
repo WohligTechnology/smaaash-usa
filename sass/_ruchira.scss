@@ -698,7 +698,7 @@ $brand-white:#fff !default;
 
 .drink,
 .event,
-.contact {
+.contact,.careers {
   .greeny {
     color: $brand-green;
   }
@@ -1187,7 +1187,7 @@ background-image: url("../img/corporate/mall.jpg");
 .drink,
 .event,
 .dealings,
-.contact {
+.contact,.careers {
   h3 {
     font-family: $body-font;
     font-size: 30px;

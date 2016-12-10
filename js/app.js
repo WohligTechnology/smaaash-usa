@@ -279,6 +279,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'CareersCtrl'
     })
 
+   .state('gift', {
+        url: "/gift",
+        templateUrl: "views/template.html",
+        controller: 'GiftCtrl'
+    })
 
     .state('confirm-order', {
         url: "/confirm-order",
