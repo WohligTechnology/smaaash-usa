@@ -2,6 +2,7 @@ var globalfunction = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $state, $filter, ngDialog) {
+
     //Used to name the .html file
       TemplateService.removeLoaderOn(2);
     $scope.template = TemplateService.changecontent("home");
@@ -1855,28 +1856,26 @@ TemplateService.removeLoaderOn(3);
 
 })
 
-.controller('RechargeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
+.controller('RechargeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal,$window,$location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("online");
     $scope.menutitle = NavigationService.makeactive("Recharge");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-
-
     $scope.rechargeOnline = {};
     if ($.jStorage.get("loginDetail") != null) {
         $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
         $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
     }
-
     $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:94/signup/returnUrlFunction";
+
+
 
     $scope.submitRecharge = function(rechargeOnline) {
 
         if (rechargeOnline && $.jStorage.get("loginDetail") === null) {
-
-            $uibModal.open({
+          $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/wishlistsigup.html',
                 scope: $scope
@@ -1885,6 +1884,12 @@ TemplateService.removeLoaderOn(3);
 
             NavigationService.rechargeCard(rechargeOnline, function(data) {
                 console.log("data", data);
+                if (data.value === true) {
+                  $scope.newWindow = data.data.RechargeCard[0].Link;
+                   $window.location.href = $scope.newWindow;
+                }else if (data.value === false) {
+$scope.incorrect =true;
+                }
             })
 
         }
