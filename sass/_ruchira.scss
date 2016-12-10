@@ -2695,6 +2695,9 @@ button {
         .views {
           button {
             border-color: $brand-darkblue;
+            a{
+              color:$brand-darkblue;
+            }
           }
         }
         .bluey {
@@ -2717,6 +2720,9 @@ button {
         .views {
           button {
             border-color: $brand-orangy;
+             a{
+              color:$brand-orangy;
+            }
           }
         }
         .bluey {
@@ -2739,6 +2745,9 @@ button {
         .views {
           button {
             border-color: $brand-pink;
+             a{
+              color:$brand-pink;
+            }
           }
         }
         .bluey {
@@ -2764,6 +2773,9 @@ button {
         .views {
           button {
             border-color: $brand-green;
+             a{
+              color: $brand-green;
+            }
           }
         }
         .bluey {
@@ -2786,6 +2798,9 @@ button {
         .views {
           button {
             border-color: $brand-blue;
+             a{
+              color: $brand-blue;
+            }
           }
         }
         .bluey {
@@ -2808,6 +2823,9 @@ button {
         .views {
           button {
             border-color: $brand-purple;
+             a{
+              color:$brand-purple;
+            }
           }
         }
         .bluey {
@@ -2822,7 +2840,7 @@ button {
     }
   }
 }
-.custom, .stars{
+.custom{
  .col-md-3:nth-child(6n+1),
   .col-md-4:nth-child(6n+1) {
     .karting-championship {
@@ -2834,9 +2852,6 @@ button {
         .views {
           button {
             border-color: $brand-darkblue;
-            a{
-              color: $brand-darkblue;
-            }
           }
         }
         .bluey {
@@ -2861,9 +2876,6 @@ button {
         .views {
           button {
             border-color: $brand-orangy;
-             a{
-              color: $brand-orangy;
-            }
           }
         }
         .bluey {
@@ -2888,9 +2900,6 @@ button {
         .views {
           button {
             border-color: $brand-pink;
-             a{
-              color: $brand-pink;
-            }
           }
         }
         .bluey {
@@ -2915,9 +2924,6 @@ button {
         .views {
           button {
             border-color: $brand-green;
-              a{
-              color: $brand-green;
-            }
           }
         }
         .bluey {
@@ -2942,9 +2948,6 @@ button {
         .views {
           button {
             border-color: $brand-blue;
-            a{
-              color: $brand-blue;
-            }
           }
         }
         .bluey {
@@ -2969,9 +2972,6 @@ button {
         .views {
           button {
             border-color: $brand-purple;
-            a{
-              color: $brand-purple;
-            }
           }
         }
         .bluey {
