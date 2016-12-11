@@ -280,7 +280,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
     })
 
    .state('gift', {
-        url: "/gift",
+        url: "/giftcards",
         templateUrl: "views/template.html",
         controller: 'GiftCtrl'
     })

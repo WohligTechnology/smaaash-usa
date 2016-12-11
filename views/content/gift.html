@@ -7,10 +7,76 @@
    <div class="container">
        <div class="row">
            <div class="col-md-6">
-               
+               <ul>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+               </ul>
            </div>
            <div class="col-md-6">
+          <div class="practice">
+            <form class="form" name="user" ng-submit="assistanceLogin(formData)" ng-if="!formCompleteAssistance">
+              <h3 class="text-center">Need assistance?</h3>
+              <div class="form-group relative">
+                <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name </div>
+              </div>
+              <div class="form-group relative">
+                <input type="email" class=" form-control" placeholder="Email ID" name="email" ng-model="formData.email" required>
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <div class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email ID </div>
+              </div>
+              <div class="form-group relative ">
+                <input type="tel" class="form-control" placeholder="Mobile .No" name="mobile" ng-model="formData.mobile" required only-digits
+                  maxlength="10" minlength="10">
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <div class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please enter your mobile no. </div>
+              </div>
+              <div class="form-group relative">
+                <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                <select name="categorydata" class="form-control" ng-model="formData.occasion" required>
+                           <option ng-selected="true" value="">Please select occasion</option>
+                           <option value="bParty">Birthday Party</option>
+                           <option value="dParty">Drink Party</option>
+                           <option value="CorporateParty">Corporate Parties</option>
+                           <option value="kittyParty">Kitty Parties</option>
+                           <option value="PreWeddingParty">Pre-Wedding Parties</option>
+                        </select>
 
+              </div>
+              <!--<div class="form-group ">
+                <div class="radio">
+                  <input type="radio" id="radio4" name="assistancefor" value="Adults" ng-model="formData.assistancefor" required>
+                  <label for="radio4">
+                              <span></span> Adults</label>
+                  <input type="radio" id="radio3" name="assistancefor" value="Children" ng-model="formData.assistancefor" required>
+                  <label for="radio3">
+                              <span></span> Children</label>
+                </div>
+              </div>-->
+              <div class="form-group">
+                <select name="categorydata" class="form-control" ng-model="formData.noofpeople" required>
+                           <option ng-selected="true" value="">Please select no. Of people</option>
+                           <option value="1-5">1-5</option>
+                           <option value="6-10">6-10</option>
+                           <option value="21-50">21-50</option>
+                           <option value="51-above">51-Above</option>
+                        </select>
+
+              </div>
+              <div class="form-group">
+
+                <input type="text" placeholder="Tentative date" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
+                  ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
+                <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+              </div>
+              <button type="submit" class=" btn6 btn-default block" ng-disabled="user.$invalid"><img src="img/new/submit.png" class="img-responsive" alt=""></button>
+            </form>
+            <div class="submit-thank" ng-if="formCompleteAssistance">
+              <p class="text-center">Thank You</p>
+            </div>
+          </div>
            </div>
        </div>
    </div>

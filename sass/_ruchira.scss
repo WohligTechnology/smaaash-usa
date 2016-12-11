@@ -3246,3 +3246,43 @@ padding: 20px;
     margin-top: -40px;
     margin-left: -40px;
 }
+//careers
+.career-options{
+
+  a{
+    &:hover{
+.image-holder{
+  &:before{
+opacity: 1;
+  }
+ h3{
+   opacity: 1;
+ } 
+}
+  }
+  }
+}
+  .image-holder{
+    position: relative;
+  &:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    background-color: rgba(0,0,0,.5);
+    }
+   h3{
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0;
+    z-index: 1;
+   }
+  }
