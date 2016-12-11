@@ -1072,7 +1072,7 @@ TemplateService.removeLoaderOn(3);
 
 .controller('GiftCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
-    $scope.template = TemplateService.changecontent("gift");
+    $scope.template = TemplateService.changecontent("giftcards");
     $scope.menutitle = NavigationService.makeactive("Gift");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();

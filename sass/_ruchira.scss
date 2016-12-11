@@ -3264,6 +3264,7 @@ opacity: 1;
 }
   .image-holder{
     position: relative;
+    margin-top: 10px;
   &:before{
     content: " ";
     position: absolute;
@@ -3286,3 +3287,15 @@ opacity: 1;
     z-index: 1;
    }
   }
+
+.cards{
+  list-style-type: none;
+  margin-top: 15px;
+}
+ .cards:nth-child(1){
+  margin-top: 0;
+}
+.now{
+  width: 200px !important;
+}
+
