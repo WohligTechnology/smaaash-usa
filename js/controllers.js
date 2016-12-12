@@ -1070,6 +1070,14 @@ TemplateService.removeLoaderOn(3);
     $scope.navigation = NavigationService.getnav();
 })
 
+.controller('GiftCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("giftcards");
+    $scope.menutitle = NavigationService.makeactive("Gift");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+})
+
 
 .controller('WishlistCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

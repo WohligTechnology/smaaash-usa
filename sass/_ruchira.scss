@@ -698,7 +698,7 @@ $brand-white:#fff !default;
 
 .drink,
 .event,
-.contact {
+.contact,.careers {
   .greeny {
     color: $brand-green;
   }
@@ -1187,7 +1187,7 @@ background-image: url("../img/corporate/mall.jpg");
 .drink,
 .event,
 .dealings,
-.contact {
+.contact,.careers {
   h3 {
     font-family: $body-font;
     font-size: 30px;
@@ -1937,7 +1937,7 @@ ul {
 
 .side {
   top: 50%;
-  right: -30px;
+  right: -53px;
   transform: rotate(90deg);
 }
 
@@ -2695,6 +2695,9 @@ button {
         .views {
           button {
             border-color: $brand-darkblue;
+            a{
+              color:$brand-darkblue;
+            }
           }
         }
         .bluey {
@@ -2717,6 +2720,9 @@ button {
         .views {
           button {
             border-color: $brand-orangy;
+             a{
+              color:$brand-orangy;
+            }
           }
         }
         .bluey {
@@ -2739,6 +2745,9 @@ button {
         .views {
           button {
             border-color: $brand-pink;
+             a{
+              color:$brand-pink;
+            }
           }
         }
         .bluey {
@@ -2764,6 +2773,9 @@ button {
         .views {
           button {
             border-color: $brand-green;
+             a{
+              color: $brand-green;
+            }
           }
         }
         .bluey {
@@ -2786,6 +2798,9 @@ button {
         .views {
           button {
             border-color: $brand-blue;
+             a{
+              color: $brand-blue;
+            }
           }
         }
         .bluey {
@@ -2808,6 +2823,9 @@ button {
         .views {
           button {
             border-color: $brand-purple;
+             a{
+              color:$brand-purple;
+            }
           }
         }
         .bluey {
@@ -2822,7 +2840,7 @@ button {
     }
   }
 }
-.custom, .stars{
+.custom{
  .col-md-3:nth-child(6n+1),
   .col-md-4:nth-child(6n+1) {
     .karting-championship {
@@ -2834,9 +2852,6 @@ button {
         .views {
           button {
             border-color: $brand-darkblue;
-            a{
-              color: $brand-darkblue;
-            }
           }
         }
         .bluey {
@@ -2861,9 +2876,6 @@ button {
         .views {
           button {
             border-color: $brand-orangy;
-             a{
-              color: $brand-orangy;
-            }
           }
         }
         .bluey {
@@ -2888,9 +2900,6 @@ button {
         .views {
           button {
             border-color: $brand-pink;
-             a{
-              color: $brand-pink;
-            }
           }
         }
         .bluey {
@@ -2915,9 +2924,6 @@ button {
         .views {
           button {
             border-color: $brand-green;
-              a{
-              color: $brand-green;
-            }
           }
         }
         .bluey {
@@ -2942,9 +2948,6 @@ button {
         .views {
           button {
             border-color: $brand-blue;
-            a{
-              color: $brand-blue;
-            }
           }
         }
         .bluey {
@@ -2969,9 +2972,6 @@ button {
         .views {
           button {
             border-color: $brand-purple;
-            a{
-              color: $brand-purple;
-            }
           }
         }
         .bluey {
@@ -3246,3 +3246,56 @@ padding: 20px;
     margin-top: -40px;
     margin-left: -40px;
 }
+//careers
+.career-options{
+
+  a{
+    &:hover{
+.image-holder{
+  &:before{
+opacity: 1;
+  }
+ h3{
+   opacity: 1;
+ } 
+}
+  }
+  }
+}
+  .image-holder{
+    position: relative;
+    margin-top: 10px;
+  &:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    background-color: rgba(0,0,0,.5);
+    }
+   h3{
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0;
+    z-index: 1;
+   }
+  }
+
+.cards{
+  list-style-type: none;
+  margin-top: 15px;
+}
+ .cards:nth-child(1){
+  margin-top: 0;
+}
+.now{
+  width: 200px !important;
+}
+
