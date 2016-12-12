@@ -581,6 +581,9 @@
 }
 
 @media (max-width: $screen-sm-max) {
+  .icons {
+    margin: 0 2px 2px 0;
+  }
   .divider,
   .or {
     display: none;
