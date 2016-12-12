@@ -1939,7 +1939,7 @@ ul {
 
 .side {
   top: 50%;
-  right: -53px;
+  right: -62px;
   transform: rotate(90deg);
 }
 
@@ -1953,6 +1953,7 @@ ul {
     border: 2px solid #000;
     // transform: rotate(-90deg);
       p {
+        letter-spacing: 2px;
     font-family: $body-font;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
   }
