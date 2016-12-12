@@ -1256,6 +1256,9 @@ background-image: url("../img/corporate/mall.jpg");
     h3 {
       font-size: 20px;
       margin: 10px 0;
+      a{
+        color:#000;
+      }
     }
   }
 }
@@ -1958,7 +1961,7 @@ ul {
       p {
         letter-spacing: 2px;
     font-family: $body-font;
-    // text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    text-shadow: -2px 1px 0 #000, 1px -1px 0 #000,-2px 1px 0 #000, 1px -1px 0 #000;
   }
   .orange-rays {
     position: absolute;
@@ -3308,3 +3311,21 @@ opacity: 1;
  .tops{
       top:80%;
     }
+.map{
+  a{
+    display: block;
+    height: 100px;
+    width: 280px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.conects{
+ background-color: rgba(119, 119, 119, 0.81);
+}
+
+
+
+

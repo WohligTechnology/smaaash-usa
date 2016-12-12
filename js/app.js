@@ -592,6 +592,7 @@ firstapp.directive('scrolldown', function ($compile, $parse) {
         replace: false,
         link: function ($scope, element, attrs) {
             var $element = $(element);
+            //  var height = 200;
             // var windowHeight = $(window).height();
             $scope.scrollDown = function () {
                 $scope.startVideo=false;

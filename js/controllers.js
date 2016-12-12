@@ -1907,12 +1907,22 @@ $scope.incorrect =true;
 
 
 })
-.controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("careers");
     $scope.menutitle = NavigationService.makeactive("Careers");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.carer=function(){
+ $uibModal.open({
+                animation: true,
+                templateUrl: "views/modal/careers.html",
+                scope: $scope,
+            })
+    };
+
+    
+       
 })
 
 .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
