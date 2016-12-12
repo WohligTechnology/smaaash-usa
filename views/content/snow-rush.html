@@ -44,17 +44,17 @@
                 </div>
                 <div class="slant-column pull-right">
                     <div class="slant-box half-height">
-                        <h2>timings and pricing</h2>
+                        <h2>pricing</h2>
                         <div ng-bind-html="detailExploreSmaash.timingAndPricing">
                         </div>
                         <div ng-if="detailExploreSmaash.timingAndPricing.length == 0">
-                            No Timing Available
+                            No Pricing Available
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="gallery">
+        <div class="gallery" ng-if="detailExploreSmaash.gallery.length>0">
             <div class="slidings">
                 <h2 class="title slide-text">gallery</h2>
                 <flex-slider class="carousel" flex-slide="s in detailExploreSmaash.gallery track by $index" item-width="250" animation="slide"
