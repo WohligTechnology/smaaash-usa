@@ -60,7 +60,7 @@
         <!-- <div ng-if="notAvailable" class="text-center">Nothing Available</div> -->
         <div class="col-md-4 col-sm-4" ng-repeat="d in data">
           <div class="karting-championship">
-            <div class="brand-blue relative pointer">
+            <div class="brand-blue relative pointer" fancybox-box href="{{d.image|uploadpath}}">
               <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="">
               <a href="" class="pink-button" ng-if="d.url"><img src="img/home/button.png" class="img-responsive" alt=""></a>
             </div>
