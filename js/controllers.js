@@ -12,8 +12,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     var openL = {};
     $scope.currentdate = new Date();
-
-
     var fired = false;
     $scope.onScrollStopVideo = function() {
         window.addEventListener("scroll", function() {
@@ -937,6 +935,7 @@ TemplateService.removeLoaderOn(3);
         }
     };
 
+
     $scope.male = '';
     $scope.female = '';
     $scope.children = '';
@@ -1145,6 +1144,7 @@ TemplateService.removeLoaderOn(3);
     $scope.navigation = NavigationService.getnav();
     $scope.menu = "menu-out";
       TemplateService.removeLoaderOn(2);
+
     $scope.getMenu = function() {
         if ($scope.menu == "menu-out") {
             $scope.menu = "menu-in";
