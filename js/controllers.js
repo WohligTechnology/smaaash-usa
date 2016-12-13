@@ -1075,6 +1075,11 @@ TemplateService.removeLoaderOn(3);
     $scope.menutitle = NavigationService.makeactive("Gift");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+$scope.submitGiftCard=function(formData){
+  console.log("formData",formData);
+  
+}
 })
 
 
@@ -1930,8 +1935,8 @@ $scope.incorrect =true;
             })
     };
 
-    
-       
+
+
 })
 
 .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
