@@ -99,7 +99,7 @@
                             <a ui-sref="event({id:eventId})" class="text-center">
                                 <h1 class="nav-name "><span class="block">events &amp;</span> challenges</h3>
                             </a>
-                            
+
                         </div>
                     </div>
                     <div class="col-flexing mobile-50">
@@ -243,21 +243,14 @@
 
                                     <div class="error-msg" ng-show="signUp.mobile.$error.required && signUp.mobile.$touched">Please enter your mobile no. </div>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <select name="categorydata" class="form-control" ng-model="signupData.CustomerAddress" required>
-                              <option ng-selected="true" value="">Please select city</option>
-                              <option value="{{d._id}}" ng-repeat="d in getCity">{{d.name}}</option>
 
-                           </select>
-                                    <div class="error" ng-if="validCity">Please select valid city.</div>
-                                </div> -->
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Password" name="password" required ng-model="signupData.CustomerPassword"
                                         minlength="8" ng-maxlength="14">
                                     <div class="error-msg" ng-show="signUp.password.$error.required && signUp.password.$touched">Please Enter Your Password</div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Re-Enter Password" name="confirmPassword" required ng-model="signupData.confirmPassword">
+                                    <input type="password" class="form-control" placeholder="Re-Enter Password" name="confirmPassword" required ng-model="signupData.confirmPassword" no-paste>
                                     <div class="error-msg" ng-show="signUp.confirmPassword.$error.required && signUp.confirmPassword.$touched">Please Re-Enter Your Password</div>
                                 </div>
                                 <div class="error" ng-if="!pass">password doesn't match or It should be Minimum 8 Characters & Maximum 14 Characters.</div>
