@@ -514,7 +514,6 @@ firstapp.directive('noPaste', function ($filter) {
   };
 });
 
->>>>>>> 7fce3616cd6377fd9073edd1387d09402466f905
 firstapp.filter('uploadpath', function () {
     return function (input, width, height, style) {
         var other = "";
