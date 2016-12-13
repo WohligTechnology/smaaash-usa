@@ -105,7 +105,7 @@
         </div>
       </div>
     </div>
-    <div class="packagings ">
+    <div class="packagings hidden-xs">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
           <div class="slant-col relative ">
@@ -136,7 +136,7 @@
                 <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25"></h3>
               </div>
               <div class="min-h">
-                <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
+                <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:120}}</p>
                 <p ng-show="moreDesc[data._id]">{{myDesc | htmlToPlaintext}}</p>
                 <p ng-if="!data.description"> No data found</p>
                 <span class="capitalize bluey" ng-if="data.description.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">read more</span>

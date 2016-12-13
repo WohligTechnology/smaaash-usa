@@ -575,12 +575,21 @@
     margin-top: 10px;
   }
 }
-.mt20{
-  margin-top: 20px;
+.mt35{
+  margin-top: 35px;
 }
 }
 
 @media (max-width: $screen-sm-max) {
+  .about .half-height {
+    margin-top: 10px;
+}
+.min-heights{
+  min-height: 220px;
+}
+  .min{
+    min-height: 330px;
+  }
   .icons {
     margin: 0 2px 2px 0;
   }
@@ -648,7 +657,7 @@
       font-size: 20px !important;
     }
     .new-detail {
-      height: 400px;
+      height: 260px;
       p {
         margin: 10px 0;
         span {
@@ -930,7 +939,7 @@
 }
 
 .events1 .new-detail ,.deals2{
-    min-height: 455px;
+  min-height: 220px;
 .love{
   button{
     padding: 10px;
@@ -951,9 +960,9 @@
   }
 }
 .drink{
-   .new-detail{
-    min-height: 615px !important;
-  }
+   .new-detail {
+    min-height: 315px !important;
+}
   .tripadvisor-reviews ul{
     border:none;
   }
@@ -1046,7 +1055,7 @@ li{
 }
 
   .host-pop{
-   width: 65%;
+   width: 85%;
     h3{
       font-size: 14px;
     }
