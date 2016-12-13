@@ -502,6 +502,7 @@ firstapp.directive('img', function($compile, $parse) {
     };
 });
 
+
 firstapp.directive('noPaste', function ($filter) {
   return {
     scope: {},

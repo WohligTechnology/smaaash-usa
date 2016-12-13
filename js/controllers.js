@@ -1,7 +1,7 @@
 var globalfunction = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $state, $filter, ngDialog) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService,$location, $timeout,$stateParams, $uibModal, $state, $filter, ngDialog) {
 
     //Used to name the .html file
       TemplateService.removeLoaderOn(2);
@@ -9,7 +9,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-
+    
     var openL = {};
     $scope.currentdate = new Date();
 
@@ -1652,15 +1652,24 @@ $scope.submitGiftCard=function(formData){
 
 
 
-.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal) {
+.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout,$filter,$stateParams, $uibModal) {
     $scope.template = TemplateService.changecontent("host-party");
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = window.location.href;
     TemplateService.removeLoaderOn(2);
-
-
+     $scope.$on('$viewContentLoaded', function(event) {
+      $timeout(function() {
+          var iframe = document.getElementById('externalForm');
+    console.log(iframe)
+    iframedoc =iframe.contentDocument || iframe.contentWindow.document;
+    iframedoc.body.innerHTML= "<script src='https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21'></script>";
+    // console.log(window.encodeURI(e));
+    console.log(document.getElementById('externalForm'))
+    
+      },100);
+    });
     $scope.mySlides10 = [
         'img/Top-banner.jpg',
         'img/Top-banner.jpg',
