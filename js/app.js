@@ -179,6 +179,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         templateUrl: "views/template.html",
         controller: 'CartsCtrl'
     })
+       .state('terms', {
+        url: "/terms",
+        templateUrl: "views/template.html",
+        controller: 'TermsCtrl'
+    })
 
 
     .state('whats-new', {

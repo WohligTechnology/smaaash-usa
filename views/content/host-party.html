@@ -36,15 +36,15 @@
   <div class="container relative">
     <div class="form-content">
       <div class="row">
-        <div class="col-md-4 col-sm-4 hidden-xs"></div>
-        <div class="col-md-4  col-sm-4  hidden-xs"></div>
+        <div class="col-md-4 col-sm-4 hidden-xs "></div>
+        <div class="col-md-4  col-sm-4  hidden-xs "></div>
         <div class="col-md-4  col-sm-4 col-xs-12">
           <div class="practice">
             <!--<iframe id="externalForm" />-->
               <!--<script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21"></script>-->
-            <!--<form class="form" name="user" ng-submit="assistanceLogin(formData)" ng-if="!formCompleteAssistance">
+            <form class="form">
               <h3 class="text-center">Need assistance?</h3>
-              <div class="form-group relative">
+              <!--<div class="form-group relative">
                 <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
                 <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
                 <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name </div>
@@ -97,37 +97,41 @@
                 <input type="text" placeholder="Tentative date" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
                   ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
                 <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
-              </div>
-              <button type="submit" class=" btn6 btn-default block" ng-disabled="user.$invalid"><img src="img/new/submit.png" class="img-responsive" alt=""></button>
-            </form>-->
+              </div>-->
+              <button type="submit" class=" btn6 btn-default block">
+                <a target="_blank" href="https://smaaash.tripleseat.com/party_request/4755">
+  <img src="img/new/submit.png" class="img-responsive" alt="">
+                </a>
+              </button>
+            </form>
           
-            <div class="submit-thank" ng-if="formCompleteAssistance">
+            <!--<div class="submit-thank" ng-if="formCompleteAssistance">
               <p class="text-center">Thank You</p>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
     </div>
-    <div class="packagings hidden-xs">
-      <div class="row">
+    <!--<div class="packagings hidden-xs ">
+      <div class="row hiddem-md hidden-sm">
         <div class="col-md-4 col-sm-4 col-xs-12">
           <div class="slant-col relative ">
-            <div class="slant-box full-height">
-              <!--<div class="special">
+            <div class="slant-box ">
+              <div class="special">
                 <img src="img/newest/party.jpg" class="img-responsive" alt="">
-              </div>-->
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <!--<div class="image-chefing pointer" ui-sref="customizepackage">
+          <div class="image-chefing pointer" ui-sref="customizepackage">
             <img src="img/newest/chefing.jpg" class="img-responsive" alt="">
-          </div>-->
+          </div>
 
         </div>
       </div>
 
-    </div>
+    </div>-->
     <div class="new">
       <div class="row" ng-repeat="datas in SingleHostParty">
         <div class="col-md-4 col-sm-4" ng-repeat="data in datas">

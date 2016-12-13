@@ -256,7 +256,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnlines = [{
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
-        id: '57bc4b2aeb9c91f1025a3b55'
+        id: '584fcfa08635b956ba8e1db2'
     }, {
         img: 'img/new/parties.jpg',
         text: ' parties',
@@ -330,6 +330,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.removeLoader();
     });
 
+})
+
+.controller('TermsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("terms");
+    $scope.menutitle = NavigationService.makeactive("Terms");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    TemplateService.removeLoaderOn(1);
 })
 
 .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
@@ -1658,17 +1667,17 @@ $scope.submitGiftCard=function(formData){
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = window.location.href;
     TemplateService.removeLoaderOn(2);
-     $scope.$on('$viewContentLoaded', function(event) {
-      $timeout(function() {
-          var iframe = document.getElementById('externalForm');
-    console.log(iframe)
-    iframedoc =iframe.contentDocument || iframe.contentWindow.document;
-    iframedoc.body.innerHTML= "<script src='https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21'></script>";
-    // console.log(window.encodeURI(e));
-    console.log(document.getElementById('externalForm'))
+    //  $scope.$on('$viewContentLoaded', function(event) {
+    //   $timeout(function() {
+    //       var iframe = document.getElementById('externalForm');
+    // console.log(iframe)
+    // iframedoc =iframe.contentDocument || iframe.contentWindow.document;
+    // iframedoc.body.innerHTML= "<script src='https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21'></script>";
+    // // console.log(window.encodeURI(e));
+    // console.log(document.getElementById('externalForm'))
     
-      },100);
-    });
+    //   },100);
+    // });
     $scope.mySlides10 = [
         'img/Top-banner.jpg',
         'img/Top-banner.jpg',

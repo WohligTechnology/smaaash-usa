@@ -12,16 +12,16 @@
                         <div class="img-bg">
                             <img ng-src="{{data.homeimage|uploadpath}}" class="img-responsive" alt="">
                         </div>
-                        <div class="restaurants">
+                        <!--<div class="restaurants">
                             <span>restaurants</span>
-                        </div>
+                        </div>-->
                         <div class="new-detail">
                             <div class="min-h">
                                 <h3 class="margin0 uppercase" ng-bind-html="data.hometext"></h3>
                             </div>
                             <div class="button-sets text-center">
-                                <button class="uppercase large green" ng-click="bookings();">reservations</button>
-                                <!--<button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>-->
+                                <!--<button class="uppercase large green" ng-click="bookings();">reservations</button>-->
+                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>
                             </div>
                             <div class="min-h">
                                 <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
