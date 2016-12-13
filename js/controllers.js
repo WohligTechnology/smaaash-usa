@@ -1139,16 +1139,16 @@ $scope.submitGiftCard=function(formData){
 
         }
     }
-    $scope.kittyParty = function(hostAPartyType) {
+    // $scope.kittyParty = function(hostAPartyType) {
 
-        $scope.enquiryData.hostAPartyType = hostAPartyType;
-        $scope.modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: "views/modal/enquiry.html",
-            scope: $scope
+    //     $scope.enquiryData.hostAPartyType = hostAPartyType;
+    //     $scope.modalInstance = $uibModal.open({
+    //         animation: true,
+    //         templateUrl: "views/modal/enquiry.html",
+    //         scope: $scope
 
-        })
-    };
+    //     })
+    // };
 })
 
 .controller('CustomizePackageCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
