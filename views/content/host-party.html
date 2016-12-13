@@ -16,15 +16,15 @@
 
   <div class="smaash-drops hidden-lg hidden-md hidden-sm">
     <div class="slidings">
-      <flex-slider class="carousel" flex-slide="s in mySlides10 track by $index" manual-controls=".custom-pagination li" animation="slide"
+      <flex-slider class="carousel" flex-slide="s in hostPartySlider track by $index" manual-controls=".custom-pagination li" animation="slide"
         animationLoop="true" direction-nav="false">
         <li>
-          <img ng-src="{{s}}">
+          <img ng-src="{{s.image|uploadpath}}">
         </li>
       </flex-slider>
       <ul class="custom-pagination list-inline">
-        <li>1</li>
-        <li>2</li>
+        <li ng-repeat="s in hostPartySlider track by $index">{{s.order}}</li>
+       
       </ul>
     </div>
 
