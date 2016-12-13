@@ -272,7 +272,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         templateUrl: "views/template.html",
         controller: 'RechargeCtrl'
     })
-    
+
     .state('careers', {
         url: "/careers",
         templateUrl: "views/template.html",
@@ -501,6 +501,18 @@ firstapp.directive('img', function($compile, $parse) {
         }
     };
 });
+
+firstapp.directive('noPaste', function ($filter) {
+  return {
+    scope: {},
+    link: function (scope, element) {
+      element.on('cut copy paste', function (event) {
+        event.preventDefault();
+      });
+    }
+  };
+});
+
 firstapp.filter('uploadpath', function () {
     return function (input, width, height, style) {
         var other = "";
@@ -526,7 +538,7 @@ firstapp.filter('uploadpath', function () {
 
 firstapp.filter('uploadprofilepicture', function () {
     return function (input, width, height, style) {
-      
+
         var other = "";
         if (width && width != "") {
             other += "&width=" + width;
