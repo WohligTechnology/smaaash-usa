@@ -40,7 +40,9 @@
         <div class="col-md-4  col-sm-4  hidden-xs"></div>
         <div class="col-md-4  col-sm-4 col-xs-12">
           <div class="practice">
-            <form class="form" name="user" ng-submit="assistanceLogin(formData)" ng-if="!formCompleteAssistance">
+            <!--<iframe id="externalForm" />-->
+              <!--<script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21"></script>-->
+            <!--<form class="form" name="user" ng-submit="assistanceLogin(formData)" ng-if="!formCompleteAssistance">
               <h3 class="text-center">Need assistance?</h3>
               <div class="form-group relative">
                 <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
@@ -70,7 +72,7 @@
                         </select>
 
               </div>
-              <!--<div class="form-group ">
+              <div class="form-group ">
                 <div class="radio">
                   <input type="radio" id="radio4" name="assistancefor" value="Adults" ng-model="formData.assistancefor" required>
                   <label for="radio4">
@@ -79,7 +81,7 @@
                   <label for="radio3">
                               <span></span> Children</label>
                 </div>
-              </div>-->
+              </div>
               <div class="form-group">
                 <select name="categorydata" class="form-control" ng-model="formData.noofpeople" required>
                            <option ng-selected="true" value="">Please select no. Of people</option>
@@ -97,7 +99,8 @@
                 <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
               </div>
               <button type="submit" class=" btn6 btn-default block" ng-disabled="user.$invalid"><img src="img/new/submit.png" class="img-responsive" alt=""></button>
-            </form>
+            </form>-->
+          
             <div class="submit-thank" ng-if="formCompleteAssistance">
               <p class="text-center">Thank You</p>
             </div>

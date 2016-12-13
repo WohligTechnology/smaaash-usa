@@ -501,6 +501,10 @@ firstapp.directive('img', function($compile, $parse) {
         }
     };
 });
+firstapp.filter('urlEncode', [function() {
+
+    return window.encodeURIComponent;
+}]);
 firstapp.filter('uploadpath', function () {
     return function (input, width, height, style) {
         var other = "";
