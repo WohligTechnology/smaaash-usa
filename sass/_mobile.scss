@@ -581,6 +581,9 @@
 }
 
 @media (max-width: $screen-sm-max) {
+  .about .half-height {
+    margin-top: 10px;
+}
 .min-heights{
   min-height: 220px;
 }
@@ -936,7 +939,7 @@
 }
 
 .events1 .new-detail ,.deals2{
-    min-height: 455px;
+  min-height: 220px;
 .love{
   button{
     padding: 10px;
@@ -1052,7 +1055,7 @@ li{
 }
 
   .host-pop{
-   width: 65%;
+   width: 85%;
     h3{
       font-size: 14px;
     }
