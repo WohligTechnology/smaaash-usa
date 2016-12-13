@@ -40,7 +40,7 @@ var navigationservice = angular.module('navigationservice', [])
             return menuname;
         },
 
-        getCity: function(callback) {
+        getAllCityByOrder: function(callback) {
             $http({
                 url: adminurl + 'city/getAllCityByOrder',
                 method: 'POST',
@@ -189,7 +189,7 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
 
-      
+
 
 
 

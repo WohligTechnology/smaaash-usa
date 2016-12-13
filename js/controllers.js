@@ -661,10 +661,11 @@ TemplateService.removeLoaderOn(3);
     //     console.log("$scope.mediagallery", $scope.mediagallery);
     //     TemplateService.removeLoader();
     // });
-    NavigationService.getCity(function(data) {
-        $scope.allCity = data.data;
-        console.log("allCity", $scope.allCity);
-        TemplateService.removeLoader();
+    NavigationService.getAllCityByOrder(function(data) {
+      console.log("data",data);
+        // $scope.allCity = data.data;
+        // console.log("allCity", $scope.allCity);
+        // TemplateService.removeLoader();
     });
 
 
@@ -680,7 +681,7 @@ TemplateService.removeLoaderOn(3);
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(2);
 
-    NavigationService.getCity(function(data) {
+    NavigationService.getAllCityByOrder(function(data) {
         $scope.allCity = data.data;
         console.log("allCity", $scope.allCity);
         // TemplateService.removeLoader();
@@ -1078,7 +1079,7 @@ TemplateService.removeLoaderOn(3);
     $scope.formData={};
 $scope.submitGiftCard=function(formData){
   console.log("formData",formData);
-  
+
 }
 })
 
@@ -1360,7 +1361,7 @@ $scope.submitGiftCard=function(formData){
         } else {}
 
     }
-    NavigationService.getCity(function(data) {
+    NavigationService.getAllCityByOrder(function(data) {
         $scope.allCity = data.data;
         TemplateService.removeLoader();
     });
@@ -2316,18 +2317,23 @@ $scope.incorrect =true;
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.drinkParty1 = data.data;
         $scope.drinkParty = _.chunk(data.data, 3);
-        $scope.readMore = function(id) {
 
-
-            $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-
-            $scope.myDesc = _.find($scope.drinkParty1, function(n) {
-                return n._id == id;
-
-            }).description;
-        };
         TemplateService.removeLoader();
     });
+
+    $scope.readMore = function(id) {
+      console.log("id",id);
+      console.log("$scope.moreDesc[id]",$scope.moreDesc[id]);
+      // $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+      $scope.moreDesc[id] = !$scope.moreDesc[id];
+        console.log("$scope.drinkParty",$scope.drinkParty);
+        // _.each($scope.drinkParty)
+      $scope.myDesc = _.find($scope.drinkParty1, function(n) {
+            return n._id == id;
+
+
+        }).description;
+    };
     $scope.imagesmodal = function() {
         $uibModal.open({
             animation: true,
@@ -3179,25 +3185,6 @@ $scope.incorrect =true;
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
-        TemplateService.removeLoaderOn(1);
-        $scope.getCity = function() {
-            NavigationService.getCity(function(data) {
-                if (data.value) {
-                    $scope.getCity = data.data;
-                    if ($.jStorage.get("city") === null || $.jStorage.get('city') === '') {
-                        var mumbai = _.find($scope.getCity, function(key) {
-                            if (key.name.toLowerCase() == "mumbai") {
-                                return key;
-                            }
-                        });
-                        $scope.getCityName(mumbai);
-                    }
-                      TemplateService.removeLoader();
-                }
-
-            });
-        }
-        $scope.getCity();
 
 
         $scope.currentdate = new Date();
@@ -3209,15 +3196,14 @@ $scope.incorrect =true;
         $scope.toggleCity = function() {
             $scope.city = !$scope.city;
         };
-        $scope.getCityName = function(cityname) {
-            console.log("cityname", cityname);
-            $.jStorage.set("cityid", cityname._id);
-            $.jStorage.set("city", cityname.name);
-            $.jStorage.set("logos", cityname.logo);
-            $.jStorage.set("branchId", cityname.BranchID);
 
-            $state.reload();
-        }
+        NavigationService.getAllCityByOrder(function(data){
+          $.jStorage.set("cityid", data.data[0]._id);
+          $.jStorage.set("city",data.data[0].name);
+          $.jStorage.set("logos", data.data[0].logo);
+          $.jStorage.set("branchId", data.data[0].BranchID);
+        });
+
 
         $scope.template.reFetchCity = function() {
             $scope.cityData = {

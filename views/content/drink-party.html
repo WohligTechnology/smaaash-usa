@@ -21,11 +21,11 @@
                             </div>
                             <div class="button-sets text-center">
                                 <button class="uppercase large green" ng-click="bookings();">reservations</button>
-                                <!--<button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>-->
+
                             </div>
                             <div class="min-h">
-                                <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
-                                <p ng-show="moreDesc[data._id]">{{myDesc| htmlToPlaintext}}</p>
+                                <p ng-if="!moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
+                                <p ng-if="moreDesc[data._id]">{{myDesc| htmlToPlaintext}}</p>
 
                                 <div ng-if="!data.description">No description</div>
 
