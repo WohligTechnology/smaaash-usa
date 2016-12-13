@@ -9,7 +9,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    
+
     var openL = {};
     $scope.currentdate = new Date();
 
@@ -1676,7 +1676,7 @@ $scope.submitGiftCard=function(formData){
     // iframedoc.body.innerHTML= "<script src='https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21'></script>";
     // // console.log(window.encodeURI(e));
     // console.log(document.getElementById('externalForm'))
-    
+
     //   },100);
     // });
     $scope.mySlides10 = [
@@ -3196,10 +3196,7 @@ $scope.incorrect =true;
         $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
         $scope.promotionId = "57bc4b36eb9c91f1025a3b56";
         $scope.template = TemplateService;
-        $scope.city = true;
-        if ($.jStorage.get("city") === 'Mumbai') {
-            $scope.showlogo = true;
-        }
+
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
@@ -3288,6 +3285,7 @@ $scope.incorrect =true;
                             if (data.value === true) {
                                 $scope.otp();
                             } else {
+                              $scope.noOTP=true;
                                 console.log("data in false", data);
                             }
                         });
