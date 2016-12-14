@@ -930,7 +930,7 @@ TemplateService.removeLoaderOn(3);
 
 })
 
-.controller('AttractionCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal) {
+.controller('AttractionCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("attractions");
     $scope.menutitle = NavigationService.makeactive("Attractions");
@@ -945,6 +945,13 @@ TemplateService.removeLoaderOn(3);
             $scope.menu = "menu-out";
         }
     };
+    $scope.goTo=function(name,id){
+      if (name,id) {
+        $scope.name = name.replace(/\s/g,'').toLowerCase();
+        $state.go('snow-rush',{name:$scope.name,id:id});
+      }
+
+    }
 
     $scope.male = '';
     $scope.female = '';
