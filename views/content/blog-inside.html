@@ -111,8 +111,8 @@ Next Blog
                         </div>
                         <div class="may-like">
                            <h4>You May Also Like</h4>
-                           <div class="row">
-                              <div class="col-md-6" ng-repeat=" data in blogInside.youMayLike">
+                           <div class="row" ng-repeat="blogInside in youMayLike">
+                              <div class="col-md-6" ng-repeat="data in blogInside">
                                  <div class="race-eve relative pointer margno">
                                     <div class="img-bg">
                                        <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">

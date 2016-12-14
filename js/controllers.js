@@ -2339,19 +2339,27 @@ $scope.incorrect =true;
         TemplateService.removeLoader();
     });
 
+
     $scope.readMore = function(id) {
       console.log("id",id);
-      console.log("$scope.moreDesc[id]",$scope.moreDesc[id]);
-      // $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-      $scope.moreDesc[id] = !$scope.moreDesc[id];
-        console.log("$scope.drinkParty",$scope.drinkParty);
-        // _.each($scope.drinkParty)
+      $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+      console.log("$scope.drinkParty",$scope.drinkParty);
       $scope.myDesc = _.find($scope.drinkParty1, function(n) {
             return n._id == id;
-
-
-        }).description;
+          }).description;
     };
+
+    // $scope.readMore = function(id,index) {
+    //   console.log("id",id,index);
+    //   $scope.moreDesc[index] = ($scope.moreDesc[index] == true) ? false : true;
+    //   console.log("$scope.drinkParty",$scope.drinkParty);
+    //   $scope.myDesc = _.find($scope.drinkParty1, function(n) {
+    //       $scope.moreDesc[index] = ($scope.moreDesc[index] == true) ? false : true;
+    //         return n._id == id;
+    //       }).description;
+    //     console.log("$scope.myDesc",$scope.myDesc);
+    // };
+
     $scope.imagesmodal = function() {
         $uibModal.open({
             animation: true,
@@ -3138,6 +3146,7 @@ $scope.incorrect =true;
         } else {
             $scope.blogInside.popularBlog = data.data.popularBlog;
         }
+          $scope.youMayLike=_.chunk($scope.blogInside.youMayLike,2);
           TemplateService.removeLoader();
     });
 
