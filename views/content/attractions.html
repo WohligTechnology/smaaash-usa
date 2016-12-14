@@ -48,7 +48,7 @@
             </div>
             <div class="new-detail">
               <div class="views inline-block">
-                <button class="uppercase bluey" ui-sref="snow-rush({id:d._id})">view</button>
+                <button class="uppercase bluey" ui-sref="snow-rush({name:d.hometext,id:d._id})">view</button>
               </div>
               <div class="min-h">
                 <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ui-sref="snow-rush({id:d._id})"></h3>
