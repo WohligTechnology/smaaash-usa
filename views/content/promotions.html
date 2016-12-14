@@ -15,27 +15,27 @@
               <!-- <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                 class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="d.video"></a> -->
             </div>
-            <div class="new-detail">
+            <!--<div class="new-detail">
               <div class="views inline-block">
                 <button class="uppercase bluey" ui-sref="promotion-inner({id:data._id})">view</button>
               </div>
               <div class="min-last">
                 <h3 class="margin0 bluey pointer" ng-bind-html="data.hometext | shorten :25"  ui-sref="promotion-inner"></h3>
                  <p class="" ng-bind-html="data.description | htmlToPlaintext | shorten :130"></p>
-                <!--<p ng-hide="d.gameforarray==''">Game For:
+                <p ng-hide="d.gameforarray==''">Game For:
                   <span class="bluey capitalize">
                              <span ng-repeat="per in d.gameforarray track by $index">{{per}} <span ng-if="$index<d.gameforarray.length-2">|</span>
                   <span ng-if="$index==d.gameforarray.length-2">&</span> </span>
                   </span>
-                </p>-->
+                </p>
               </div>
               <div class="button-set">
                 <button class="uppercase blue">buy now</button>
               </div>
-              <!--<div class="love">
+              <div class="love">
                 <button class="uppercase" ng-click="addedToWishList(data._id);"><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(data._id),'fa-heart':isInWishlist(data._id)}" style="color:red;"></i>would love to try</button>
-              </div>-->
-            </div>
+              </div>
+            </div>-->
           </div>
         </div>
         <div ng-if="msg" class="text-center">No Options Available As Per Your Criteria.</div>
