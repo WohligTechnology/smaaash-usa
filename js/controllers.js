@@ -945,15 +945,6 @@ TemplateService.removeLoaderOn(3);
             $scope.menu = "menu-out";
         }
     };
-   
-  
-    $scope.gotoSnowRush=function(name,id){
-        if(name && id){
-            $state.go('snow-rush',{id:id});
-           
-        }
-
-    }
 
     $scope.male = '';
     $scope.female = '';
