@@ -1,10 +1,10 @@
 var globalfunction = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService,$location, $timeout,$stateParams, $uibModal, $state, $filter, ngDialog) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $location, $timeout, $stateParams, $uibModal, $state, $filter, ngDialog) {
 
     //Used to name the .html file
-      TemplateService.removeLoaderOn(2);
+    TemplateService.removeLoaderOn(2);
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
@@ -101,7 +101,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
             });
-                TemplateService.removeLoader();
+            TemplateService.removeLoader();
         }
 
 
@@ -121,15 +121,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value) {
             $scope.homeContent = data.data;
             $scope.content = _.groupBy($scope.homeContent, "type.name");
-          console.log("deals", $scope.content);
-            $scope.attraction = $scope.content.Attraction;
-            $scope.whatsnew = $scope.content["What's new"];
-            $scope.hostParty = $scope.content["Host a party"];
-            $scope.deals = $scope.content["Deals and Packages"];
-            console.log("deals", $scope.deals);
-            $scope.events = $scope.content["Events"];
-            $scope.foodBeverages = $scope.content["Food and Beverages"];
-            $scope.promotion = $scope.content["Promotions"];
+            console.log("deals", $scope.content);
+            $scope.attraction = $filter('orderBy')($scope.content.Attraction, '-order');
+            $scope.whatsnew = $filter('orderBy')($scope.content["What's new"], '-order');
+            $scope.hostParty = $filter('orderBy')($scope.content["Host a party"], '-order');
+            $scope.deals = $filter('orderBy')($scope.content["Deals and Packages"], '-order');
+            $scope.events = $filter('orderBy')($scope.content["Events"], '-order');
+            $scope.foodBeverages = $filter('orderBy')($scope.content["Food and Beverages"], '-order');
+            $scope.promotion = $filter('orderBy')($scope.content["Promotions"], '-order');
             TemplateService.removeLoader();
         } else {}
 
@@ -586,7 +585,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Stars");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-TemplateService.removeLoaderOn(3);
+    TemplateService.removeLoaderOn(3);
     $scope.menu = "menu-out";
     $scope.getMenu = function() {
         if ($scope.menu == "menu-out") {
@@ -633,7 +632,7 @@ TemplateService.removeLoaderOn(3);
                     console.log("in else last array");
                     $scope.noviewmore = false;
                 }
-                  TemplateService.removeLoader();
+                TemplateService.removeLoader();
             }
 
         })
@@ -663,7 +662,7 @@ TemplateService.removeLoaderOn(3);
             }
 
             $scope.stars = data.data.data
-              TemplateService.removeLoader();
+            TemplateService.removeLoader();
         })
     };
 
@@ -673,7 +672,7 @@ TemplateService.removeLoaderOn(3);
     //     TemplateService.removeLoader();
     // });
     NavigationService.getAllCityByOrder(function(data) {
-      console.log("data",data);
+        console.log("data", data);
         // $scope.allCity = data.data;
         // console.log("allCity", $scope.allCity);
         // TemplateService.removeLoader();
@@ -734,7 +733,7 @@ TemplateService.removeLoaderOn(3);
                     console.log("in else last array");
                     $scope.noviewmore = false;
                 }
-                  TemplateService.removeLoader();
+                TemplateService.removeLoader();
             }
 
         })
@@ -766,7 +765,7 @@ TemplateService.removeLoaderOn(3);
             //     $scope.noviewmore = false;
             // }
             $scope.mediagallery = data.data.data
-              TemplateService.removeLoader();
+            TemplateService.removeLoader();
         })
     };
 
@@ -947,11 +946,14 @@ TemplateService.removeLoaderOn(3);
             $scope.menu = "menu-out";
         }
     };
-    $scope.goTo=function(name,id){
-      if (name,id) {
-        $scope.name = name.replace(/\s/g,'').toLowerCase();
-        $state.go('snow-rush',{name:$scope.name,id:id});
-      }
+    $scope.goTo = function(name, id) {
+        if (name, id) {
+            $scope.name = name.replace(/\s/g, '').toLowerCase();
+            $state.go('snow-rush', {
+                name: $scope.name,
+                id: id
+            });
+        }
 
     }
 
@@ -1094,11 +1096,11 @@ TemplateService.removeLoaderOn(3);
     $scope.menutitle = NavigationService.makeactive("Gift");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.formData={};
-$scope.submitGiftCard=function(formData){
-  console.log("formData",formData);
+    $scope.formData = {};
+    $scope.submitGiftCard = function(formData) {
+        console.log("formData", formData);
 
-}
+    }
 })
 
 
@@ -1128,27 +1130,27 @@ $scope.submitGiftCard=function(formData){
     $scope.enquiryData = {};
     $scope.enquiryData.hostAPartyType = ""
     $scope.formSubmit = function(enquiryData) {
-        if (enquiryData) {
-            enquiryData.city = $.jStorage.get("cityid");
-            NavigationService.eventInnerForm(enquiryData, function(data) {
+            if (enquiryData) {
+                enquiryData.city = $.jStorage.get("cityid");
+                NavigationService.eventInnerForm(enquiryData, function(data) {
 
-                if (data.value === true) {
-                    $scope.formComplete = true;
+                    if (data.value === true) {
+                        $scope.formComplete = true;
 
-                    $timeout(function() {
-                        $scope.modalInstance.close();
-                        $scope.formComplete = false;
-                        $scope.enquiryData = {};
+                        $timeout(function() {
+                            $scope.modalInstance.close();
+                            $scope.formComplete = false;
+                            $scope.enquiryData = {};
 
-                    }, 2000);
-                } else {
+                        }, 2000);
+                    } else {
 
-                }
-            })
+                    }
+                })
 
+            }
         }
-    }
-    // $scope.kittyParty = function(hostAPartyType) {
+        // $scope.kittyParty = function(hostAPartyType) {
 
     //     $scope.enquiryData.hostAPartyType = hostAPartyType;
     //     $scope.modalInstance = $uibModal.open({
@@ -1167,7 +1169,7 @@ $scope.submitGiftCard=function(formData){
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.menu = "menu-out";
-      TemplateService.removeLoaderOn(2);
+    TemplateService.removeLoaderOn(2);
 
     $scope.getMenu = function() {
         if ($scope.menu == "menu-out") {
@@ -1530,7 +1532,7 @@ $scope.submitGiftCard=function(formData){
     $scope.menutitle = NavigationService.makeactive("Snow Rush");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-  TemplateService.removeLoaderOn(1);
+    TemplateService.removeLoaderOn(1);
     $scope.$on('$viewContentLoaded', function() {
         $(window).scroll(function() {
             var scroller = $(document).scrollTop();
@@ -1670,7 +1672,7 @@ $scope.submitGiftCard=function(formData){
 
 
 
-.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout,$filter,$stateParams, $uibModal) {
+.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal) {
     $scope.template = TemplateService.changecontent("host-party");
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
@@ -1897,66 +1899,66 @@ $scope.submitGiftCard=function(formData){
 
 })
 
-.controller('RechargeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal,$window,$location) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("online");
-    $scope.menutitle = NavigationService.makeactive("Recharge");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+.controller('RechargeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $window, $location) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("online");
+        $scope.menutitle = NavigationService.makeactive("Recharge");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-    $scope.rechargeOnline = {};
-    if ($.jStorage.get("loginDetail") != null) {
-        $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
-        $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
-    }
-    $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:94/signup/returnUrlFunction";
+        $scope.rechargeOnline = {};
+        if ($.jStorage.get("loginDetail") != null) {
+            $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
+            $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
+        }
+        $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:94/signup/returnUrlFunction";
 
 
 
-    $scope.submitRecharge = function(rechargeOnline) {
+        $scope.submitRecharge = function(rechargeOnline) {
 
-        if (rechargeOnline && $.jStorage.get("loginDetail") === null) {
-          $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/wishlistsigup.html',
-                scope: $scope
-            });
-        } else if (rechargeOnline && $.jStorage.get("loginDetail") != null) {
+            if (rechargeOnline && $.jStorage.get("loginDetail") === null) {
+                $uibModal.open({
+                    animation: true,
+                    templateUrl: 'views/modal/wishlistsigup.html',
+                    scope: $scope
+                });
+            } else if (rechargeOnline && $.jStorage.get("loginDetail") != null) {
 
-            NavigationService.rechargeCard(rechargeOnline, function(data) {
-                console.log("data", data);
-                if (data.value === true) {
-                  $scope.newWindow = data.data.RechargeCard[0].Link;
-                   $window.location.href = $scope.newWindow;
-                }else if (data.value === false) {
-$scope.incorrect =true;
-                }
-            })
+                NavigationService.rechargeCard(rechargeOnline, function(data) {
+                    console.log("data", data);
+                    if (data.value === true) {
+                        $scope.newWindow = data.data.RechargeCard[0].Link;
+                        $window.location.href = $scope.newWindow;
+                    } else if (data.value === false) {
+                        $scope.incorrect = true;
+                    }
+                })
+
+            }
 
         }
 
-    }
 
 
-
-})
-.controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("careers");
-    $scope.menutitle = NavigationService.makeactive("Careers");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    $scope.carer=function(){
- $uibModal.open({
+    })
+    .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("careers");
+        $scope.menutitle = NavigationService.makeactive("Careers");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.carer = function() {
+            $uibModal.open({
                 animation: true,
                 templateUrl: "views/modal/careers.html",
                 scope: $scope,
             })
-    };
+        };
 
 
 
-})
+    })
 
 .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -2294,7 +2296,7 @@ $scope.incorrect =true;
         $scope.menutitle = NavigationService.makeactive("Events and Challengest");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-  TemplateService.removeLoaderOn(1);
+        TemplateService.removeLoaderOn(1);
         $scope.menu = "menu-out";
         $scope.getMenu = function() {
             if ($scope.menu == "menu-out") {
@@ -2350,12 +2352,12 @@ $scope.incorrect =true;
 
 
     $scope.readMore = function(id) {
-      console.log("id",id);
-      $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-      console.log("$scope.drinkParty",$scope.drinkParty);
-      $scope.myDesc = _.find($scope.drinkParty1, function(n) {
+        console.log("id", id);
+        $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+        console.log("$scope.drinkParty", $scope.drinkParty);
+        $scope.myDesc = _.find($scope.drinkParty1, function(n) {
             return n._id == id;
-          }).description;
+        }).description;
     };
 
     // $scope.readMore = function(id,index) {
@@ -2545,7 +2547,7 @@ $scope.incorrect =true;
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = window.location.href;
-      TemplateService.removeLoaderOn(1);
+    TemplateService.removeLoaderOn(1);
     $scope.today = function() {
         $scope.dt = new Date();
     };
@@ -2974,7 +2976,7 @@ $scope.incorrect =true;
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = window.location.href;
-      TemplateService.removeLoaderOn(3);
+    TemplateService.removeLoaderOn(3);
 
     // $scope.goto=function(data._id){
     //   console.log("im in");
@@ -2983,7 +2985,7 @@ $scope.incorrect =true;
     NavigationService.getPopularBlog(function(data) {
 
         $scope.popularblogs = data.data;
-          TemplateService.removeLoader();
+        TemplateService.removeLoader();
     });
 
     $scope.objectfilter = {};
@@ -3027,7 +3029,7 @@ $scope.incorrect =true;
                     console.log("in else last array");
                     $scope.noviewmore = false;
                 }
-                  TemplateService.removeLoader();
+                TemplateService.removeLoader();
             }
             console.log("blogs", $scope.blogs);
         })
@@ -3053,7 +3055,7 @@ $scope.incorrect =true;
             data.data.data = _.chunk(data.data.data, 2);
             $scope.blogs = data.data.data;
             console.log("blogs", $scope.blogs);
-              TemplateService.removeLoader();
+            TemplateService.removeLoader();
         })
     };
 
@@ -3136,7 +3138,7 @@ $scope.incorrect =true;
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = window.location.href;
-      TemplateService.removeLoaderOn(1);
+    TemplateService.removeLoaderOn(1);
     $scope.myBlogslides = [
         'img/karting/blue.png',
         // 'img/karting/star.png',
@@ -3155,8 +3157,8 @@ $scope.incorrect =true;
         } else {
             $scope.blogInside.popularBlog = data.data.popularBlog;
         }
-          $scope.youMayLike=_.chunk($scope.blogInside.youMayLike,2);
-          TemplateService.removeLoader();
+        $scope.youMayLike = _.chunk($scope.blogInside.youMayLike, 2);
+        TemplateService.removeLoader();
     });
 
 })
@@ -3230,11 +3232,11 @@ $scope.incorrect =true;
             $scope.city = !$scope.city;
         };
 
-        NavigationService.getAllCityByOrder(function(data){
-          $.jStorage.set("cityid", data.data[0]._id);
-          $.jStorage.set("city",data.data[0].name);
-          $.jStorage.set("logos", data.data[0].logo);
-          $.jStorage.set("branchId", data.data[0].BranchID);
+        NavigationService.getAllCityByOrder(function(data) {
+            $.jStorage.set("cityid", data.data[0]._id);
+            $.jStorage.set("city", data.data[0].name);
+            $.jStorage.set("logos", data.data[0].logo);
+            $.jStorage.set("branchId", data.data[0].BranchID);
         });
 
 
@@ -3303,7 +3305,7 @@ $scope.incorrect =true;
                             if (data.value === true) {
                                 $scope.otp();
                             } else {
-                              $scope.noOTP=true;
+                                $scope.noOTP = true;
                                 console.log("data in false", data);
                             }
                         });
@@ -3484,7 +3486,7 @@ $scope.incorrect =true;
     })
     .controller('footerctrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-            TemplateService.removeLoaderOn(1);
+        TemplateService.removeLoaderOn(1);
         $scope.footer = function(val) {
             if (val == $scope.showFooter) {
                 $scope.showFooter = 0;
@@ -3531,8 +3533,8 @@ $scope.incorrect =true;
         $scope.attrctionId = "57bc4b2aeb9c91f1025a3b55";
         $scope.drinkandPartyId = "57bc4b48eb9c91f1025a3b57";
         $scope.dealsandpackagesId = "57bc4b5aeb9c91f1025a3b58";
-          $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
-              $scope.promotionId = "57bc4b36eb9c91f1025a3b56";
+        $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
+        $scope.promotionId = "57bc4b36eb9c91f1025a3b56";
     })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
