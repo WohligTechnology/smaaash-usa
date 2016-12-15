@@ -3159,7 +3159,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.youMayLike = _.chunk($scope.blogInside.youMayLike, 2);
         TemplateService.removeLoader();
     });
-
 })
 
 
