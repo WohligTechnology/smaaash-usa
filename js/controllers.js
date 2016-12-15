@@ -121,10 +121,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value) {
             $scope.homeContent = data.data;
             $scope.content = _.groupBy($scope.homeContent, "type.name");
+          console.log("deals", $scope.content);
             $scope.attraction = $scope.content.Attraction;
             $scope.whatsnew = $scope.content["What's new"];
             $scope.hostParty = $scope.content["Host a party"];
             $scope.deals = $scope.content["Deals and Packages"];
+            console.log("deals", $scope.deals);
             $scope.events = $scope.content["Events"];
             $scope.foodBeverages = $scope.content["Food and Beverages"];
             $scope.promotion = $scope.content["Promotions"];
