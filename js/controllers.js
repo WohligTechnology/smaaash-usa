@@ -121,7 +121,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value) {
             $scope.homeContent = data.data;
             $scope.content = _.groupBy($scope.homeContent, "type.name");
-            console.log("deals", $scope.content);
             $scope.attraction = $filter('orderBy')($scope.content.Attraction, '-order');
             $scope.whatsnew = $filter('orderBy')($scope.content["What's new"], '-order');
             $scope.hostParty = $filter('orderBy')($scope.content["Host a party"], '-order');
