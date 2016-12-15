@@ -256,7 +256,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnlines = [{
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
-        id: '584fcfa08635b956ba8e1db2'
+        id: '57bc4b2aeb9c91f1025a3b55'
     }, {
         img: 'img/new/parties.jpg',
         text: ' parties',
