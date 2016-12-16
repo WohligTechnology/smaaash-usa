@@ -45,8 +45,15 @@
                               </figure>
 
                            </a>
-                          
+
+
                            <a ui-sref="attractions({id:s.id})" ng-if="s.id === '57bc4b2aeb9c91f1025a3b55'">
+                              <figure>
+                                 <img src="{{s.img}}" class="img-responsive" alt="">
+                              </figure>
+
+                           </a>
+                           <a ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === '584fc0b627f423504111f59d'">
                               <figure>
                                  <img src="{{s.img}}" class="img-responsive" alt="">
                               </figure>

@@ -256,7 +256,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnlines = [{
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
-        id: '57bc4b2aeb9c91f1025a3b55'
+        id: '584fc0b627f423504111f59d',
+        pagename:'karting'
     }, {
         img: 'img/new/parties.jpg',
         text: ' parties',
@@ -930,7 +931,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('AttractionCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $state) {
+.controller('AttractionCtrl', function($scope, TemplateService,$filter, NavigationService, $timeout, $stateParams, $uibModal, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("attractions");
     $scope.menutitle = NavigationService.makeactive("Attractions");
@@ -967,6 +968,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.goTOSearch = function(filter) {
         NavigationService.searchExploreSmaaash($scope.filter, function(data) {
             $scope.singleAttraction = data.data;
+              data.data= $filter('orderBy')(data.data, '-order');
+              console.log("  data.data",  data.data);
             $scope.singleAttraction1 = _.chunk(data.data, 3);
 
             if ($scope.singleAttraction1.length === 0) {
