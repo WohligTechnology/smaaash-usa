@@ -707,7 +707,7 @@ $brand-white:#fff !default;
   }
   .social-icons {
     p {
-      color: #d4d4d4;
+      color: #777;
     }
   }
   .backg {
@@ -2349,7 +2349,7 @@ button {
   }
 }
 
-.slid,.blog {
+.slid,.blog{
   // margin: 20px;
   .flex-control-nav {
     display: none;
@@ -2364,8 +2364,7 @@ button {
         }
       }
     }
-  }
-  .flex-next,
+      .flex-next,
   .flex-prev {
     display: block;
     height: 50px;
@@ -2383,6 +2382,8 @@ button {
     background: url("../img/new/ahead.png")no-repeat;
     background-size: contain;
   }
+  }
+
 }
 
 //new pages//
@@ -3338,5 +3339,16 @@ opacity: 1;
     }
 }
 
-
+// .blog{
+//    .flex-direction-nav {
+//      .flex-prev{
+//        &:before {
+//     content: "";
+//     @include square(100%);
+//     background: url("../img/home/arrow.png")no-repeat;
+//     background-size: contain;
+//   }
+//    }
+//    }
+// }
 
