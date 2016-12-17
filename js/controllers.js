@@ -275,7 +275,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnline = [{
         img: 'img/karting/1.jpg',
         text: ' Minnesota Lynx',
-        partners:'Proud Partners',
+        // partners:'Proud Partners',
         id: '583420a69f3f2cd049f2cb0e'
     }, {
         img: 'img/karting/2.jpg',
@@ -285,12 +285,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
         img: 'img/karting/3.jpg',
         text: ' Minnesota Timberwolves',
-         partners:'Proud Partners',
+        //  partners:'Proud Partners',
         id: '5847a24762aaa336cbd301bd'
     }, {
         img: 'img/karting/4.jpg',
         text: ' Minnesota Wild',
-         partners:'Proud Partners',
+        //  partners:'Proud Partners',
         id: '5847a43562aaa336cbd3027a'
     }];
 
