@@ -178,10 +178,9 @@
         </div>
     </div>
     <div class="side-buttons" ng-class="{'slide-down': menu == true}" ng-hide="showConnect">
-        <div class="connect-button" id="axis" ng-click="getMenus();">
+        <!--<div class="connect-button" id="axis" ng-click="getMenus();">
 
             <div class="orange-rays"></div>
-            <!--<img src="img/connect.png" class="img-responsive rotate360cw" alt="">-->
             <p class="uppercase brand-white text-center">login</p>
         </div>
 
@@ -211,11 +210,8 @@
                             <div ng-if="formComplete">
                                 <h4 class="text-center" >Thank You</h4>
                             </div>
-                            <!-- <button type="button" class="butn relative"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>login with facebook</button>
-                            <button type="button" class="buton relative "><span><i class="fa fa-google-plus" aria-hidden="true"></i></span>login with Google</button> -->
+                          
                        <a href="" class="forgot" ng-click="resets();getMenus();">Forgot password?</a>
-                       <!-- <div ng-if="incorrect">Please ente v </div> -->
-                       <!-- <a href="" class="forgot" ng-click="resets();getMenus();closeModal();">Forgot password?</a> -->
                         </div>
                     </div>
                     <div class="divider"></div>
@@ -233,12 +229,10 @@
                                 <div class="form-group">
                                     <input type="email" class="form-control" placeholder="Email ID" name="email" required ng-model="signupData.CustomerEmail">
                                     <div class="error-msg" ng-show="signUp.email.$error.required && signUp.email.$touched">Please Enter Your Email ID</div>
-                                    <!-- <div class="error" ng-if="emailExist">Email Id Already Exist</div> -->
-
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Mobile .No" name="mobile" ng-model="signupData.CustomerMobile" required only-digits
+                                    <input type="text" class="form-control" placeholder="Mobile No." name="mobile" ng-model="signupData.CustomerMobile" required only-digits
                                         maxlength="10" minlength="10">
 
                                     <div class="error-msg" ng-show="signUp.mobile.$error.required && signUp.mobile.$touched">Please enter your mobile no. </div>
@@ -272,14 +266,14 @@ Already Exists</div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="side" ui-sref="recharge" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
+    </div>-->
+    <!--<div class="side" ui-sref="recharge" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
         <div class="live-chat" id="axe">
             <div class="orange-rays"></div>
      <p class="uppercase brand-white text-center">recharge online</p>
 
         </div>
-    </div>
+    </div>-->
 
 </div>
 <div  ng-show="template.isLoader"  style="text-align:center";>

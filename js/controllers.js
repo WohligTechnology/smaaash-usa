@@ -275,18 +275,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnline = [{
         img: 'img/karting/1.jpg',
         text: ' Minnesota Lynx',
+        partners:'Proud Partners',
         id: '583420a69f3f2cd049f2cb0e'
     }, {
         img: 'img/karting/2.jpg',
         text: ' Minnesota Vikings',
+         partners:'Proud Partners',
         id: '583421099f3f2cd049f2cb28'
     }, {
         img: 'img/karting/3.jpg',
         text: ' Minnesota Timberwolves',
+         partners:'Proud Partners',
         id: '5847a24762aaa336cbd301bd'
     }, {
         img: 'img/karting/4.jpg',
         text: ' Minnesota Wild',
+         partners:'Proud Partners',
         id: '5847a43562aaa336cbd3027a'
     }];
 
@@ -1749,7 +1753,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.readMore = function(id) {
-
+        _.each($scope.moreDesc,function(value,property){
+            if(id !=property){
+                $scope.moreDesc[property]=false;
+            }
+        });
         $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
         $scope.myDesc = _.find($scope.SingleHostParty1, function(n) {
             return n._id == id;

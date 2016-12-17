@@ -168,6 +168,7 @@
                      <div class="race-text whites blacks">
                         <div class="min-hiss">
                            <h3 class="margin0 pointer text-center"> {{s.text}}</h3>
+                           <p class="margin0 pointer text-center error title">{{s.partners}}</p>
                         </div>
                      </div>
                   </div>
@@ -246,7 +247,7 @@
                <div class="mover extra">
                   <flex-slider class="carousel relative" item-margin="0" flex-slide="s in deals track by $index" slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
                      <li>
-                        <a ui-sref="deals-inner({id:s._id})">
+                        <a ui-sref="dealsp({id:deals[0].type._id})">
                            <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
                         </a>
                         <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>

@@ -707,7 +707,7 @@ $brand-white:#fff !default;
   }
   .social-icons {
     p {
-      color: #777;
+      color: rgba(0, 0, 0, 0.8);
     }
   }
   .backg {
@@ -3000,6 +3000,11 @@ button {
 
 
 .blog{
+  .social-icons{
+    p{
+      color:  rgba(0, 0, 0, 0.8);
+    }
+  }
    .img-bg{
       border:2px solid  $brand-blue;
     }
@@ -3061,7 +3066,7 @@ button {
 
 .drink {
   .new-detail {
-    min-height: 470px;
+    min-height: 300px;
   }
 }
 

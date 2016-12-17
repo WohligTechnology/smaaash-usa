@@ -1,7 +1,7 @@
 <div class="drink">
     <div class="backg">
         <div class="container">
-            <h2 class="nav-name center">eat &#44; drink &amp; party</h2>
+            <h2 class="nav-name center">eat . drink . party</h2>
         </div>
     </div>
     <div class="container">
@@ -21,7 +21,7 @@
                             </div>
                             <div class="button-sets text-center">
                                 <!--<button class="uppercase large green" ng-click="bookings();">reservations</button>-->
-                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>
+                                <!--<button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>-->
                             </div>
                             <div class="min-h">
                                 <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
@@ -80,12 +80,12 @@
                                         <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
                                     </li>-->
                                 </ul>
-                                <div class="more inline-block">
+                                <!--<div class="more inline-block">
 
 
                                     <button class="uppercase green" ng-click="getGallery(data._id);">Gallery</button>
 
-                                </div>
+                                </div>-->
                             </div>
                             <div class="love" ng-if="data.sublink">
                                 <a href={{data.sublink}} target="_blank">
