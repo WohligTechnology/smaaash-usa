@@ -59,7 +59,8 @@
                   <span ng-if="$index==d.gameforarray.length-2">&</span> </span>
                   </span>
                 </p>-->
-                <p class="" ng-bind-html="d.description | htmlToPlaintext | shorten :140"></p>
+                <p class="" ng-bind-html="d.description | htmlToPlaintext "></p>
+                <!--| shorten :140-->
               </div>
               <div class="button-set" ng-if="showBuyNow">
                 <button class="uppercase blue">buy now</button>
