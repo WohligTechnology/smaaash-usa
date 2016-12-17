@@ -18,16 +18,19 @@
             
              
               <div class="new-detail">
-              <div class="views inline-block">
+              <!--<div class="views inline-block">
                 <button class="uppercase bluey" ui-sref="deals-inner({id:d._id})">view</button>
-              </div>
+              </div>-->
               <div class="min-last">
                 <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ui-sref="deals-inner({id:d._id})"></h3>
                   <p class="" ng-bind-html="d.description |htmlToPlaintext | shorten :140"></p>
               </div>
-              <div class="button-set">
-                <button class="uppercase blue">buy now</button>
+              <div class="tc  pointer">
+                <p ui-sref="terms">T & C* Applied</p>
               </div>
+              <!--<div class="button-set">
+                <button class="uppercase blue">buy now</button>
+              </div>-->
               <!--<div class="love">
                 <button class="uppercase" ng-click="addedToWishList(d._id);"><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>would love to try</button>
               </div>-->

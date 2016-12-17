@@ -3133,7 +3133,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('BlogInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
+.controller('BlogInsideCtrl', function($scope, TemplateService, $state ,NavigationService, $timeout, $stateParams, $filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog-inside");
     $scope.menutitle = NavigationService.makeactive("Blog Inside");
@@ -3151,6 +3151,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
     NavigationService.getDetailBlog($stateParams.id, function(data) {
         $scope.blogInside = data.data;
+        console.log("hie hels",data.data);
         var findIndex = _.findIndex($scope.blogInside.popularBlog, function(val) {
             return val._id === $stateParams.id;
         });
@@ -3162,6 +3163,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.youMayLike = _.chunk($scope.blogInside.youMayLike, 2);
         TemplateService.removeLoader();
     });
+    // blog-inside({id:data._id})
+ $scope.bloginside = function(id) {
+         console.log("id",id);
+         $state.go('blog-inside',{id:id});
+        };
+
 })
 
 
