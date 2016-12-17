@@ -1435,12 +1435,25 @@ ul {
 
 .form-content {
   position: absolute;
-  top: -200px;
+  top: -220px;
   bottom: 0;
   right: 0;
   left: 0;
   .practice {
-    background-color: #fff;
+   background-color: #fff;
+    border-radius: 10px;
+    width: 50%;
+    .form{
+      padding: 10px 0;
+    border-radius: 10px;
+    h3{
+          margin: 0;
+    font-size: 14px;
+    a{
+      display: block;
+    }
+    }
+    }
   }
 }
 
