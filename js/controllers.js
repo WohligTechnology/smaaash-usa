@@ -519,13 +519,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('EventCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams) {
+.controller('EventCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams, $state ) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("event");
     $scope.menutitle = NavigationService.makeactive("Events");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
+    if ($state.current.name === 'event') {
+      // $state.reload();
+      $scope.eventurl =window.location.href;
+      console.log("$scope.eventurl",$scope.eventurl);
+    }
+
     $scope.moreDesc = {};
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.events = _.chunk(data.data, 3);
@@ -1785,8 +1791,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+      $scope.myUrl="";
     $scope.myUrl = window.location.href;
     TemplateService.removeLoaderOn(2);
+    console.log("$scope.myUrl0",$scope.myUrl);
     //  $scope.$on('$viewContentLoaded', function(event) {
     //   $timeout(function() {
     //       var iframe = document.getElementById('externalForm');
@@ -1855,7 +1863,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.readMore = function(id) {
+      console.log("id",id);
         _.each($scope.moreDesc,function(value,property){
+          console.log("property",property);
             if(id !=property){
                 $scope.moreDesc[property]=false;
             }
@@ -2463,25 +2473,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
 
+    // $scope.readMore = function(id) {
+    //     console.log("id", id);
+    //     $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+    //     console.log("$scope.drinkParty", $scope.drinkParty);
+    //     $scope.myDesc = _.find($scope.drinkParty1, function(n) {
+    //         return n._id == id;
+    //     }).description;
+    // };
     $scope.readMore = function(id) {
-        console.log("id", id);
+        _.each($scope.moreDesc,function(value,property){
+            if(id !=property){
+                $scope.moreDesc[property]=false;
+            }
+        });
         $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-        console.log("$scope.drinkParty", $scope.drinkParty);
         $scope.myDesc = _.find($scope.drinkParty1, function(n) {
             return n._id == id;
         }).description;
     };
 
-    // $scope.readMore = function(id,index) {
-    //   console.log("id",id,index);
-    //   $scope.moreDesc[index] = ($scope.moreDesc[index] == true) ? false : true;
-    //   console.log("$scope.drinkParty",$scope.drinkParty);
-    //   $scope.myDesc = _.find($scope.drinkParty1, function(n) {
-    //       $scope.moreDesc[index] = ($scope.moreDesc[index] == true) ? false : true;
-    //         return n._id == id;
-    //       }).description;
-    //     console.log("$scope.myDesc",$scope.myDesc);
-    // };
 
     $scope.imagesmodal = function() {
         $uibModal.open({
