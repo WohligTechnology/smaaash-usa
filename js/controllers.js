@@ -1041,7 +1041,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('AttractionCtrl', function($scope, TemplateService,$filter, NavigationService, $timeout, $stateParams, $uibModal, $state) {
+.controller('AttractionCtrl', function($scope, TemplateService,$filter, NavigationService, $timeout, $stateParams, $uibModal, $state,$location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("attractions");
     $scope.menutitle = NavigationService.makeactive("Attractions");
@@ -2460,7 +2460,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     })
 
-.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal) {
+.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal,$location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("drink-party");
     $scope.menutitle = NavigationService.makeactive("Drink Party");
