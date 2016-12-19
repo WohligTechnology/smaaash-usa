@@ -921,7 +921,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.showMore = false;
 
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.SingleExploreSmaaash = data.data;
         $scope.SingleExploreSmaaash1 = _.chunk(data.data, 3);
@@ -1049,6 +1049,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
     $scope.menu = "menu-out";
+    $scope.moreDesc={};
     $scope.getMenu = function() {
         if ($scope.menu == "menu-out") {
             $scope.menu = "menu-in";
@@ -1111,6 +1112,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     }
     $scope.goTOSearch($scope.filter);
+
+    $scope.readMore = function(id) {
+      console.log("id",id);
+        _.each($scope.moreDesc,function(value,property){
+          console.log("property",property);
+            if(id !=property){
+                $scope.moreDesc[property]=false;
+            }
+        });
+        $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+        $scope.myDesc = _.find($scope.singleAttraction, function(n) {
+            return n._id == id;
+        }).description;
+    };
 
 
 
@@ -1789,7 +1804,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    
+
     $scope.myUrl = $location.url();
     TemplateService.removeLoaderOn(2);
     console.log("$scope.myUrl0",$scope.myUrl);
@@ -2451,7 +2466,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Drink Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     $scope.menu = "menu-out";
     TemplateService.removeLoaderOn(1);
     $scope.pdfpath = "http://104.155.129.33:82/upload/readFile?file";
@@ -2651,7 +2666,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailDealsInner = data.data;
 
@@ -2667,7 +2682,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Events Inner");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     TemplateService.removeLoaderOn(1);
     $scope.today = function() {
         $scope.dt = new Date();
@@ -3054,7 +3069,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailPromotionsInner = data.data;
         console.log("$scope.detailPromotionsInner", $scope.detailPromotionsInner);
@@ -3096,7 +3111,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Blog");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     TemplateService.removeLoaderOn(3);
 
     // $scope.goto=function(data._id){
@@ -3258,7 +3273,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Blog Inside");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.myUrl = window.location.href;
+    $scope.myUrl = $location.url();
     TemplateService.removeLoaderOn(1);
     $scope.myBlogslides = [
         'img/karting/blue.png',

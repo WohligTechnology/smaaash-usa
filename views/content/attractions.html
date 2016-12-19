@@ -1,10 +1,10 @@
 <div class="attractions deals2">
-  <div class="backg-deal">
-    <div class="container">
-      <h2 class="nav-name center">games</h2>
-    </div>
-  </div>
-  <!--<div class="forms brand-blue">
+   <div class="backg-deal">
+      <div class="container">
+         <h2 class="nav-name center">games</h2>
+      </div>
+   </div>
+   <!--<div class="forms brand-blue">
     <div class="container">
       <div class="search-green">
         <input type="text" class="form-control" placeholder="Search" ng-model="filter.search" ng-change="goTOSearch(filter)">
@@ -34,47 +34,52 @@
       </div>
     </div>
   </div>-->
-  <div class="container">
-    <div class="new">
-        <div ng-if="msg" class="text-center">No Options Available As Per Your Criteria.</div>
-      <div class="row" ng-repeat="data in singleAttraction1">
-        <div class="col-md-4 col-sm-4" ng-repeat="d in data">
+   <div class="container">
+      <div class="new">
+         <div ng-if="msg" class="text-center">No Options Available As Per Your Criteria.</div>
+         <div class="row" ng-repeat="data in singleAttraction1">
+            <div class="col-md-4 col-sm-4" ng-repeat="d in data">
 
-          <div class="karting-championship">
-            <div class="brand-blue relative  pointer">
-              <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt=""  ng-click="goTo(d.hometext,d._id)">
-              <!-- <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+               <div class="karting-championship">
+                  <div class="brand-blue relative  pointer">
+                     <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" ng-click="goTo(d.hometext,d._id)">
+                     <!-- <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                 class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="d.video"></a> -->
-            </div>
-            <div class="new-detail">
-              <div class="views inline-block">
-                <button class="uppercase bluey" ng-click="goTo(d.hometext,d._id)">view</button>
-              </div>
+                  </div>
+                  <div class="new-detail">
+                     <div class="views inline-block">
+                        <button class="uppercase bluey" ng-click="goTo(d.hometext,d._id)">view</button>
+                     </div>
 
-              <div class="min-h">
-                <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ng-click="goTo(d.hometext,d._id)"></h3>
-                <!--<p ng-hide="d.gameforarray==''">Game For:
+                     <div class="min-h">
+                        <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ng-click="goTo(d.hometext,d._id)"></h3>
+                        <!--<p ng-hide="d.gameforarray==''">Game For:
                   <span class="bluey capitalize">
                              <span ng-repeat="per in d.gameforarray track by $index">{{per}} <span ng-if="$index<d.gameforarray.length-2">|</span>
                   <span ng-if="$index==d.gameforarray.length-2">&</span> </span>
                   </span>
                 </p>-->
-                <p class="" ng-bind-html="d.description | htmlToPlaintext "></p>
-                <!--| shorten :140-->
-              </div>
-              <div class="button-set" ng-if="showBuyNow">
-                <button class="uppercase blue">buy now</button>
-              </div>
-              <!--<div class="love">
+                        <p class="" ng-hide="moreDesc[d._id]" ng-bind-html="d.description | htmlToPlaintext | shorten:130 "></p>
+                        <p ng-show="moreDesc[d._id]" ng-bind-html="myDesc| htmlToPlaintext"></p>
+                        <div ng-if="!d.description">No description</div>
+                        <span class="capitalize greeny" ng-if="d.description.length > 130 && !moreDesc[d._id]" ng-click="readMore(d._id,$index)">read more</span>
+                        <span class="capitalize greeny" ng-if="d.description.length > 130 && moreDesc[d._id]" ng-click="readMore(d._id,$index)">read less</span>
+
+
+                     </div>
+                     <div class="button-set" ng-if="showBuyNow">
+                        <button class="uppercase blue">buy now</button>
+                     </div>
+                     <!--<div class="love">
                 <button class="uppercase" ng-click="addedToWishList(d._id);"><i class="fa" aria-hidden="true" ng-class="{'fa-heart-o':!isInWishlist(d._id),'fa-heart':isInWishlist(d._id)}" style="color:red;"></i>would love to try</button>
               </div>-->
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
 
+         </div>
       </div>
-    </div>
 
-  </div>
+   </div>
 
 </div>
