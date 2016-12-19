@@ -923,6 +923,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.menu = "menu-out";
         }
     };
+
+
     $scope.moreDesc = {};
     NavigationService.getLeader(function(data) {
         $scope.leadership = data.data;
@@ -930,6 +932,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.readMore = function(id, indexid) {
 
             console.log(id);
+            _.each($scope.moreDesc,function(value,property){
+          console.log("property",property);
+            if(id !=property){
+                $scope.moreDesc[property]=false;
+            }
+        });
             $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
             console.log($scope.moreDesc);
             $scope.myDesc = _.find($scope.leadership, function(n) {

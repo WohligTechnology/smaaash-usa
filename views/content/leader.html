@@ -27,7 +27,7 @@
                             <p ng-hide="moreDesc[data._id]">{{data.description|htmlToPlaintext|shorten:130}}</p>
                             <p ng-show="moreDesc[data._id]">{{myDesc|htmlToPlaintext}}</p>
                             <p ng-if="!data.description"> No data found</p>
-                            <span class="greeny" ng-if="data.description.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id,$index)">Read More</span>
+                            <span class="greeny" ng-if="data.description.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">Read More</span>
                             <span class="greeny" ng-if="data.description.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id,$index)">Read Less</span>
                         </div>
                     </div>
