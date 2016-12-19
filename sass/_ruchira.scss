@@ -2641,7 +2641,7 @@ button {
   height: 442px;
   background-position: center;
 }
-.reset-passwords,.landing-from,.landing-forms{
+.reset-passwords,.landing-form,.landing-forms{
       background-image: url("../img/new/bgpurple.png");
    background-repeat: no-repeat;
     background-size: cover;
@@ -2662,6 +2662,8 @@ button {
    .form{
      background-color: #fff;
      border:2px solid #ccc;
+     margin-bottom: 10px;
+     padding: 20px 30px;
      .form-control{
     background-color: #fff;
     
@@ -2678,13 +2680,13 @@ button {
    }
    .condition{
      p{
-       color: rgba(127, 127, 127, 0.6);
+       color: rgba(127, 127, 127, 0.88);
      }
    }
 }
 .land-forms{
   .practice{
-width: 80%;
+width: 70%;
     margin: 0 auto;
   }
   .blacks{
@@ -2693,6 +2695,14 @@ width: 80%;
   }
   .videos{
     margin-top: 30px;
+    iframe{
+      position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    }
   }
 
 
