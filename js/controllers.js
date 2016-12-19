@@ -3678,6 +3678,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.dealsandpackagesId = "57bc4b5aeb9c91f1025a3b58";
         $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
         $scope.promotionId = "57bc4b36eb9c91f1025a3b56";
+         $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
     })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
