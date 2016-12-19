@@ -20,8 +20,8 @@
                                 <h3 class="margin0 uppercase" ng-bind-html="data.hometext"></h3>
                             </div>
                             <div class="button-sets text-center">
-                                <!--<button class="uppercase large green" ng-click="bookings();">reservations</button>-->
-                                <!--<button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>-->
+                                <!-- <button class="uppercase large green" ng-click="bookings();">reservations</button> -->
+                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">Menu</button>{{data.pdf}}
                             </div>
                             <div class="min-h">
                                 <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
