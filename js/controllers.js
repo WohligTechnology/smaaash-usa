@@ -277,7 +277,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnline = [{
         img: 'img/karting/1.jpg',
         text: ' Minnesota Lynx',
-        // partners:'Proud Partners',
+        partners:'Proud Partners',
         id: '583420a69f3f2cd049f2cb0e'
     }, {
         img: 'img/karting/2.jpg',
@@ -287,12 +287,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
         img: 'img/karting/3.jpg',
         text: ' Minnesota Timberwolves',
-        //  partners:'Proud Partners',
+         partners:'Proud Partners',
         id: '5847a24762aaa336cbd301bd'
     }, {
         img: 'img/karting/4.jpg',
         text: ' Minnesota Wild',
-        //  partners:'Proud Partners',
+         partners:'Proud Partners',
         id: '5847a43562aaa336cbd3027a'
     }];
 
@@ -3105,7 +3105,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 })
 
-.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal, $state) {
+.controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal, $state,$location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog");
     $scope.menutitle = NavigationService.makeactive("Blog");
@@ -3267,7 +3267,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('BlogInsideCtrl', function($scope, TemplateService, $state ,NavigationService, $timeout, $stateParams, $filter) {
+.controller('BlogInsideCtrl', function($scope, TemplateService, $state ,NavigationService, $timeout, $stateParams, $filter,$location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog-inside");
     $scope.menutitle = NavigationService.makeactive("Blog Inside");
