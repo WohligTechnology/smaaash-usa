@@ -1001,6 +1001,9 @@
 }
 
 @media (max-width:480px) {
+  .custom-pagination{
+    display: none;
+  }
   .deals-event .karting1 .half-height,.deals-event .karting1 .full-height{
     height: 340px;
   }
