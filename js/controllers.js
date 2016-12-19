@@ -9,6 +9,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.homeurl=$location.url();
+    console.log("  $scope.homeurl",  $scope.homeurl);
 
     var openL = {};
     $scope.currentdate = new Date();
@@ -417,19 +419,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('EventCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams, $state ) {
+.controller('EventCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams, $state, $location  ) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("event");
     $scope.menutitle = NavigationService.makeactive("Events");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    TemplateService.removeLoaderOn(1);
-    if ($state.current.name === 'event') {
-      // $state.reload();
-      $scope.eventurl =window.location.href;
-      console.log("$scope.eventurl",$scope.eventurl);
-    }
 
+  $scope.myUrl= $location.url();
+  console.log("$scope.myUrl",$scope.myUrl);
     $scope.moreDesc = {};
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         $scope.events = _.chunk(data.data, 3);
@@ -1684,13 +1682,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal) {
+.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal,$location ) {
     $scope.template = TemplateService.changecontent("host-party");
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-      $scope.myUrl="";
-    $scope.myUrl = window.location.href;
+    
+    $scope.myUrl = $location.url();
     TemplateService.removeLoaderOn(2);
     console.log("$scope.myUrl0",$scope.myUrl);
     //  $scope.$on('$viewContentLoaded', function(event) {
