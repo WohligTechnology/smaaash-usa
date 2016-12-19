@@ -19,10 +19,7 @@
                             <div class="min-h">
                                 <h3 class="margin0 uppercase" ng-bind-html="data.hometext"></h3>
                             </div>
-                            <div class="button-sets text-center">
-                                <!-- <button class="uppercase large green" ng-click="bookings();">reservations</button> -->
-                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">Menu</button>
-                            </div>
+                           
                             <div class="min-h">
                                 <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
                                 <p ng-show="moreDesc[data._id]">{{myDesc| htmlToPlaintext}}</p>
@@ -66,7 +63,7 @@
 
 
                             </div>-->
-                            <div class="button-set">
+                            <div class="button-set inline-block">
                                 <ul class="social-icons list-inline inline-block">
                                     <p class="inline-block">Share</p>
                                     <li>
@@ -84,6 +81,10 @@
                                     <button class="uppercase green" ng-click="getGallery(data._id);">Gallery</button>
 
                                 </div> -->
+                            </div>
+                             <div class="button-sets inline-block">
+                                <!-- <button class="uppercase large green" ng-click="bookings();">reservations</button> -->
+                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">Menu</button>
                             </div>
                             <div class="love" ng-if="data.sublink">
                                 <a href={{data.sublink}} target="_blank">
