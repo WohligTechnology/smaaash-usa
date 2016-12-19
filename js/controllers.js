@@ -1753,7 +1753,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.readMore = function(id) {
+      console.log("id",id);
         _.each($scope.moreDesc,function(value,property){
+          console.log("property",property);
             if(id !=property){
                 $scope.moreDesc[property]=false;
             }
@@ -2361,25 +2363,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
 
+    // $scope.readMore = function(id) {
+    //     console.log("id", id);
+    //     $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+    //     console.log("$scope.drinkParty", $scope.drinkParty);
+    //     $scope.myDesc = _.find($scope.drinkParty1, function(n) {
+    //         return n._id == id;
+    //     }).description;
+    // };
     $scope.readMore = function(id) {
-        console.log("id", id);
+        _.each($scope.moreDesc,function(value,property){
+            if(id !=property){
+                $scope.moreDesc[property]=false;
+            }
+        });
         $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-        console.log("$scope.drinkParty", $scope.drinkParty);
         $scope.myDesc = _.find($scope.drinkParty1, function(n) {
             return n._id == id;
         }).description;
     };
 
-    // $scope.readMore = function(id,index) {
-    //   console.log("id",id,index);
-    //   $scope.moreDesc[index] = ($scope.moreDesc[index] == true) ? false : true;
-    //   console.log("$scope.drinkParty",$scope.drinkParty);
-    //   $scope.myDesc = _.find($scope.drinkParty1, function(n) {
-    //       $scope.moreDesc[index] = ($scope.moreDesc[index] == true) ? false : true;
-    //         return n._id == id;
-    //       }).description;
-    //     console.log("$scope.myDesc",$scope.myDesc);
-    // };
 
     $scope.imagesmodal = function() {
         $uibModal.open({
