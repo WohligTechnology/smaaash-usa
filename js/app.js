@@ -219,6 +219,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'BirthdayCtrl'
         })
+             .state('landing-form', {
+            url: "/landing-form",
+            templateUrl: "views/template.html",
+            controller: 'LandingCtrl'
+        })
         .state('smaaash-cricket', {
             url: "/smaaash-cricket",
             templateUrl: "views/template.html",
