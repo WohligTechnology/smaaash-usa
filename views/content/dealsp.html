@@ -10,9 +10,10 @@
         <div class="col-md-4 col-sm-4" ng-repeat="d in data" >
 
           <div class="karting-championship">
-            <div class="brand-blue relative  pointer"  ui-sref="deals-inner({id:d._id})">
+            <div class="brand-blue relative "  >
               <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" >
-              <!--<a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+              <!--ui-sref="deals-inner({id:d._id})" 
+                <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                 class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="d.video"></a>-->
             </div>
             
@@ -22,7 +23,7 @@
                 <button class="uppercase bluey" ui-sref="deals-inner({id:d._id})">view</button>
               </div>-->
               <div class="min-last">
-                <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ui-sref="deals-inner({id:d._id})"></h3>
+                <h3 class="margin0 bluey" ng-bind-html="d.hometext | shorten :25" ></h3>
                   <p class="" ng-bind-html="d.description |htmlToPlaintext | shorten :140"></p>
               </div>
               <div class="tc  pointer">
