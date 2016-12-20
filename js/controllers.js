@@ -1566,7 +1566,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('SnowCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, $filter, $uibModal) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("snow-rush");
-    $scope.menutitle = NavigationService.makeactive("Snow Rush");
+    $scope.menutitle = $stateParams.name ;
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
@@ -1618,9 +1618,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, true)
     }
     $scope.onScrollStopVideo();
+
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailExploreSmaash = data.data;
-
         $scope.detailExploreSmaash.banner = $filter('uploadpath')($scope.detailExploreSmaash.banner);
 
         var attractions = [];
