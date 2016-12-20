@@ -970,6 +970,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.goTo = function(name, id) {
         if (name, id) {
             $scope.name = name.replace(/\s/g, '').toLowerCase();
+            $scope.name = $scope.name.replace(/:/g,''); 
             $state.go('snow-rush', {
                 name: $scope.name,
                 id: id
