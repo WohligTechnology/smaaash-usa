@@ -1565,8 +1565,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('SnowCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, $filter, $uibModal) {
     //Used to name the .html file
+
     $scope.template = TemplateService.changecontent("snow-rush");
-    $scope.menutitle = $stateParams.name ;
+    $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1) ;
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
@@ -1622,7 +1623,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
         $scope.detailExploreSmaash = data.data;
         $scope.detailExploreSmaash.banner = $filter('uploadpath')($scope.detailExploreSmaash.banner);
-
         var attractions = [];
         _.each($scope.detailExploreSmaash.multipleattraction, function(multi) {
             _.each(multi.attraction, function(attr) {
@@ -1639,7 +1639,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         TemplateService.removeLoader();
     })
-
 
 
 
