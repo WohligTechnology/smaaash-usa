@@ -2586,7 +2586,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('EventInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal) {
+.controller('EventInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal,$location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("event-inner");
     $scope.menutitle = NavigationService.makeactive("Events Inner");
