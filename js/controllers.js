@@ -970,7 +970,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.goTo = function(name, id) {
         if (name, id) {
             $scope.name = name.replace(/\s/g, '').toLowerCase();
-            $scope.name = $scope.name.replace(/:/g,''); 
+            $scope.name = $scope.name.replace(/:/g,'');
             $state.go('snow-rush', {
                 name: $scope.name,
                 id: id
@@ -2685,7 +2685,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         return '';
     }
-
+    // $scope.pdfmodal = function(pdf) {
+    //
+    //     $scope.pdfdata = pdf;
+    //     if ($scope.pdfdata) {
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: "views/modal/menu.html",
+    //             scope: $scope,
+    //         })
+    //     }
+    // };
+    $scope.termsConditionModal = function(pdf) {
+        $scope.pdfdata = pdf;
+        if ($scope.pdfdata) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: "views/modal/menu.html",
+                scope: $scope,
+            })
+        }
+    };
     $scope.formData = {};
     $scope.formData.city = $.jStorage.get("cityid");
     $scope.formComplete = false;
@@ -2718,17 +2738,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
         TemplateService.removeLoader();
     })
-    $scope.pdfmodal = function(pdf) {
 
-        $scope.pdfdata = pdf;
-        if ($scope.pdfdata) {
-            $uibModal.open({
-                animation: true,
-                templateUrl: "views/modal/menu.html",
-                scope: $scope,
-            })
-        }
-    };
 })
 
 .controller('ThankCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
