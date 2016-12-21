@@ -22,6 +22,10 @@ var navigationservice = angular.module('navigationservice', [])
             anchor: "home"
         }]
     }];
+    var loginDetail = $.jStorage.get("loginDetail");
+    if (!loginDetail) {
+      loginDetail ={};
+    }
 
     return {
         getnav: function() {
@@ -47,6 +51,16 @@ var navigationservice = angular.module('navigationservice', [])
                 withCredentials: true
             }).success(callback);
         },
+        // setUsers:function(data){
+        //   console.log("im in");
+        //   // _assignIn(loginDetail,data);
+        //   // $.jStorage.set("loginDetail",loginDetail);
+        // },
+        // getuser :function(){
+        //   return loginDetail ;
+        // },
+
+
         getSlider: function(callback) {
             var data = {
                 city: $.jStorage.get("cityid")
