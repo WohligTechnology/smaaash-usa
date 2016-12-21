@@ -219,16 +219,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'BirthdayCtrl'
         })
-   
+
         .state('smaaash-cricket', {
             url: "/smaaash-cricket",
             templateUrl: "views/template.html",
             controller: 'SportsCtrl'
-        })
-        .state('snow-rush', {
-            url: "/:name/:id",
-            templateUrl: "views/template.html",
-            controller: 'SnowCtrl'
         })
 
     .state('sponsor', {
@@ -295,7 +290,13 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         url: "/confirm-order",
         templateUrl: "views/template.html",
         controller: 'ConfirmCtrl'
+    })
+    .state('snow-rush', {
+        url: "/:name/:id",
+        templateUrl: "views/template.html",
+        controller: 'SnowCtrl'
     });
+
 
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
