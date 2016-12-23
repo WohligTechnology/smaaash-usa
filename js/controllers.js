@@ -48,6 +48,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
         //for mobile
+
         $(window).scroll(function() {
             var scroller = $(document).scrollTop();
             var mobileheight = 200;
@@ -127,8 +128,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.attraction = $filter('orderBy')($scope.content.Attraction, '-order');
             $scope.whatsnew = $filter('orderBy')($scope.content["What's new"], '-order');
             $scope.hostParty = $filter('orderBy')($scope.content["Host a party"], '-order');
+            console.log("$scope.hostParty",$scope.hostParty);
             $scope.deals = $filter('orderBy')($scope.content["Deals and Packages"], '-order');
             $scope.events = $filter('orderBy')($scope.content["Events"], '-order');
+            console.log("$scope.events",$scope.events);
             $scope.foodBeverages = $filter('orderBy')($scope.content["Food and Beverages"], '-order');
             $scope.promotion = $filter('orderBy')($scope.content["Promotions"], '-order');
             TemplateService.removeLoader();
@@ -259,7 +262,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnlines = [{
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
-        id: '584fc0b627f423504111f59d',
+        id: '585d3de843d6132e58a3371b',
         pagename:'karting'
     }, {
         img: 'img/new/parties.jpg',
