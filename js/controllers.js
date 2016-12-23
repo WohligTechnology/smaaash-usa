@@ -1954,7 +1954,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.rechargeOnline = {};
         if ($.jStorage.get("loginDetail") != null) {
-            $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
+            $scope.rechargeOnline.CustomerID = $.jStorage.get("loginDetail").CustomerID;
             $scope.rechargeOnline.BranchID = $.jStorage.get("branchId");
         }
         $scope.rechargeOnline.PGReturnURL = "http://104.155.129.33:94/signup/returnUrlFunction";
@@ -2127,7 +2127,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         });
         $scope.msg = false;
-        $scope.CustID = $.jStorage.get("loginDetail").data.CustomerID;
+        $scope.CustID = $.jStorage.get("loginDetail").CustomerID;
         NavigationService.GetCustomerBookingDetails($scope.CustID, function(data) {
             if (data.value === true) {
                 $scope.custBooking = data.GetCustomerBookingDetails.CustomerBooking;
@@ -2233,7 +2233,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         $scope.detailsForBal = {};
         $scope.detailsForBal.CardNo = "cardnumber";
-        $scope.detailsForBal.MobileNo = $.jStorage.get("loginDetail").data.CustomerMobile;
+        $scope.detailsForBal.MobileNo = $.jStorage.get("loginDetail").CustomerMobile;
         NavigationService.GetCustomerBalance($scope.detailsForBal, function(data) {
             if (data.value) {
 
@@ -2777,8 +2777,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.wrongPass = false;
     $scope.passUpdated = false;
     if ($.jStorage.get("loginDetail") != null) {
-        $scope.credentials.CustomerID = $.jStorage.get("loginDetail").data.CustomerID;
-        $scope.loggedInUser = $.jStorage.get("loginDetail").data.CustomerName;
+        $scope.credentials.CustomerID = $.jStorage.get("loginDetail").CustomerID;
+        $scope.loggedInUser = $.jStorage.get("loginDetail").CustomerName;
     }
     $scope.formSubmit = function(credentials) {
 
@@ -3295,23 +3295,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.city = !$scope.city;
         };
 
-        NavigationService.getAllCityByOrder(function(data) {
-            $.jStorage.set("cityid", data.data[0]._id);
-            $.jStorage.set("city", data.data[0].name);
-            $.jStorage.set("logos", data.data[0].logo);
-            $.jStorage.set("branchId", data.data[0].BranchID);
-        });
-
-
-        $scope.template.reFetchCity = function() {
-            $scope.cityData = {
-                _id: $.jStorage.get("cityid"),
-                name: $.jStorage.get("city"),
-                smaaashLogo: $.jStorage.get("logos")
-            };
-        };
-        $scope.template.reFetchCity();
-
 
         $scope.menu = false;
         $scope.toggleMenu = function() {
@@ -3394,7 +3377,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log("signupData", signupData);
                 console.log("signupDataforData", data);
                 if (data.value === true) {
-                    $.jStorage.set("loginDetail", data);
+                    // $.jStorage.set("loginDetail", data);
+                    NavigationService.setUser(data.data);
                     $scope.emailExist = false;
                     $scope.formCompleteSignup = true;
                     $timeout(function() {
@@ -3425,7 +3409,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 NavigationService.VerifyCustomerLogin(userData, function(data) {
                     console.log("data", data);
                     if (data.value == true) {
-                        $.jStorage.set("loginDetail", data);
+                        // $.jStorage.set("loginDetail", data);
+                        NavigationService.setUser(data.data);
                         $scope.valid = false;
                         $scope.formComplete = true;
                         $timeout(function() {

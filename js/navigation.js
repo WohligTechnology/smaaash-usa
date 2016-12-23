@@ -1,11 +1,9 @@
 // var adminurl = "http://104.155.129.33:82/"; //India server
-var adminurl = "http://104.155.129.33:94/"; //US server
-// var adminurl = "http://192.168.0.104:1337/"; //local
+var adminurl = "http://146.148.109.185:94/"; //US server
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
-// var pdfpath = imgurl + "readFile?file=";
 var pdfpath ="http://104.155.129.33:82/upload/readFile?file";
-// var uploadurl = adminURL + "imageUpload";
+
 
 var uploadurl = imgurl;
 
@@ -51,11 +49,9 @@ var navigationservice = angular.module('navigationservice', [])
                 withCredentials: true
             }).success(callback);
         },
-        // setUsers:function(data){
-        //   console.log("im in");
-        //   // _assignIn(loginDetail,data);
-        //   // $.jStorage.set("loginDetail",loginDetail);
-        // },
+        setUser: function(data) {
+            $.jStorage.set("loginDetail", data);
+        },
         // getuser :function(){
         //   return loginDetail ;
         // },
@@ -262,7 +258,7 @@ var navigationservice = angular.module('navigationservice', [])
         getOne: function(callback) {
             if($.jStorage.get("loginDetail")!= null){
   var data = {
-                _id: $.jStorage.get("loginDetail").data._id,
+                _id: $.jStorage.get("loginDetail")._id,
 
             };
             }
@@ -385,7 +381,7 @@ var navigationservice = angular.module('navigationservice', [])
         addToWishList: function(id, callback) {
             console.log("nAV", id);
             var data = {
-                user: $.jStorage.get("loginDetail").data._id,
+                user: $.jStorage.get("loginDetail")._id,
                 wishList: {
                     exploresmash: id,
                     city: $.jStorage.get("cityid")
@@ -401,7 +397,7 @@ var navigationservice = angular.module('navigationservice', [])
         showWishList: function(callback) {
             // console.log("nAV", id);
             var data = {
-                user: $.jStorage.get("loginDetail").data._id,
+                user: $.jStorage.get("loginDetail")._id,
             };
             $http({
                 url: adminurl + 'signup/showWishList',
@@ -413,7 +409,7 @@ var navigationservice = angular.module('navigationservice', [])
         removeFromWishList: function(id,callback) {
           console.log("inNav",id);
             var data = {
-                user: $.jStorage.get("loginDetail").data._id,
+                user: $.jStorage.get("loginDetail")._id,
                 _id:id
             };
             $http({
@@ -549,7 +545,7 @@ var navigationservice = angular.module('navigationservice', [])
         },
         signupProfile: function(callback) {
           var data = {
-              _id: $.jStorage.get("loginDetail").data._id,
+              _id: $.jStorage.get("loginDetail")._id,
             };
             $http({
                 url: adminurl + 'signup/profile',
