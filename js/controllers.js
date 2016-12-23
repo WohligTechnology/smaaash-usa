@@ -11,8 +11,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.homeurl=$location.url();
     console.log("  $scope.homeurl",  $scope.homeurl);
-   $scope.template.header = "";
-       $scope.template.footer = "";
+//    $scope.template.header = "";
+//        $scope.template.footer = "";
     var openL = {};
     $scope.currentdate = new Date();
 
