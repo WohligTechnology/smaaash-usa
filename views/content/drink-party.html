@@ -19,7 +19,7 @@
                             <div class="min-h">
                                 <h3 class="margin0 uppercase" ng-bind-html="data.hometext"></h3>
                             </div>
-                           
+
                             <div class="min-h">
                                 <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:130}}</p>
                                 <p ng-show="moreDesc[data._id]">{{myDesc| htmlToPlaintext}}</p>
@@ -64,7 +64,7 @@
 
                             </div>-->
                             <div class="button-set inline-block">
-                                <ul class="social-icons list-inline inline-block">
+                                <!-- <ul class="social-icons list-inline inline-block">
                                     <p class="inline-block">Share</p>
                                     <li>
                                         <a
@@ -74,7 +74,7 @@
                                         <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                                     </li>
 
-                                </ul>
+                                </ul> -->
                                 <!-- <div class="more inline-block">
 
 
@@ -82,10 +82,13 @@
 
                                 </div> -->
                             </div>
-                             <div class="button-sets inline-block">
-                                <!-- <button class="uppercase large green" ng-click="bookings();">reservations</button> -->
-                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">Menu</button>
+                             <div class="button-sets inline-block" ng-if="data.hometext=='Food'">
+                                <button class="uppercase larger green" ng-click="pdfmodal('img/food_menu.pdf');">Menu</button>
                             </div>
+                            <!-- <div class="button-sets inline-block">
+                               <button class="uppercase large green" ng-click="bookings();">reservations</button>
+                               <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">Menu</button>
+                           </div> -->
                             <div class="love" ng-if="data.sublink">
                                 <a href={{data.sublink}} target="_blank">
                                     <button class="uppercase" ng-if="data.sublink">know more</button>
