@@ -11,7 +11,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.homeurl=$location.url();
     console.log("  $scope.homeurl",  $scope.homeurl);
-
+   $scope.template.header = "";
+       $scope.template.footer = "";
     var openL = {};
     $scope.currentdate = new Date();
 
@@ -1117,6 +1118,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Account");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+})
+.controller('ComingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("comingsoon");
+    $scope.menutitle = NavigationService.makeactive("Coming soon");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+      $scope.template.header = "";
+       $scope.template.footer = "";
 })
 
 
@@ -3295,12 +3305,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.city = !$scope.city;
         };
 
-        NavigationService.getAllCityByOrder(function(data) {
-            $.jStorage.set("cityid", data.data[0]._id);
-            $.jStorage.set("city", data.data[0].name);
-            $.jStorage.set("logos", data.data[0].logo);
-            $.jStorage.set("branchId", data.data[0].BranchID);
-        });
+        // NavigationService.getAllCityByOrder(function(data) {
+        //     $.jStorage.set("cityid", data.data[0]._id);
+        //     $.jStorage.set("city", data.data[0].name);
+        //     $.jStorage.set("logos", data.data[0].logo);
+        //     $.jStorage.set("branchId", data.data[0].BranchID);
+        // });
 
 
         $scope.template.reFetchCity = function() {

@@ -286,6 +286,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'GiftCtrl'
     })
 
+    .state('coming-soon', {
+        url: "/coming-soon",
+        templateUrl: "views/template.html",
+        controller: 'ComingCtrl'
+    })
     .state('confirm-order', {
         url: "/confirm-order",
         templateUrl: "views/template.html",
