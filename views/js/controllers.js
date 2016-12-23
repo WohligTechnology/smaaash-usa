@@ -8,7 +8,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
       TemplateService.removeLoaderOn(4);
-    var openL = {};
+    // var openL = {};
     // $scope.openpops = function() {
     //     openL = ngDialog.open({
     //         template: 'views/content/popup.html',
