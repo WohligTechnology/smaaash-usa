@@ -148,12 +148,21 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-        GetCustomerBalance: function(detailsForBal, callback) {
+        getCustomerBalance: function(detailsForBal, callback) {
             $http({
                 url: adminurl + 'signup/GetCustomerBalance',
                 method: 'POST',
 
                 data: detailsForBal
+
+            }).success(callback);
+        },
+        getGiftCard: function(formData, callback) {
+            $http({
+                url: adminurl + 'signup/giftCard',
+                method: 'POST',
+
+                data: formData
 
             }).success(callback);
         },
@@ -419,7 +428,7 @@ var navigationservice = angular.module('navigationservice', [])
                 data: data
             }).success(callback);
         },
-        getMediaGallery: function(mediaObj,callback) {
+        getGallery: function(mediaObj,callback) {
             $http({
                 url: adminurl + 'mediagallery/findLimited',
                 method: 'POST',

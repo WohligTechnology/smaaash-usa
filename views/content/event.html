@@ -11,16 +11,16 @@
 
           <div class="karting-championship">
             <div class="brand-blue relative  pointer">
-              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="" ui-sref="event-inner({id:data._id})">
+              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt=""  >
               <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                 class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="d.video"></a>
             </div>
             <div class="new-detail">
               <div class="views inline-block">
-                <button class="uppercase bluey" ui-sref="event-inner({id:data._id})">view</button>
+                <button class="uppercase bluey"  ng-click="goTo(data.hometext,data._id,'event-inner')">view</button>
               </div>
               <div class="min-last">
-                <h3 class="margin0 bluey pointer" ng-bind-html="data.hometext | shorten :20" ui-sref="event-inner({id:data._id})"></h3>
+                <h3 class="margin0 bluey pointer" ng-bind-html="data.hometext | shorten :20" ></h3>
                  <p class=""  ng-bind-html="data.description | htmlToPlaintext | shorten :130"></p>
               </div>
               <div class="button-set" ng-if="data.showBuyNow">

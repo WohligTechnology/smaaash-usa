@@ -1,7 +1,7 @@
 // JavaScript Document
 $.jStorage.set("city", "Bloomington");
 $.jStorage.set("cityid", "577f4d106b78e0bc03724800");
-  $.jStorage.set("branchId", "20");
+$.jStorage.set("branchId", "20");
 // if (!$.jStorage.get("city")) {
 //     $.holdReady(false);
 //
@@ -46,7 +46,7 @@ var firstapp = angular.module('firstapp', [
 
 ]);
 
-firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
     $stateProvider
@@ -63,7 +63,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
     })
 
     .state('event', {
-        url: "/event/:id",
+        url: "/events/:id",
         templateUrl: "views/template.html",
         controller: 'EventCtrl'
     })
@@ -74,16 +74,16 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'DealspCtrl'
     })
 
- .state('thank', {
+    .state('thank', {
         url: "/thankyou",
         // url: "/thankyou/:orderno/:cnrno/:amount/:paymentfor",
         templateUrl: "views/template.html",
         controller: 'ThankCtrl'
     })
 
-.state('sorry', {
+    .state('sorry', {
         url: "/sorry",
-            // url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
+        // url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
         templateUrl: "views/template.html",
         controller: 'SorryCtrl'
     })
@@ -94,41 +94,37 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'DrinkCtrl'
     })
 
-   .state('reset', {
+    .state('reset', {
         url: "/reset",
         templateUrl: "views/template.html",
         controller: 'ResetCtrl'
     })
 
-  .state('promotion-inner', {
+    .state('promotion-inner', {
         url: "/promotion-inner/:id",
         templateUrl: "views/template.html",
         controller: 'PromotionInnerCtrl'
     })
 
 
-   .state('promotion', {
+    .state('promotion', {
         url: "/promotion/:id",
         templateUrl: "views/template.html",
         controller: 'PromotionCtrl'
     })
 
     .state('blog', {
-     url: "/blog",
-     templateUrl: "views/template.html",
-     controller: 'BlogCtrl'
-  })
-    .state('blogs', {
-     url: "/blogs/:search",
-     templateUrl: "views/template.html",
-     controller: 'BlogCtrl'
-  })
+            url: "/blog",
+            templateUrl: "views/template.html",
+            controller: 'BlogCtrl'
+        })
+        .state('blogs', {
+            url: "/blogs/:search",
+            templateUrl: "views/template.html",
+            controller: 'BlogCtrl'
+        })
 
-        .state('blog-inside', {
-     url: "/blog-inside/:id",
-     templateUrl: "views/template.html",
-     controller: 'BlogInsideCtrl'
-  })
+
 
     .state('deals-inner', {
         url: "/deals-inner/:id",
@@ -136,20 +132,15 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'DealsInnerCtrl'
     })
 
-    .state('event-inner', {
-        url: "/event-inner/:id",
-        templateUrl: "views/template.html",
-        controller: 'EventInnerCtrl'
-    })
 
 
     .state('stars', {
-        url: "/stars",
+        url: "/gallery",
         templateUrl: "views/template.html",
         controller: 'StarsCtrl'
     })
 
-       .state('media', {
+    .state('media', {
         url: "/media",
         templateUrl: "views/template.html",
         controller: 'MediaCtrl'
@@ -175,15 +166,15 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
     })
 
     .state('cart', {
-        url: "/cart",
-        templateUrl: "views/template.html",
-        controller: 'CartsCtrl'
-    })
-       .state('terms', {
-        url: "/terms",
-        templateUrl: "views/template.html",
-        controller: 'TermsCtrl'
-    })
+            url: "/cart",
+            templateUrl: "views/template.html",
+            controller: 'CartsCtrl'
+        })
+        .state('terms', {
+            url: "/terms",
+            templateUrl: "views/template.html",
+            controller: 'TermsCtrl'
+        })
 
 
     .state('whats-new', {
@@ -220,11 +211,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             controller: 'BirthdayCtrl'
         })
 
-        .state('smaaash-cricket', {
-            url: "/smaaash-cricket",
-            templateUrl: "views/template.html",
-            controller: 'SportsCtrl'
-        })
+    .state('smaaash-cricket', {
+        url: "/smaaash-cricket",
+        templateUrl: "views/template.html",
+        controller: 'SportsCtrl'
+    })
 
     .state('sponsor', {
         url: "/sponsor",
@@ -268,7 +259,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'ProfileCtrl'
     })
 
-        .state('recharge', {
+    .state('recharge', {
         url: "/recharge",
         templateUrl: "views/template.html",
         controller: 'RechargeCtrl'
@@ -280,27 +271,40 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'CareersCtrl'
     })
 
-   .state('gift', {
+    .state('gift', {
         url: "/giftcards",
         templateUrl: "views/template.html",
         controller: 'GiftCtrl'
     })
 
     .state('coming-soon', {
-        url: "/coming-soon",
-        templateUrl: "views/template.html",
-        controller: 'ComingCtrl'
-    })
-    .state('confirm-order', {
-        url: "/confirm-order",
-        templateUrl: "views/template.html",
-        controller: 'ConfirmCtrl'
-    })
-    .state('snow-rush', {
-        url: "/:name/:id",
-        templateUrl: "views/template.html",
-        controller: 'SnowCtrl'
-    });
+            url: "/coming-soon",
+            templateUrl: "views/template.html",
+            controller: 'ComingCtrl'
+        })
+        .state('confirm-order', {
+            url: "/confirm-order",
+            templateUrl: "views/template.html",
+            controller: 'ConfirmCtrl'
+        })
+
+
+
+        .state('blog-inside', {
+            url: "/blogInside/:name/:id",
+            templateUrl: "views/template.html",
+            controller: 'BlogInsideCtrl'
+        })
+        .state('event-inner', {
+            url: "/event/:name/:id",
+            templateUrl: "views/template.html",
+            controller: 'EventInnerCtrl'
+        })
+        .state('snow-rush', {
+            url: "/:name/:id",
+            templateUrl: "views/template.html",
+            controller: 'SnowCtrl'
+        });
 
 
     $urlRouterProvider.otherwise("/");
@@ -308,11 +312,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
 });
 
 
-firstapp.directive('fancyboxBox', function ($document) {
+firstapp.directive('fancyboxBox', function($document) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function (scope, element, attr) {
+        link: function(scope, element, attr) {
             var $element = $(element);
             var target;
             if (attr.rel) {
@@ -334,47 +338,47 @@ firstapp.directive('fancyboxBox', function ($document) {
     };
 })
 
-firstapp.directive('fancyboxThumb', function ($document) {
+firstapp.directive('fancyboxThumb', function($document) {
 
-        return {
-            restrict: 'EA',
-            replace: false,
-            link: function (scope, element, attr) {
-                var $element = $(element);
-                var target;
-                if (attr.rel) {
-                    target = $("[rel='" + attr.rel + "']");
-                } else {
-                    target = element;
-                }
-
-                target.fancybox({
-                    nextEffect: 'none',
-                    prevEffect: 'none',
-                    padding: 0,
-                    helpers: {
-                        title: {
-                            type: 'over'
-                        },
-                        thumbs: {
-                            width: 50,
-                            height: 50
-                        }
-                    }
-                });
-            }
-        };
-    })
-
-
-firstapp.directive('autoHeight', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function(scope, element, attr) {
+            var $element = $(element);
+            var target;
+            if (attr.rel) {
+                target = $("[rel='" + attr.rel + "']");
+            } else {
+                target = element;
+            }
+
+            target.fancybox({
+                nextEffect: 'none',
+                prevEffect: 'none',
+                padding: 0,
+                helpers: {
+                    title: {
+                        type: 'over'
+                    },
+                    thumbs: {
+                        width: 50,
+                        height: 50
+                    }
+                }
+            });
+        }
+    };
+})
+
+
+firstapp.directive('autoHeight', function($compile, $parse) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function($scope, element, attrs) {
             var $element = $(element);
             var windowHeight = $(window).height();
-            var addHeight = function () {
+            var addHeight = function() {
                 $element.css("min-height", windowHeight);
             };
             addHeight();
@@ -382,11 +386,11 @@ firstapp.directive('autoHeight', function ($compile, $parse) {
     };
 });
 
-firstapp.directive('noDrag', function ($compile, $parse) {
+firstapp.directive('noDrag', function($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             var $element = $(element);
             $element.context.draggable = false;
         }
@@ -411,11 +415,11 @@ function allowPatternDirective() {
         restrict: "A",
         compile: function(tElement, tAttrs) {
             return function(scope, element, attrs) {
-              element.bind("keypress", function(event) {
+                element.bind("keypress", function(event) {
                     var keyCode = event.which || event.keyCode;
                     var keyCodeChar = String.fromCharCode(keyCode);
                     if (!keyCodeChar.match(new RegExp(attrs.allowPattern, "i"))) {
-            event.preventDefault();
+                        event.preventDefault();
                         return false;
                     }
 
@@ -515,19 +519,19 @@ firstapp.directive('img', function($compile, $parse) {
 });
 
 
-firstapp.directive('noPaste', function ($filter) {
-  return {
-    scope: {},
-    link: function (scope, element) {
-      element.on('cut copy paste', function (event) {
-        event.preventDefault();
-      });
-    }
-  };
+firstapp.directive('noPaste', function($filter) {
+    return {
+        scope: {},
+        link: function(scope, element) {
+            element.on('cut copy paste', function(event) {
+                event.preventDefault();
+            });
+        }
+    };
 });
 
-firstapp.filter('uploadpath', function () {
-    return function (input, width, height, style) {
+firstapp.filter('uploadpath', function() {
+    return function(input, width, height, style) {
         var other = "";
         if (width && width != "") {
             other += "&width=" + width;
@@ -549,8 +553,8 @@ firstapp.filter('uploadpath', function () {
     };
 });
 
-firstapp.filter('uploadprofilepicture', function () {
-    return function (input, width, height, style) {
+firstapp.filter('uploadprofilepicture', function() {
+    return function(input, width, height, style) {
 
         var other = "";
         if (width && width != "") {
@@ -570,22 +574,22 @@ firstapp.filter('uploadprofilepicture', function () {
 
                 return input;
             }
-        }else{
+        } else {
             return 'img/profile/female.png';
         }
     };
 });
 
-firstapp.config(function ($translateProvider) {
+firstapp.config(function($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);
     $translateProvider.translations('hi', LanguageHindi);
     $translateProvider.preferredLanguage('en');
 });
-firstapp.directive('onlyDigits', function () {
+firstapp.directive('onlyDigits', function() {
     return {
         require: 'ngModel',
         restrict: 'A',
-        link: function (scope, element, attr, ctrl) {
+        link: function(scope, element, attr, ctrl) {
             var digits;
 
             function inputValue(val) {
@@ -610,17 +614,17 @@ firstapp.directive('onlyDigits', function () {
     };
 });
 
-firstapp.directive('scrolldown', function ($compile, $parse) {
+firstapp.directive('scrolldown', function($compile, $parse) {
 
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             var $element = $(element);
             //  var height = 200;
             // var windowHeight = $(window).height();
-            $scope.scrollDown = function () {
-                $scope.startVideo=false;
+            $scope.scrollDown = function() {
+                $scope.startVideo = false;
                 $('html,body').animate({
                         scrollTop: $(".second").offset().top
                     },
@@ -629,8 +633,8 @@ firstapp.directive('scrolldown', function ($compile, $parse) {
         }
     };
 });
-firstapp.filter('rmvStartEndSpace', function () {
-    return function (input) {
+firstapp.filter('rmvStartEndSpace', function() {
+    return function(input) {
         if (input) {
             console.log(input);
             return input.toString().trim();
@@ -669,22 +673,22 @@ firstapp.filter('youtubethumb', function() {
 });
 
 firstapp.filter('rawHtml', ['$sce',
-    function ($sce) {
-        return function (val) {
+    function($sce) {
+        return function(val) {
             console.log(val);
             return $sce.trustAsHtml(val);
         };
     }
 ]);
-firstapp.filter('trusted', ['$sce', function ($sce) {
-    return function (url) {
+firstapp.filter('trusted', ['$sce', function($sce) {
+    return function(url) {
         return $sce.trustAsResourceUrl(url);
     };
 }]);
 
 
-firstapp.filter('shorten', function () {
-    return function (value, limit) {
+firstapp.filter('shorten', function() {
+    return function(value, limit) {
         if (value)
             if (value.length < limit) {
                 return value;
@@ -695,18 +699,18 @@ firstapp.filter('shorten', function () {
 
     }
 });
-firstapp.filter('htmlToPlaintext', function () {
-    return function (text) {
+firstapp.filter('htmlToPlaintext', function() {
+    return function(text) {
         return text ? String(text).replace(/<[^>]+>/gm, '') : '';
     };
 });
 
-firstapp.directive('aplhaOnly', function () {
+firstapp.directive('aplhaOnly', function() {
     return {
         require: 'ngModel',
-        link: function (scope, element, attr, ngModelCtrl) {
+        link: function(scope, element, attr, ngModelCtrl) {
             function fromUser(text) {
-                var transformedInput = text.replace(/[^a-zA-Z]/g, '');
+                var transformedInput = text.replace(/[^a-zA-Z\.\s]/g, '');
                 if (transformedInput !== text) {
                     ngModelCtrl.$setViewValue(transformedInput);
                     ngModelCtrl.$render();
@@ -717,20 +721,20 @@ firstapp.directive('aplhaOnly', function () {
         }
     };
 });
-firstapp.filter('urlEncode', [function () {
+firstapp.filter('urlEncode', [function() {
     return window.encodeURIComponent;
 }]);
 
-firstapp.filter('englishNumeralDate', function () {
-    return function (value) {
+firstapp.filter('englishNumeralDate', function() {
+    return function(value) {
         if (value) {
             console.log(angular.isDate(value));
             return moment(new Date(value)).format("Do MMMM YYYY");
         }
     };
 });
-firstapp.filter('englishNumeralTime', function () {
-    return function (value) {
+firstapp.filter('englishNumeralTime', function() {
+    return function(value) {
         if (value) {
             console.log(angular.isDate(value));
             return moment(new Date(value)).format("h:mm a");

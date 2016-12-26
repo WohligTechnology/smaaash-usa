@@ -34,61 +34,61 @@
             </div>
             <div class="col-md-6">
                <div class="practice">
-                
+
                   <form class="form" name="user" ng-submit="submitGiftCard(formData)">
                      <h3 class="text-center" >   Gift your friends & family an adrenaline rush.</h3>
-                 
+
                     <h4 class="text-center title" >You can buy gift cards over the counter at Smaaash   for your dear ones this festive season.</h4>
-                     <!--<div class="form-group relative">
-                        <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
+                     <div class="form-group relative">
+                        <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.SenderName" aplha-Only required>
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
                         <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name </div>
                      </div>
                      <div class="form-group relative">
-                        <input type="email" class=" form-control" placeholder="Email ID" name="email" ng-model="formData.email" required>
+                        <input type="email" class=" form-control" placeholder="Email ID" name="email" ng-model="formData.SenderEmail" required>
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
                         <div class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email ID </div>
                      </div>
                      <div class="form-group relative ">
-                        <input type="tel" class="form-control" placeholder="Mobile .No" name="mobile" ng-model="formData.mobile" required only-digits maxlength="10" minlength="10">
+                        <input type="tel" class="form-control" placeholder="Mobile .No" name="mobile" ng-model="formData.SenderMobile" required only-digits maxlength="10" minlength="10">
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
                         <div class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please enter your mobile no. </div>
                      </div>
                      <div class="form-group relative">
                         <input type="text" class=" form-control" placeholder="Name of the person you want to
- gift this card" name="hname" ng-model="formData.hname" required>
+ gift this card" name="hname" ng-model="formData.ReceiverName" required aplha-Only>
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
                         <div class="error-msg" ng-show="user.hname.$error.required && user.hname.$touched">Please Enter the person's Name </div>
                      </div>
                      <div class="form-group relative ">
-                        <input type="tel" class="form-control" placeholder="His/Her Mobile No." name="hmobile" ng-model="formData.hmobile" required only-digits maxlength="10" minlength="10">
+                        <input type="tel" class="form-control" placeholder="His/Her Mobile No." name="hmobile" ng-model="formData.ReceiverMobileNo" required only-digits maxlength="10" minlength="10">
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
                         <div class="error-msg" ng-show="user.hmobile.$error.required && user.hmobile.$touched">Please enter his/her mobile no. </div>
                      </div>
                      <div class="form-group relative">
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                        <input type="text" placeholder=" Their Address" class="form-control"  ng-model="formData.address" required>
+                        <input type="text" placeholder=" Their Address" class="form-control"  ng-model="formData.ReceiverAddress" required>
                      </div>
                      <div class="form-group relative">
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                        <input type="text" placeholder=" Zip code" class="form-control" required ng-model="formData.pincode">
+                        <input type="text" placeholder=" Zip code" class="form-control" required ng-model="formData.ReceiverPinCode" only-Digits maxlength="6">
 
                      </div>
                      <div class="form-group relative">
                         <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                        <select name="categorydata" class="form-control" ng-model="formData.denomination" required>
+                        <select name="categorydata" class="form-control" ng-model="formData.GiftCardAmount" required>
                            <option ng-selected="true" value=""> Select Gift Card Denomination</option>
-                           <option value="$ 10">$ 10</option>
-                            <option value="$ 20">$ 20</option>
-                           <option value="$ 50"> $ 50</option>
-                           <option value="$ 100">$ 100</option>
+                           <option value="10">$ 10</option>
+                            <option value="20">$ 20</option>
+                           <option value="50"> $ 50</option>
+                           <option value="100">$ 100</option>
                         </select>
 
                      </div>
 
                      <button type="submit" class=" btn6 btn-default block now" ><img src="img/gift/now.png" class="img-responsive" alt=""></button>
-                  </form>-->
-                  <!--<div class="submit-thank" ng-if="formCompleteAssistance">
+                  </form>
+                  <div class="submit-thank" ng-if="formComplete">
               <p class="text-center">Thank You</p>
             </div>
                </div>
