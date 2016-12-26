@@ -2011,6 +2011,13 @@ margin: 0 !important;
     text-decoration: underline !important;
     color: #000;
   }
+
+.media{
+    .min-heights {
+    min-height: 236px;
+}
+}
+
 @import "ruchira";
 @import "mobile";
 @import "fancybox-override";
