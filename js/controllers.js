@@ -731,17 +731,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(2);
 
-    NavigationService.getAllCityByOrder(function(data) {
-        $scope.allCity = data.data;
-        console.log("allCity", $scope.allCity);
-        // TemplateService.removeLoader();
-    });
+    $scope.moreDesc={};
     $scope.mediaObject = {};
     $scope.mediaObject.pagenumber = 0;
     $scope.mediaObject.pagesize = 6;
     $scope.mediaObject.city = $.jStorage.get("cityid");
     $scope.noviewmore = true;
     $scope.mediagallery = [];
+    $scope.mediagalleryDesc = [];
     $scope.notAvailable = false;
     $scope.fetchData = function() {
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
@@ -758,6 +755,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log($scope.mediaObject.pagenumber);
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
                     if (data.data.data) {
+                      console.log("data  in medi",data.data.data);
+                        $scope.mediagalleryDesc=_.cloneDeep(data.data.data);
                         data.data.data = _.chunk(data.data.data, 3);
                         _.each(data.data.data, function(n) {
                             // console.log(n);
@@ -778,6 +777,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         })
     };
+
     $scope.fetchData();
     $scope.message = false;
     $scope.fetchSearchedData = function() {
@@ -808,7 +808,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             TemplateService.removeLoader();
         })
     };
+    $scope.readMore = function(id) {
 
+        console.log(id);
+        _.each($scope.moreDesc, function(value, property) {
+            console.log("property", property);
+            if (id != property) {
+                $scope.moreDesc[property] = false;
+            }
+        });
+        $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
+        console.log($scope.moreDesc);
+        console.log("$scope.mediagallery ",$scope.mediagallery );
+        $scope.myDesc = _.find($scope.mediagalleryDesc , function(n) {
+            return n._id == id;
+
+        }).text;
+    };
 })
 
 .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $stateParams) {

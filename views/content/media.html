@@ -66,8 +66,15 @@
                   <a href="{{data.link}}" target="_blank">View</a></button>
               </div>
 
-              <h3 class="margin0 bluey" ng-bind-html="data.title">Food & Beverages at SMAAASH MOA</h3>
-            <p style="min-height: 78px;" ng-bind-html="data.text">Three New and Coming Soon Restaurants and SMAAASH.</p>
+              <h3 class="margin0 bluey" ng-bind-html="data.title"></h3>
+            <!-- <p style="min-height: 78px;" ng-bind-html="data.text"></p> -->
+
+
+            <p style="min-height: 78px;" ng-hide="moreDesc[data._id]">{{data.text | htmlToPlaintext | shorten:120}}</p>
+            <p style="min-height: 78px;" ng-show="moreDesc[data._id]">{{myDesc | htmlToPlaintext}}</p>
+            <p style="min-height: 78px;" ng-if="!data.text"> No data found</p>
+            <span class="capitalize bluey" ng-if="data.text.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">read more</span>
+            <span class="capitalize bluey" ng-if="data.text.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id)">read less</span>
 
             </div>
 </div>
