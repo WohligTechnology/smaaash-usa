@@ -66,7 +66,7 @@
                   <a href="{{data.link}}" target="_blank">View</a></button>
               </div>
 
-              <h3 class="margin0 bluey" ng-bind-html="data.title"></h3>
+              <h3 class="margin0 bluey" ng-bind-html="data.title | shorten :45"></h3>
             <!-- <p style="min-height: 78px;" ng-bind-html="data.text"></p> -->
 
 
