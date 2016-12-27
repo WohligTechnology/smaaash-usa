@@ -621,7 +621,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('StarsCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("stars");
-    $scope.menutitle = NavigationService.makeactive("Gallery");
+    $scope.menutitle = NavigationService.makeactive("Stars");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(3);
