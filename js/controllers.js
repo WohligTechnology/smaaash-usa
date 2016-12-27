@@ -822,7 +822,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log("$scope.mediagallery ",$scope.mediagallery );
         $scope.myDesc = _.find($scope.mediagalleryDesc , function(n) {
             return n._id == id;
-
         }).text;
     };
 })
