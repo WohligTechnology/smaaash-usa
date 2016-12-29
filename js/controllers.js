@@ -1197,9 +1197,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("data", data);
             if (data.value === true) {
               $scope.newWindow = data.data.GiftCard[0].Link ;
+                $scope.showError=false;
                 $window.location.href = $scope.newWindow;
                 // $window.open($scope.newWindow, " ");
                 }else {
+                  $scope.showError=true;
               console.log("something went wrong");
             }
         })

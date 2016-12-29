@@ -75,24 +75,30 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     })
 
     .state('thank', {
-        url: "/thankyou",
-        // url: "/thankyou/:orderno/:cnrno/:amount/:paymentfor",
+        // url: "/thankyou",
+        url: "/thankyou/:orderno/:cnrno/:amount",
         templateUrl: "views/template.html",
         controller: 'ThankCtrl'
     })
-
-    // .state('sorry', {
-    //     // url: "/sorry",
-    //     url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
+    // .state('thank', {
+    //     // url: "/thankyou",
+    //     url: "/thankyou/:orderno/:cnrno/:amount/:paymentfor",
     //     templateUrl: "views/template.html",
-    //     controller: 'SorryCtrl'
+    //     controller: 'ThankCtrl'
     // })
+
     .state('sorry', {
         // url: "/sorry",
         url: "/sorry/:orderno/:cnrno/:amount",
         templateUrl: "views/template.html",
         controller: 'SorryCtrl'
     })
+    // .state('sorry', {
+    //     // url: "/sorry",
+    //     url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
+    //     templateUrl: "views/template.html",
+    //     controller: 'SorryCtrl'
+    // })
 
     .state('drink-party', {
         url: "/drink-party/:id",
