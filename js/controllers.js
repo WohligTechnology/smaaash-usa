@@ -2820,6 +2820,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.amount = $stateParams.amount;
     $scope.cnrNo = $stateParams.cnrno;
     $scope.paymentFor = $stateParams.paymentfor;
+    console.log("$stateParams",$stateParams);
+    console.log("im in");
+    // console.log("log",$location);
 })
 
 

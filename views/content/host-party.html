@@ -169,9 +169,14 @@
                 </a>
               </div>
   <div class="love " >
-                <button class="uppercase blue"  fancybox-box href="{{data.image|uploadpath}}">
+                <button ng-if="data.rateImage" class="uppercase blue"  fancybox-box href="{{data.rateImage|uploadpath}}">
                   rate card
                   </button>
+
+                <!-- <button ng-if="!data.rateImage" class="uppercase blue"  >
+                No rate card
+                  </button> -->
+
               </div>
             </div>
           </div>
