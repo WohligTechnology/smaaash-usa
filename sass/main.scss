@@ -587,9 +587,18 @@ background-image: none;
     background-size: 20px 20px;
     background-position: 0 0, 30px 30px;
 }
-
+.footing{
+    background-color: #fff;
+    padding: 10px 0 0;
+    margin: 10px 0;
+    h4{
+        color: #000;
+        font-size: 14px;
+        text-align: center;
+    }
+}
 .footers-list {
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .foot {
