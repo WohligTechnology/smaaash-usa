@@ -723,7 +723,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('MediaCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+.controller('MediaCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,$filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("media");
     $scope.menutitle = NavigationService.makeactive("Media");
@@ -740,6 +740,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.mediagallery = [];
     $scope.mediagalleryDesc = [];
     $scope.notAvailable = false;
+
     $scope.fetchData = function() {
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
         NavigationService.getStars($scope.mediaObject, function(data) {
@@ -755,6 +756,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log($scope.mediaObject.pagenumber);
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
                     if (data.data.data) {
+                        data.data.data = $filter('orderBy')(data.data.data, '-order');
                       console.log("data  in medi",data.data.data);
                         $scope.mediagalleryDesc=_.cloneDeep(data.data.data);
                         data.data.data = _.chunk(data.data.data, 3);
@@ -798,6 +800,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.message = false;
             }
             if (data.data.data) {
+                  data.data.data = $filter('orderBy')(data.data.data, '-order');
                 data.data.data = _.chunk(data.data.data, 3);
 
             }
