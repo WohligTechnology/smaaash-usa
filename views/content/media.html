@@ -35,7 +35,7 @@
             <!-- <p>For media inquiries, please contact Sara Wickoren at <a class="mail" href="mailto:sara@smaaashusa.com">sara@smaaashusa.com</a></p>
             <p>"There's so much to share: press coverage and videos coming soon!"</p> -->
       <h4 ng-if="mediagallery.length === 0" class="text-center">Loading ...</h4>
-      <div class="row" ng-repeat="datas in mediagallery | orderBy :'-order'" >
+      <div class="row" ng-repeat="datas in mediagallery" >
       <!-- <div class="row" ng-repeat="datas in mediagallery | orderBy :'-order'" > -->
 <!--<div class="col-md-4">
     <div class="karting-championship">
@@ -55,7 +55,7 @@
             </div>
 </div>
 </div>-->
-<div class="col-md-4" ng-repeat ="data in datas">
+<div class="col-md-4" ng-repeat ="data in datas | orderBy :'-order'">
     <div class="karting-championship">
  <div class="brand-blue relative pointer">
               <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
