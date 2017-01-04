@@ -658,6 +658,18 @@ firstapp.directive('scrolldown', function($compile, $parse) {
         }
     };
 });
+firstapp.directive('fancybox', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      if (scope.$last) setTimeout(function() {
+       $('.fancybox').fancybox({
+          theme : 'dark'
+        });
+       }, 1);
+    }
+  };
+});
 firstapp.filter('rmvStartEndSpace', function() {
     return function(input) {
         if (input) {
