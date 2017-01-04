@@ -657,10 +657,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log($scope.objectfilter.pagenumber);
                 if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
 
-                    // if (data.data.data) {
-                    //     data.data.data = _.chunk(data.data.data, 3)
-                    //
-                    // }
+                    if (data.data.data) {
+                        data.data.data = _.chunk(data.data.data, 3)
+
+                    }
                     _.each(data.data.data, function(n) {
                         // console.log(n);
                         $scope.stars.push(n)
@@ -677,11 +677,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         })
     };
-    // var slides = $scope.slides = [];
-    // var currIndex = 0;
-    $scope.showPopUp=function(index){
-      console.log(index,"index");
-    }
+
     $scope.fetchData();
     $scope.message = false;
     $scope.fetchSearchedData = function() {
@@ -701,10 +697,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $scope.message = false;
             }
-            // if (data.data.data) {
-            //     data.data.data = _.chunk(data.data.data, 3)
-            //
-            // }
+            if (data.data.data) {
+                data.data.data = _.chunk(data.data.data, 3)
+
+            }
 
             $scope.stars = data.data.data
             TemplateService.removeLoader();
