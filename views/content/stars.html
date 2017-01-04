@@ -61,7 +61,7 @@
 
         <div class="col-md-4 col-sm-4" ng-repeat="d in data">
           <div class="karting-championship">
-            <div class="brand-blue relative pointer" fancybox-box href="{{d.popupImage|uploadpath}}"  rel="fancybox-thumb" fancybox data-fancybox-group="gallery">
+            <div class="brand-blue relative pointer" fancybox-box href="{{d.popupImage|uploadpath}}"  rel="fancybox-thumb" data-fancybox-group="gallery" title={{d.title}}>
               <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" >
               <a href="" class="pink-button" ng-if="d.url"><img src="img/home/button.png" class="img-responsive" alt=""></a>
             </div>

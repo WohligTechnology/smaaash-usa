@@ -2,6 +2,8 @@
 $.jStorage.set("city", "Bloomington");
 $.jStorage.set("cityid", "577f4d106b78e0bc03724800");
 $.jStorage.set("branchId", "20");
+
+
 // if (!$.jStorage.get("city")) {
 //     $.holdReady(false);
 //
@@ -658,18 +660,7 @@ firstapp.directive('scrolldown', function($compile, $parse) {
         }
     };
 });
-firstapp.directive('fancybox', function() {
-  return {
-    restrict: 'A',
-    link: function(scope, element) {
-      if (scope.$last) setTimeout(function() {
-       $('.fancybox').fancybox({
-          theme : 'dark'
-        });
-       }, 1);
-    }
-  };
-});
+
 firstapp.filter('rmvStartEndSpace', function() {
     return function(input) {
         if (input) {

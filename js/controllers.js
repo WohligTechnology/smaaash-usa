@@ -634,7 +634,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     };
 
-
+$scope.title ='title to give';
     $scope.objectfilter = {};
     $scope.objectfilter.pagenumber = 0;
     $scope.objectfilter.pagesize = 6;
