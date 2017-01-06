@@ -10,7 +10,7 @@
                 <div class="col-md-4 col-sm-4" ng-repeat="data in data2">
                     <div class="karting-championship relative">
                         <div class="img-bg">
-                            <img ng-src="{{data.homeimage|uploadpath}}" class="img-responsive" alt="" ui-sref="host-party({id:'57bc4b10eb9c91f1025a3b54'})">
+                            <img ng-src="{{data.homeimage|uploadpath}}" class="img-responsive" alt="" ng-click="gotFunction(data._id)">
                         </div>
                         <!--<div class="restaurants">
                             <span>restaurants</span>
