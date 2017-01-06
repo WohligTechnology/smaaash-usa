@@ -2803,10 +2803,14 @@ TemplateService.removeLoaderOn(2);
         }
     }
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
-        $scope.detailEventsInner = data.data;
-        $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
-        TemplateService.removeLoader();
-    })
+          if (data.value) {
+            $scope.detailEventsInner = data.data;
+            if ($scope.detailEventsInner.banner) {
+              $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
+            }
+          TemplateService.removeLoader();
+        }
+      })
 
 })
 
