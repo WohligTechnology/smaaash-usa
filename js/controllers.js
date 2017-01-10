@@ -634,7 +634,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     };
 
-
+$scope.title ='title to give';
     $scope.objectfilter = {};
     $scope.objectfilter.pagenumber = 0;
     $scope.objectfilter.pagesize = 6;
@@ -677,6 +677,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         })
     };
+
     $scope.fetchData();
     $scope.message = false;
     $scope.fetchSearchedData = function() {
@@ -1786,10 +1787,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-
+TemplateService.removeLoaderOn(2);
     // $scope.myUrl = window.location.href;
     $scope.myUrl = $location.absUrl();
-    TemplateService.removeLoaderOn(2);
+
     console.log("$scope.myUrl0", $scope.myUrl);
     //  $scope.$on('$viewContentLoaded', function(event) {
     //   $timeout(function() {
@@ -1847,14 +1848,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
-        $scope.SingleHostParty1 = data.data;
-        $scope.SingleHostParty = _.chunk(data.data, 3);
-        $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
-        $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
-        $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
-        $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
-        $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
-        TemplateService.removeLoader();
+        if (data.value) {
+          $scope.SingleHostParty1 = data.data;
+          $scope.SingleHostParty = _.chunk(data.data, 3);
+          $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
+          $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
+          $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
+          $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
+          $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
+            TemplateService.removeLoader();
+        }
+
     });
 
 
@@ -1872,12 +1876,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }).description;
     };
     NavigationService.getAllHostPartySlider(function(data) {
-        var i = 1;
-        $scope.hostPartySlider = _.each(data.data, function(key) {
-            key.order = i;
-            i++;
-        });
-        TemplateService.removeLoader();
+      if (data.value) {
+          var i = 1;
+          $scope.hostPartySlider = _.each(data.data, function(key) {
+              key.order = i;
+              i++;
+          });
+          TemplateService.removeLoader();
+
+        }
 
     })
 
@@ -2443,7 +2450,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     })
 
-.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $location) {
+.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $location,$state ) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("drink-party");
     $scope.menutitle = NavigationService.makeactive("Drink Party");
@@ -2469,14 +2476,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
 
-    // $scope.readMore = function(id) {
-    //     console.log("id", id);
-    //     $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-    //     console.log("$scope.drinkParty", $scope.drinkParty);
-    //     $scope.myDesc = _.find($scope.drinkParty1, function(n) {
-    //         return n._id == id;
-    //     }).description;
-    // };
+
+    $scope.gotFunction=function(id){
+      if (id === '57e13248d32ecf3237dcf36a') {
+        $state.go( 'host-party', {
+          id: '57bc4b10eb9c91f1025a3b54'
+        });
+      }
+    }
     $scope.readMore = function(id) {
         _.each($scope.moreDesc, function(value, property) {
             if (id != property) {
@@ -2796,10 +2803,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     }
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
-        $scope.detailEventsInner = data.data;
-        $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
-        TemplateService.removeLoader();
-    })
+          if (data.value) {
+            $scope.detailEventsInner = data.data;
+            if ($scope.detailEventsInner.banner) {
+              $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
+            }
+          TemplateService.removeLoader();
+        }
+      })
 
 })
 

@@ -55,15 +55,18 @@
 
       <h3 class="uppercase" ng-if="stars.length>0">gallery</h3>
         <h4 ng-if="stars.length === 0" class="text-center">Loading ...</h4>
-      <div class="row" ng-repeat ="data in stars">
+      <div class="row" ng-repeat="data in stars">
 
         <!-- <div ng-if="notAvailable" class="text-center">Nothing Available</div> -->
+
         <div class="col-md-4 col-sm-4" ng-repeat="d in data">
           <div class="karting-championship">
-            <div class="brand-blue relative pointer" fancybox-box href="{{d.image|uploadpath}}">
-              <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="">
+            <div class="brand-blue relative pointer" fancybox-box href="{{d.popupImage|uploadpath}}"  rel="fancybox-thumb" data-fancybox-group="gallery" title={{d.title}}>
+              <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" >
               <a href="" class="pink-button" ng-if="d.url"><img src="img/home/button.png" class="img-responsive" alt=""></a>
             </div>
+
+
             <!--<div class="new-detail">
               <div class="views inline-block">
                 <button class="uppercase bluey" fancybox-box href="{{d.image|uploadpath}}">view</button>

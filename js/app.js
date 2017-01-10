@@ -2,6 +2,8 @@
 $.jStorage.set("city", "Bloomington");
 $.jStorage.set("cityid", "577f4d106b78e0bc03724800");
 $.jStorage.set("branchId", "20");
+
+
 // if (!$.jStorage.get("city")) {
 //     $.holdReady(false);
 //
@@ -658,6 +660,7 @@ firstapp.directive('scrolldown', function($compile, $parse) {
         }
     };
 });
+
 firstapp.filter('rmvStartEndSpace', function() {
     return function(input) {
         if (input) {
