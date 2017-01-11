@@ -2047,6 +2047,9 @@ position: absolute;
 @include transform(translateX(-50%));
 }
 
+.modal-lg{
+    width: 90%;
+}
 
 
 @import "ruchira";

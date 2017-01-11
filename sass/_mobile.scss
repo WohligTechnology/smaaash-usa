@@ -578,6 +578,25 @@
 .mt35{
   margin-top: 35px;
 }
+
+.arrow-no{
+.flex-direction-nav{
+    display: none;
+}
+
+.flex-control-nav{
+    bottom:-22px;
+    display: block !important;
+    li{
+        a{
+            height: 8px!important;
+            width: 8px!important;
+        }
+    }
+}
+
+}
+
 }
 
 @media (max-width: $screen-sm-max) {

@@ -2502,6 +2502,7 @@ TemplateService.removeLoaderOn(2);
             animation: true,
             templateUrl: "views/modal/party.html",
             scope: $scope
+             
         });
 
     };
@@ -2513,6 +2514,7 @@ TemplateService.removeLoaderOn(2);
                 animation: true,
                 templateUrl: "views/modal/menu.html",
                 scope: $scope,
+                //  windowClass: "modal-lg"
             })
         }
     };
