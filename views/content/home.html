@@ -1,9 +1,9 @@
 <div class="default hidden-xs" ng-if="hideBanner">
    <img src="img/avatar/3.jpg" class="img-responsive">
 </div>
-<div class="default hidden-md-hidden-sm visible-xs" ng-if="hideBanner">
+<!-- <div class="default hidden-md-hidden-sm visible-xs" ng-if="hideBanner">
    <img src="img/home/mbanner.png" class="img-responsive">
-</div>
+</div> -->
 <div class="smaash-drops" ng-if="!hideBanner">
    <div class="slidings">
       <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
@@ -66,7 +66,11 @@
                      </div>
                      <div class="race-text whites blacks">
                         <div class="min-hiss">
-                           <h3 class="margin0 pointer text-center"> {{s.text}}</h3>
+                           <h3 class="margin0 pointer text-center" ui-sref="drink-party({id:s.id})" ng-if="s.id === '57bc4b48eb9c91f1025a3b57'"> {{s.text}}</h3>
+                           <h3 class="margin0 pointer text-center" ui-sref="host-party({id:s.id})" ng-if="s.id === '57bc4b10eb9c91f1025a3b54'"> {{s.text}}</h3>
+                           <h3 class="margin0 pointer text-center"  ui-sref="attractions({id:s.id})" ng-if="s.id === '57bc4b2aeb9c91f1025a3b55'"> {{s.text}}</h3>
+
+                           <h3 class="margin0 pointer text-center" ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === '585d3de843d6132e58a3371b'"> {{s.text}}</h3>
                         </div>
                      </div>
                   </div>
@@ -78,16 +82,24 @@
 
                      <div class="race relative margno">
                         <div class="img-bg">
-                           <a href="#">
+                           <a>
                               <figure>
-                                 <img src="{{s.img}}" class="img-responsive" alt="">
+
+                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='585d3de843d6132e58a3371b'" ui-sref="snow-rush({name:s.pagename,id:s.id})">
+                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='57bc4b10eb9c91f1025a3b54'" ui-sref="host-party({id:s.id})">
+                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='57bc4b48eb9c91f1025a3b57'" ui-sref="drink-party({id:s.id})">
+
+                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='57bc4b2aeb9c91f1025a3b55'" ui-sref="attractions({id:s.id})" >
                               </figure>
 
                            </a>
                         </div>
                         <div class="race-text whites blacks">
                            <div class="min-hiss">
-                              <h3 class="margin0 pointer"> {{s.text}}</h3>
+                              <h3 class="margin0 pointer" ng-if="s.id==='585d3de843d6132e58a3371b'" ui-sref="snow-rush({name:s.pagename,id:s.id})"> {{s.text}}</h3>
+                              <h3 class="margin0 pointer" ng-if="s.id==='57bc4b10eb9c91f1025a3b54'" ui-sref="host-party({id:s.id})"> {{s.text}}</h3>
+                              <h3 class="margin0 pointer" ng-if="s.id==='57bc4b48eb9c91f1025a3b57'" ui-sref="drink-party({id:s.id})"> {{s.text}}</h3>
+                              <h3 class="margin0 pointer" ng-if="s.id==='57bc4b2aeb9c91f1025a3b55'" ui-sref="attractions({id:s.id})"> {{s.text}}</h3>
                            </div>
                         </div>
                      </div>
@@ -160,7 +172,7 @@
                <div class="col-md-3" ng-repeat="s in buyOnline track by $index">
 
                   <div class="race relative margno" >
-                     <div class="img-bg">
+                     <div class="img-bg pointer">
 
                            <figure>
                               <img ng-src="{{s.img}}" class="img-responsive" alt="" ng-click=goTo(s.text,s.id,'blog-inside')>
