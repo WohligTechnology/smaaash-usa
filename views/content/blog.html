@@ -31,9 +31,9 @@
 
                         <div class="new-detail">
                            <h3 class="margin0 bluey  pointer">{{data.name}}</h3>
-                           <span><i class="fa fa-calendar" aria-hidden="true"></i> {{data.date | date :'d MMM, y'}}</span>
-                           <!-- <span><i class="fa fa-calendar" aria-hidden="true"></i> 14 Jan,2016</span> -->
-                           <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{data.date |date: 'h:mm a'}}</span>
+                           <!-- <span><i class="fa fa-calendar" aria-hidden="true"></i> {{data.date | date :'d MMM, y'}}</span>
+
+                           <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{data.date |date: 'h:mm a'}}</span> -->
                            <div class="button-set">
                               <ul class="social-icons list-inline inline-block">
                                  <!--<p class="inline-block">Share</p>
@@ -50,7 +50,7 @@
                               <div class="more inline-block">
 
 
-                                 <button class="uppercase green" ui-sref="blog-inside({id:data._id})">know more</button>
+                                 <button class="uppercase green" ui-sref="blog-inside({name:data.name ,id:data._id})">know more</button>
                                  <!-- <button class="uppercase green" ng-click="imagesmodal();">know more</button> -->
 
                               </div>

@@ -748,6 +748,7 @@ $brand-white:#fff !default;
   }
   .love {
     text-align: center;
+    margin-top: 20px;
     button {
       color: #000;
     }
@@ -2299,7 +2300,9 @@ button {
 .karting-championship {
   margin-bottom: 20px !important;
 }
-
+.cursor-point{
+  cursor: pointer;
+}
 .slide-down {
   top: 65%;
 }
@@ -3089,7 +3092,10 @@ button {
 
 .drink {
   .new-detail {
-    min-height: 325px;
+    min-height: 400px;
+    .content-height{
+      min-height: 150px;
+    }
   }
 }
 
