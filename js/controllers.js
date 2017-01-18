@@ -782,45 +782,56 @@ $scope.fetchData();
             return n._id == id;
         }).text;
     };
-console.log("  $scope.mediagalleryDesc",  $scope.mediagalleryDesc );
+
     // $scope.fetchSearchedData = function() {
     //   $scope.busy = false;
     //     $scope.mediaObject.pagenumber = 0;
-    //    $scope.mediagallery=[];
+    //       $scope.mediagallery=[];
     //        $scope.mediagalleryDesc = [];
-    //   $scope.fetchData();
-    //   TemplateService.removeLoader();
+    //        $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
+    //   NavigationService.getStars($scope.mediaObject, function(data) {
+    //
+    //       console.log("mediaObject", data.data);
+    //       console.log(data.data.totalpages);
+    //       console.log("getStars", data.data);
+    //       if (data.data.data.length === 0) {
+    //           $scope.notAvailable = true;
+    //       } else {
+    //           $scope.notAvailable = false;
+    //       }
+    //       if (data.value) {
+    //           console.log($scope.mediaObject.pagenumber);
+    //           if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
+    //               if (data.data.data) {
+    //                 $scope.mediagallery=[];
+    //                     $scope.mediagalleryDesc = [];
+    //               _.each(data.data.data,function(val){
+    //                     $scope.mediagalleryDesc.push(val);
+    //                 });
+    //                 console.log("  $scope.mediagalleryDesc",  $scope.mediagalleryDesc);
+    //                 data.data.data = _.chunk(data.data.data, 3);
+    //                   _.each(data.data.data, function(n) {
+    //                       // console.log(n);
+    //                       $scope.mediagallery.push(n);
+    //                             $scope.busy = false;
+    //
+    //                   });
+    //               }
+    //
+    //               if (data.data.totalpages === $scope.mediaObject.pagenumber) {
+    //                   $scope.noviewmore = false;
+    //               }
+    //           } else {
+    //               console.log("in else last array");
+    //               $scope.noviewmore = false;
+    //           }
+    //           TemplateService.removeLoader();
+    //       }
+    //
+    //   })
+    //
     // }
 
-    // $scope.fetchSearchedData = function() {
-    //     $scope.mediaObject.pagenumber = 0;
-    //     $scope.mediaObject.pagesize = 6;
-    //     // $scope.mediaObject.pagesize = 1000;
-    //     $scope.mediagallery = [];
-    //     $scope.noviewmore = true;
-    //     $scope.mediaObject.city = $scope.mediaObject.city;
-    //
-    //     $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
-    //     NavigationService.getStars($scope.mediaObject, function(data) {
-    //         console.log("$scope.mediaObject", $scope.mediaObject);
-    //         console.log(data.data.totalpages);
-    //
-    //         if (data.data.data.length === 0) {
-    //             $scope.message = true;
-    //         } else {
-    //             $scope.message = false;
-    //         }
-    //         if (data.data.data) {
-    //               data.data.data = $filter('orderBy')(data.data.data, '-order');
-    //             data.data.data = _.chunk(data.data.data, 3);
-    //               $scope.mediagallery = data.data.data
-    //
-    //         }
-    //
-    //
-    //         TemplateService.removeLoader();
-    //     })
-    // };
 
 })
 
