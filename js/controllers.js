@@ -1,5 +1,5 @@
 var globalfunction = {};
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload','infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $location, $timeout, $stateParams, $uibModal, $state, $filter, ngDialog) {
 
@@ -642,11 +642,16 @@ $scope.title ='title to give';
     $scope.noviewmore = true;
     $scope.stars = [];
     $scope.notAvailable = false;
+      $scope.busy = false;
     $scope.fetchData = function() {
-        $scope.objectfilter.pagenumber = $scope.objectfilter.pagenumber + 1;
+      if ($scope.busy) return;
+      $scope.busy = true;
+        $scope.objectfilter.pagenumber =  $scope.objectfilter.pagenumber + 1;
+        console.log("$scope.objectfilter.pagenumber",  $scope.objectfilter.pagenumber);
         NavigationService.getGallery($scope.objectfilter, function(data) {
+          console.log("$scope.objectfilter",  $scope.objectfilter);
         // NavigationService.getStars($scope.objectfilter, function(data) {
-            console.log(data.data.totalpages);
+            // console.log(data.data.totalpages);
             console.log("getStars", data.data);
             if (data.data.data.length === 0) {
                 $scope.notAvailable = true;
@@ -654,8 +659,8 @@ $scope.title ='title to give';
                 $scope.notAvailable = false;
             }
             if (data.value) {
-                console.log($scope.objectfilter.pagenumber);
-                if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
+                console.log(  $scope.objectfilter.pagenumber);
+                if (data.data.totalpages >=  $scope.objectfilter.pagenumber) {
 
                     if (data.data.data) {
                         data.data.data = _.chunk(data.data.data, 3)
@@ -664,8 +669,15 @@ $scope.title ='title to give';
                     _.each(data.data.data, function(n) {
                         // console.log(n);
                         $scope.stars.push(n)
+                         $scope.busy = false;
                     });
-                    if (data.data.totalpages === $scope.objectfilter.pagenumber) {
+
+                    if (data.data.data.length !== 0) {
+                      $scope.$broadcast('scroll.infiniteScrollComplete');
+                    }
+
+
+                    if (data.data.totalpages ===   $scope.objectfilter.pagenumber) {
                         $scope.noviewmore = false;
                     }
                 } else {
@@ -677,47 +689,15 @@ $scope.title ='title to give';
 
         })
     };
+$scope.fetchData();
 
-    $scope.fetchData();
-    $scope.message = false;
     $scope.fetchSearchedData = function() {
-        $scope.objectfilter.pagenumber = 0;
-        $scope.objectfilter.pagesize = 6;
-        $scope.stars = [];
-        $scope.noviewmore = true;
-        $scope.objectfilter.city = $scope.objectfilter.city;
-
-        $scope.objectfilter.pagenumber = $scope.objectfilter.pagenumber + 1;
-        NavigationService.getGallery($scope.objectfilter, function(data) {
-            console.log("$scope.objectfilter", $scope.objectfilter);
-            console.log(data.data.totalpages);
-
-            if (data.data.data.length === 0) {
-                $scope.message = true;
-            } else {
-                $scope.message = false;
-            }
-            if (data.data.data) {
-                data.data.data = _.chunk(data.data.data, 3)
-
-            }
-
-            $scope.stars = data.data.data
-            TemplateService.removeLoader();
-        })
-    };
-
-    // NavigationService.getMediaGallery(function(data) {
-    //     $scope.mediagallery = data.data;
-    //     console.log("$scope.mediagallery", $scope.mediagallery);
-    //     TemplateService.removeLoader();
-    // });
-    NavigationService.getAllCityByOrder(function(data) {
-        console.log("data", data);
-        // $scope.allCity = data.data;
-        // console.log("allCity", $scope.allCity);
-        // TemplateService.removeLoader();
-    });
+      $scope.busy = false;
+      $scope.objectfilter.pagenumber = 0;
+      $scope.stars=[];
+      $scope.fetchData();
+      TemplateService.removeLoader();
+    }
 
 
 
@@ -741,10 +721,14 @@ $scope.title ='title to give';
     $scope.mediagallery = [];
     $scope.mediagalleryDesc = [];
     $scope.notAvailable = false;
+    $scope.busy = false;
 
     $scope.fetchData = function() {
+    if ($scope.busy) return;
+      $scope.busy = true;
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
         NavigationService.getStars($scope.mediaObject, function(data) {
+
             console.log("mediaObject", data.data);
             console.log(data.data.totalpages);
             console.log("getStars", data.data);
@@ -757,13 +741,15 @@ $scope.title ='title to give';
                 console.log($scope.mediaObject.pagenumber);
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
                     if (data.data.data) {
-                        data.data.data = $filter('orderBy')(data.data.data, '-order');
-                      console.log("data  in medi",data.data.data);
-                        $scope.mediagalleryDesc=_.cloneDeep(data.data.data);
-                        data.data.data = _.chunk(data.data.data, 3);
+                    _.each(data.data.data,function(val){
+                          $scope.mediagalleryDesc.push(val);
+                      });
+                      console.log("  $scope.mediagalleryDesc",  $scope.mediagalleryDesc);
+                      data.data.data = _.chunk(data.data.data, 3);
                         _.each(data.data.data, function(n) {
                             // console.log(n);
                             $scope.mediagallery.push(n);
+                                  $scope.busy = false;
 
                         });
                     }
@@ -782,39 +768,9 @@ $scope.title ='title to give';
     };
 
     $scope.fetchData();
-    $scope.message = false;
-    $scope.fetchSearchedData = function() {
-        $scope.mediaObject.pagenumber = 0;
-        $scope.mediaObject.pagesize = 6;
-        $scope.mediagallery = [];
-        $scope.noviewmore = true;
-        $scope.mediaObject.city = $scope.mediaObject.city;
 
-        $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
-        NavigationService.getStars($scope.mediaObject, function(data) {
-            console.log("$scope.mediaObject", $scope.mediaObject);
-            console.log(data.data.totalpages);
-
-            if (data.data.data.length === 0) {
-                $scope.message = true;
-            } else {
-                $scope.message = false;
-            }
-            if (data.data.data) {
-                  data.data.data = $filter('orderBy')(data.data.data, '-order');
-                data.data.data = _.chunk(data.data.data, 3);
-
-            }
-            // if (data.data.data.length === 1) {
-            //     $scope.noviewmore = false;
-            // }
-            $scope.mediagallery = data.data.data
-            TemplateService.removeLoader();
-        })
-    };
     $scope.readMore = function(id) {
-
-        console.log(id);
+        console.log("id", id);
         _.each($scope.moreDesc, function(value, property) {
             console.log("property", property);
             if (id != property) {
@@ -822,12 +778,61 @@ $scope.title ='title to give';
             }
         });
         $scope.moreDesc[id] = ($scope.moreDesc[id] == true) ? false : true;
-        console.log($scope.moreDesc);
-        console.log("$scope.mediagallery ",$scope.mediagallery );
-        $scope.myDesc = _.find($scope.mediagalleryDesc , function(n) {
+        $scope.myDesc = _.find($scope.mediagalleryDesc, function(n) {
             return n._id == id;
         }).text;
     };
+
+    // $scope.fetchSearchedData = function() {
+    //   $scope.busy = false;
+    //     $scope.mediaObject.pagenumber = 0;
+    //       $scope.mediagallery=[];
+    //        $scope.mediagalleryDesc = [];
+    //        $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
+    //   NavigationService.getStars($scope.mediaObject, function(data) {
+    //
+    //       console.log("mediaObject", data.data);
+    //       console.log(data.data.totalpages);
+    //       console.log("getStars", data.data);
+    //       if (data.data.data.length === 0) {
+    //           $scope.notAvailable = true;
+    //       } else {
+    //           $scope.notAvailable = false;
+    //       }
+    //       if (data.value) {
+    //           console.log($scope.mediaObject.pagenumber);
+    //           if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
+    //               if (data.data.data) {
+    //                 $scope.mediagallery=[];
+    //                     $scope.mediagalleryDesc = [];
+    //               _.each(data.data.data,function(val){
+    //                     $scope.mediagalleryDesc.push(val);
+    //                 });
+    //                 console.log("  $scope.mediagalleryDesc",  $scope.mediagalleryDesc);
+    //                 data.data.data = _.chunk(data.data.data, 3);
+    //                   _.each(data.data.data, function(n) {
+    //                       // console.log(n);
+    //                       $scope.mediagallery.push(n);
+    //                             $scope.busy = false;
+    //
+    //                   });
+    //               }
+    //
+    //               if (data.data.totalpages === $scope.mediaObject.pagenumber) {
+    //                   $scope.noviewmore = false;
+    //               }
+    //           } else {
+    //               console.log("in else last array");
+    //               $scope.noviewmore = false;
+    //           }
+    //           TemplateService.removeLoader();
+    //       }
+    //
+    //   })
+    //
+    // }
+
+
 })
 
 .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $stateParams) {
@@ -2502,7 +2507,7 @@ TemplateService.removeLoaderOn(2);
             animation: true,
             templateUrl: "views/modal/party.html",
             scope: $scope
-             
+
         });
 
     };

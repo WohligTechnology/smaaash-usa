@@ -15,6 +15,7 @@ var jsArray = [
     './bower_components/ng-dialog/js/ngDialog.js',
     './bower_components/lodash/lodash.js',
     './bower_components/angulartics/dist/angulartics.min.js',
+    './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
     './bower_components/moment/min/moment.min.js',
     './bower_components/jStorage/jstorage.min.js',
     './bower_components/angularjs-imageupload-directive/public/javascripts/imageupload.js',
