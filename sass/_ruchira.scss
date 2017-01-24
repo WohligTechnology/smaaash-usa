@@ -3382,15 +3382,18 @@ opacity: 1;
 .blocks{
   display: block;
 }
-// .blog{
-//    .flex-direction-nav {
-//      .flex-prev{
-//        &:before {
-//     content: "";
-//     @include square(100%);
-//     background: url("../img/home/arrow.png")no-repeat;
-//     background-size: contain;
-//   }
-//    }
-//    }
-// }
+
+.contact-ways{
+.telephone {
+  i{
+        margin-left: 5px;
+        margin-right: 0;
+  }
+  span{
+margin: 0;
+  }
+}
+.teleo .fa{
+  font-size: 8px;
+}
+}
