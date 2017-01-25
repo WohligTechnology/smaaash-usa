@@ -2025,7 +2025,18 @@ TemplateService.removeLoaderOn(2);
                 }
             })
         }
-    }
+    };
+    $scope.pdfmodal = function(pdf) {
+        $scope.pdfdata = pdf;
+        if ($scope.pdfdata) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: "views/modal/menu.html",
+                scope: $scope,
+                //  windowClass: "modal-lg"
+            })
+        }
+    };
 
 })
 
