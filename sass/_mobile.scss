@@ -28,7 +28,7 @@
   float: none !important;
     display: block;
     text-align: center;
-   
+
 }
 
 
@@ -1010,7 +1010,7 @@
   .race-text{
   padding: 0;
 }
-} 
+}
 // .ab
 .gallery .slidings .race {
     margin-right: 10px;
@@ -1021,6 +1021,9 @@
 }
 
 @media (max-width:480px) {
+  .marginmobile0{
+   margin: 0;
+ }
   .custom-pagination{
     display: none;
   }
@@ -1273,7 +1276,7 @@ li{
   .smaash-menu {
     .nav-name {
       margin: 0;
-      padding: 40px 25px;
+      padding: 27px;
       font-size: 30px;
     }
   }
@@ -1467,7 +1470,7 @@ background-color: $brand-purple;
     }
   }
   .top {
-    margin: -8px 0;
+    margin: 0;
   }
   .dropdowns {
     .cities {
