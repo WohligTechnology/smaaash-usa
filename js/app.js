@@ -36,13 +36,6 @@ $.jStorage.set("branchId", "20");
 //
 // }
 
-$(function () {
-    var isIE = window.ActiveXObject || "ActiveXObject" in window;
-    if (isIE) {
-        $('.modal').removeClass('fade');
-    }
-});
-
 var firstapp = angular.module('firstapp', [
     'ui.router',
     'phonecatControllers',
@@ -84,30 +77,30 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     })
 
     .state('thank', {
-        // url: "/thankyou",
-        url: "/thankyou/:orderno/:cnrno/:amount",
-        templateUrl: "views/template.html",
-        controller: 'ThankCtrl'
-    })
-    // .state('thank', {
-    //     // url: "/thankyou",
-    //     url: "/thankyou/:orderno/:cnrno/:amount/:paymentfor",
-    //     templateUrl: "views/template.html",
-    //     controller: 'ThankCtrl'
-    // })
+            // url: "/thankyou",
+            url: "/thankyou/:orderno/:cnrno/:amount",
+            templateUrl: "views/template.html",
+            controller: 'ThankCtrl'
+        })
+        // .state('thank', {
+        //     // url: "/thankyou",
+        //     url: "/thankyou/:orderno/:cnrno/:amount/:paymentfor",
+        //     templateUrl: "views/template.html",
+        //     controller: 'ThankCtrl'
+        // })
 
     .state('sorry', {
-        // url: "/sorry",
-        url: "/sorry/:orderno/:cnrno/:amount",
-        templateUrl: "views/template.html",
-        controller: 'SorryCtrl'
-    })
-    // .state('sorry', {
-    //     // url: "/sorry",
-    //     url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
-    //     templateUrl: "views/template.html",
-    //     controller: 'SorryCtrl'
-    // })
+            // url: "/sorry",
+            url: "/sorry/:orderno/:cnrno/:amount",
+            templateUrl: "views/template.html",
+            controller: 'SorryCtrl'
+        })
+        // .state('sorry', {
+        //     // url: "/sorry",
+        //     url: "/sorry/:orderno/:cnrno/:amount/:paymentfor",
+        //     templateUrl: "views/template.html",
+        //     controller: 'SorryCtrl'
+        // })
 
     .state('drink-party', {
         url: "/drink-party/:id",
@@ -311,7 +304,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 
 
 
-        .state('blog-inside', {
+    .state('blog-inside', {
             url: "/blogInside/:name/:id",
             templateUrl: "views/template.html",
             controller: 'BlogInsideCtrl'
@@ -555,6 +548,7 @@ firstapp.filter('uploadpath', function() {
     return function(input, width, height, style) {
         var other = "";
         if (width && width != "") {
+            console.log('input', input, width);
             other += "&width=" + width;
         }
         if (height && height != "") {
@@ -563,17 +557,28 @@ firstapp.filter('uploadpath', function() {
         if (style && style != "") {
             other += "&style=" + style;
         }
+        // if (pdfNav) {
+        //     console.log('pdfNav', pdfNav);
+        //     if (input.indexOf('https://') == -1) {
+        //         return imgpathPdf + "?file=" + input + other;
+        //         console.log('imgpathPdf + "?file=" + input + hideNav;', imgpathPdf + "?file=" + input + other);
+        //     } else {
+        //         return input;
+        //     }
+        // }
         if (input) {
-            if (input.indexOf('https://') == -1) {
+            console.log(input.indexOf('https://'));
+            if (input.indexOf('https://') == -1 && input.indexOf('.pdf') == -1) {
                 return imgpath + "?file=" + input + other;
 
+            } else if (input.indexOf('.pdf') != -1) {
+                return imgpathPdf + "?file=" + input + other;
             } else {
                 return input;
             }
         }
     };
 });
-
 firstapp.filter('uploadprofilepicture', function() {
     return function(input, width, height, style) {
 

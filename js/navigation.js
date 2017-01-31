@@ -3,6 +3,7 @@ var adminurl = "http://146.148.109.185:94/"; //US server
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var pdfpath ="http://104.155.129.33:82/upload/readFile?file";
+var imgpathPdf = imgurl + "smaaashUsa";
 
 
 var uploadurl = imgurl;
