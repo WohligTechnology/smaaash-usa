@@ -56,8 +56,9 @@ $color) {
 
 $body-font: "American Purpose"!default;
 $head-font: "Galano Grotesque"!default;
+
 body {
-    font-family: $head-font;
+    font-family: "$head-font", Helvetica, Arial, sans-serif;
 }
 
 .fixed-pad {
