@@ -38,7 +38,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // }
         $(window).scroll(function() {
             var scroller = $(document).scrollTop();
-            var height = $(window).height() - 40;
+            var height = 200;
             if (height <= scroller) {
                 $('body').addClass('show-header');
 
