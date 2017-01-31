@@ -36,6 +36,13 @@ $.jStorage.set("branchId", "20");
 //
 // }
 
+$(function () {
+    var isIE = window.ActiveXObject || "ActiveXObject" in window;
+    if (isIE) {
+        $('.modal').removeClass('fade');
+    }
+});
+
 var firstapp = angular.module('firstapp', [
     'ui.router',
     'phonecatControllers',
