@@ -47,21 +47,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             }
         });
-        //for mobile
-
-        $(window).scroll(function() {
-            var scroller = $(document).scrollTop();
-            var mobileheight = 200;
-            if (mobileheight <= scroller) {
-                $('body').addClass('show-header');
-
-            } else {
-                $('body').removeClass('show-header');
-
-            }
-        });
-
-        //for mobile
     });
 
     $scope.goTo = function(name, id,statetogo) {
