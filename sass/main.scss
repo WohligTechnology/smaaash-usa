@@ -28,9 +28,10 @@ $brand-purply: #662d91 !default;
 $brand-bluey: #293685!default;
 $brand-orangy: #fc5626 !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
 @font-face {
-    font-family: "American Purpose";
-    src: url("../fonts/AmericanPurpose.ttf");
+font-family: 'American Purpose';
+src: url('../fonts/AmericanPurpose.ttf') format("truetype"), url('../fonts/AmericanPurpose.otf') format("opentype"), url('../fonts/AmericanPurpose.eot') format("embedded-opentype");
 }
 
 button.selected {
@@ -40,7 +41,7 @@ button.selected {
 
 @font-face {
     font-family: "Galano Grotesque";
-    src: url("../fonts/GalanoGrotesque.otf");
+    src: url('../fonts/GalanoGrotesque.ttf') format("truetype"), url('../fonts/GalanoGrotesque.otf') format("opentype"), url('../fonts/GalanoGrotesque.eot') format("embedded-opentype");
 }
 
 @font-face {
