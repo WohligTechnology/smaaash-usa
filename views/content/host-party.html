@@ -143,7 +143,7 @@
                 <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25"></h3>
               </div>
               <div class="min-h">
-                <p ng-bind-html="data.description | htmlToPlaintext"></p>
+                <p class="height-minimum" ng-bind-html="data.description | htmlToPlaintext"></p>
                 <!-- <p ng-hide="moreDesc[data._id]">{{data.description | htmlToPlaintext | shorten:120}}</p>
                 <p ng-show="moreDesc[data._id]">{{myDesc | htmlToPlaintext}}</p>
                 <p ng-if="!data.description"> No data found</p>

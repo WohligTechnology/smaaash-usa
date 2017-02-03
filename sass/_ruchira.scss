@@ -3414,12 +3414,9 @@ opacity: 1;
 }
 .loves+.loves{
   margin-left: 10px;
-  button{
+  button{ background-color: #fff !important; }
+}
 
-      background-color: #fff !important;
-      // padding: 10px 90px !important;
-    // color: #fff;
-        // padding: 10px 40px !important;
-  }
-
+.height-minimum{
+  min-height: 150px;
 }
