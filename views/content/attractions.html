@@ -59,11 +59,12 @@
                   <span ng-if="$index==d.gameforarray.length-2">&</span> </span>
                   </span>
                 </p>-->
-                        <p class="" ng-hide="moreDesc[d._id]" ng-bind-html="d.description | htmlToPlaintext | shorten:130 "></p>
+                        <p class="" ng-bind-html="d.description | htmlToPlaintext "></p>
+                        <!-- <p class="" ng-hide="moreDesc[d._id]" ng-bind-html="d.description | htmlToPlaintext | shorten:130 "></p>
                         <p ng-show="moreDesc[d._id]" ng-bind-html="myDesc| htmlToPlaintext"></p>
                         <div ng-if="!d.description">No description</div>
                         <span class="capitalize greeny pointer" ng-if="d.description.length > 130 && !moreDesc[d._id]" ng-click="readMore(d._id,$index)">read more</span>
-                        <span class="capitalize greeny pointer" ng-if="d.description.length > 130 && moreDesc[d._id]" ng-click="readMore(d._id,$index)">read less</span>
+                        <span class="capitalize greeny pointer" ng-if="d.description.length > 130 && moreDesc[d._id]" ng-click="readMore(d._id,$index)">read less</span> -->
 
 
                      </div>

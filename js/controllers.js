@@ -38,7 +38,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // }
         $(window).scroll(function() {
             var scroller = $(document).scrollTop();
-            var height = 200;
+            var height = 0;
+            // var height = 200;
             if (height <= scroller) {
                 $('body').addClass('show-header');
 
@@ -3655,6 +3656,7 @@ TemplateService.removeLoaderOn(2);
                 }
             }
         };
+        $scope.id = '57bc4b10eb9c91f1025a3b54';
 
         NavigationService.getTypes(function(data) {
             $scope.types = data.data;
@@ -3664,6 +3666,11 @@ TemplateService.removeLoaderOn(2);
                 }
             })
             TemplateService.removeLoader();
+        });
+        NavigationService.getSingleExploreSmaaash($scope.id, function(data) {
+            $scope.SingleHostParty1 = data.data;
+            // console.log(".SingleHostParty1",.SingleHostParty1);
+
         });
         $scope.attrctionId = "57bc4b2aeb9c91f1025a3b55";
         $scope.drinkandPartyId = "57bc4b48eb9c91f1025a3b57";

@@ -40,10 +40,12 @@
               <h4 class="bold title pointer" ui-sref="host-party({id:hostpartyId})">HOST A PARTY</h4>
             </div>
             <ul class="foot-list foot-data" ng-show="showFooter == 2">
-              <li><a ui-sref="host-party({id:hostpartyId})">Birthday Parties</a></li>
+              <!-- <li><a ui-sref="host-party({id:hostpartyId})">Birthday Parties</a></li>
               <li><a ui-sref="host-party({id:hostpartyId})">Corporate Parties</a></li>
-              <!--<li><a ui-sref="kitty-parties">Kitty Parties</a></li>-->
-              <li><a ui-sref="host-party({id:hostpartyId})">Social Events</a></li>
+              <li><a ui-sref="kitty-parties">Kitty Parties</a></li>
+              <li><a ui-sref="host-party({id:hostpartyId})">Social Events</a></li> -->
+
+                <li ng-repeat="data in SingleHostParty1"><a ui-sref="parties({id:data._id})" >{{data.hometext}}</a></li>
             </ul>
           </div>
         </div>

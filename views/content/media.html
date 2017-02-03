@@ -64,11 +64,12 @@
             <!-- <p style="min-height: 78px;" ng-bind-html="data.text"></p> -->
 
 
-            <p style="min-height: 78px;" ng-hide="moreDesc[data._id]">{{data.text | htmlToPlaintext | shorten:120}}</p>
+            <p style="min-height: 78px;" ng-bind-html="data.text | htmlToPlaintext"></p>
+            <!-- <p style="min-height: 78px;" ng-hide="moreDesc[data._id]">{{data.text | htmlToPlaintext | shorten:120}}</p>
             <p style="min-height: 78px;" ng-show="moreDesc[data._id]">{{myDesc | htmlToPlaintext}}</p>
             <p style="min-height: 78px;" ng-if="!data.text"> No data found</p>
             <span class="capitalize bluey pointer" ng-if="data.text.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">read more</span>
-            <span class="capitalize bluey pointer" ng-if="data.text.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id)">read less</span>
+            <span class="capitalize bluey pointer" ng-if="data.text.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id)">read less</span> -->
 
             </div>
 </div>
