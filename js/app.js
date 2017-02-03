@@ -567,7 +567,7 @@ firstapp.filter('uploadpath', function() {
         //     }
         // }
         if (input) {
-            console.log(input.indexOf('https://'));
+            // console.log(input.indexOf('https://'));
             if (input.indexOf('https://') == -1 && input.indexOf('.pdf') == -1) {
                 return imgpath + "?file=" + input + other;
 

@@ -8,7 +8,7 @@
    <div class="slidings">
       <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
          <li>
-            <a href="{{s.url}}">
+            <a href="{{s.url}}" target="_blank">
                <img ng-src="{{s.image|uploadpath}}">
             </a>
 
@@ -283,7 +283,7 @@
 
             </div>
 
-         <div class="slant-in brand-red">
+         <!-- <div class="slant-in brand-red">
             <div class="slant-box half-height">
                <h2 class="title slide-text brand-white">be the first to know</h2>
                <form class="form" name="subscribeForm" ng-if="!subscribeFormComplete" ng-submit="subscribeLogin(subscribeData)">
@@ -298,7 +298,8 @@
                   <p class="text-center">Thank You For Subscribing.</p>
                </div>
             </div>
-         </div>
+         </div> -->
+
       </div>
       <div class="slant-col brand-yellow pull-right">
          <div class="slant-box full-height full-heights babes pointer" ui-sref="about">
@@ -335,10 +336,10 @@
             <div class=" facebook brand-pink inline-block fb-mobile">
                <h2 class="brand-white">Instagram</h2>
                <div class="wdget">
-                   <iframe src="//lightwidget.com/widgets/a7f08b7ea373589392284d36610d5356.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                 <iframe src="//lightwidget.com/widgets/1873d2264cd15950b66dfeed54fcfd7f.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                   <!-- <iframe src="//lightwidget.com/widgets/a7f08b7ea373589392284d36610d5356.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe> -->
               <!--<iframe src="//lightwidget.com/widgets/32820efdae525893bd7e7741de86c089.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>-->
-
-               </div>
+             </div>
             </div>
          </div>
       </div>
