@@ -2,7 +2,6 @@
 $brand-white:#fff !default;
 .brand-white {
   color: $brand-white;
-  text-shadow: 2px 2px #ccc;
 }
 
 .center {
@@ -3415,4 +3414,12 @@ opacity: 1;
 }
 .loves+.loves{
   margin-left: 10px;
+  button{
+
+      background-color: #fff !important;
+      // padding: 10px 90px !important;
+    // color: #fff;
+        // padding: 10px 40px !important;
+  }
+
 }
