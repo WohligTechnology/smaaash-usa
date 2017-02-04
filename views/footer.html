@@ -266,6 +266,27 @@
           </ul>
         </div>-->
       </div>
+      <div class="first-know">
+
+<form class="form-inline" ng-if="!subscribeFormComplete" ng-submit="subscribeLogin(subscribeData)">
+<div class="form-group">
+     <h4 class="title slide-text title-know brand-white">be the first to know</h4>
+
+
+</div>
+
+  <div class="form-group inline-block subform">
+     <input type="email" class="form-control subscribe" name="email" placeholder="Email Id" required ng-model="subscribeData.email">
+    </div>
+
+
+  <button type="submit" class="btn title brand-green  inline-block "><span class="brand-white">send</span></button>
+</form>
+<div ng-if="subscribeFormComplete">
+   <h3 class="text-center brand-white">Thank You For Subscribing.</h3>
+</div>
+      </div>
+
       <div class="foots-list">
         <ul class="justified-li text-center">
           <li><a ui-sref="terms">Terms of Use & Privacy Policy</a></li>

@@ -140,27 +140,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    $scope.subscribeFormComplete = false;
-    $scope.subscribeData = {};
-    $scope.duplicate = false;
-    $scope.subscribeLogin = function(subscribeData) {
-        if ($scope.subscribeData) {
-            NavigationService.subscribe($scope.subscribeData, function(data) {
-                if (data.data.value == false) {
-                    $scope.duplicate = true;
-                    $scope.subscribeFormComplete = false;
-                } else {
-                    $scope.duplicate = false;
-                    $scope.subscribeFormComplete = true;
-                    $timeout(function() {
-                        $scope.subscribeFormComplete = false;
-                        $scope.subscribeData = {};
-                    }, 2000);
-                }
-            })
-        }
-
-    }
+    // $scope.subscribeFormComplete = false;
+    // $scope.subscribeData = {};
+    // $scope.duplicate = false;
+    // $scope.subscribeLogin = function(subscribeData) {
+    //     if ($scope.subscribeData) {
+    //         NavigationService.subscribe($scope.subscribeData, function(data) {
+    //             if (data.data.value == false) {
+    //                 $scope.duplicate = true;
+    //                 $scope.subscribeFormComplete = false;
+    //             } else {
+    //                 $scope.duplicate = false;
+    //                 $scope.subscribeFormComplete = true;
+    //                 $timeout(function() {
+    //                     $scope.subscribeFormComplete = false;
+    //                     $scope.subscribeData = {};
+    //                 }, 2000);
+    //             }
+    //         })
+    //     }
+    //
+    // }
 
 
 
@@ -3620,7 +3620,7 @@ TemplateService.removeLoaderOn(2);
 
 
     })
-    .controller('footerctrl', function($scope, TemplateService, NavigationService) {
+    .controller('footerctrl', function($scope, TemplateService, NavigationService,  $timeout) {
         $scope.template = TemplateService;
         TemplateService.removeLoaderOn(1);
         $scope.footer = function(val) {
@@ -3678,6 +3678,29 @@ TemplateService.removeLoaderOn(2);
         $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
         $scope.promotionId = "57bc4b36eb9c91f1025a3b56";
         $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
+
+        $scope.subscribeFormComplete = false;
+        $scope.subscribeData = {};
+        $scope.duplicate = false;
+        $scope.subscribeLogin = function(subscribeData) {
+            if ($scope.subscribeData) {
+                NavigationService.subscribe($scope.subscribeData, function(data) {
+                    if (data.data.value == false) {
+                        $scope.duplicate = true;
+                        $scope.subscribeFormComplete = false;
+                    } else {
+                        $scope.duplicate = false;
+                        $scope.subscribeFormComplete = true;
+                        $timeout(function() {
+                            $scope.subscribeFormComplete = false;
+                            $scope.subscribeData = {};
+                        }, 2000);
+                    }
+                })
+            }
+
+        }
+
     })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {

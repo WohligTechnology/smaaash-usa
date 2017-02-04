@@ -610,8 +610,13 @@
 }
 .loves + .loves{
   margin-left: 0;
+  button{
+    padding: 10px !important;
+  }
 }
-
+.first-know {
+  text-align: center;
+}
 }
 
 @media (max-width: $screen-sm-max) {
@@ -803,7 +808,7 @@
   }
   .facebook {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: -5px;
   }
   .landing-kartbanner {
     min-height: 767px;
@@ -1128,8 +1133,26 @@ li{
     width: 100%;
     text-align: center;
     height: 200px;
-    margin-bottom: 15px;
+    margin-bottom: -5px;
   }
+  .first-know .subscribe {
+    margin:0;
+}
+.first-know {
+  h4{
+    text-align: center;
+  }
+  .subform{
+    display: block;
+  }
+  .subscribe{
+  margin: 0 auto;
+  }
+  .title{
+    display: block;
+    margin: 0 auto;
+  }
+}
   .purple-butn {
     width: 30px;
     height: 30px;
