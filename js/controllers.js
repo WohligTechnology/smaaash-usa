@@ -1773,7 +1773,7 @@ $scope.fetchData();
 
 
 
-.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal, $location) {
+.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal, $location, $filter,$sce) {
     $scope.template = TemplateService.changecontent("host-party");
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
@@ -2013,7 +2013,11 @@ TemplateService.removeLoaderOn(2);
         }
     };
     $scope.pdfmodal = function(pdf) {
-        $scope.pdfdata = pdf;
+      $scope.pdfdata = pdf;
+      $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
+         $scope.finalURL = 'http://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
+         $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
+
         if ($scope.pdfdata) {
             $uibModal.open({
                 animation: true,
@@ -2452,7 +2456,7 @@ TemplateService.removeLoaderOn(2);
         });
     })
 
-.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $location,$state ) {
+.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $location,$state,$filter, $sce ) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("drink-party");
     $scope.menutitle = NavigationService.makeactive("Drink Party");
@@ -2461,7 +2465,8 @@ TemplateService.removeLoaderOn(2);
     $scope.myUrl = $location.absUrl();
     $scope.menu = "menu-out";
     TemplateService.removeLoaderOn(1);
-    $scope.pdfpath = "http://104.155.129.33:82/upload/readFile?file";
+
+    // $scope.pdfpath = "http://104.155.129.33:82/upload/readFile?file";
     $scope.getMenu = function() {
         if ($scope.menu == "menu-out") {
             $scope.menu = "menu-in";
@@ -2510,7 +2515,11 @@ TemplateService.removeLoaderOn(2);
     };
 
     $scope.pdfmodal = function(pdf) {
-        $scope.pdfdata = pdf;
+      $scope.pdfdata = pdf;
+      $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
+         $scope.finalURL = 'http://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
+         $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
+
         if ($scope.pdfdata) {
             $uibModal.open({
                 animation: true,
