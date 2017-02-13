@@ -6,7 +6,7 @@
  <h4 class="bold title">hours of operation:</h4>
       </div>
       <div class="col-md-3">
- <h4 class="bold title">Monday-Thursday : 11 am-12 am</h4>
+ <h4 class="bold title">Monday-Thursday : 11 am-11 pm</h4>
       </div>
       <div class="col-md-3">
    <h4 class="bold title">Friday-Saturday : 10 am- 1 am</h4>
@@ -266,8 +266,32 @@
           </ul>
         </div>-->
       </div>
+      <div class="first-know">
+
+<form class="form-inline" ng-if="!subscribeFormComplete" ng-submit="subscribeLogin(subscribeData)">
+<div class="form-group">
+     <h4 class="title slide-text title-know brand-white">be the first to know</h4>
+
+
+</div>
+
+  <div class="form-group inline-block subform">
+     <input type="email" class="form-control subscribe" name="email" placeholder="Email Id" required ng-model="subscribeData.email">
+    </div>
+
+
+  <button type="submit" class="btn title brand-green  inline-block "><span class="brand-white">send</span></button>
+</form>
+<div ng-if="subscribeFormComplete">
+   <h3 class="text-center brand-white">Thank You For Subscribing.</h3>
+</div>
+      </div>
+
       <div class="foots-list">
         <ul class="justified-li text-center">
+          <li class="hidden-xs">  <div class="foot-cards">
+              <img src="img/careers/paypal.gif" alt="Visa cards">
+            </div></li>
           <li><a ui-sref="terms">Terms of Use & Privacy Policy</a></li>
           <!--<li><a href=""></a></li>-->
             <!--<li><a href="">Children's Online Privacy Policy</a></li>-->
@@ -276,9 +300,7 @@
           <li><a href="http://ting.in/" target="_blank">Designed by Ting</a></li>
         </ul>
       </div>
-      <div class="foot-cards">
-        <img src="img/careers/paypal.gif" alt="Visa cards">
-      </div>
+
     </div>
   </div>
 </div>
