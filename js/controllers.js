@@ -1,5 +1,5 @@
 var globalfunction = {};
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload','infinite-scroll'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ngDialog', 'imageupload', 'infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $location, $timeout, $stateParams, $uibModal, $state, $filter, ngDialog) {
 
@@ -50,20 +50,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     });
 
-    $scope.goTo = function(name, id,statetogo) {
-      console.log("im in");
-        if (name, id,statetogo) {
-            $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
-            $state.go( statetogo, {
-                name: $scope.name,
-                id: id
-            });
-        }
+    $scope.goTo = function(name, id, statetogo) {
+            console.log("im in");
+            if (name, id, statetogo) {
+                $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
+                $state.go(statetogo, {
+                    name: $scope.name,
+                    id: id
+                });
+            }
 
-    }
-// $scope.gotoss=function(){
-//   console.log("im in");
-// }
+        }
+        // $scope.gotoss=function(){
+        //   console.log("im in");
+        // }
 
 
 
@@ -347,8 +347,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('TermsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("terms");
-    $scope.menutitle = NavigationService.makeactive("Terms");
+    // $scope.menutitle = NavigationService.makeactive("Terms");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("SMAAASH Terms of Use and Privacy Policy");
     TemplateService.title = $scope.menutitle;
+    TemplateService.description = " Better than a theme park, cooler than an amusement park, SMAAASH is here to revolutionize the idea of fun. Here are the terms of use and privacy policy.";
+
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
 })
@@ -427,16 +431,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('EventCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams, $state, $location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("event");
-    $scope.menutitle = NavigationService.makeactive("Events");
+    $scope.menutitle = NavigationService.makeactive("Dare To Take On SMAAASH Challenges? Check Them Out Now.");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    TemplateService.description = "Be it our ice hockey game or the unbeatable football goalkeeper, we have a challenge in store for you at Mall of America. Are you brave enough to take it?";
+    TemplateService.keywords = "events in minnesota, things to do minnesota, kids games bloomington, mall of america games, mall of america events";
 
     $scope.myUrl = $location.absUrl();
-    $scope.goTo = function(name, id,statetogo) {
-      console.log("im in");
-        if (name, id,statetogo) {
+    $scope.goTo = function(name, id, statetogo) {
+        console.log("im in");
+        if (name, id, statetogo) {
             $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
-            $state.go( statetogo, {
+            $state.go(statetogo, {
                 name: $scope.name,
                 id: id
             });
@@ -524,8 +530,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('DealspCtrl', function($scope, $uibModal, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("dealsp");
-    $scope.menutitle = NavigationService.makeactive("Deals and Packages");
+    // $scope.menutitle = NavigationService.makeactive("Deals and Packages");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("Check Out Crazy Gaming Deals at SMAAASH Mall of America");
     TemplateService.title = $scope.menutitle;
+    TemplateService.description = "Why play just one game when you can play many for cheaper? Make the most of our incomparable gaming zone by availing one of our amazing deals!";
+    TemplateService.keywords = "Gaming zone, gaming zone in USA, adventure theme park, best amusement park rides, amusement park rides, amusement park list, Amusement park in USA";
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
@@ -607,8 +617,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('StarsCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("stars");
-    $scope.menutitle = NavigationService.makeactive("Gallery");
-    TemplateService.title = $scope.menutitle;
+    // $scope.menutitle = NavigationService.makeactive("Gallery");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("Captured Thrills - SMAAASH Gallery");
+    TemplateService.title = $scope.menutitle ;
+    TemplateService.description = "Be it as a place to chill with family or a place for kids to have fun, SMAAASH has it all. Check out these amazing photos from your favourite place!";
+    TemplateService.keywords = "place to chill with family, place for kids to have fun, gaming zone";
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(3);
     $scope.menu = "menu-out";
@@ -620,7 +634,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     };
 
-$scope.title ='title to give';
+    $scope.title = 'title to give';
     $scope.objectfilter = {};
     $scope.objectfilter.pagenumber = 0;
     $scope.objectfilter.pagesize = 6;
@@ -628,15 +642,15 @@ $scope.title ='title to give';
     $scope.noviewmore = true;
     $scope.stars = [];
     $scope.notAvailable = false;
-      $scope.busy = false;
+    $scope.busy = false;
     $scope.fetchData = function() {
-      if ($scope.busy) return;
-      $scope.busy = true;
-        $scope.objectfilter.pagenumber =  $scope.objectfilter.pagenumber + 1;
-        console.log("$scope.objectfilter.pagenumber",  $scope.objectfilter.pagenumber);
+        if ($scope.busy) return;
+        $scope.busy = true;
+        $scope.objectfilter.pagenumber = $scope.objectfilter.pagenumber + 1;
+        console.log("$scope.objectfilter.pagenumber", $scope.objectfilter.pagenumber);
         NavigationService.getGallery($scope.objectfilter, function(data) {
-          console.log("$scope.objectfilter",  $scope.objectfilter);
-        // NavigationService.getStars($scope.objectfilter, function(data) {
+            console.log("$scope.objectfilter", $scope.objectfilter);
+            // NavigationService.getStars($scope.objectfilter, function(data) {
             // console.log(data.data.totalpages);
             console.log("getStars", data.data);
             if (data.data.data.length === 0) {
@@ -645,8 +659,8 @@ $scope.title ='title to give';
                 $scope.notAvailable = false;
             }
             if (data.value) {
-                console.log(  $scope.objectfilter.pagenumber);
-                if (data.data.totalpages >=  $scope.objectfilter.pagenumber) {
+                console.log($scope.objectfilter.pagenumber);
+                if (data.data.totalpages >= $scope.objectfilter.pagenumber) {
 
                     if (data.data.data) {
                         data.data.data = _.chunk(data.data.data, 3)
@@ -655,15 +669,15 @@ $scope.title ='title to give';
                     _.each(data.data.data, function(n) {
                         // console.log(n);
                         $scope.stars.push(n)
-                         $scope.busy = false;
+                        $scope.busy = false;
                     });
 
                     if (data.data.data.length !== 0) {
-                      $scope.$broadcast('scroll.infiniteScrollComplete');
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
                     }
 
 
-                    if (data.data.totalpages ===   $scope.objectfilter.pagenumber) {
+                    if (data.data.totalpages === $scope.objectfilter.pagenumber) {
                         $scope.noviewmore = false;
                     }
                 } else {
@@ -675,14 +689,14 @@ $scope.title ='title to give';
 
         })
     };
-$scope.fetchData();
+    $scope.fetchData();
 
     $scope.fetchSearchedData = function() {
-      $scope.busy = false;
-      $scope.objectfilter.pagenumber = 0;
-      $scope.stars=[];
-      $scope.fetchData();
-      TemplateService.removeLoader();
+        $scope.busy = false;
+        $scope.objectfilter.pagenumber = 0;
+        $scope.stars = [];
+        $scope.fetchData();
+        TemplateService.removeLoader();
     }
 
 
@@ -690,15 +704,18 @@ $scope.fetchData();
 
 })
 
-.controller('MediaCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,$filter) {
+.controller('MediaCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("media");
-    $scope.menutitle = NavigationService.makeactive("Media");
+    // $scope.menutitle = NavigationService.makeactive("Media");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("SMAAASH - The Official Hangout of Minnesota Lynx, Minnesota Wid & Minnesota Timberwolves");
     TemplateService.title = $scope.menutitle;
+    TemplateService.description = "SMAAASH is the best hangout arena for singles, couples and families and the media agree with us! Check out SMAAASH in news.";
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(2);
 
-    $scope.moreDesc={};
+    $scope.moreDesc = {};
     $scope.mediaObject = {};
     $scope.mediaObject.pagenumber = 0;
     $scope.mediaObject.pagesize = 6;
@@ -710,8 +727,8 @@ $scope.fetchData();
     $scope.busy = false;
 
     $scope.fetchData = function() {
-    if ($scope.busy) return;
-      $scope.busy = true;
+        if ($scope.busy) return;
+        $scope.busy = true;
         $scope.mediaObject.pagenumber = $scope.mediaObject.pagenumber + 1;
         NavigationService.getStars($scope.mediaObject, function(data) {
 
@@ -727,15 +744,15 @@ $scope.fetchData();
                 console.log($scope.mediaObject.pagenumber);
                 if (data.data.totalpages >= $scope.mediaObject.pagenumber) {
                     if (data.data.data) {
-                    _.each(data.data.data,function(val){
-                          $scope.mediagalleryDesc.push(val);
-                      });
-                      console.log("  $scope.mediagalleryDesc",  $scope.mediagalleryDesc);
-                      data.data.data = _.chunk(data.data.data, 3);
+                        _.each(data.data.data, function(val) {
+                            $scope.mediagalleryDesc.push(val);
+                        });
+                        console.log("  $scope.mediagalleryDesc", $scope.mediagalleryDesc);
+                        data.data.data = _.chunk(data.data.data, 3);
                         _.each(data.data.data, function(n) {
                             // console.log(n);
                             $scope.mediagallery.push(n);
-                                  $scope.busy = false;
+                            $scope.busy = false;
 
                         });
                     }
@@ -992,9 +1009,12 @@ $scope.fetchData();
 .controller('AttractionCtrl', function($scope, TemplateService, $filter, NavigationService, $timeout, $stateParams, $uibModal, $state, $location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("attractions");
-    $scope.menutitle = NavigationService.makeactive("Attractions");
+    $scope.menutitle = NavigationService.makeactive("Virtual Reality,Arcade Games + SkyKarting at SMAAASH.");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    TemplateService.description = "From Sky Karting, virtual reality to simulation games SMAAASH is the ultimate adreneline arena of America. Visit Us in Mall Of America, Minnesota.";
+    TemplateService.keywords = "weekend hangout for kids, Amusement park , amusement parks near me, virtual reality gaming , amusement park rides, go karting minnesota, kids amusement parks, amazement park, amusements parks";
     TemplateService.removeLoaderOn(1);
     $scope.menu = "menu-out";
     $scope.moreDesc = {};
@@ -1175,11 +1195,15 @@ $scope.fetchData();
     $scope.navigation = NavigationService.getnav();
 })
 
-.controller('GiftCtrl', function($scope, TemplateService, NavigationService, $timeout,$window) {
+.controller('GiftCtrl', function($scope, TemplateService, NavigationService, $timeout, $window) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("giftcards");
-    $scope.menutitle = NavigationService.makeactive("Gift");
-    TemplateService.title = $scope.menutitle;
+    // $scope.menutitle = NavigationService.makeactive("Gift");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("SMAAASH Gift Cards - The Best Gift Ever");
+    TemplateService.title =$scope.menutitle ;
+    TemplateService.description ="Why gift somebody simple gifts when you could gift them an experience of a lifetime! Gift them with the best attraction in the Mall Of America – SMAAASH.";
+    TemplateService.keywords = "attraction in the mall of America, gift cads" ;
     $scope.navigation = NavigationService.getnav();
     $scope.formData = {};
     $scope.formData.BranchID = $.jStorage.get("branchId");
@@ -1191,13 +1215,13 @@ $scope.fetchData();
         NavigationService.getGiftCard(formData, function(data) {
             console.log("data", data);
             if (data.value === true) {
-              $scope.newWindow = data.data.GiftCard[0].Link ;
-                $scope.showError=false;
+                $scope.newWindow = data.data.GiftCard[0].Link;
+                $scope.showError = false;
                 $window.location.href = $scope.newWindow;
                 // $window.open($scope.newWindow, " ");
-                }else {
-                  $scope.showError=true;
-              console.log("something went wrong");
+            } else {
+                $scope.showError = true;
+                console.log("something went wrong");
             }
         })
 
@@ -1632,10 +1656,134 @@ $scope.fetchData();
     //Used to name the .html file
 
     $scope.template = TemplateService.changecontent("snow-rush");
-    $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
-    TemplateService.title = $scope.menutitle;
+    // $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
+    // TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
+    // ============Start of Switch Case =================
+    if ($stateParams.id) {
+        console.log("stateParamsid", $stateParams.id);
+        switch ($stateParams.id) {
+            case '585d3de843d6132e58a3371b':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH Multilevel Sky Karting | Fuel Your Speed Adrenaline");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Karting Fans, here’s your date with speed. Our eco-friendly karts and zippy track ensures a thrill ride.Get Special karts for kids. Visit us at MOA ";
+                TemplateService.keywords = "gokarting, formula 1 racing games, karting minnesota, f 1 racing games, indoor karting, go karting";
+                break;
+
+            case '585d3de843d6132e58a3371b':
+                $scope.menutitle = NavigationService.makeactive("A New Level of Speed in Minnesota | SMAAASH Sky Karting");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "The best karts in the world zooming down Mall of America’s multi-level karting arena. Speed, Safety and Thrill is 100 % assured! For Adults & Kids.";
+                TemplateService.keywords = "go karting minneapolis, karting minnesota, formula 1 racing games, f 1 racing games, indoor karting,go karting for kids, formula car games, formula 1 game, sky karting";
+                break;
+
+            case '585d409343d6132e58a33858':
+                $scope.menutitle = NavigationService.makeactive("Ride Your Own Thrills with SMAAASH’s Virtual Roller Coaster");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Time to take the roller coaster ride of your life. Design the ride path, put on your VR Gear and experience a spine tingling ride only at Smaaash, Mall Of America.";
+                TemplateService.keywords = "Rollercoaster ride, finger coaster game, roller coaster games for kids, coaster games, roller coaster fun games, roller coaster games, virtual reality games, vr games minnesota";
+                break;
+
+            case '585d41d343d6132e58a338f6':
+                $scope.menutitle = NavigationService.makeactive("Exterminator Virtual Shooting Game Only at SMAAASH Minnesota");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Killer robots are taking over the world and you are humanity’s only hope! Buckle up folks, the most amazing shooting virtual reality game is here at SMAAASH!";
+                TemplateService.keywords = "Virtual reality game, play virtual games, virtual games to play, shooting games, shooting virtual reality games, shooting vr games, kids vr games";
+
+                break;
+            case '585d428743d6132e58a3395f':
+                $scope.menutitle = NavigationService.makeactive("Future of Racing- SMAAASH Extreme Drone Race");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Time to move on from F1 games, the future has arrived! Don your Oculus gear and race your drones to the finish line. Only at SMAAASH, Mall of America.";
+                TemplateService.keywords = " F1 car racing games , virtual drones games, formula 1 racing games, f 1 racing games, best f1 racing game, vr games minnesota, formua 1 car racing games, formula car games, formula 1 game, formula one games, bloomington video game";
+
+
+                break;
+            case '585d42f443d6132e58a33977':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH Virtual Reality Games | Vertigo – Walk the Plank ");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Real or virtual, fear of heights can really throw you off balance! Presenting a virtual reality game to challenge your senses! Must Play at Smaaash.";
+                TemplateService.keywords = "Virtual reality game, virtual roller coaster game, play virtual games, virtual games to play, gaming in minnesota, entertainment arena";
+                console.log("TITLE", $scope.menutitle);
+
+                break;
+            case '585d436443d6132e58a339ab':
+                $scope.menutitle = NavigationService.makeactive("Master the Art Of Attack | SMAASH Virtual Reality Games ");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Choose a weapon, pick a target, and fire away! Master the Art of Attack for a thrill unlike anything that a regular amusement park provides";
+                TemplateService.keywords = "Amusement park, amusement parks near me, adventure park, amusement park rides, best amusement parks, kids amusement parks, amazement park, amusements parks";
+                console.log("TITLE", $scope.menutitle);
+
+                break;
+            case '585d43bd43d6132e58a339e0':
+                $scope.menutitle = NavigationService.makeactive("SMAASH Haunted Hospital | Thrills With Chills");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Even the best amusement parks won’t give you the kind of chills and thrills Smaaash Haunted Hospital will deliver. Scares are guaranteed at Mall of America!";
+                TemplateService.keywords = " Best amusement parks, Amusement park, amusement parks near me, adventure park, amusement park rides, best amusement parks, kids amusement parks, amazement park, amusements parks";
+                console.log("TITLE", $scope.menutitle);
+
+                break;
+            case '585d451843d6132e58a33c26':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH X1 Simulator Racing Game | Race Like A Pro");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Taking F1 racing games to a whole new level, the X1 simulator at Mall of America puts you right into the driver’s seat for a racing experience unlike no other!";
+                TemplateService.keywords = "F1 racing games , formula 1 games, formula 1 racing games, f 1 racing games, best f1 racing game, formula 1 car racing games, formula car games, formula 1 game, formula one games, f1 video game";
+                console.log("TITLE", $scope.menutitle);
+
+                break;
+            case '585d45a243d6132e58a33ce4':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH Super Keeper. Challenge Your Soccer Skills Now.");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "He’s fast, he’s brutal he’s SMAAASH, Mall of America’s Super Keeper - the best football goalkeeper in the world! Put Your Penalty ShootOut Skills at test.";
+                TemplateService.keywords = " Football goalkeeper, goalkeeper games, goalkeeper games, football goalkeeper, super goalkeeper, play goalkeeper games, football goalkeeper games, gaming zone, gaming zone in USA";
+                console.log("TITLE", $scope.menutitle);
+            case '585d489643d6132e58a33f90':
+                $scope.menutitle = NavigationService.makeactive("What the Puck | SMAAASH Ice Hockey Madness in Minnesota.");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Ice Hockey game at Mall of America just got more brutal! The robotic keeper is no pushover. Try beating him - You will simply make you go – What The Puck!";
+                TemplateService.keywords = "Ice hockey games, ice hockey minnesota, kids ice hockey, ice hockey games, ice hockey games for kids, ice hockey arena, play ice hockey, where to play ice hockey";
+                console.log("TITLE", $scope.menutitle);
+                break;
+            case '585d498e43d6132e58a33fad':
+                $scope.menutitle = NavigationService.makeactive(" SMAASH’s Extreme Takedown Challenge – Touchdown To Victory.");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Featuring one of the best games an indoor amusement park could offer, this game will test your speed and strength as you fight to score the winning touchdown.";
+                TemplateService.keywords = " Indoor amusement park, indoor amusement parks, gaming zone, adventure theme park, best amusement park rides, amusement park rides, amusement park list, Amusement park in USA";
+                console.log("TITLE", $scope.menutitle);
+                break;
+            case '585d4a9843d6132e58a340c2':
+                $scope.menutitle = NavigationService.makeactive("Load, Lock and Shoot | Play Hot Shots at SMAAASH in Mall Of America");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "An attraction you won’t find in any regular amusement park, Hot Shots tests your shooting skills. Different shooting scenarios await gunslingers!";
+                TemplateService.keywords = "Amusement park, gaming zone, adventure theme park, best amusement park rides, amusement park rides, amusement park list, Amusement park in minneapolis, shooting games minnesota";
+                console.log("TITLE", $scope.menutitle);
+                break;
+            case '585d4b9743d6132e58a34149':
+                $scope.menutitle = NavigationService.makeactive("Battle the Zombie Outbreak at SMAAASH Minnesota");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "The Zombie apocalypse is finally here! Team up with a buddy and kick out some zombies in this amazing virtual reality game at SMAAASH, Mall of America.";
+                TemplateService.keywords = "Virtual reality game, virtual roller coaster game, play virtual games, virtual games to play";
+                console.log("TITLE", $scope.menutitle);
+
+                break;
+            case '585d4cce43d6132e58a3415f':
+                $scope.menutitle = NavigationService.makeactive("Game On at SMAAASH Smart Arcade | America's Adrenaline Arena");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Big screen thrills of small-screen arcade classics like angry birds and candy crush. We promise you, this is a gaming zone unlike any other you’ve seen before.";
+                TemplateService.keywords = "arcade games, arcade games in USA, gaming zone, game zone minnesota";
+                console.log("TITLE", $scope.menutitle);
+                break;
+
+            default:
+                TemplateService.description = "Best Sky Karting & Virtual Reality Games in MN. Try our handcrafted, custom cocktails that pair perfectly with a night of gaming at Mall Of America, Minnesota.";
+                TemplateService.keywords = "Go Karting, Corporate Party, Virtual Reality Gaming, Birthday Party Places, Happy Hour Bars, Places to visit Minnesota, Mall of america attractions, Jonathan Pogash Cocktails, Minnesota Brewery, Brewery in Mall of america";
+
+        }
+
+
+    }
+    // ============End Of Switch Case =================
     $scope.$on('$viewContentLoaded', function() {
         $(window).scroll(function() {
             var scroller = $(document).scrollTop();
@@ -1773,12 +1921,12 @@ $scope.fetchData();
 
 
 
-.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal, $location, $filter,$sce) {
+.controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal, $location, $filter, $sce) {
     $scope.template = TemplateService.changecontent("host-party");
     $scope.menutitle = NavigationService.makeactive("Host Party");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-TemplateService.removeLoaderOn(2);
+    TemplateService.removeLoaderOn(2);
     // $scope.myUrl = window.location.href;
     $scope.myUrl = $location.absUrl();
 
@@ -1840,13 +1988,13 @@ TemplateService.removeLoaderOn(2);
 
     NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         if (data.value) {
-          $scope.SingleHostParty1 = data.data;
-          $scope.SingleHostParty = _.chunk(data.data, 3);
-          $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
-          $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
-          $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
-          $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
-          $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
+            $scope.SingleHostParty1 = data.data;
+            $scope.SingleHostParty = _.chunk(data.data, 3);
+            $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
+            $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
+            $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
+            $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
+            $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
             TemplateService.removeLoader();
         }
 
@@ -1867,13 +2015,13 @@ TemplateService.removeLoaderOn(2);
         }).description;
     };
     NavigationService.getAllHostPartySlider(function(data) {
-      if (data.value) {
-          var i = 1;
-          $scope.hostPartySlider = _.each(data.data, function(key) {
-              key.order = i;
-              i++;
-          });
-          TemplateService.removeLoader();
+        if (data.value) {
+            var i = 1;
+            $scope.hostPartySlider = _.each(data.data, function(key) {
+                key.order = i;
+                i++;
+            });
+            TemplateService.removeLoader();
 
         }
 
@@ -2013,10 +2161,10 @@ TemplateService.removeLoaderOn(2);
         }
     };
     $scope.pdfmodal = function(pdf) {
-      $scope.pdfdata = pdf;
-      $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
-         $scope.finalURL = 'http://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
-         $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
+        $scope.pdfdata = pdf;
+        $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
+        $scope.finalURL = 'http://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
+        $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
 
         if ($scope.pdfdata) {
             $uibModal.open({
@@ -2076,8 +2224,11 @@ TemplateService.removeLoaderOn(2);
     .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("careers");
-        $scope.menutitle = NavigationService.makeactive("Careers");
+        // $scope.menutitle = NavigationService.makeactive("Careers");
+        // TemplateService.title = $scope.menutitle;
+        $scope.menutitle =  NavigationService.makeactive("SMAAASH is Now Hiring. Most Exciting Place to 'Play Your Day Away'.");
         TemplateService.title = $scope.menutitle;
+        TemplateService.description = "SMAAASH is one of the best Mall Of America attractions, thanks to our awesome crew. You could be one of them too, just send us your resume!";
         $scope.navigation = NavigationService.getnav();
         $scope.carer = function() {
             $uibModal.open({
@@ -2094,8 +2245,11 @@ TemplateService.removeLoaderOn(2);
 .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("about");
-    $scope.menutitle = NavigationService.makeactive("About");
+    // $scope.menutitle = NavigationService.makeactive("About");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("All You Need To Know About the behind the scenes at SMAAASH");
     TemplateService.title = $scope.menutitle;
+    TemplateService.description = "You already know that SMAAASH is the best chill out place in Minnesota but wouldn’t you love to know more? Here’s all you ever wanted to know!";
     $scope.navigation = NavigationService.getnav();
 })
 
@@ -2456,11 +2610,26 @@ TemplateService.removeLoaderOn(2);
         });
     })
 
-.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $location,$state,$filter, $sce ) {
+.controller('DrinkCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal, $location, $state, $filter, $sce) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("drink-party");
-    $scope.menutitle = NavigationService.makeactive("Drink Party");
+    // $scope.menutitle = NavigationService.makeactive("Drink Party");
+    // TemplateService.title = $scope.menutitle;
+
+    $scope.menutitle = NavigationService.makeactive("SMAAASH – The Home of Awesome Parties in Minnesota");
+
     TemplateService.title = $scope.menutitle;
+
+    console.log("HOME TITELE",$scope.menutitle);
+    TemplateService.description = "Looking for the perfect break before the big day? Celebrate the trip of a lifetime at the best bachelor party destinations with your friends only with TBT. ";
+    TemplateService.keywords = "bachelor trip, bachelor party destinations , bachelor party, bachelor party planning, bachelor party themes";
+
+
+
+    // $scope.menutitle = NavigationService.makeactive("SMAAASH – The Home of Awesome Parties in Minnesota");
+    // TemplateService.title = $scope.menutitle;
+    // TemplateService.description = "Be it as a venue for birthday parties or a corporate event party, SMAAASH at Mall of America provides the very best in delicious dining and gaming thrills!";
+    // TemplateService.keywords = "venue for birthday parties, corporate event party, party places, birthday party places, kids birthday party places";
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = $location.absUrl();
     $scope.menu = "menu-out";
@@ -2484,12 +2653,12 @@ TemplateService.removeLoaderOn(2);
 
 
 
-    $scope.gotFunction=function(id){
-      if (id === '57e13248d32ecf3237dcf36a') {
-        $state.go( 'host-party', {
-          id: '57bc4b10eb9c91f1025a3b54'
-        });
-      }
+    $scope.gotFunction = function(id) {
+        if (id === '57e13248d32ecf3237dcf36a') {
+            $state.go('host-party', {
+                id: '57bc4b10eb9c91f1025a3b54'
+            });
+        }
     }
     $scope.readMore = function(id) {
         _.each($scope.moreDesc, function(value, property) {
@@ -2515,10 +2684,10 @@ TemplateService.removeLoaderOn(2);
     };
 
     $scope.pdfmodal = function(pdf) {
-      $scope.pdfdata = pdf;
-      $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
-         $scope.finalURL = 'http://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
-         $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
+        $scope.pdfdata = pdf;
+        $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
+        $scope.finalURL = 'http://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
+        $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
 
         if ($scope.pdfdata) {
             $uibModal.open({
@@ -2682,11 +2851,33 @@ TemplateService.removeLoaderOn(2);
 .controller('EventInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal, $location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("event-inner");
-    $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
-    TemplateService.title = $scope.menutitle;
+    // $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
+    // TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = $location.absUrl();
     TemplateService.removeLoaderOn(1);
+
+    if ($stateParams.id) {
+        switch ($stateParams.id) {
+            case '57e13e364c8614a4029152fa':
+                $scope.menutitle = NavigationService.makeactive("Kick Your Way to A Harley | SMAAASH Super Keeper");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = " All that stands between you and a Harley Davidson is our super goalkeeper! Beat him seven consecutive times and ride home a champion on a Harley.";
+                TemplateService.keywords = "super goalkeeper ,Football goalkeeper, goalkeeper games, goalkeeper games, football goalkeeper, play goalkeeper games, football goalkeeper games, gaming zone, gaming zone in USA";
+                break;
+            case '585d92e0a46dd5775c39e46b':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH What the Puck Challenge | Score to Win");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Here’s another reason to give our ice hockey game a try! Score seven consecutive goals in What the Puck and win an awesome game card worth $100!";
+                TemplateService.keywords = "Ice hockey game, ice hockey skates, ice hockey games, ice hockey games for kids, ice hockey arena, gaming zone, gaming zone in USA";
+                break;
+            default:
+                TemplateService.description = "Best Sky Karting & Virtual Reality Games in MN. Try our handcrafted, custom cocktails that pair perfectly with a night of gaming at Mall Of America, Minnesota.";
+                TemplateService.keywords = "Go Karting, Corporate Party, Virtual Reality Gaming, Birthday Party Places, Happy Hour Bars, Places to visit Minnesota, Mall of america attractions, Jonathan Pogash Cocktails, Minnesota Brewery, Brewery in Mall of america";
+
+        }
+
+    }
     $scope.today = function() {
         $scope.dt = new Date();
     };
@@ -2816,14 +3007,14 @@ TemplateService.removeLoaderOn(2);
         }
     }
     NavigationService.getDetailExploreSmaaash($stateParams.id, function(data) {
-          if (data.value) {
+        if (data.value) {
             $scope.detailEventsInner = data.data;
             if ($scope.detailEventsInner.banner) {
-              $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
+                $scope.detailEventsInner.banner = $filter('uploadpath')($scope.detailEventsInner.banner);
             }
-          TemplateService.removeLoader();
+            TemplateService.removeLoader();
         }
-      })
+    })
 
 })
 
@@ -2849,7 +3040,7 @@ TemplateService.removeLoaderOn(2);
     $scope.amount = $stateParams.amount;
     $scope.cnrNo = $stateParams.cnrno;
     $scope.paymentFor = $stateParams.paymentfor;
-    console.log("$stateParams",$stateParams);
+    console.log("$stateParams", $stateParams);
     console.log("im in");
     // console.log("log",$location);
 })
@@ -3118,8 +3309,14 @@ TemplateService.removeLoaderOn(2);
 .controller('BlogCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal, $state, $location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog");
-    $scope.menutitle = NavigationService.makeactive("Blog");
+    // $scope.menutitle = NavigationService.makeactive("Blog");
+    // TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("The Official SMAAASH Stories - News, Customer Stories & More.");
     TemplateService.title = $scope.menutitle;
+    TemplateService.description = "Forever changing the face of amusement parks and theme parks SMAAASH has a lot to offer. Check out the blog for more innovations.";
+    TemplateService.keywords = "Amusement parks, theme parks, adventure theme park, best amusement park rides, amusement park rides, amusement park list, Amusement park in USA";
+
+
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = $location.absUrl();
     TemplateService.removeLoaderOn(3);
@@ -3280,11 +3477,59 @@ TemplateService.removeLoaderOn(2);
 .controller('BlogInsideCtrl', function($scope, TemplateService, $state, NavigationService, $timeout, $stateParams, $filter, $location) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("blog-inside");
-    $scope.menutitle =$stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
-    TemplateService.title = $scope.menutitle;
+    // $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
+    // TemplateService.title = $scope.menutitle;
+
     $scope.navigation = NavigationService.getnav();
     $scope.myUrl = $location.absUrl();
     TemplateService.removeLoaderOn(1);
+    if ($stateParams.id) {
+        switch ($stateParams.id) {
+            case '585d582e43d6132e58a3476c':
+                $scope.menutitle = NavigationService.makeactive("Meet Jonathan Pogash – The Cocktail Guru");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Meet Jonathan Pogash, the main reason SMAAASH has one of the best bar lounges in town. Delve into the life of this brilliant Cocktail Guru, at Mall of America. ";
+                TemplateService.keywords = "bar lounges, cocktails in minnesota, minnesota must see places, best bars in minnesota";
+                break;
+            case '583421099f3f2cd049f2cb28':
+                $scope.menutitle = NavigationService.makeactive("The Minnesota Lynx | SMAAASH");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "SMAAASH - The Official Hangout of The Minnesota Lynx, professional women's basketball in Minnesota - 3 times winner of WNBA title. ";
+
+
+                break;
+            case '585d55a443d6132e58a34677':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH – Official Hangout of The Minnesota Timberwolves");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Looking for a place to chill? The Minnesota Timberwolves love hanging out at SMAAASH, what about you?";
+                TemplateService.keywords = "Place to chill, sports bars minnesota, timberwolves fans bars, best minnesota bar";
+
+                break;
+            case '585d566f43d6132e58a346a3':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH – Proud Partner of the Minnesota Vikings");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "SMAAASH is definitely no less than Valhalla when it comes to an awesome place to go with friends. Which is why we are partners with The Minnesota Vikings!";
+                TemplateService.keywords = "Place to go with friends, fun place to go, minnesota brewery, minnesota cocktail bars";
+
+                break;
+            case '585d573d43d6132e58a346d4':
+                $scope.menutitle = NavigationService.makeactive("The Minnesota Wild loves SMAAASH");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "Looking for a place to chill? The Minnesota Wid love hanging out at SMAAASH, what about you? Spotted Karl Anthony Town Jr in Feb, 2017!";
+                TemplateService.keywords = "fun place to go , best beer bar, craft beers in minnesota, minneapolis brewery, mall of america bars, couples bar minnesota";
+                break;
+            case '585d8e61a46dd5775c39e1a6':
+                $scope.menutitle = NavigationService.makeactive("SMAAASH - Mall Of America’s Main Attraction");
+                TemplateService.title = $scope.menutitle;
+                TemplateService.description = "You’ll never run out of things to do at the Mall Of America thanks to SMAAASH. Read the full story here!";
+                TemplateService.keywords = "Things to do at the mall of America, mall of america must do things, mall of america attractions, moa adventure, moa karting";
+
+                break;
+            default:
+                TemplateService.description = "Best Sky Karting & Virtual Reality Games in MN. Try our handcrafted, custom cocktails that pair perfectly with a night of gaming at Mall Of America, Minnesota.";
+                TemplateService.keywords = "Go Karting, Corporate Party, Virtual Reality Gaming, Birthday Party Places, Happy Hour Bars, Places to visit Minnesota, Mall of america attractions, Jonathan Pogash Cocktails, Minnesota Brewery, Brewery in Mall of america";
+        }
+    }
     $scope.myBlogslides = [
         'img/karting/blue.png',
         // 'img/karting/star.png',
@@ -3309,11 +3554,11 @@ TemplateService.removeLoaderOn(2);
     });
 
 
-    $scope.goTo = function(name, id,statetogo) {
-      console.log("im in");
-        if (name, id,statetogo) {
+    $scope.goTo = function(name, id, statetogo) {
+        console.log("im in");
+        if (name, id, statetogo) {
             $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
-            $state.go( statetogo, {
+            $state.go(statetogo, {
                 name: $scope.name,
                 id: id
             });
@@ -3629,7 +3874,7 @@ TemplateService.removeLoaderOn(2);
 
 
     })
-    .controller('footerctrl', function($scope, TemplateService, NavigationService,  $timeout) {
+    .controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService;
         TemplateService.removeLoaderOn(1);
         $scope.footer = function(val) {
