@@ -6,7 +6,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //Used to name the .html file
     TemplateService.removeLoaderOn(2);
     $scope.template = TemplateService.changecontent("home");
-    $scope.menutitle = NavigationService.makeactive("Home");
+    // $scope.menutitle = NavigationService.makeactive("Home");
+    $scope.menutitle = NavigationService.makeactive("Smaaash - Play Drink and Party Like Never Before");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.homeurl = $location.url();
@@ -260,7 +261,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
         id: '585d3de843d6132e58a3371b',
-        pagename: 'karting'
+        pagename: 'skykarting'
     }, {
         img: 'img/new/parties.jpg',
         text: ' parties',
@@ -1923,8 +1924,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('HostCtrl', function($scope, TemplateService, NavigationService, $timeout, $filter, $stateParams, $uibModal, $location, $filter, $sce) {
     $scope.template = TemplateService.changecontent("host-party");
-    $scope.menutitle = NavigationService.makeactive("Host Party");
+    // $scope.menutitle = NavigationService.makeactive("Host Party");
+    $scope.menutitle = NavigationService.makeactive("Host Your Corporate, Social or Birthday Party at Smaaash.");
     TemplateService.title = $scope.menutitle;
+    TemplateService.keywords="birthday party place, corporate party, team outing place, corporate outing venues, corporate venues, corporate party venues, team offsite places";
+    TemplateService.description = "Best place to host your parties in Minnesota! Eat, Play, Drink & have unlimited fun with your group. Private Party Room Available on Request. ";
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(2);
     // $scope.myUrl = window.location.href;
