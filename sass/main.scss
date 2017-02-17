@@ -374,7 +374,22 @@ $menu-height: 80px !default;
      @include position(absolute,
         10px 10px null null);
 }
+.custom-quote{
+  background-color: #29a8df !important;
 
+      padding: 5px 8px !important;
+      display: inline-block;;
+          border-radius: 8px;
+      button{
+        border: none;
+          color: #fff;
+          background: transparent;
+          font-weight:600;
+      }
+}
+.minimum-height{
+  min-height: 60px;
+}
 .backdroped {
     .cross {
         width: 30px;
