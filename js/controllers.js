@@ -2625,8 +2625,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
 
     console.log("HOME TITELE",$scope.menutitle);
-    TemplateService.description = "Looking for the perfect break before the big day? Celebrate the trip of a lifetime at the best bachelor party destinations with your friends only with TBT. ";
-    TemplateService.keywords = "bachelor trip, bachelor party destinations , bachelor party, bachelor party planning, bachelor party themes";
+    TemplateService.description = "Be it as a venue for birthday parties or a corporate event party, SMAAASH at Mall of America provides the very best in delicious dining and gaming thrills! ";
+    TemplateService.keywords = "venue for birthday parties, corporate event party, party places, birthday party places, kids birthday party placess";
 
 
 
