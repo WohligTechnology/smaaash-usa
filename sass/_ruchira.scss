@@ -3416,11 +3416,15 @@ opacity: 1;
   }
 }
 .loves+.loves{
-  margin-left: 95px;
-  // margin-left: 10px;
+  // margin-left: 95px;
+  margin-left: 25px;
   button{ background-color: #fff !important; }
 }
-
+.food-menu{
+  float: right;
+  margin: 10px;
+  // margin-right: 50px;
+}
 .height-minimum{
   min-height: 150px;
 }
