@@ -135,12 +135,12 @@
     <div class="new">
       <div class="row" ng-repeat="datas in SingleHostParty">
         <div class="col-md-4 col-sm-4" ng-repeat="data in datas">
-          <div class="karting-championship">
+          <div class="karting-championship cursor-point">
             <div class="brand-blue relative">
               <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="" ui-sref="parties({id:data._id})">            </div>
             <div class="new-details">
               <div class="min-h ">
-                <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25"></h3>
+                <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25" ui-sref="parties({id:data._id})"></h3>
               </div>
               <div class="min-h">
                 <p class="height-minimum" ng-bind-html="data.description | htmlToPlaintext"></p>
@@ -172,12 +172,12 @@
 
               </div>
 
-            
+
               <div class=" loves"  ng-click="pdfmodal(data.pdf);"ng-if="data.pdf" >
                 <img src="img/pdf.png" alt="">
               </div>
               <div  class="food-menu">
-                <img src="img/pdf.png" alt="">
+                <img src="img/game-icon.png" alt="">
               </div>
 
             </div>
