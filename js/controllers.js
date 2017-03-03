@@ -272,11 +272,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
         img: 'img/new/food.jpg',
         text: ' food and beverages',
-        id: '57bc4b48eb9c91f1025a3b57'
+        id: 'food-and-beverages'
     }, {
         img: 'img/new/virtual.jpg',
         text: 'virtual reality',
-        id: '57bc4b2aeb9c91f1025a3b55'
+        id: 'attraction'
     }];
 
     $scope.buyOnline = [{
