@@ -92,6 +92,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getSlider(function(data) {
         if (data.value === true) {
             $scope.mySlides = data.data;
+            console.log("$scope.mySlides ",$scope.mySlides );
             var i = 1;
             _.each($scope.mySlides, function(n) {
                 if (n.image) {
@@ -124,6 +125,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.homeContent = data.data;
             $scope.content = _.groupBy($scope.homeContent, "type.name");
             $scope.attraction = $filter('orderBy')($scope.content.Attraction, '-order');
+            console.log( "  $scope.attraction", $scope.attraction);
             $scope.whatsnew = $filter('orderBy')($scope.content["What's new"], '-order');
             $scope.hostParty = $filter('orderBy')($scope.content["Host a party"], '-order');
             console.log("$scope.hostParty", $scope.hostParty);
@@ -260,12 +262,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.buyOnlines = [{
         img: 'img/new/sky.jpg',
         text: ' sky karting  ',
-        id: '585d3de843d6132e58a3371b',
+        id: 'sky-karting',
+        // id: '585d3de843d6132e58a3371b',
         pagename: 'skykarting'
     }, {
         img: 'img/new/parties.jpg',
         text: ' parties',
-        id: '57bc4b10eb9c91f1025a3b54'
+        id: 'host-a-party'
     }, {
         img: 'img/new/food.jpg',
         text: ' food and beverages',
@@ -1042,7 +1045,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.female = '';
     $scope.children = '';
     $scope.filter = {};
-    $scope.filter._id = $stateParams.id;
+    $scope.filter.myslug = $stateParams.id;
+    // $scope.filter._id = $stateParams.id;
     $scope.msg = false;
     $scope.singleAttraction1 = [];
     $scope.singleAttraction = [];
@@ -1989,8 +1993,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
     }
+    console.log("$stateParams.id",$stateParams.id);
 
-    NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
+    NavigationService.getSingleExploreSmaaashByUrl($stateParams.id, function(data) {
+      console.log("data",data);
+    // NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         if (data.value) {
             $scope.SingleHostParty1 = data.data;
             $scope.SingleHostParty = _.chunk(data.data, 3);
@@ -2648,7 +2655,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     };
     $scope.moreDesc = {};
-    NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
+    NavigationService.getSingleExploreSmaaashByUrl($stateParams.id, function(data) {
         $scope.drinkParty1 = data.data;
         $scope.drinkParty = _.chunk(data.data, 3);
 

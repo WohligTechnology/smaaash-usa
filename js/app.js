@@ -198,7 +198,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     })
 
     .state('attractions', {
-        url: "/attractions/:id",
+        url: "/games/:id",
         templateUrl: "views/template.html",
         controller: 'AttractionCtrl'
     })
@@ -315,7 +315,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'EventInnerCtrl'
         })
         .state('snow-rush', {
-            url: "/:name/:id",
+            url: "/game/:id",
             templateUrl: "views/template.html",
             controller: 'SnowCtrl'
         });

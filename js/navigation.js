@@ -303,12 +303,29 @@ var navigationservice = angular.module('navigationservice', [])
         },
 
         getSingleExploreSmaaash: function(id, callback) {
+          console.log(id,"id");
             var data = {
-                _id: id,
+                // _id: id,
+                myslug: id,
                 city: $.jStorage.get("cityid")
             };
             $http({
                 url: adminurl + 'exploresmash/getSingleExploreSmaaash',
+                method: 'POST',
+                withCredentials: true,
+                data: data
+
+            }).success(callback);
+        },
+        getSingleExploreSmaaashByUrl: function(id, callback) {
+          console.log(id,"id");
+            var data = {
+                // _id: id,
+                myslug: id,
+                city: $.jStorage.get("cityid")
+            };
+            $http({
+                url: adminurl + 'exploresmash/getSingleExploreSmaaashByUrl',
                 method: 'POST',
                 withCredentials: true,
                 data: data
@@ -333,7 +350,7 @@ var navigationservice = angular.module('navigationservice', [])
           filter.city=$.jStorage.get("cityid");
         }
                 $http({
-                url: adminurl + 'exploresmash/getSingleExploreSmaaash',
+                url: adminurl + 'exploresmash/getSingleExploreSmaaashByUrl',
                 method: 'POST',
                 withCredentials: true,
                 data: filter
@@ -376,12 +393,13 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getDetailExploreSmaaash: function(id, callback) {
             var data = {
-                _id: id,
+                myslug: id,
+                // _id: id,
                 city: $.jStorage.get("cityid")
             };
 
             $http({
-                url: adminurl + 'exploresmash/getDetailExploreSmaaash',
+                url: adminurl + 'exploresmash/getDetailExploreSmaaashByUrl',
                 method: 'POST',
                 withCredentials: true,
                 data: data
