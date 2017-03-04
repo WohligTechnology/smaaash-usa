@@ -101,13 +101,14 @@ var navigationservice = angular.module('navigationservice', [])
                 data: data
             }).success(callback);
         },
-        getDetailBlog: function(id, callback) {
+        getDetailBlogByUrl: function(id, callback) {
             var data = {
-                _id: id,
+                myslug : id,
+                // _id: id,
                 city: $.jStorage.get("cityid")
             };
             $http({
-                url: adminurl + 'blog/getDetailBlog',
+                url: adminurl + 'blog/getDetailBlogByUrl',
                 method: 'POST',
                 withCredentials: true,
                 data: data
@@ -169,11 +170,11 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getPartyInside: function(id, callback) {
             var data = {
-                _id: id,
+                myslug: id,
                 city: $.jStorage.get("cityid")
             };
             $http({
-                url: adminurl + 'exploresmash/getOne',
+                url: adminurl + 'exploresmash/getByUrl',
                 method: 'POST',
                 withCredentials: true,
                 data: data

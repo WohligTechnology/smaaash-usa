@@ -51,13 +51,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     });
 
-    $scope.goTo = function(name, id, statetogo) {
+    $scope.goTo = function(id, statetogo) {
             console.log("im in");
-            if (name, id, statetogo) {
-                $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
+            if (id) {
+                // $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
                 $state.go(statetogo, {
-                    name: $scope.name,
-                    id: id
+                id: id
                 });
             }
 
@@ -131,6 +130,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("$scope.hostParty", $scope.hostParty);
             $scope.deals = $filter('orderBy')($scope.content["Deals and Packages"], '-order');
             $scope.events = $filter('orderBy')($scope.content["Events"], '-order');
+            console.log("events",  $scope.events);
             console.log("$scope.events", $scope.events);
             $scope.foodBeverages = $filter('orderBy')($scope.content["Food and Beverages"], '-order');
             $scope.promotion = $filter('orderBy')($scope.content["Promotions"], '-order');
@@ -283,22 +283,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: 'img/karting/1.jpg',
         text: ' Minnesota Lynx',
         partners: 'Preferred Hangout ',
-        id: '583421099f3f2cd049f2cb28'
+        id: 'minnesota-lynx'
+        // id: '583421099f3f2cd049f2cb28'
     }, {
         img: 'img/karting/2.jpg',
         text: ' Minnesota Vikings',
         partners: 'Proud Partner',
-        id: '585d566f43d6132e58a346a3'
+        id: 'minnesota-vikings'
+        // id: '585d566f43d6132e58a346a3'
     }, {
         img: 'img/karting/3.jpg',
         text: ' Minnesota Timberwolves',
         partners: 'Preferred Hangout ',
-        id: '585d55a443d6132e58a34677'
+        id: 'minnesota-timberwolves'
     }, {
         img: 'img/karting/4.jpg',
         text: ' Minnesota Wild',
         partners: 'Preferred Hangout ',
-        id: '585d573d43d6132e58a346d4'
+        id: 'minnesota-wild'
     }];
 
 
@@ -442,13 +444,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.keywords = "events in minnesota, things to do minnesota, kids games bloomington, mall of america games, mall of america events";
 
     $scope.myUrl = $location.absUrl();
-    $scope.goTo = function(name, id, statetogo) {
+    $scope.goTo = function(id, statetogo) {
         console.log("im in");
-        if (name, id, statetogo) {
-            $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
+        if (id && statetogo) {
+            // $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
             $state.go(statetogo, {
-                name: $scope.name,
-                id: id
+              id: id
             });
         }
 
@@ -456,7 +457,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     console.log("$scope.myUrl", $scope.myUrl);
     $scope.moreDesc = {};
-    NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
+    NavigationService.getSingleExploreSmaaashByUrl($stateParams.id, function(data) {
         $scope.events = _.chunk(data.data, 3);
         TemplateService.removeLoader();
     });
@@ -542,7 +543,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.keywords = "Gaming zone, gaming zone in USA, adventure theme park, best amusement park rides, amusement park rides, amusement park list, Amusement park in USA";
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
-    NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
+    NavigationService.getSingleExploreSmaaashByUrl($stateParams.id, function(data) {
         $scope.SingleDealsPackages = _.chunk(data.data, 3);
         TemplateService.removeLoader();
     });
@@ -3541,6 +3542,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 TemplateService.keywords = "Go Karting, Corporate Party, Virtual Reality Gaming, Birthday Party Places, Happy Hour Bars, Places to visit Minnesota, Mall of america attractions, Jonathan Pogash Cocktails, Minnesota Brewery, Brewery in Mall of america";
         }
     }
+
     $scope.myBlogslides = [
         'img/karting/blue.png',
         // 'img/karting/star.png',
@@ -3549,7 +3551,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/karting/salman.png',
         'img/karting/shikar.png'
     ];
-    NavigationService.getDetailBlog($stateParams.id, function(data) {
+    NavigationService.getDetailBlogByUrl($stateParams.id, function(data) {
         $scope.blogInside = data.data;
         console.log("hie hels", data.data);
         var findIndex = _.findIndex($scope.blogInside.popularBlog, function(val) {
@@ -3624,12 +3626,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 .controller('headerctrl', function($scope, TemplateService, NavigationService, $state, $timeout, $uibModal) {
-        $scope.attraId = "57bc4b2aeb9c91f1025a3b55";
-        $scope.dealsId = "57bc4b5aeb9c91f1025a3b58";
-        $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
+        $scope.attraId = "attraction";
+        // $scope.attraId = "57bc4b2aeb9c91f1025a3b55";
+        $scope.dealsId = "deals-and-packages";
+        // $scope.dealsId = "57bc4b5aeb9c91f1025a3b58";
+        $scope.hostpartyId = "host-a-party";
+        // $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
         $scope.whatsnewId = "57bc4af6eb9c91f1025a3b4f";
-        $scope.foodBeveragesId = "57bc4b48eb9c91f1025a3b57";
-        $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
+        $scope.foodBeveragesId = "food-and-beverages";
+        // $scope.foodBeveragesId = "57bc4b48eb9c91f1025a3b57";
+        $scope.eventId = "events";
+        // $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
         $scope.promotionId = "57bc4b36eb9c91f1025a3b56";
         $scope.template = TemplateService;
 

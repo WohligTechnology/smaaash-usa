@@ -137,10 +137,11 @@
         <div class="col-md-4 col-sm-4" ng-repeat="data in datas">
           <div class="karting-championship cursor-point">
             <div class="brand-blue relative">
-              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="" ui-sref="parties({id:data._id})">            </div>
+              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="" ui-sref="parties({id:data.myslug})">            </div>
             <div class="new-details">
               <div class="min-h ">
-                <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25" ui-sref="parties({id:data._id})"></h3>
+                <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25" ui-sref="parties({id:data.myslug})"></h3>
+                <!-- <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25" ui-sref="parties({id:data._id})"></h3> -->
               </div>
               <div class="min-h">
                 <p class="height-minimum" ng-bind-html="data.description | htmlToPlaintext"></p>

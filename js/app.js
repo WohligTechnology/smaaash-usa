@@ -305,12 +305,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 
 
     .state('blog-inside', {
-            url: "/blogInside/:name/:id",
+            url: "/blogInside/:id",
             templateUrl: "views/template.html",
             controller: 'BlogInsideCtrl'
         })
         .state('event-inner', {
-            url: "/event/:name/:id",
+            url: "/event/:id",
             templateUrl: "views/template.html",
             controller: 'EventInnerCtrl'
         })

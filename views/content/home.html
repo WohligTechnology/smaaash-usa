@@ -177,7 +177,7 @@
                      <div class="img-bg pointer">
 
                            <figure>
-                              <img ng-src="{{s.img}}" class="img-responsive" alt="" ng-click=goTo(s.text,s.id,'blog-inside')>
+                              <img ng-src="{{s.img}}" class="img-responsive" alt="" ng-click=goTo(s.id,'blog-inside')>
                            </figure>
 
 
@@ -231,7 +231,8 @@
                      <li >
                      <!-- <li ng-click="goTo(s.hometext,s._id,event-inner)"> -->
 
-                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.hometext,s._id,'event-inner')">
+                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.myslug,'event-inner')">
+                           <!-- <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.hometext,s._id,'event-inner')"> -->
 
                         </li>
                   </flex-slider>
@@ -257,7 +258,7 @@
                      </li>
 
                   </flex-slider>
-                  <div ng-if="!hostParty">Loading..</div>
+
                </div>
 
             </div>
