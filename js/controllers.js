@@ -52,15 +52,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
     $scope.goTo = function(id, statetogo) {
-            console.log("im in");
-            if (id) {
-                // $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
-                $state.go(statetogo, {
+        console.log("im in");
+        if (id) {
+            // $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
+            $state.go(statetogo, {
                 id: id
-                });
-            }
-
+            });
         }
+
+    }
 
 
 
@@ -88,7 +88,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getSlider(function(data) {
         if (data.value === true) {
             $scope.mySlides = data.data;
-            console.log("$scope.mySlides ",$scope.mySlides );
+            console.log("$scope.mySlides ", $scope.mySlides);
             var i = 1;
             _.each($scope.mySlides, function(n) {
                 if (n.image) {
@@ -121,17 +121,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.homeContent = data.data;
             $scope.content = _.groupBy($scope.homeContent, "type.name");
             $scope.attraction = $filter('orderBy')($scope.content.Attraction, '-order');
-            console.log( "  $scope.attraction", $scope.attraction);
+            console.log("  $scope.attraction", $scope.attraction);
             $scope.whatsnew = $filter('orderBy')($scope.content["What's new"], '-order');
             $scope.hostParty = $filter('orderBy')($scope.content["Host a party"], '-order');
             console.log("$scope.hostParty", $scope.hostParty);
             $scope.deals = $filter('orderBy')($scope.content["Deals and Packages"], '-order');
             $scope.events = $filter('orderBy')($scope.content["Events"], '-order');
-            console.log("events",  $scope.events);
+            console.log("events", $scope.events);
             console.log("$scope.events", $scope.events);
             $scope.foodBeverages = $filter('orderBy')($scope.content["Food and Beverages"], '-order');
             $scope.promotion = $filter('orderBy')($scope.content["Promotions"], '-order');
-            console.log("  $scope.promotion",  $scope.promotion);
+            console.log("  $scope.promotion", $scope.promotion);
             // 57bc4b36eb9c91f1025a3b56
             TemplateService.removeLoader();
         } else {}
@@ -283,13 +283,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         text: ' Minnesota Lynx',
         partners: 'Preferred Hangout ',
         id: 'minnesota-lynx'
-        // id: '583421099f3f2cd049f2cb28'
+            // id: '583421099f3f2cd049f2cb28'
     }, {
         img: 'img/karting/2.jpg',
         text: ' Minnesota Vikings',
         partners: 'Proud Partner',
         id: 'minnesota-vikings'
-        // id: '585d566f43d6132e58a346a3'
+            // id: '585d566f43d6132e58a346a3'
     }, {
         img: 'img/karting/3.jpg',
         text: ' Minnesota Timberwolves',
@@ -448,7 +448,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (id && statetogo) {
             // $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
             $state.go(statetogo, {
-              id: id
+                id: id
             });
         }
 
@@ -624,7 +624,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // $scope.menutitle = NavigationService.makeactive("Gallery");
     // TemplateService.title = $scope.menutitle;
     $scope.menutitle = NavigationService.makeactive("Captured Thrills - SMAAASH Gallery");
-    TemplateService.title = $scope.menutitle ;
+    TemplateService.title = $scope.menutitle;
     TemplateService.description = "Be it as a place to chill with family or a place for kids to have fun, SMAAASH has it all. Check out these amazing photos from your favourite place!";
     TemplateService.keywords = "place to chill with family, place for kids to have fun, gaming zone";
     $scope.navigation = NavigationService.getnav();
@@ -1029,16 +1029,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.menu = "menu-out";
         }
     };
-    $scope.goTo = function(name, id) {
-        if (name, id) {
-            $scope.name = name.replace(/\s/g, '').toLowerCase();
-            $scope.name = $scope.name.replace(/:/g, '');
+    $scope.goTo = function(id) {
+        if (id) {
+            // $scope.name = name.replace(/\s/g, '').toLowerCase();
+            // $scope.name = $scope.name.replace(/:/g, '');
             $state.go('snow-rush', {
-                name: $scope.name,
+                // name: $scope.name,
                 id: id
             });
         }
-
     }
 
     $scope.male = '';
@@ -1206,9 +1205,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // $scope.menutitle = NavigationService.makeactive("Gift");
     // TemplateService.title = $scope.menutitle;
     $scope.menutitle = NavigationService.makeactive("SMAAASH Gift Cards - The Best Gift Ever");
-    TemplateService.title =$scope.menutitle ;
-    TemplateService.description ="Why gift somebody simple gifts when you could gift them an experience of a lifetime! Gift them with the best attraction in the Mall Of America – SMAAASH.";
-    TemplateService.keywords = "attraction in the mall of America, gift cads" ;
+    TemplateService.title = $scope.menutitle;
+    TemplateService.description = "Why gift somebody simple gifts when you could gift them an experience of a lifetime! Gift them with the best attraction in the Mall Of America – SMAAASH.";
+    TemplateService.keywords = "attraction in the mall of America, gift cads";
     $scope.navigation = NavigationService.getnav();
     $scope.formData = {};
     $scope.formData.BranchID = $.jStorage.get("branchId");
@@ -1931,7 +1930,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // $scope.menutitle = NavigationService.makeactive("Host Party");
     $scope.menutitle = NavigationService.makeactive("Host Your Corporate, Social or Birthday Party at Smaaash.");
     TemplateService.title = $scope.menutitle;
-    TemplateService.keywords="birthday party place, corporate party, team outing place, corporate outing venues, corporate venues, corporate party venues, team offsite places";
+    TemplateService.keywords = "birthday party place, corporate party, team outing place, corporate outing venues, corporate venues, corporate party venues, team offsite places";
     TemplateService.description = "Best place to host your parties in Minnesota! Eat, Play, Drink & have unlimited fun with your group. Private Party Room Available on Request. ";
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(2);
@@ -1993,11 +1992,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
     }
-    console.log("$stateParams.id",$stateParams.id);
+    console.log("$stateParams.id", $stateParams.id);
 
     NavigationService.getSingleExploreSmaaashByUrl($stateParams.id, function(data) {
-      console.log("data",data);
-    // NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
+        console.log("data", data);
+        // NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
         if (data.value) {
             $scope.SingleHostParty1 = data.data;
             $scope.SingleHostParty = _.chunk(data.data, 3);
@@ -2237,7 +2236,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("careers");
         // $scope.menutitle = NavigationService.makeactive("Careers");
         // TemplateService.title = $scope.menutitle;
-        $scope.menutitle =  NavigationService.makeactive("SMAAASH is Now Hiring. Most Exciting Place to 'Play Your Day Away'.");
+        $scope.menutitle = NavigationService.makeactive("SMAAASH is Now Hiring. Most Exciting Place to 'Play Your Day Away'.");
         TemplateService.title = $scope.menutitle;
         TemplateService.description = "SMAAASH is one of the best Mall Of America attractions, thanks to our awesome crew. You could be one of them too, just send us your resume!";
         $scope.navigation = NavigationService.getnav();
@@ -2631,7 +2630,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     TemplateService.title = $scope.menutitle;
 
-    console.log("HOME TITELE",$scope.menutitle);
+    console.log("HOME TITELE", $scope.menutitle);
     TemplateService.description = "Be it as a venue for birthday parties or a corporate event party, SMAAASH at Mall of America provides the very best in delicious dining and gaming thrills! ";
     TemplateService.keywords = "venue for birthday parties, corporate event party, party places, birthday party places, kids birthday party placess";
 

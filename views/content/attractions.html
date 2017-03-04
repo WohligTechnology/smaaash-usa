@@ -42,17 +42,17 @@
 
                <div class="karting-championship">
                   <div class="brand-blue relative  pointer">
-                     <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" ng-click="goTo(d.hometext,d._id)">
+                     <img ng-src="{{d.image|uploadpath}}" class="img-responsive" alt="" ng-click="goTo(d.myslug)">
                      <!-- <a ng-if="d.video" fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{d.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                 class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="d.video"></a> -->
                   </div>
                   <div class="new-detail">
                      <div class="views inline-block">
-                        <button class="uppercase bluey" ng-click="goTo(d.hometext,d.myslug)">view </button>
+                        <button class="uppercase bluey" ng-click="goTo(d.myslug)">view </button>
                      </div>
 
                      <div class="min-h">
-                        <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ng-click="goTo(d.hometext,d._id)"></h3>
+                        <h3 class="margin0 bluey pointer" ng-bind-html="d.hometext | shorten :25" ng-click="goTo(d.myslug)"></h3>
                         <!--<p ng-hide="d.gameforarray==''">Game For:
                   <span class="bluey capitalize">
                              <span ng-repeat="per in d.gameforarray track by $index">{{per}} <span ng-if="$index<d.gameforarray.length-2">|</span>
