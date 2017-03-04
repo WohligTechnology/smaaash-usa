@@ -134,6 +134,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("$scope.events", $scope.events);
             $scope.foodBeverages = $filter('orderBy')($scope.content["Food and Beverages"], '-order');
             $scope.promotion = $filter('orderBy')($scope.content["Promotions"], '-order');
+            console.log("  $scope.promotion",  $scope.promotion);
+            // 57bc4b36eb9c91f1025a3b56
             TemplateService.removeLoader();
         } else {}
 
@@ -3098,7 +3100,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     TemplateService.removeLoaderOn(1);
-    NavigationService.getSingleExploreSmaaash($stateParams.id, function(data) {
+    NavigationService.getSingleExploreSmaaashByUrl($stateParams.id, function(data) {
 
         $scope.promotion = _.chunk(data.data, 3);
         TemplateService.removeLoader();
@@ -3928,7 +3930,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             }
         };
-        $scope.id = '57bc4b10eb9c91f1025a3b54';
+        $scope.id = 'host-a-party';
 
         NavigationService.getTypes(function(data) {
             $scope.types = data.data;
@@ -3939,7 +3941,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             })
             TemplateService.removeLoader();
         });
-        NavigationService.getSingleExploreSmaaash($scope.id, function(data) {
+        NavigationService.getSingleExploreSmaaashByUrl($scope.id, function(data) {
             $scope.SingleHostParty1 = data.data;
             // console.log(".SingleHostParty1",.SingleHostParty1);
 

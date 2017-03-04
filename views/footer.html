@@ -23,13 +23,14 @@
                <div class="foot-menu foot-list">
                   <div class="clearfix">
                      <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 1 }" ng-click="footer(1)"></i></span>
-                     <h4 class="bold title pointer" ui-sref="attractions({id:attrctionId})">EXPLORE SMAAASH </h4>
+                     <h4 class="bold title pointer" ui-sref="attractions({id:'attraction'})">EXPLORE SMAAASH </h4>
                   </div>
                   <ul class="foot-list foot-data" ng-show="showFooter == 1">
-                     <li><a ui-sref="attractions({id:attrctionId})">Games</a></li>
-                     <li><a ui-sref="drink-party({id:drinkandPartyId})">Food &amp; Beverages</a></li>
-                     <li><a ui-sref="dealsp({id:dealsandpackagesId})">Deals &amp; Packages</a></li>
-                     <li><a ui-sref="promotion({id:promotionId})">Promotions</a></li>
+                     <li><a ui-sref="attractions({id:'attraction'})">Games</a></li>
+                     <li><a ui-sref="drink-party({id:'food-and-beverages'})">Food &amp; Beverages</a></li>
+                     <li><a ui-sref="dealsp({id:'deals-and-packages'})">Deals &amp; Packages</a></li>
+                     <li><a ui-sref="promotion({id:'promotions'})">Promotions</a></li>
+                     <!-- <li><a ui-sref="promotion({id:promotionId})">Promotions</a></li> -->
                   </ul>
                </div>
             </div>
@@ -45,7 +46,7 @@
               <li><a ui-sref="kitty-parties">Kitty Parties</a></li>
               <li><a ui-sref="host-party({id:hostpartyId})">Social Events</a></li> -->
 
-                     <li ng-repeat="data in SingleHostParty1"><a ui-sref="parties({id:data._id})">{{data.hometext}}</a></li>
+                     <li ng-repeat="data in SingleHostParty1"><a ui-sref="parties({id:data.myslug})">{{data.hometext}}</a></li>
                   </ul>
                </div>
             </div>
@@ -83,7 +84,7 @@
                   </div>
                   <div class="clearfix">
                      <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <h4 class="bold title pointer" ui-sref="event({id:eventId})">events and challenges</h4>
+                     <h4 class="bold title pointer" ui-sref="event({id:'events'})">events and challenges</h4>
                   </div>
 
                   <div class="clearfix">
