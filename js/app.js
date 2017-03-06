@@ -74,9 +74,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     })
 
     .state('dealsp', {
-        url: "/dealsp/:id",
+        url: "/deals-and-packages",
         templateUrl: "views/template.html",
-        controller: 'DealspCtrl'
+        controller: 'DealspCtrl',
+        params:{
+          id:"deals-and-packages"
+        }
     })
 
     .state('thank', {
@@ -128,9 +131,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 
 
     .state('promotion', {
-        url: "/promotion/:id",
+        url: "/promotions",
         templateUrl: "views/template.html",
-        controller: 'PromotionCtrl'
+        controller: 'PromotionCtrl',
+        params:{
+          id:"promotions"
+        }
     })
 
     .state('blog', {
