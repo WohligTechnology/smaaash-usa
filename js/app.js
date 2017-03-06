@@ -215,9 +215,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'LeaderCtrl'
         })
         .state('host-party', {
-            url: "/host-party/:id",
+            url: "/host-party",
             templateUrl: "views/template.html",
-            controller: 'HostCtrl'
+            controller: 'HostCtrl',
+        params: {
+        id:"host-a-party"
+        }
         })
         .state('birthday-parties', {
             url: "/birthday-parties/:id",
