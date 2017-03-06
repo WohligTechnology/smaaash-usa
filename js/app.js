@@ -65,9 +65,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     })
 
     .state('event', {
-        url: "/events/:id",
+        url: "/events",
         templateUrl: "views/template.html",
-        controller: 'EventCtrl'
+        controller: 'EventCtrl',
+        params:{
+          id:"events"
+        }
     })
 
     .state('dealsp', {
@@ -103,9 +106,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         // })
 
     .state('drink-party', {
-        url: "/drink-party/:id",
+        url: "/food-and-beverages",
         templateUrl: "views/template.html",
-        controller: 'DrinkCtrl'
+        controller: 'DrinkCtrl',
+        params:{
+          id:"food-and-beverages"
+        }
     })
 
     .state('reset', {
@@ -215,7 +221,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'LeaderCtrl'
         })
         .state('host-party', {
-            url: "/host-party",
+            url: "/host-a-party",
             templateUrl: "views/template.html",
             controller: 'HostCtrl',
         params: {
@@ -315,7 +321,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         .state('event-inner', {
             url: "/event/:id",
             templateUrl: "views/template.html",
-            controller: 'EventInnerCtrl'
+            controller: 'EventInnerCtrl',
         })
         .state('snow-rush', {
             url: "/game/:id",
