@@ -3565,17 +3565,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
 
-    $scope.goTo = function(name, id, statetogo) {
+    $scope.goTo = function(id, statetogo) {
         console.log("im in");
-        if (name, id, statetogo) {
-            $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
+        if (id && statetogo) {
+            // $scope.name = name.replace(/(?!\w|\s)./g, '').replace(/\s/g, '').replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2').toLowerCase();
             $state.go(statetogo, {
-                name: $scope.name,
-                id: id
+              id: id
             });
+          }
         }
-
-    }
 
 })
 
