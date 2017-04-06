@@ -7,8 +7,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.removeLoaderOn(2);
     $scope.template = TemplateService.changecontent("home");
     // $scope.menutitle = NavigationService.makeactive("Home");
-    $scope.menutitle = NavigationService.makeactive("Smaaash - Play Drink and Party Like Never Before");
+    $scope.menutitle = NavigationService.makeactive("Smaaash - Play, Drink, Party Like Never Before! ");
     TemplateService.title = $scope.menutitle;
+    TemplateService.description = "Best Sky Karting & Virtual Reality Games in MN. Try our handcrafted, custom cocktails that pair perfectly with a night of gaming at Mall Of America, Minnesota. ";
+    TemplateService.keywords = "Go Karting, Corporate Party, Virtual Reality Gaming, Birthday Party Places, Happy Hour Bars, Places to visit Minnesota, Mall of america attractions, Jonathan Pogash Cocktails, Minnesota Brewery, Brewery in Mall of america";
+
     $scope.navigation = NavigationService.getnav();
     $scope.homeurl = $location.url();
     console.log("  $scope.homeurl", $scope.homeurl);
@@ -61,8 +64,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
     }
-
-
 
 
 
