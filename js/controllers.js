@@ -1247,9 +1247,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('KittyCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $uibModal) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("parties");
-    $scope.menutitle = NavigationService.makeactive("Parties");
-    TemplateService.title = $scope.menutitle;
+
+
     $scope.navigation = NavigationService.getnav();
+    $scope.menutitle = NavigationService.makeactive("Host Your Corporate, Social or Birthday Party at Smaaash.");
+    TemplateService.title = $scope.menutitle;
+    TemplateService.description = "Best place to host your parties in Minnesota! Eat, Play, Drink & have unlimited fun with your group. Private Party Room Available on Request.";
+    TemplateService.keywords = "birthday party place, corporate party, team outing place, corporate outing venues, corporate venues, corporate party venues, team offsite places";
     TemplateService.removeLoaderOn(1);
     NavigationService.getPartyInside($stateParams.id, function(data) {
         $scope.party = data.data;
@@ -1741,8 +1745,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.menutitle = NavigationService.makeactive("SMAAASH Super Keeper. Challenge Your Soccer Skills Now.");
                 TemplateService.title = $scope.menutitle;
                 TemplateService.description = "He’s fast, he’s brutal he’s SMAAASH, Mall of America’s Super Keeper - the best football goalkeeper in the world! Put Your Penalty ShootOut Skills at test.";
-                TemplateService.keywords = " Football goalkeeper, goalkeeper games, goalkeeper games, football goalkeeper, super goalkeeper, play goalkeeper games, football goalkeeper games, gaming zone, gaming zone in USA";
+                TemplateService.keywords = "Football goalkeeper, goalkeeper games, goalkeeper games, football goalkeeper, super goalkeeper, play goalkeeper games, football goalkeeper games, gaming zone, gaming zone in USA";
                 console.log("TITLE", $scope.menutitle);
+                break;
             case 'what-the-puck':
                 $scope.menutitle = NavigationService.makeactive("What the Puck | SMAAASH Ice Hockey Madness in Minnesota.");
                 TemplateService.title = $scope.menutitle;
