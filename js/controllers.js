@@ -1747,7 +1747,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 TemplateService.description = "He’s fast, he’s brutal he’s SMAAASH, Mall of America’s Super Keeper - the best football goalkeeper in the world! Put Your Penalty ShootOut Skills at test.";
                 TemplateService.keywords = "Football goalkeeper, goalkeeper games, goalkeeper games, football goalkeeper, super goalkeeper, play goalkeeper games, football goalkeeper games, gaming zone, gaming zone in USA";
                 console.log("TITLE", $scope.menutitle);
-                break;
+                bre
             case 'what-the-puck':
                 $scope.menutitle = NavigationService.makeactive("What the Puck | SMAAASH Ice Hockey Madness in Minnesota.");
                 TemplateService.title = $scope.menutitle;
@@ -2864,7 +2864,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('EventInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal, $location) {
+.controller('EventInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal, $location,$sce ) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("event-inner");
     // $scope.menutitle = $stateParams.name.charAt(0).toUpperCase() + $stateParams.name.substring(1);
@@ -2985,8 +2985,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         return '';
     }
 
+
     $scope.termsConditionModal = function(pdf) {
         $scope.pdfdata = pdf;
+        $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
+        $scope.finalURL = 'https://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
+        $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
+
         if ($scope.pdfdata) {
             $uibModal.open({
                 animation: true,
@@ -3180,7 +3185,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('PromotionInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal) {
+.controller('PromotionInnerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $filter, $uibModal,$sce) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("promotion");
     $scope.menutitle = NavigationService.makeactive("Promotion Inner");
@@ -3235,8 +3240,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.setDate = function(year, month, day) {
         $scope.dt = new Date(year, month, day);
     };
-    $scope.pdfmodal = function(pdf) {
+
+
+
+      $scope.pdfmodal = function(pdf) {
         $scope.pdfdata = pdf;
+        $scope.pdfURL = $filter('uploadpath')($scope.pdfdata);
+        $scope.finalURL = 'https://docs.google.com/gview?url=' + $scope.pdfURL + '&embedded=true';
+        $scope.trustedURL = $sce.trustAsResourceUrl($scope.finalURL);
+
         if ($scope.pdfdata) {
             $uibModal.open({
                 animation: true,
