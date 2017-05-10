@@ -1747,7 +1747,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 TemplateService.description = "He’s fast, he’s brutal he’s SMAAASH, Mall of America’s Super Keeper - the best football goalkeeper in the world! Put Your Penalty ShootOut Skills at test.";
                 TemplateService.keywords = "Football goalkeeper, goalkeeper games, goalkeeper games, football goalkeeper, super goalkeeper, play goalkeeper games, football goalkeeper games, gaming zone, gaming zone in USA";
                 console.log("TITLE", $scope.menutitle);
-                bre
+                  break;
             case 'what-the-puck':
                 $scope.menutitle = NavigationService.makeactive("What the Puck | SMAAASH Ice Hockey Madness in Minnesota.");
                 TemplateService.title = $scope.menutitle;
