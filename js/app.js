@@ -299,6 +299,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         templateUrl: "views/template.html",
         controller: 'CareersCtrl'
     })
+   .state('marketing-franchisee', {
+        url: "/marketing-franchisee",
+        templateUrl: "views/template.html",
+        controller: 'MarketingFranchiseeCtrl'
+    })
 
     .state('gift', {
         url: "/giftcards",
