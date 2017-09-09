@@ -1,118 +1,118 @@
 <div class="footers" ng-controller="footerctrl">
-   <div class="container">
-      <div class="footing">
-         <div class="row">
-            <div class="col-md-3">
-               <h4 class="bold title">hours of operation:</h4>
-            </div>
-            <div class="col-md-3">
-               <h4 class="bold title">Monday-Thursday : 10 am-12 am</h4>
-            </div>
-            <div class="col-md-3">
-               <h4 class="bold title">Friday-Saturday : 10 am- 1 am</h4>
+  <div class="container">
+    <div class="footing">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="bold title">hours of operation:</h4>
+        </div>
+        <div class="col-md-3">
+          <h4 class="bold title">Monday - Thursday- 11 am - 11 pm</h4>
+        </div>
+        <div class="col-md-3">
+          <h4 class="bold title">Friday - Saturday- 10 am - 1 am</h4>
 
-            </div>
-            <div class="col-md-3">
-               <h4 class="bold title">Sunday : 10 am- 10 pm</h4>
-            </div>
-         </div>
+        </div>
+        <div class="col-md-3">
+          <h4 class="bold title">Sunday - 10 am - 10 pm</h4>
+        </div>
       </div>
-      <div class="footers-list">
-         <div class="row foot">
-            <div class="col col-flexing">
-               <div class="foot-menu foot-list">
-                  <div class="clearfix">
-                     <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 1 }" ng-click="footer(1)"></i></span>
-                     <h4 class="bold title pointer" ui-sref="attractions({id:'attraction'})">EXPLORE SMAAASH </h4>
-                  </div>
-                  <ul class="foot-list foot-data" ng-show="showFooter == 1">
-                     <li><a ui-sref="attractions({id:'attraction'})">Games</a></li>
-                     <li><a ui-sref="drink-party({id:'food-and-beverages'})">Food &amp; Beverages</a></li>
-                     <li><a ui-sref="dealsp({id:'deals-and-packages'})">Deals &amp; Packages</a></li>
-                     <li><a ui-sref="promotion({id:'promotions'})">Promotions</a></li>
-                     <!-- <li><a ui-sref="promotion({id:promotionId})">Promotions</a></li> -->
-                  </ul>
-               </div>
+    </div>
+    <div class="footers-list">
+      <div class="row foot">
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 1 }" ng-click="footer(1)"></i></span>
+              <h4 class="bold title pointer" ui-sref="attractions({id:'attraction'})">EXPLORE SMAAASH </h4>
             </div>
-            <div class="col col-flexing">
-               <div class="foot-menu foot-list">
-                  <div class="clearfix">
-                     <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 2 }"  ng-click="footer(2)"></i></span>
-                     <h4 class="bold title pointer" ui-sref="host-party({id:hostpartyId})">HOST A PARTY</h4>
-                  </div>
-                  <ul class="foot-list foot-data" ng-show="showFooter == 2">
-                     <!-- <li><a ui-sref="host-party({id:hostpartyId})">Birthday Parties</a></li>
+            <ul class="foot-list foot-data" ng-show="showFooter == 1">
+              <li><a ui-sref="attractions({id:'attraction'})">Games</a></li>
+              <li><a ui-sref="drink-party({id:'food-and-beverages'})">Food &amp; Beverages</a></li>
+              <li><a ui-sref="dealsp({id:'deals-and-packages'})">Deals &amp; Packages</a></li>
+              <li><a ui-sref="promotion({id:'promotions'})">Promotions</a></li>
+              <!-- <li><a ui-sref="promotion({id:promotionId})">Promotions</a></li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 2 }"  ng-click="footer(2)"></i></span>
+              <h4 class="bold title pointer" ui-sref="host-party({id:hostpartyId})">HOST A PARTY</h4>
+            </div>
+            <ul class="foot-list foot-data" ng-show="showFooter == 2">
+              <!-- <li><a ui-sref="host-party({id:hostpartyId})">Birthday Parties</a></li>
               <li><a ui-sref="host-party({id:hostpartyId})">Corporate Parties</a></li>
               <li><a ui-sref="kitty-parties">Kitty Parties</a></li>
               <li><a ui-sref="host-party({id:hostpartyId})">Social Events</a></li> -->
 
-                     <li ng-repeat="data in SingleHostParty1"><a ui-sref="parties({id:data.myslug})">{{data.hometext}}</a></li>
-                  </ul>
-               </div>
+              <li ng-repeat="data in SingleHostParty1"><a ui-sref="parties({id:data.myslug})">{{data.hometext}}</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <div class="clearfix">
+                <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
+                <h4 class="bold title pointer" ui-sref="about">About Us</h4>
+              </div>
+              <div class="clearfix">
+                <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
+                <h4 class="bold title pointer" ui-sref="careers">careers</h4>
+              </div>
+              <div class="clearfix">
+
+                <h4 class="bold title pointer" ui-sref="media"> media</h4>
+              </div>
+              <div class="clearfix">
+
+                <h4 class="bold title pointer" ui-sref="blog"> blog</h4>
+              </div>
             </div>
-            <div class="col col-flexing">
-               <div class="foot-menu foot-list">
-                  <div class="clearfix">
-                     <div class="clearfix">
-                        <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
-                        <h4 class="bold title pointer" ui-sref="about">About Us</h4>
-                     </div>
-                     <div class="clearfix">
-                        <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }"></i></span>-->
-                        <h4 class="bold title pointer" ui-sref="careers">careers</h4>
-                     </div>
-                     <div class="clearfix">
-
-                        <h4 class="bold title pointer" ui-sref="media"> media</h4>
-                     </div>
-                     <div class="clearfix">
-
-                        <h4 class="bold title pointer" ui-sref="blog"> blog</h4>
-                     </div>
-                  </div>
-               </div>
+          </div>
+        </div>
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list">
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
+              <!--<h4 class="bold title pointer"  >recharge online</h4>-->
             </div>
-            <div class="col col-flexing">
-               <div class="foot-menu foot-list">
-                  <div class="clearfix">
-                     <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <!--<h4 class="bold title pointer"  >recharge online</h4>-->
-                  </div>
-                  <div class="clearfix">
-                     <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <h4 class="bold title pointer" ui-sref="stars">gallery</h4>
-                  </div>
-                  <div class="clearfix">
-                     <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <h4 class="bold title pointer" ui-sref="event({id:'events'})">events and challenges</h4>
-                  </div>
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="stars">gallery</h4>
+            </div>
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="event({id:'events'})">events and challenges</h4>
+            </div>
 
-                  <div class="clearfix">
-                     <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <h4 class="bold title pointer" ui-sref="contact">contact us</h4>
-                  </div>
-                    <div class="clearfix">
-                     <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <h4 class="bold title pointer" ui-sref="marketing-franchisee">Marketing & Franchisee</h4>
-                  </div>
-                  <!--<ul class="foot-list foot-data" ng-show="showFooter == 3">
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="contact">contact us</h4>
+            </div>
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
+              <h4 class="bold title pointer" ui-sref="marketing-franchisee">Marketing & Franchisee</h4>
+            </div>
+            <!--<ul class="foot-list foot-data" ng-show="showFooter == 3">
               <li><a href="">Packages</a></li>
               <li><a href="">Pay Advance</a></li>
             </ul>-->
-                  <div class="clearfix">
-                     <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
-                     <!--<h4 class="bold title">Monday-Thursday  <span class="blocks">10 am-12 am</span></h4>
+            <div class="clearfix">
+              <!--<span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 3 }" ng-click="footer(3)"></i></span>-->
+              <!--<h4 class="bold title">Monday-Thursday  <span class="blocks">10 am-12 am</span></h4>
                 <h4 class="bold title">Friday-Saturday <span class="blocks">10 am- 1 am</span></h4>
                   <h4 class="bold title">Sunday<span class="blocks"> 10 am- 10 pm</span></h4>-->
-                     <!--<ul class="foot-list foot-data">
+              <!--<ul class="foot-list foot-data">
               <li> Monday-Thursday  10 am-12 am</li>
               <li>Friday-Saturday   10 am- 1 am</li>
                <li>Sunday   10 am- 10 pm</li>
             </ul>-->
-                  </div>
-               </div>
             </div>
-            <!--<div class="col col-flexing">
+          </div>
+        </div>
+        <!--<div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
               <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 4 }" ng-click="footer(4)"></i></span>
@@ -128,7 +128,7 @@
             </ul>
           </div>
         </div>-->
-            <!--<div class="col col-flexing">
+        <!--<div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
               <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 5 }" ng-click="footer(5)"></i></span>
@@ -139,7 +139,7 @@
             </ul>
           </div>
         </div>-->
-            <!--<div class="col col-flexing">
+        <!--<div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
               <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 6 }"></i></span>
@@ -167,7 +167,7 @@
             </div>
           </div>
         </div>-->
-            <!--<div class="col col-flexing">
+        <!--<div class="col col-flexing">
           <div class="foot-menu foot-list">
 
 
@@ -207,7 +207,7 @@
             </ul>
           </div>
         </div>-->
-            <!--<div class="col col-flexing">
+        <!--<div class="col col-flexing">
           <div class="foot-menu foot-list">
             <div class="clearfix">
               <span class="icon pull-right"><i class="fa fa-angle-down " ng-class="{'fa-angle-up': showFooter == 12 }"></i></span>
@@ -223,47 +223,47 @@
             </ul>
           </div>
         </div>-->
-            <div class="col col-flexing">
-               <div class="foot-menu foot-list map">
-                  <a target="_blank" href="https://www.google.co.in/maps/place/Mall+of+America/@44.8548651,-93.2444088,17z/data=!3m1!4b1!4m5!3m4!1s0x87f62f6c393c612d:0xb3c6f1806e78286b!8m2!3d44.8548651!4d-93.2422148">
-                     <!--href="https://maps.googleapis.com/maps/api/staticmap?center=Mall+of+America&zoom=13&size=350x15044.8548651,-93.2444088"-->
-                     <img src="img/careers/map.jpg" class="img-responsive" alt="">
-                  </a>
-               </div>
-            </div>
-            <div class="col col-flexing no-flex no-width mobile">
-               <div class="foot-menu foot-list margs mt35">
-                  <h4 class="bold title">follow smaaash</h4>
-                  <ul class="foot-list">
-                     <!-- <li class="icons"><a href="https://www.facebook.com/SmaaashUSA/" target="_blank"><i class="fa fa-facebook-square fa-2x" title="Facebook"  aria-hidden="true"></i></a></li> -->
+        <div class="col col-flexing">
+          <div class="foot-menu foot-list map">
+            <a target="_blank" href="https://www.google.co.in/maps/place/Mall+of+America/@44.8548651,-93.2444088,17z/data=!3m1!4b1!4m5!3m4!1s0x87f62f6c393c612d:0xb3c6f1806e78286b!8m2!3d44.8548651!4d-93.2422148">
+              <!--href="https://maps.googleapis.com/maps/api/staticmap?center=Mall+of+America&zoom=13&size=350x15044.8548651,-93.2444088"-->
+              <img src="img/careers/map.jpg" class="img-responsive" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col col-flexing no-flex no-width mobile">
+          <div class="foot-menu foot-list margs mt35">
+            <h4 class="bold title">follow smaaash</h4>
+            <ul class="foot-list">
+              <!-- <li class="icons"><a href="https://www.facebook.com/SmaaashUSA/" target="_blank"><i class="fa fa-facebook-square fa-2x" title="Facebook"  aria-hidden="true"></i></a></li> -->
 
-                     <li class="icons"><a href="https://www.facebook.com/SmaaashUSA/" target="_blank"><i class="fa fa-2x fa-facebook-square" title="Facebook"  aria-hidden="true"></i></a></li>
+              <li class="icons"><a href="https://www.facebook.com/SmaaashUSA/" target="_blank"><i class="fa fa-2x fa-facebook-square" title="Facebook"  aria-hidden="true"></i></a></li>
 
-                     <li class="icons"><a href=" https://twitter.com/SmaaashUSA" target="_blank"><i class="fa fa-twitter-square  fa-2x" title="Twitter"  aria-hidden="true"></i></a></li>
-                     <li class="icons"><a href="https://www.instagram.com/smaaashusa/ " target="_blank"><i class="fa fa-instagram  fa-2x" title="Instagram"  aria-hidden="true"></i></a></li>
-                     <li class="icons"><a href="https://www.youtube.com/channel/UCI2ysb6lFvGfuUkPSpsplpQ" target="_blank"><i class="fa fa-youtube-square  fa-2x" title="Youtube"  aria-hidden="true"></i></a></li>
-                     <li class="icons"><a target="_blank" href="https://www.linkedin.com/company/13235443?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A13235443%2Cidx%3A1-3-3%2CtarId%3A1481268935488%2Ctas%3Asmaaash"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
-                     </li>
-                  </ul>
-                  <a class="" ui-sref="home">
-                     <!--<a class="logoss" ui-sref="home">-->
-                     <img src="img/log-revised.png" class="img-responsive " alt="Smaaash">
-                      <!--<img src="img/home/log.png" class="img-responsive " alt="Smaaash">-->
-                  </a>
-               </div>
-               <div class="foot-list">
-                  <!--<ul class="foot-list">
+              <li class="icons"><a href=" https://twitter.com/SmaaashUSA" target="_blank"><i class="fa fa-twitter-square  fa-2x" title="Twitter"  aria-hidden="true"></i></a></li>
+              <li class="icons"><a href="https://www.instagram.com/smaaashusa/ " target="_blank"><i class="fa fa-instagram  fa-2x" title="Instagram"  aria-hidden="true"></i></a></li>
+              <li class="icons"><a href="https://www.youtube.com/channel/UCI2ysb6lFvGfuUkPSpsplpQ" target="_blank"><i class="fa fa-youtube-square  fa-2x" title="Youtube"  aria-hidden="true"></i></a></li>
+              <li class="icons"><a target="_blank" href="https://www.linkedin.com/company/13235443?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A13235443%2Cidx%3A1-3-3%2CtarId%3A1481268935488%2Ctas%3Asmaaash"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+            <a class="" ui-sref="home">
+              <!--<a class="logoss" ui-sref="home">-->
+              <img src="img/log-revised.png" class="img-responsive " alt="Smaaash">
+              <!--<img src="img/home/log.png" class="img-responsive " alt="Smaaash">-->
+            </a>
+          </div>
+          <div class="foot-list">
+            <!--<ul class="foot-list">
             <li>
               <a ui-sref="home">
                 <img src="img/home/log.png" class="img-responsive" alt="Smaaash">
               </a>
             </li>
           </ul>-->
-                  <!--<h4 class="bold title">hashtags</h4>
+            <!--<h4 class="bold title">hashtags</h4>
             <p class=""><a href="" class="hash">#Lorem #Ipsum #issimply #dummy #text #printing</a></p>-->
-               </div>
-            </div>
-            <!--<div class="col col-flexing no-flex width mobiles">
+          </div>
+        </div>
+        <!--<div class="col col-flexing no-flex width mobiles">
           <ul class="foot-list">
             <li>
               <a ui-sref="home">
@@ -272,47 +272,47 @@
             </li>
           </ul>
         </div>-->
-         </div>
-         <div class="first-know">
-
-            <form class="form-inline" ng-if="!subscribeFormComplete" ng-submit="subscribeLogin(subscribeData)">
-               <div class="form-group">
-                  <h4 class="title slide-text title-know brand-white">be the first to know</h4>
-
-
-               </div>
-
-               <div class="form-group inline-block subform">
-                  <input type="email" class="form-control subscribe" name="email" placeholder="Email Id" required ng-model="subscribeData.email">
-               </div>
-
-
-
-
-               <button type="submit" class="btn title brand-green  inline-block "><span class="brand-white">send</span></button>
-               <h4 ng-if="duplicate" class="text-center inline-block brand-white">Email Already Exist.</h4>
-            </form>
-            <div ng-if="subscribeFormComplete">
-               <h3 class="text-center brand-white">Thank You For Subscribing.</h3>
-            </div>
-         </div>
-
-         <div class="foots-list">
-            <ul class="justified-li text-center">
-               <li class="hidden-xs">
-                  <div class="foot-cards">
-                     <img src="img/careers/paypal.gif" alt="Visa cards">
-                  </div>
-               </li>
-               <li><a ui-sref="terms">Terms of Use & Privacy Policy</a></li>
-               <!--<li><a href=""></a></li>-->
-               <!--<li><a href="">Children's Online Privacy Policy</a></li>-->
-               <!--<li><a href="">License Agreement</a></li>-->
-               <li>© {{template.year}} SMAAASH</li>
-               <li><a href="http://ting.in/" target="_blank">Designed by Ting</a></li>
-            </ul>
-         </div>
-
       </div>
-   </div>
+      <div class="first-know">
+
+        <form class="form-inline" ng-if="!subscribeFormComplete" ng-submit="subscribeLogin(subscribeData)">
+          <div class="form-group">
+            <h4 class="title slide-text title-know brand-white">be the first to know</h4>
+
+
+          </div>
+
+          <div class="form-group inline-block subform">
+            <input type="email" class="form-control subscribe" name="email" placeholder="Email Id" required ng-model="subscribeData.email">
+          </div>
+
+
+
+
+          <button type="submit" class="btn title brand-green  inline-block "><span class="brand-white">send</span></button>
+          <h4 ng-if="duplicate" class="text-center inline-block brand-white">Email Already Exist.</h4>
+        </form>
+        <div ng-if="subscribeFormComplete">
+          <h3 class="text-center brand-white">Thank You For Subscribing.</h3>
+        </div>
+      </div>
+
+      <div class="foots-list">
+        <ul class="justified-li text-center">
+          <li class="hidden-xs">
+            <div class="foot-cards">
+              <img src="img/careers/paypal.gif" alt="Visa cards">
+            </div>
+          </li>
+          <li><a ui-sref="terms">Terms of Use & Privacy Policy</a></li>
+          <!--<li><a href=""></a></li>-->
+          <!--<li><a href="">Children's Online Privacy Policy</a></li>-->
+          <!--<li><a href="">License Agreement</a></li>-->
+          <li>© {{template.year}} SMAAASH</li>
+          <li><a href="http://ting.in/" target="_blank">Designed by Ting</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </div>
