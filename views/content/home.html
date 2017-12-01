@@ -1,293 +1,304 @@
 <div class="default hidden-xs" ng-if="hideBanner">
-   <img src="img/avatar/3.jpg" class="img-responsive">
+      <img src="img/avatar/3.jpg" class="img-responsive">
 </div>
 <!-- <div class="default hidden-md-hidden-sm visible-xs" ng-if="hideBanner">
    <img src="img/home/mbanner.png" class="img-responsive">
 </div> -->
 <div class="smaash-drops" ng-if="!hideBanner">
-   <div class="slidings">
-      <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true" direction-nav="false">
-         <li>
-            <a href="{{s.url}}" target="_blank">
+      <div class="slidings">
+            <flex-slider flex-slide="s in mySlides track by $index" manual-controls=".custom-pagination li" animation="slide" animationLoop="true"
+                  direction-nav="false">
+                  <li>
+                        <a href="{{s.url}}" target="_blank">
                <img ng-src="{{s.image|uploadpath}}">
             </a>
 
-         </li>
-      </flex-slider>
-      <ul class="custom-pagination">
-         <li ng-repeat="s in mySlides track by $index" ng-if="s.image">{{s.ordering}}</li>
-      </ul>
+                  </li>
+            </flex-slider>
+            <ul class="custom-pagination">
+                  <li ng-repeat="s in mySlides track by $index" ng-if="s.image">{{s.ordering}}</li>
+            </ul>
 
-   </div>
+      </div>
 </div>
 <div class="container">
 
 
-   <div class="purple-butn" ng-click="scrollToHome();">
-      <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-   </div>
+      <div class="purple-butn" ng-click="scrollToHome();">
+            <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+      </div>
 </div>
 <div class="new-slider"><a name="home"></a>
-   <div class="container">
-      <div class="gallery" id="toHome">
-         <div class="slidings">
-            <div class="headings clearfix">
-               <h2 class="title slide-text pull-left">Smaaash at a glance</h2>
-            </div>
-            <div class=" row hidden-xs hidden-sm">
-               <div class="col-md-3" ng-repeat="s in buyOnlines track by $index">
-                  <div class="race relative margno">
-                     <div class="img-bg">
-                        <a ui-sref="drink-party({id:s.id})" ng-if="s.id === 'food-and-beverages'">
-                           <figure>
-                              <img src="{{s.img}}" class="img-responsive" alt="">
-                           </figure </a>
-                           <a ui-sref="host-party({id:s.id})" ng-if="s.id === 'host-a-party'">
-                              <figure>
-                                 <img src="{{s.img}}" class="img-responsive" alt="">
-                              </figure>
-
-                           </a>
-
-
-                           <a ui-sref="attractions({id:s.id})" ng-if="s.id === 'attraction'">
-                              <figure>
-                                 <img src="{{s.img}}" class="img-responsive" alt="">
-                              </figure>
-
-                           </a>
-                           <a ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'">
-                              <figure>
-                                 <img src="{{s.img}}" class="img-responsive" alt="">
-                              </figure>
-
-                           </a>
-
-                     </div>
-                     <div class="race-text whites blacks">
-                        <div class="min-hiss">
-                           <h3 class="margin0 pointer text-center" ui-sref="drink-party({id:s.id})" ng-if="s.id === 'food-and-beverages'"> {{s.text}}</h3>
-                           <h3 class="margin0 pointer text-center" ui-sref="host-party({id:s.id})" ng-if="s.id === 'host-a-party'"> {{s.text}}</h3>
-                           <h3 class="margin0 pointer text-center"  ui-sref="attractions({id:s.id})" ng-if="s.id === 'attraction'"> {{s.text}}</h3>
-
-                           <h3 class="margin0 pointer text-center" ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'"> {{s.text}}</h3>
+      <div class="container">
+            <div class="gallery" id="toHome">
+                  <div class="slidings">
+                        <div class="headings clearfix">
+                              <h2 class="title slide-text pull-left">Smaaash at a glance</h2>
                         </div>
-                     </div>
+                        <div class=" row hidden-xs hidden-sm">
+                              <div class="col-md-3" ng-repeat="s in buyOnlines track by $index">
+                                    <div class="race relative margno">
+                                          <div class="img-bg">
+                                                <a ui-sref="drink-party({id:s.id})" ng-if="s.id === 'food-and-beverages'">
+                                                      <figure>
+                                                            <img src="{{s.img}}" class="img-responsive" alt="">
+                                                      </figure </a>
+                                                      <a ui-sref="host-party({id:s.id})" ng-if="s.id === 'host-a-party'">
+                                                            <figure>
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="">
+                                                            </figure>
+
+                                                      </a>
+
+
+                                                      <a ui-sref="attractions({id:s.id})" ng-if="s.id === 'attraction'">
+                                                            <figure>
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="">
+                                                            </figure>
+
+                                                      </a>
+                                                      <a ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'">
+                                                            <figure>
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="">
+                                                            </figure>
+
+                                                      </a>
+
+                                          </div>
+                                          <div class="race-text whites blacks">
+                                                <div class="min-hiss">
+                                                      <h3 class="margin0 pointer text-center" ui-sref="drink-party({id:s.id})" ng-if="s.id === 'food-and-beverages'"> {{s.text}}</h3>
+                                                      <h3 class="margin0 pointer text-center" ui-sref="host-party({id:s.id})" ng-if="s.id === 'host-a-party'"> {{s.text}}</h3>
+                                                      <h3 class="margin0 pointer text-center" ui-sref="attractions({id:s.id})" ng-if="s.id === 'attraction'"> {{s.text}}</h3>
+
+                                                      <h3 class="margin0 pointer text-center" ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'"> {{s.text}}</h3>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="hidden-md visible-xs visible-sm arrow-no">
+                              <flex-slider class="carousel " flex-slide="s in buyOnlines track by $index" item-width="250" animation="slide" slideshow="true"
+                                    animationLoop="true" prev-text="" next-text="">
+                                    <li>
+
+                                          <div class="race relative margno">
+                                                <div class="img-bg">
+                                                      <a>
+                                                            <figure>
+
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='sky-karting'" ui-sref="snow-rush({name:s.pagename,id:s.id})">
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='host-a-party'" ui-sref="host-party({id:s.id})">
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='food-and-beverages'" ui-sref="drink-party({id:s.id})">
+
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='attraction'" ui-sref="attractions({id:s.id})">
+                                                            </figure>
+
+                                                      </a>
+                                                </div>
+                                                <div class="race-text whites blacks">
+                                                      <div class="min-hiss">
+                                                            <h3 class="margin0 pointer" ng-if="s.id==='sky-karting'" ui-sref="snow-rush({name:s.pagename,id:s.id})"> {{s.text}}</h3>
+                                                            <h3 class="margin0 pointer" ng-if="s.id==='host-a-party'" ui-sref="host-party({id:s.id})"> {{s.text}}</h3>
+                                                            <h3 class="margin0 pointer" ng-if="s.id==='food-and-beverages'" ui-sref="drink-party({id:s.id})"> {{s.text}}</h3>
+                                                            <h3 class="margin0 pointer" ng-if="s.id==='attraction'" ui-sref="attractions({id:s.id})"> {{s.text}}</h3>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                    </li>
+                              </flex-slider>
+                        </div>
+
                   </div>
-               </div>
             </div>
-                <div class="hidden-md visible-xs visible-sm arrow-no">
-               <flex-slider class="carousel " flex-slide="s in buyOnlines track by $index" item-width="250" animation="slide" slideshow="true" animationLoop="true" prev-text="" next-text="">
-                  <li>
-
-                     <div class="race relative margno">
-                        <div class="img-bg">
-                           <a>
-                              <figure>
-
-                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='sky-karting'" ui-sref="snow-rush({name:s.pagename,id:s.id})">
-                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='host-a-party'" ui-sref="host-party({id:s.id})">
-                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='food-and-beverages'" ui-sref="drink-party({id:s.id})">
-
-                                 <img src="{{s.img}}" class="img-responsive" alt="" ng-if="s.id==='attraction'" ui-sref="attractions({id:s.id})" >
-                              </figure>
-
-                           </a>
-                        </div>
-                        <div class="race-text whites blacks">
-                           <div class="min-hiss">
-                              <h3 class="margin0 pointer" ng-if="s.id==='sky-karting'" ui-sref="snow-rush({name:s.pagename,id:s.id})"> {{s.text}}</h3>
-                              <h3 class="margin0 pointer" ng-if="s.id==='host-a-party'" ui-sref="host-party({id:s.id})"> {{s.text}}</h3>
-                              <h3 class="margin0 pointer" ng-if="s.id==='food-and-beverages'" ui-sref="drink-party({id:s.id})"> {{s.text}}</h3>
-                              <h3 class="margin0 pointer" ng-if="s.id==='attraction'" ui-sref="attractions({id:s.id})"> {{s.text}}</h3>
-                           </div>
-                        </div>
-                     </div>
-
-                  </li>
-               </flex-slider>
-            </div>
-
-         </div>
       </div>
-   </div>
 </div>
 <div class="container">
-   <div class="row">
-      <div class="col-md-6">
-         <div class="updates arrow-no">
-            <div class="slant-box pad0">
-               <!-- <p class=" capitalize brand-white border-bot" ui-sref="attractions({id:attraction[0].type._id})">view all</p> -->
-               <h2 class="brand-white text-shadow">games</h2>
-               <div class="mover extra">
-                  <flex-slider ng-if="attraction" class="carousel relative" item-margin="0" flex-slide="s in attraction track by $index"  slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
-                     <li>
+      <div class="row">
+            <div class="col-md-6">
+                  <div class="updates arrow-no">
+                        <div class="slant-box pad0">
+                              <!-- <p class=" capitalize brand-white border-bot" ui-sref="attractions({id:attraction[0].type._id})">view all</p> -->
+                              <h2 class="brand-white text-shadow">games</h2>
+                              <div class="mover extra">
+                                    <flex-slider ng-if="attraction" class="carousel relative" item-margin="0" flex-slide="s in attraction track by $index" slideshow="false"
+                                          animation="slide" animationLoop="true" prev-text="" next-text="">
+                                          <li>
 
-                        <a ui-sref="attractions({id:s.type.myslug})">
-                        <!-- <a ui-sref="attractions({id:s.type._id})"> -->
-                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" >
-                        </a>
-                        <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
-                     </li>
-
-
-
-                  </flex-slider>
-                  <div ng-if="!attraction">Loading..</div>
-               </div>
-
-            </div>
-         </div>
-
-      </div>
-      <div class="col-md-6">
-         <div class="updates arrow-no">
-            <div class="slant-box pad0">
-               <!-- <p class=" capitalize brand-white border-bot" ui-sref="host-party({id:hostParty[0].type._id})">view all</p> -->
-               <h2 class="brand-white text-shadow">Host A Party</h2>
-               <div class="mover extra" ng-if="hostParty">
-                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in hostParty track by $index" slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
-                     <li>
-                        <a ui-sref="host-party({id:s.type.myslug})">
-                        <!-- <a ui-sref="host-party({id:s.type._id})"> -->
-                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
-                        </a>
-                        <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
-                     </li>
-                  </flex-slider>
-                  <div ng-if="!hostParty">Loading..</div>
-               </div>
-
-            </div>
-         </div>
-
-      </div>
-   </div>
-
-   <div class="new-sliding">
-      <div class="gallery ">
-         <div class="slidings">
-            <div class="headings clearfix">
-               <h2 class="title slide-text pull-left">Celebrated Affiliates </h2>
-            </div>
-            <div class="row hidden-xs hidden-sm ">
-               <div class="col-md-3" ng-repeat="s in buyOnline track by $index">
-
-                  <div class="race relative margno" >
-                     <div class="img-bg pointer">
-
-                           <figure>
-                              <img ng-src="{{s.img}}" class="img-responsive" alt="" ng-click=goTo(s.id,'blog-inside')>
-                           </figure>
+                                                <a ui-sref="attractions({id:s.type.myslug})">
+                                                      <!-- <a ui-sref="attractions({id:s.type._id})"> -->
+                                                      <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                                                </a>
+                                                <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+                                                      class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
+                                          </li>
 
 
-                     </div>
-                     <div class="race-text whites blacks">
-                        <div class="min-hiss">
-                           <h3 class="margin0 pointer text-center"> {{s.text}}</h3>
-                           <p class="margin0 pointer text-center error title">{{s.partners}}</p>
+
+                                    </flex-slider>
+                                    <div ng-if="!attraction">Loading..</div>
+                              </div>
+
                         </div>
-                     </div>
                   </div>
-               </div>
+
             </div>
-            <div class="hidden-md visible-xs visible-sm arrow-no">
-               <flex-slider class="carousel " flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" slideshow="true" animationLoop="true" prev-text="" next-text="">
-                  <li>
+            <div class="col-md-6">
+                  <div class="updates arrow-no">
+                        <div class="slant-box pad0">
+                              <!-- <p class=" capitalize brand-white border-bot" ui-sref="host-party({id:hostParty[0].type._id})">view all</p> -->
+                              <h2 class="brand-white text-shadow">Host A Party</h2>
+                              <div class="mover extra" ng-if="hostParty">
+                                    <flex-slider class="carousel relative" item-margin="0" flex-slide="s in hostParty track by $index" slideshow="false" animation="slide"
+                                          animationLoop="true" prev-text="" next-text="">
+                                          <li>
+                                                <a ui-sref="host-party({id:s.type.myslug})">
+                                                      <!-- <a ui-sref="host-party({id:s.type._id})"> -->
+                                                      <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                                                </a>
+                                                <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+                                                      class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
+                                          </li>
+                                    </flex-slider>
+                                    <div ng-if="!hostParty">Loading..</div>
+                              </div>
 
-                     <div class="race relative margno">
-                        <div class="img-bg">
-                           <a ui-sref="blog-inside({id:s.id})">
-                              <figure>
-                                 <img src="{{s.img}}" class="img-responsive" alt="">
-                              </figure>
-
-                           </a>
                         </div>
-                        <div class="race-text whites blacks">
-                           <div class="min-hiss">
-                              <h3 class="margin0 pointer text-center "> {{s.text}}</h3>
-                                 <p class="margin0 pointer text-center error title">{{s.partners}}</p>
-                           </div>
+                  </div>
+
+            </div>
+      </div>
+
+      <div class="new-sliding">
+            <div class="gallery ">
+                  <div class="slidings">
+                        <div class="headings clearfix">
+                              <h2 class="title slide-text pull-left">Celebrated Affiliates </h2>
                         </div>
-                     </div>
+                        <div class="row hidden-xs hidden-sm ">
+                              <div class="col-md-3" ng-repeat="s in buyOnline track by $index">
 
-                  </li>
-               </flex-slider>
+                                    <div class="race relative margno">
+                                          <div class="img-bg pointer">
+
+                                                <figure>
+                                                      <img ng-src="{{s.img}}" class="img-responsive" alt="" ng-click=goTo(s.id, 'blog-inside')>
+                                                </figure>
+
+
+                                          </div>
+                                          <div class="race-text whites blacks">
+                                                <div class="min-hiss">
+                                                      <h3 class="margin0 pointer text-center"> {{s.text}}</h3>
+                                                      <p class="margin0 pointer text-center error title">{{s.partners}}</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="hidden-md visible-xs visible-sm arrow-no">
+                              <flex-slider class="carousel " flex-slide="s in buyOnline track by $index" item-width="250" animation="slide" slideshow="true"
+                                    animationLoop="true" prev-text="" next-text="">
+                                    <li>
+
+                                          <div class="race relative margno">
+                                                <div class="img-bg">
+                                                      <a ui-sref="blog-inside({id:s.id})">
+                                                            <figure>
+                                                                  <img src="{{s.img}}" class="img-responsive" alt="">
+                                                            </figure>
+
+                                                      </a>
+                                                </div>
+                                                <div class="race-text whites blacks">
+                                                      <div class="min-hiss">
+                                                            <h3 class="margin0 pointer text-center "> {{s.text}}</h3>
+                                                            <p class="margin0 pointer text-center error title">{{s.partners}}</p>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                    </li>
+                              </flex-slider>
+                        </div>
+
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-6">
+                  <div class="updated arrow-no">
+
+                        <div class="slant-box pad0 relative">
+                              <!-- <p class=" capitalize brand-white border-bot" ui-sref="event({id:events[0].type._id})">view all</p> -->
+                              <h2 class="brand-white text-shadow">events</h2>
+                              <div class="mover extra">
+                                    <flex-slider class="carousel relative" item-margin="0" flex-slide="s in events track by $index" slideshow="true" animation="slide"
+                                          animationLoop="true" prev-text="" next-text="">
+                                          <li>
+                                                <!-- <li ng-click="goTo(s.hometext,s._id,event-inner)"> -->
+
+                                                <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.myslug,'event-inner')">
+                                                <!-- <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.hometext,s._id,'event-inner')"> -->
+
+                                          </li>
+                                    </flex-slider>
+
+                              </div>
+
+                        </div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                  <div class="updated arrow-no">
+                        <div class="slant-box pad0 relative">
+                              <!-- <p class=" capitalize brand-white border-bot" ui-sref="dealsp({id:deals[0].type._id})">view all</p> -->
+                              <h2 class="brand-white text-shadow">Deals and Packages</h2>
+                              <div class="mover extra">
+                                    <flex-slider class="carousel relative" item-margin="0" flex-slide="s in deals track by $index" slideshow="false" animation="slide"
+                                          animationLoop="true" prev-text="" next-text="">
+                                          <li>
+                                                <a ui-sref="dealsp({id:deals[0].type.myslug})">
+                                                      <!-- <a ui-sref="dealsp({id:deals[0].type._id})"> -->
+                                                      <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
+                                                </a>
+                                                <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
+                                                      class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
+                                          </li>
+
+                                    </flex-slider>
+
+                              </div>
+
+                        </div>
+                  </div>
             </div>
 
-         </div>
       </div>
-   </div>
-   <div class="row">
-      <div class="col-md-6">
-         <div class="updated arrow-no">
 
-            <div class="slant-box pad0 relative">
-               <!-- <p class=" capitalize brand-white border-bot" ui-sref="event({id:events[0].type._id})">view all</p> -->
-               <h2 class="brand-white text-shadow">events</h2>
-               <div class="mover extra">
-                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in events track by $index" slideshow="true" animation="slide" animationLoop="true" prev-text="" next-text="">
-                     <li >
-                     <!-- <li ng-click="goTo(s.hometext,s._id,event-inner)"> -->
-
-                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.myslug,'event-inner')">
-                           <!-- <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}" ng-click="goTo(s.hometext,s._id,'event-inner')"> -->
-
-                        </li>
-                  </flex-slider>
-
-               </div>
-
-            </div>
-         </div>
-      </div>
-      <div class="col-md-6">
-         <div class="updated arrow-no">
-            <div class="slant-box pad0 relative">
-               <!-- <p class=" capitalize brand-white border-bot" ui-sref="dealsp({id:deals[0].type._id})">view all</p> -->
-               <h2 class="brand-white text-shadow">Deals and Packages</h2>
-               <div class="mover extra">
-                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in deals track by $index" slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
-                     <li>
-                        <a ui-sref="dealsp({id:deals[0].type.myslug})">
-                        <!-- <a ui-sref="dealsp({id:deals[0].type._id})"> -->
+      <div class="slant-row reverse mt15">
+            <div class="slant-col updated arrow-no">
+                  <div class="slant-box pad0 relative">
+                        <!-- <p class=" capitalize brand-white border-bot" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p> -->
+                        <h2 class="brand-white text-shadow">FOOD AND BEVERAGES</h2>
+                        <div class="mover extra">
+                              <flex-slider class="carousel relative" item-margin="0" flex-slide="s in foodBeverages track by $index" slideshow="false"
+                                    animation="slide" animationLoop="true" prev-text="" next-text="">
+                                    <li>
+                                          <a ui-sref="drink-party({id:s.type.myslug})">
                            <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
                         </a>
-                        <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
-                     </li>
 
-                  </flex-slider>
+                                    </li>
 
-               </div>
+                              </flex-slider>
+                              <div ng-if="!hostParty">Loading...</div>
+                        </div>
 
-            </div>
-         </div>
-      </div>
+                  </div>
 
-   </div>
-
-   <div class="slant-row reverse mt15">
-      <div class="slant-col updated arrow-no">
-               <div class="slant-box pad0 relative">
-                <!-- <p class=" capitalize brand-white border-bot" ui-sref="drink-party({id:foodBeverages[0].type._id})">view all</p> -->
-               <h2 class="brand-white text-shadow">FOOD AND BEVERAGES</h2>
-               <div class="mover extra">
-                  <flex-slider class="carousel relative" item-margin="0" flex-slide="s in foodBeverages track by $index" slideshow="false" animation="slide" animationLoop="true" prev-text="" next-text="">
-                     <li>
-                        <a ui-sref="drink-party({id:s.type.myslug})">
-                           <img ng-if="s.image" noloading="true" ng-src="{{s.image|uploadpath}}">
-                        </a>
-
-                     </li>
-
-                  </flex-slider>
-                  <div ng-if="!hostParty">Loading...</div>
-               </div>
-
-            </div>
-
-         <!-- <div class="slant-in brand-red">
+                  <!-- <div class="slant-in brand-red">
             <div class="slant-box half-height">
                <h2 class="title slide-text brand-white">be the first to know</h2>
                <form class="form" name="subscribeForm" ng-if="!subscribeFormComplete" ng-submit="subscribeLogin(subscribeData)">
@@ -304,18 +315,18 @@
             </div>
          </div> -->
 
-      </div>
-      <div class="slant-col brand-yellow pull-right">
-         <div class="slant-box full-height full-heights babes pointer" ui-sref="about">
-            <div class="texting">
-               <h2 class="brand-white text-shadow">about us</h2>
             </div>
-         </div>
+            <div class="slant-col brand-yellow pull-right">
+                  <div class="slant-box full-height full-heights babes pointer" ui-sref="about">
+                        <div class="texting">
+                              <h2 class="brand-white text-shadow">about us</h2>
+                        </div>
+                  </div>
+            </div>
       </div>
-   </div>
       <div class="social-media">
-      <div class="row">
-         <!-- <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                  <!-- <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="facebook brand-green inline-block fb-mobile">
                <h2 class="brand-white">Facebook</h2>
                <div class="wdgett text-center">
@@ -336,20 +347,22 @@
                </div>
             </div>
          </div> -->
-         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class=" facebook brand-pink inline-block fb-mobile space-issue">
-               <h2 class="brand-white">Instagram</h2>
-               <div class="wdget">
-            <iframe src="//lightwidget.com/widgets/bb5274adf45858d1813c93146f971147.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-                     <!--<iframe src="//lightwidget.com/widgets/ddcb00a004a85bdaba015156d03e5e15.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>-->
-                </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class=" facebook brand-pink inline-block fb-mobile space-issue">
+                              <h2 class="brand-white">Instagram</h2>
+                              <div class="wdget">
+                                    <!-- <iframe src="//lightwidget.com/widgets/bb5274adf45858d1813c93146f971147.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe> -->
+                                    <!--<iframe src="//lightwidget.com/widgets/ddcb00a004a85bdaba015156d03e5e15.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>-->
+                                    <iframe src="//lightwidget.com/widgets/a33e210e42745346b8b15e75048da76d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"
+                                          style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                              </div>
+                        </div>
+                  </div>
             </div>
-         </div>
       </div>
-   </div>
-   <div class="usp">
-     <img src="img/USP-banner.jpg" alt="" >
-   </div>
+      <div class="usp">
+            <img src="img/USP-banner.jpg" alt="">
+      </div>
 </div>
 <!--<div class="coming-soon"  auto-height>
     <img src="img/gift/smaaaash.jpg"  class="img-responsive" alt="" >
