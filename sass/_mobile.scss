@@ -1073,10 +1073,16 @@
   .custom-pagination {
     display: none;
   }
+  .deals2 .new-detail, .events1 .new-detail {
+    min-height: auto;
+}
   .deals-event .karting1 .full-height,
   .deals-event .karting1 .half-height {
     height: 340px;
   }
+  .deals2 .new-detail, .events1 .new-detail {
+    min-height: 275px;
+}
   .deals-event .karting1 .slant-col:before,
   .deals-event .karting1 .slant-column:before {
     height: 372px;
