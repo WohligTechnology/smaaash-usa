@@ -24,6 +24,27 @@
   }
 }
 @media (max-width: $screen-xs-max) {
+ //scss for testimonial
+  .testimonial .test-desc {
+    width: 150px !important;
+    margin: 25px 0px;
+  }
+ .testimonial .test-desc p {
+      &:before {
+        top: -10px;
+        left: -10px;
+        height: 10px;
+        width: 10px;
+      }
+      &:after {
+        bottom: -10px;
+        right: 0px;
+        height: 10px;
+        width: 10px;
+      }
+    }
+
+
   .updates {
     margin-top: 15px;
   }
@@ -641,6 +662,10 @@
   }
 }
 @media (max-width: $screen-sm-max) {
+
+   .testimonial .test-desc{
+    width:220px;
+  }
   .about .half-height {
     margin-top: 10px;
   }

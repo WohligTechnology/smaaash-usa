@@ -10,10 +10,8 @@
       <!--<ul class="custom-pagination list-inline">
         <li ng-repeat="s in hostPartySlider track by $index">{{s.order}}</li>
       </ul>-->
-
     </div>
   </div>
-
   <div class="smaash-drops hidden-lg hidden-md hidden-sm">
     <div class="slidings">
       <flex-slider class="carousel" flex-slide="s in hostPartySlider track by $index" manual-controls=".custom-pagination li" animation="slide"
@@ -27,12 +25,7 @@
 
       </ul>-->
     </div>
-
   </div>
-
-
-
-
   <div class="container relative">
     <div class="form-content">
       <div class="row">
@@ -41,9 +34,9 @@
         <div class="col-md-4  col-sm-4 col-xs-12">
           <div class="practice">
             <!--<iframe id="externalForm" />-->
-              <!--<script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21"></script>-->
+            <!--<script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=4755&public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21"></script>-->
             <form class="form">
-              <h3 class="text-center">   <a href="https://smaaash.tripleseat.com/party_request/4755" target="_blank">book now</a></h3>
+              <h3 class="text-center"> <a href="https://smaaash.tripleseat.com/party_request/4755" target="_blank">book now</a></h3>
               <!--<div class="form-group relative">
                 <input type="text" class=" form-control" placeholder="Name" name="name" ng-model="formData.name" required>
                 <span class="required"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
@@ -98,13 +91,12 @@
                   ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
                 <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
               </div>-->
-               <!--<button type="button" class="btn6 btn-default block" >
+              <!--<button type="button" class="btn6 btn-default block" >
           <a href="https://smaaash.tripleseat.com/party_request/4755" target="_blank">
          <img src="img/new/submit.png" class="img-responsive" alt="">
           </a>
           </button>-->
             </form>
-
             <!--<div class="submit-thank" ng-if="formCompleteAssistance">
               <p class="text-center">Thank You</p>
             </div>-->
@@ -137,7 +129,7 @@
         <div class="col-md-4 col-sm-4" ng-repeat="data in datas">
           <div class="karting-championship cursor-point">
             <div class="brand-blue relative">
-              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="" ui-sref="parties({id:data.myslug})">            </div>
+              <img ng-src="{{data.image|uploadpath}}" class="img-responsive" alt="" ui-sref="parties({id:data.myslug})">              </div>
             <div class="new-details">
               <div class="min-h ">
                 <h3 class="margin0 bluey " ng-bind-html="data.hometext | shorten :25" ui-sref="parties({id:data.myslug})"></h3>
@@ -151,10 +143,7 @@
                 <span class="capitalize bluey" ng-if="data.description.length > 130 && !moreDesc[data._id]" ng-click="readMore(data._id)">read more</span>
                 <span class="capitalize bluey" ng-if="data.description.length > 130 && moreDesc[data._id]" ng-click="readMore(data._id,$index)">read less</span> -->
               </div>
-
-
-
-              <div class=" text-center" >
+              <div class=" text-center">
                 <!-- <ul class="social-icons list-inline inline-block">
                   <p class="inline-block">Share</p>
                   <li><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
@@ -165,40 +154,54 @@
                   <button class="uppercase conects" ng-click="direct();"><i class="fa fa-phone" aria-hidden="true"></i>connect</button>
                 </div> -->
               </div>
-                <div class="minimum-height">
-              <div class=" loves">
-                <a href="https://smaaash.tripleseat.com/party_request/4755" target="_blank">
-                  <button class="uppercase ">GET A QUOTE</button>
-                </a>
-
+              <div class="minimum-height">
+                <div class=" loves">
+                  <a href="https://smaaash.tripleseat.com/party_request/4755" target="_blank">
+                    <button class="uppercase ">GET A QUOTE</button>
+                  </a>
+                </div>
+                <div class=" loves" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">
+                  <img src="img/pdf.png" alt="">
+                </div>
+                <div class="food-menu">
+                  <img src="img/game-icon.png" alt="">
+                </div>
               </div>
-
-
-              <div class=" loves"  ng-click="pdfmodal(data.pdf);"ng-if="data.pdf" >
-                <img src="img/pdf.png" alt="">
-              </div>
-              <div  class="food-menu">
-                <img src="img/game-icon.png" alt="">
-              </div>
-
-            </div>
-
               <div class="custom-quote">
                 <a href="https://smaaash.tripleseat.com/party_request/4755" target="_blank">
-                  <button >
+                  <button>
 Contact for Special Events</button>
                 </a>
               </div>
-
-
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
-    <!--<div class="packages">
+    <div class="testimonial">
+      <flex-slider flex-slide="slocation in mySlides11 track by $index" class="section-padd" animation="slide" item-width="620"
+        item-margin="30" min-items="2" prev-text="" next-text="" slideshow="true" slideshow-speed="2000">
+        <li>
+          <div class="testimonial-border">
+            <div class="text-uppercase testo-text">
+              <h3>testimonials</h3>
+            </div>
+            <div class="test-desc">
+              <!--<div class="quotes-top">
+               <img src="img/quote-top.png" class="img-responsive">
+              </div>-->
+              <p>{{slocation.desc}}</p>
+              <!--<div class="quotes-bottom">
+               <img src="img/quote-top.png" class="img-responsive">
+              </div>-->
+            </div>
+            <div class="test-title">
+              <p>{{slocation.topic}}</p>
+            </div>
+        </li>
+      </flex-slider>
+      </div>
+      <!--<div class="packages">
       <div class="row">
         <div class="col-md-6 col-sm-6">
           <img src="img/newest/partya.jpg" class="img-responsive" alt="party">
@@ -211,6 +214,6 @@ Contact for Special Events</button>
         </div>
       </div>
     </div>-->
-
+    </div>
   </div>
 </div>
