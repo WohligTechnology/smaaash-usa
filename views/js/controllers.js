@@ -1770,6 +1770,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     }
 
+
+NavigationService.getAllTestimonial(function(data){
+})
 })
 
 .controller('RechargeCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {

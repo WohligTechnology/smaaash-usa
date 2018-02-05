@@ -186,17 +186,10 @@ Contact for Special Events</button>
             <div class="text-uppercase testo-text">
               <h3>testimonials</h3>
             </div>
-            <div class="test-desc">
-              <!--<div class="quotes-top">
-               <img src="img/quote-top.png" class="img-responsive">
-              </div>-->
-              <p>{{slocation.desc}}</p>
-              <!--<div class="quotes-bottom">
-               <img src="img/quote-top.png" class="img-responsive">
-              </div>-->
+            <div class="test-desc"  ng-bind-html="slocation.description">
             </div>
             <div class="test-title">
-              <p>{{slocation.topic}}</p>
+              <p>{{slocation.name}}</p>
             </div>
         </li>
       </flex-slider>

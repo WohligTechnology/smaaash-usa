@@ -1971,23 +1971,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/Top-banner.jpg',
         'img/Top-banner.jpg'
     ];
-    $scope.mySlides11 = [{
-        desc :"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt",
-        topic:"img/Top-banner.jpg",
-    }, {
-        desc :"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt",
-        topic:"img/Top-banner.jpg",
-    } ,{
-        desc :"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tinciduntLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt",
-        topic:"img/Top-banner.jpg",
-    },{
-        desc :"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tinciduntLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt",
-        topic:"img/Top-banner.jpg",
-    },{
-        desc :"Lorem ipsum dolor sit amet, consectetuer adipiscing ",
-        topic:"img/Top-banner.jpg",
-    }];
 
+NavigationService.getAllTestimonial(function(data){
+  $scope.mySlides11=  _.sortBy(data.data, ['order']);
+// $scope.mySlides11=data.data;
+})
 
     $scope.menu = "menu-out";
     $scope.getMenu = function () {
@@ -2216,6 +2204,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             })
         }
     };
+
+     
 
 })
 

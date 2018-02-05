@@ -1,5 +1,6 @@
 // var adminurl = "http://104.155.129.33:82/"; //India server
 var adminurl = "http://104.155.129.33:94/"; //US server
+// var adminurl1 ="http://192.168.2.37:1337"; //local
 // var adminurl = "http://192.168.0.104:1337/"; //local
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
@@ -349,8 +350,7 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
-     getAll: function(callback) {
-
+     getAllTestimonial: function(callback) {
             $http({
                 url: adminurl + 'Testimonial/getAll',
                 method: 'POST',
