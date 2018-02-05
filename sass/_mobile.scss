@@ -29,7 +29,12 @@
     width: 150px !important;
     margin: 25px 0px;
   }
-
+.testimonial .test-desc p{
+  padding: 15px 0;
+  &:before{
+    left: -15px;
+  }
+}
 
 
   .updates {

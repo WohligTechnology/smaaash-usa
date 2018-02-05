@@ -2213,21 +2213,24 @@ input[type="password"].form-control::-webkit-input-placeholder {
     }
     .test-desc {
         position: relative;
-        overflow-wrap: break-word;
+        height: 100px;
         width: 350px;
         margin: 35px 40px;
         p {
             margin: 0;
-            // min-height: 50px;
+            position: absolute;
+            width: 100%;
+            overflow-wrap: break-word;
             &:before {
                 content: url(../img/quote-top.png);
-                // top: -10px;
-                // left: -25px;
+                position: absolute;
+                left: -25px;
+                top: -5px;
             }
             &:after {
                 content: url(../img/quote-bottom.png);
                 position: absolute;
-                bottom: -20px;
+                bottom: -10px;
             }
         }
     }
