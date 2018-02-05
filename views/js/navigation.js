@@ -349,6 +349,15 @@ var navigationservice = angular.module('navigationservice', [])
 
             }).success(callback);
         },
+     getAll: function(callback) {
+
+            $http({
+                url: adminurl + 'Testimonial/getAll',
+                method: 'POST',
+                withCredentials: true
+
+            }).success(callback);
+        },
 
         getAllHostPartySlider: function(callback) {
             var data = {
