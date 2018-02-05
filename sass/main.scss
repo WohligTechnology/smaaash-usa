@@ -2172,7 +2172,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
 //scss for testimonial
 .testimonial {
     .flex-control-nav {
-        bottom: 0px;
+        bottom: -30px;
     }
     .flexslider {
         margin: 0 0 30px;
@@ -2213,7 +2213,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
     }
     .test-desc {
         position: relative;
-        height: 100px;
+        height: 120px;
         width: 350px;
         margin: 35px 40px;
         p {
