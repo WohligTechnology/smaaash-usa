@@ -2213,19 +2213,17 @@ input[type="password"].form-control::-webkit-input-placeholder {
     }
     .test-desc {
         position: relative;
-        height: 120px;
-        width: 350px;
-        margin: 35px 40px;
         p {
-            margin: 0;
-            position: absolute;
-            width: 100%;
-            overflow-wrap: break-word;
+            height: 64px;
+            width: 350px;
+            display: -webkit-box;
+            margin: 35px 40px;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
             &:before {
                 content: url(../img/quote-top.png);
-                position: absolute;
-                left: -25px;
-                top: -5px;
             }
             &:after {
                 content: url(../img/quote-bottom.png);

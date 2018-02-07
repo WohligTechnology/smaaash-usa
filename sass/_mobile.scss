@@ -25,9 +25,10 @@
 }
 @media (max-width: $screen-xs-max) {
  //scss for testimonial
-  .testimonial .test-desc {
-    width: 150px !important;
-    margin: 25px 0px;
+  .testimonial .test-desc p{
+    width: 120px !important;
+    margin: 30px 10px  !important;
+    height:75px  !important;
   }
 .testimonial .test-desc p{
   padding: 15px 0;
@@ -35,7 +36,13 @@
     left: -15px;
   }
 }
-
+.testimonial .test-title p {
+    font-size: 12px;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
   .updates {
     margin-top: 15px;
@@ -654,9 +661,12 @@
   }
 }
 @media (max-width: $screen-sm-max) {
-
-   .testimonial .test-desc{
-    width:220px;
+.testimonial .test-title p{
+  font-size: 12px;
+}
+   .testimonial .test-desc p{
+       width: 265px;
+    margin: 30px 10px;
   }
   .about .half-height {
     margin-top: 10px;
