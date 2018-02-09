@@ -790,7 +790,7 @@ $menu-height: 80px !default;
 }
 
 .slant-box {
-    h2 {
+   h1, h2 {
         font-family: $body-font;
         font-size: 30px;
         margin: 0;
@@ -1463,13 +1463,13 @@ img.fancybox-image {
 .updated,
 .updates {
     .slant-box {
-        h2,
+        h1,h2,
         p {
             position: absolute;
             z-index: 99;
             top: 10px;
         }
-        h2 {
+       h1, h2 {
             left: 10px;
         }
         p {
@@ -1488,7 +1488,7 @@ img.fancybox-image {
 
 .updates {
     .slant-box {
-        h2 {
+      h1,  h2 {
             left: 25px;
         }
         p {

@@ -1,3 +1,8 @@
+<h1 style="display:none">Corporate Parties</h1>
+<h1 style="display:none">Birthday Party</h1>
+<h1 style="display:none">Laser tag </h1>
+<h1 style="display:none">tilt brush</h1>
+<h1 style="display:none">Fruit ninja</h1>
 <div class="default hidden-xs" ng-if="hideBanner">
       <img src="img/avatar/3.jpg" class="img-responsive">
 </div>
@@ -71,7 +76,7 @@
                                                       <h3 class="margin0 pointer text-center" ui-sref="host-party({id:s.id})" ng-if="s.id === 'host-a-party'"> {{s.text}}</h3>
                                                       <h3 class="margin0 pointer text-center" ui-sref="attractions({id:s.id})" ng-if="s.id === 'attraction'"> {{s.text}}</h3>
 
-                                                      <h3 class="margin0 pointer text-center" ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'"> {{s.text}}</h3>
+                                                      <h1 class="margin0 pointer text-center" ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'"> {{s.text}}</h1>
                                                 </div>
                                           </div>
                                     </div>
@@ -148,7 +153,7 @@
                   <div class="updates arrow-no">
                         <div class="slant-box pad0">
                               <!-- <p class=" capitalize brand-white border-bot" ui-sref="host-party({id:hostParty[0].type._id})">view all</p> -->
-                              <h2 class="brand-white text-shadow">Host A Party</h2>
+                              <h1 class="brand-white text-shadow">Host A Party</h1>
                               <div class="mover extra" ng-if="hostParty">
                                     <flex-slider class="carousel relative" item-margin="0" flex-slide="s in hostParty track by $index" slideshow="false" animation="slide"
                                           animationLoop="true" prev-text="" next-text="">
