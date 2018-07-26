@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="tools/img/favicon.ico">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Smaaash</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="tools/css/style.css">
+    <script src="tools/js/all.js"></script>
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-96098993-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</head>
+
+<body class="index">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 hidden-xs hidden-sm" style="padding-left: 0; padding-right: 0; position: relative;">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators dots_design">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="tools/img/banner3.jpg" alt="..." width="100%">
+                        </div>
+                        <div class="item">
+                            <img src="tools/img/banner2.jpg" alt="..." width="100%">
+                        </div>
+                        <div class="item">
+                            <img src="tools/img/banner.jpg" alt="..." width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 hidden-md hidden-lg" style="padding-left: 0; padding-right: 0; position: relative;">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators dots_design">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="tools/img/image1-mob.jpg" alt="..." width="100%">
+                        </div>
+                        <div class="item">
+                            <img src="tools/img/image2-mob.jpg" alt="..." width="100%">
+                        </div>
+                        <div class="item">
+                            <img src="tools/img/image3-mob.jpg" alt="..." width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 col-lg-offset-8 col-md-7 col-md-offset-5 col-xs-12 full-row-content">
+                <h1 class="text-center">Corporate Parties Unleashed</h1>
+                <br />
+                <form class="form-horizontal" action="" method="POST" id="mform">
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Company</label>
+                        <div class="col-sm-8 no_padding">
+                            <input id="first_name" maxlength="40" name="first_name" placeholder="" class="form-control bottom_border" size="20" type="text" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">First Name</label>
+                        <div class="col-sm-8 no_padding">
+                            <input id="first_name" maxlength="40" name="first_name" placeholder="" class="form-control bottom_border" size="20" type="text" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Last Name</label>
+                        <div class="col-sm-8 no_padding">
+                            <input id="last_name" maxlength="40" name="last_name" placeholder="" class="form-control bottom_border" size="20" type="text" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Email</label>
+                        <div class="col-sm-8 no_padding">
+                            <input id="email" maxlength="80" name="email" class="form-control bottom_border" placeholder="" size="20" type="email" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Phone</label>
+                        <div class="col-sm-8 no_padding">
+                            <input id="mobile" maxlength="10" minlength="10" size="10" type="number" name="mobile" class="form-control bottom_border" placeholder="" size="10" required/>
+                        </div>
+                    </div>
+                    <!--
+<div class="form-group no_mar">
+    <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Event Date</label>
+    <div class="col-sm-8 no_padding">
+        <input id="event_date" maxlength="40" name="event_date" type="date" class="form-control bottom_border" placeholder="" size="20" required/>
+    </div>
+</div>-->
+
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Event Date</label>
+                        <div class="input-group date col-sm-8" data-provide="datepicker">
+                            <input type="text" class="form-control bottom_border" id="event_date" maxlength="40" name="LEADCF83" required>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Event Type</label>
+                        <div class="col-sm-8 no_padding">
+                            <select id="00N6F00000Enqi8" name="00N6F00000Enqi8" class="form-control secondlast_border">
+                <option class="color_change" value=""></option>
+                <option class="color_change" value="team-building">Team Building</option>
+                <option class="color_change" value="meeting">Meeting</option>
+                <option class="color_change" value="holiday-celebration">Holiday Celebration</option>
+                <option class="color_change" value="happy-hour">Happy Hour</option>
+                <option class="color_change" value="employee-appreciation">Employee Appreciation</option>
+                <option class="color_change" value="client-entertaining">Client Entertaining</option>
+                <option class="color_change" value="other">Other</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group no_mar">
+                        <label class="col-sm-2 col-sm-offset-1 control-label form_heading">Party For</label>
+                        <div class="col-sm-8 no_padding">
+                            <select id="00N6F00000EnggI" name="00N6F00000EnggI" class="form-control last_border">
+                <option class="color_change" value=""></option>
+                <option class="color_change" value="50">20 to 50</option>
+                <option class="color_change" value="100">50 to 100</option>
+                <option class="color_change" value="300">100 to 300</option>
+                <option class="color_change" value="500">300 to 500</option>
+                <option class="color_change" value="700">500 to 700</option></select>
+
+                        </div>
+                    </div>
+
+                    <select id="00N6F00000FbWPi" name="00N6F00000FbWPi" title="Sales Team Assigned" style="display:none">
+            <option value="Smaaash USA">Smaaash USA</option>
+            </select>
+
+                    <select id="lead_source" name="lead_source" style="display:none">  
+            <option value="Google" selected>Google</option> 
+            </select>
+
+                    <div class="top_mar"><input type="button" name="submit" id="submit" value="Submit" class="btn btn-primary center-block"></div>
+                </form>
+                <br /><br /><br /><br />
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid target_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center" style="color: #fff;">WHAT’S NEXT IN RACING, GAMING, EATING & AMAZING!</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="color: #fff; font-size: 16px; margin-bottom: 30px;">
+                    Exit the Bored-Room and enter the Party Zone. Throw your Bash at SMAAASH to unveil experiences that are out of this world. Build camaraderie, impress your clients, and forget those office blues. SMAAASH offers customized events to fit all your needs, let us know how we can create the perfect event for you!
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="panel-title" style="display: inline-block;">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="more-less plus-minus glyphicon glyphicon-minus"></i>
+                CLIENT ENTERTAINING
+              </a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                Take your events to the next level, literally… on our first of its kind, two story indoor Go Kart track! Our adrenaline filled experiences offer an exhilarating and innovative variation from normal client events. Let SMAAASH give you the upper hand with your guests to ensure you truly stand out!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default panel_design">
+                        <div class="panel-heading heading_design" role="tab" id="headingTwo">
+                            <div class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="more-less plus-minus glyphicon glyphicon-plus"></i>
+                EMPLOYEE APPRECIATION
+              </a>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body body_bg">
+                                Acknowledge, Appreciate, and Award your hardest working employees at America’s Adrenaline Arena! SMAAASH offers a unique opportunity to inspire your team members while cultivating a cohesive company culture. Ask our Event Specialists today how we can create an unforgettable event for you!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default panel_design">
+                        <div class="panel-heading heading_design" role="tab" id="headingThree">
+                            <div class="panel-title" style="display: inline-block;">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <i class="more-less plus-minus glyphicon glyphicon-plus"></i>
+                HAPPY HOUR
+              </a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body body_bg">
+                                Recharge after a hard day’s work at our newly remodeled and renovated Bar & Café. After you’ve fueled up, you’ll be ready to undertake the intensity of over 40 Virtual Reality and Active experiences!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default panel_design">
+                        <div class="panel-heading heading_design" role="tab" id="headingFour">
+                            <div class="panel-title" style="display: inline-block;">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <i class="more-less plus-minus glyphicon glyphicon-plus"></i>
+                TEAM BUILDING & STAFF RETREATS
+              </a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body body_bg">
+                                Let our captivating and engaging team challenges bring your employees together in an unprecedented way! Our experiences will enhance your corporate culture while stimulating your employee’s minds. You can’t go wrong with our special packages, book now to find out how SMAAASH can transform the ordinary into the extraordinary!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="panel panel-default panel_design">
+          <div class="panel-heading heading_design" role="tab" id="headingFive">
+            <div class="panel-title" style="display: inline-block;">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <i class="more-less plus-minus glyphicon glyphicon-plus"></i>
+                Company Picnic & Staff Retreats
+              </a>
+            </div>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+            <div class="panel-body body_bg">
+              Picnics are best enjoyed at gaming paradises, and what better place than SMAAASH to have a blast. Book in advance and enjoy special packages on games, food and drinks.
+            </div>
+          </div>
+        </div> -->
+
+                    <div class="panel panel-default panel_design">
+                        <div class="panel-heading heading_design" role="tab" id="headingSix">
+                            <div class="panel-title" style="display: inline-block;">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <i class="more-less plus-minus glyphicon glyphicon-plus"></i>
+                HOLIDAY CELEBRATIONS
+              </a>
+                            </div>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                            <div class="panel-body body_bg">
+                                Spark up the excitement this Holiday Season with an unparalleled celebration at SMAAASH! Let us cheer up your guests while creating a long-lasting tradition of captivating and thrilling celebrations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="container-fluid">
+            <div class="row row-no-padding">
+                <div class="col-lg-3 col-md-3 col-sm-3 feature feature-three" style="padding: 0;">
+                    <img src="tools/img/race.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 feature feature-one" style="padding: 0;">
+                    <img src="tools/img/play.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 feature feature-two" style="padding: 0;">
+                    <img src="tools/img/feast.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 feature feature-three" style="padding: 0;">
+                    <img src="tools/img/party.jpg" alt="" style="width: 100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-below-banner">
+        <div class="row">
+            <div class="col-md-12 banner-lead-text">
+                <h1 class="text-center">OUT OF THIS WORLD EXPERIENCES</h1>
+            </div>
+        </div>
+        <div class="row banner-lead-text">
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                <ul>
+                    <li>Go Karting</li>
+                    <li>Air Rider</li>
+                    <li>Hologram Studios</li>
+                    <li>War on Wheels</li>
+                    <li>Rally Racing</li>
+                    <li>X1 Simulator</li>
+                    <li>Super Keeper</li>
+                    <li>What the Puck</li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                <ul>
+                    <li>Hot Shot</li>
+                    <li>Zombie Attack</li>
+                    <li>Dodgeball</li>
+                    <li>Meteor Dinosaur</li>
+                    <li>Fruit Ninja</li>
+                    <li>Tilt Brush</li>
+                    <li>Space Pirate Trainer</li>
+                    <li>Finger Coaster</li>
+                    <li>Exterminator</li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                <ul>
+                    <li>Extreme Drone Race</li>
+                    <li>Vertigo</li>
+                    <li>Art of Attack</li>
+                    <li>Haunted Hospital</li>
+                    <li>Flymax</li>
+                    <li>Jurassic Escape</li>
+                    <li>World Moto Jump</li>
+                    <li>Nitro Wheelie</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="why-smaaash">
+        <div class="container">
+            <div class="row smaaash_margin">
+                <div class="col-lg-6">
+                    <h2>Why <br/><span class="why-smaaash-text">Smaaash?</span></h2>
+                    <ul>
+                        <li>America’s Adrenaline Arena</li>
+                        <li>What’s next in Racing, Gaming, Eating & Amazing!</li>
+                        <li>Customized & Unparalleled Events</li>
+                        <li>Attentive & Dedicated Event Specialists</li>
+                        <li>Innovative & Reimagined Recharge Bar & Cafe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- <div class="container footer1">
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+          <h1 style="color: #fff; margin-top: 0;">Be the first to know</h1>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email id">
+          </div>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-default">Send</button>
+        </div>
+      </div>
+    </div> -->
+
+
+        <div class="container footer2">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                    <a href="#">&copy; 2017 SMAAASH</a>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6 text-center" style="color: #fff;">
+                    Direct: 952-405-8107
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-7 tingleft">
+                    <a class="pull-right" href="http://tingdigital.com.au" target="_blank">Designed by <span class="logo_t"><img src="tools/img/ting.png" height="30px"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="tools/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        function IDGenerator() {
+
+            this.length = 8;
+            this.timestamp = +new Date;
+
+            var _getRandomInt = function(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            this.generate = function() {
+                var ts = this.timestamp.toString();
+                var parts = ts.split("").reverse();
+                var id = "";
+
+                for (var i = 0; i < this.length; ++i) {
+                    var index = _getRandomInt(0, parts.length - 1);
+                    id += parts[index];
+                }
+
+                return id;
+            }
+
+
+        }
+
+        $(function() {
+
+
+            function isEmail(email) {
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                return regex.test(email);
+            }
+
+            function isPhone(phone) {
+                var myPhoneRegex = /(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]‌​)\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]‌​|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})\s*(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+)\s*)?$/i;
+                return myPhoneRegex.test(phone);
+            }
+
+            function Phonelength(phone) {
+                if (phone.length === 10) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            }
+
+
+            $("#submit").click(function() {
+
+
+
+                // validate and process form here
+                First_name = $("#first_name").val();
+                Last_name = $("#last_name").val();
+                Phone_number = $("#mobile").val();
+                Email_address = $("#email").val();
+                Event_date = $("#event_date").val();
+                Company = $("#company").val();
+                Event_description = "Corporate";
+
+
+                Guest_count = $("#00N6F00000EnggI option:selected").val();
+                var generator = new IDGenerator();
+                var uniqueId = generator.generate();
+
+                var data = {
+                    lead: {
+                        first_name: First_name,
+                        last_name: Last_name,
+                        phone_number: Phone_number,
+                        email_address: Email_address,
+                        event_date: Event_date,
+                        guest_count: Guest_count,
+                        company: Company,
+                        leadid: uniqueId,
+                        event_description: Event_description
+                    },
+                    lead_form_id: 4943
+                };
+
+
+                if (First_name == '' || Last_name == '' || Email_address == '' || Company == '' || Phone_number == '' || Event_date == "" || Guest_count == "") {
+                    alert("Please Fill All Fields");
+                } else {
+
+
+                    if (isEmail(Email_address)) {
+
+                        if (Phonelength(Phone_number)) {
+
+                            if (isPhone(Phone_number)) {
+
+
+                                $.ajax("http://api.tripleseat.com/v1/leads/create.js?public_key=578dfc4b0125982eb5707ca926a28f0fae2e5b21", {
+                                    data: data,
+                                    dataType: 'JSONP',
+                                    crossDomain: true,
+                                    success: function(data) {
+                                        if (data.errors != undefined) {
+                                            // handle errors
+                                            alert('There is some issue submitting your requrest. Please try again.');
+                                        } else {
+                                            // show data.success_message
+                                            //alert('sent');
+                                            window.location = "thanx.html?lead_id=" + uniqueId;
+                                        }
+
+                                    }
+                                });
+                            } else {
+                                alert("Please provide proper contact number.");
+                            }
+
+                        } else {
+                            alert('Length of Phone Number should be 10');
+                        }
+
+
+
+                    }
+                    //close if 
+                    else {
+                        alert("Please provide proper email id.")
+                    }
+                    // if closes entirely 
+
+                }
+
+
+            });
+
+
+
+            function toggleIcon(e) {
+                $(e.target)
+                    .prev('.panel-heading')
+                    .find(".more-less")
+                    .toggleClass('glyphicon-plus glyphicon-minus');
+            }
+            $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+            $('.panel-group').on('shown.bs.collapse', toggleIcon);
+        });
+
+
+        $(function() {
+            $('.datepickerr').datepicker();
+        });
+
+    </script>
+
+
+</body>
+
+</html>
