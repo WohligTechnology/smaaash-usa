@@ -14,29 +14,29 @@
                     </div>
                     <div class="col-flexing mobile-50 ">
                         <div class="registration bg-prop">
-                          <a ui-sref="host-party({id:hostpartyId})" class="text-center">
-                              <h3 class="nav-name "><span class="block">host a </span>party</h3>
-                          </a>
+                            <a ui-sref="host-party({id:hostpartyId})" class="text-center">
+                                <h3 class="nav-name "><span class="block">host a </span>party</h3>
+                            </a>
 
                             <!-- <a class="text-center">
                                 <h3 class="nav-name"><span class="block">careers</span></h3>
                             </a> -->
                         </div>
                     </div>
-                       <div class="col-flexing mobile-50  ">
+                    <div class="col-flexing mobile-50  ">
                         <div class="exploring bg-prop ">
                             <a ui-sref="attractions({id:attraId})" class="text-center">
                                 <h3 class="nav-name "><span class="block">games</span></h3>
                             </a>
                         </div>
                     </div>
-                    <div class="col-flexing mobile-50 ">
+                    <!-- <div class="col-flexing mobile-50 ">
                         <div class="host bg-prop" ui-sref="media">
                             <a class="text-center">
                                 <h3 class="nav-name "><span class="block">media</span></h3>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="col-flexing mobile-50 ">
                         <div class="cart bg-prop">
                             <a class="text-center">
@@ -47,7 +47,8 @@
                     <div class="col-flexing mobile-50" ng-hide="userLoginDetails === null">
                         <div class="account bg-prop">
                             <a class="text-center">
-                                <h3 class=" nav-name nav-naming" ng-click="myAccount();"><span class="block">my</span> account</h3>
+                                <h3 class=" nav-name nav-naming" ng-click="myAccount();"><span class="block">my</span>
+                                    account</h3>
                             </a>
                         </div>
                     </div>
@@ -55,11 +56,13 @@
 
                         <div class="log bg-prop">
                             <a class="text-center">
-                                <h3 class="nav-name"><span class="block">Hi<br/><p ng-bind-html="userLoginDetails.data.CustomerName |htmlToPlaintext"> </p>.. </span></h3>
+                                <h3 class="nav-name"><span class="block">Hi<br />
+                                        <p ng-bind-html="userLoginDetails.data.CustomerName |htmlToPlaintext"> </p>..
+                                    </span></h3>
                             </a>
                         </div>
                     </div>
-                    <div class="col-flexing mobiles-50 marginmobile0" >
+                    <div class="col-flexing mobiles-50 marginmobile0">
                         <div class="log bg-prop" ui-sref="contact">
                             <a class="text-center">
                                 <h3 class="nav-name"><span class="block">contact us</span></h3>
@@ -67,7 +70,7 @@
                         </div>
                     </div>
                     <div class="col-flexing mobiles-50" ng-hide="userLoginDetails === null">
-                        <div class="log bg-prop" >
+                        <div class="log bg-prop">
                             <a href="" class="text-center">
                                 <h3 class="nav-name" ng-click="logout();"><span class="block">Logout</span></h3>
                             </a>
@@ -77,13 +80,13 @@
 
                 <div class="rows mobile-inlineblock top mgtop">
 
-                     <div class="col-flexing mobile-50 ">
+                    <!-- <div class="col-flexing mobile-50 ">
                         <div class="buy bg-prop" ui-sref="gift">
                             <a class="text-center">
                                 <h3 class="nav-name "><span class="block">gift card</span></h3>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-flexing mobile-50 ">
                         <div class="food bg-prop ">
                             <a ui-sref="drink-party({id:foodBeveragesId})" class="text-center">
@@ -134,7 +137,7 @@
 
         <div class="container relative">
             <a class="logo-smaash" ui-sref='home'>
-            <!-- <a class="logo-smaash" ui-sref="home({'#':'home'})"  > -->
+                <!-- <a class="logo-smaash" ui-sref="home({'#':'home'})"  > -->
                 <img src="img/home/log.png" alt="Smaaash" ng-click="scrollToHome();">
                 <!--<img ng-src="{{cityData.smaaashLogo | uploadpath}}" alt="Smaaash">-->
             </a>
@@ -147,7 +150,7 @@
                     <img src="img/home/woman.png" class="img-responsive" alt="woman-menu">
                 </figure>
             </div>
-        <!--<div class="contactss-img">
+            <!--<div class="contactss-img">
  <img src="img/phone-aunty.png" class="img-responsive" alt="">
         </div>-->
 
@@ -155,7 +158,7 @@
 
                 <a href="tel:952-405-8107">Contact us:<span class="relative teleo"></span>952-405-8107</a>
 
-        </div>
+            </div>
 
 
             <div class="backdroped" ng-if="city" ng-click="toggleCity()">
@@ -168,7 +171,8 @@
                         <ul class="list">
                             <li ng-repeat="city in getCity">
 
-                                <a ng-click="getCityName(city)"><img ng-src="{{city.image|uploadpath}}" class="img-responsive" alt=""></a>
+                                <a ng-click="getCityName(city)"><img ng-src="{{city.image|uploadpath}}" class="img-responsive"
+                                        alt=""></a>
                             </li>
                             <li>
                                 <a href="">
@@ -176,7 +180,8 @@
                                 </a>
                             </li>
                         </ul>
-                        <p class="text-center">{{currentdate|englishNumeralTime}} &#8739 {{currentdate| englishNumeralDate}} &#8739 YOUR CURRENT
+                        <p class="text-center">{{currentdate|englishNumeralTime}} &#8739 {{currentdate|
+                            englishNumeralDate}} &#8739 YOUR CURRENT
                             CITY IS {{cityData.name}}</p>
 
                     </div>
@@ -276,7 +281,7 @@ Already Exists</div>
             </div>
         </div>
     </div>-->
-    <!--<div class="side" ui-sref="recharge" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
+        <!--<div class="side" ui-sref="recharge" ng-class="{'slides-down': menu == true}" ng-hide="showAunty">
         <div class="live-chat" id="axe">
             <div class="orange-rays"></div>
      <p class="uppercase brand-white text-center">recharge online</p>
@@ -284,8 +289,8 @@ Already Exists</div>
         </div>
     </div>-->
 
-</div>
-<div  ng-show="template.isLoader"  style="text-align:center"; class="loaderHeader">
- <img src="img/MOA.gif" alt="" / style="margin:0 auto;">
- <!-- <img src="img/loading.gif" alt="" / style="margin:0 auto;"> -->
-</div>
+    </div>
+    <div ng-show="template.isLoader" style="text-align:center" ; class="loaderHeader">
+        <img src="img/MOA.gif" alt="" / style="margin:0 auto;">
+        <!-- <img src="img/loading.gif" alt="" / style="margin:0 auto;"> -->
+    </div>
