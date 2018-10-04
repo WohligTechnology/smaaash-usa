@@ -2610,7 +2610,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('EventsCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("events-challenges");
-        $scope.menutitle = NavigationService.makeactive("Events and Challengest");
+        $scope.menutitle = NavigationService.makeactive("Deals and Promotions");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.removeLoaderOn(1);

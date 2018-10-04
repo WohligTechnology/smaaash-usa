@@ -48,7 +48,7 @@ var firstapp = angular.module('firstapp', [
 
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
+firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
     $stateProvider
@@ -58,31 +58,31 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'HomeCtrl'
         })
 
-    .state('corporate-parties', {
-        url: "/corporate-parties",
-        templateUrl: "views/template.html",
-        controller: 'CorporateCtrl'
-    })
+        .state('corporate-parties', {
+            url: "/corporate-parties",
+            templateUrl: "views/template.html",
+            controller: 'CorporateCtrl'
+        })
 
-    .state('event', {
-        url: "/events",
-        templateUrl: "views/template.html",
-        controller: 'EventCtrl',
-        params:{
-          id:"events"
-        }
-    })
+        .state('event', {
+            url: "/deals-promotions",
+            templateUrl: "views/template.html",
+            controller: 'EventCtrl',
+            params: {
+                id: "events"
+            }
+        })
 
-    .state('dealsp', {
-        url: "/deals-and-packages",
-        templateUrl: "views/template.html",
-        controller: 'DealspCtrl',
-        params:{
-          id:"deals-and-packages"
-        }
-    })
+        .state('dealsp', {
+            url: "/deals-and-packages",
+            templateUrl: "views/template.html",
+            controller: 'DealspCtrl',
+            params: {
+                id: "deals-and-packages"
+            }
+        })
 
-    .state('thank', {
+        .state('thank', {
             // url: "/thankyou",
             url: "/thankyou/:orderno/:cnrno/:amount",
             templateUrl: "views/template.html",
@@ -95,7 +95,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         //     controller: 'ThankCtrl'
         // })
 
-    .state('sorry', {
+        .state('sorry', {
             // url: "/sorry",
             url: "/sorry/:orderno/:cnrno/:amount",
             templateUrl: "views/template.html",
@@ -108,38 +108,38 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         //     controller: 'SorryCtrl'
         // })
 
-    .state('drink-party', {
-        url: "/food-and-beverages",
-        templateUrl: "views/template.html",
-        controller: 'DrinkCtrl',
-        params:{
-          id:"food-and-beverages"
-        }
-    })
+        .state('drink-party', {
+            url: "/food-and-beverages",
+            templateUrl: "views/template.html",
+            controller: 'DrinkCtrl',
+            params: {
+                id: "food-and-beverages"
+            }
+        })
 
-    .state('reset', {
-        url: "/reset",
-        templateUrl: "views/template.html",
-        controller: 'ResetCtrl'
-    })
+        .state('reset', {
+            url: "/reset",
+            templateUrl: "views/template.html",
+            controller: 'ResetCtrl'
+        })
 
-    .state('promotion-inner', {
-        url: "/promotion-inner/:id",
-        templateUrl: "views/template.html",
-        controller: 'PromotionInnerCtrl'
-    })
+        .state('promotion-inner', {
+            url: "/promotion-inner/:id",
+            templateUrl: "views/template.html",
+            controller: 'PromotionInnerCtrl'
+        })
 
 
-    .state('promotion', {
-        url: "/promotions",
-        templateUrl: "views/template.html",
-        controller: 'PromotionCtrl',
-        params:{
-          id:"promotions"
-        }
-    })
+        .state('promotion', {
+            url: "/promotions",
+            templateUrl: "views/template.html",
+            controller: 'PromotionCtrl',
+            params: {
+                id: "promotions"
+            }
+        })
 
-    .state('blog', {
+        .state('blog', {
             url: "/blog",
             templateUrl: "views/template.html",
             controller: 'BlogCtrl'
@@ -152,46 +152,46 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 
 
 
-    .state('deals-inner', {
-        url: "/deals-inner/:id",
-        templateUrl: "views/template.html",
-        controller: 'DealsInnerCtrl'
-    })
+        .state('deals-inner', {
+            url: "/deals-inner/:id",
+            templateUrl: "views/template.html",
+            controller: 'DealsInnerCtrl'
+        })
 
 
 
-    .state('stars', {
-        url: "/gallery",
-        templateUrl: "views/template.html",
-        controller: 'StarsCtrl'
-    })
+        .state('stars', {
+            url: "/gallery",
+            templateUrl: "views/template.html",
+            controller: 'StarsCtrl'
+        })
 
-    .state('media', {
-        url: "/media",
-        templateUrl: "views/template.html",
-        controller: 'MediaCtrl'
-    })
+        .state('media', {
+            url: "/media",
+            templateUrl: "views/template.html",
+            controller: 'MediaCtrl'
+        })
 
 
-    .state('wedding-parties', {
-        url: "/wedding-parties",
-        templateUrl: "views/template.html",
-        controller: 'WeddingCtrl'
-    })
+        .state('wedding-parties', {
+            url: "/wedding-parties",
+            templateUrl: "views/template.html",
+            controller: 'WeddingCtrl'
+        })
 
-    .state('customizepackage', {
-        url: "/customizepackage",
-        templateUrl: "views/template.html",
-        controller: 'CustomizePackageCtrl'
-    })
+        .state('customizepackage', {
+            url: "/customizepackage",
+            templateUrl: "views/template.html",
+            controller: 'CustomizePackageCtrl'
+        })
 
-    .state('parties', {
-        url: "/parties/:id",
-        templateUrl: "views/template.html",
-        controller: 'KittyCtrl'
-    })
+        .state('parties', {
+            url: "/parties/:id",
+            templateUrl: "views/template.html",
+            controller: 'KittyCtrl'
+        })
 
-    .state('cart', {
+        .state('cart', {
             url: "/cart",
             templateUrl: "views/template.html",
             controller: 'CartsCtrl'
@@ -203,25 +203,25 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         })
 
 
-    .state('whats-new', {
-        url: "/whats-new/:id",
-        templateUrl: "views/template.html",
-        controller: 'NewCtrl'
-    })
+        .state('whats-new', {
+            url: "/whats-new/:id",
+            templateUrl: "views/template.html",
+            controller: 'NewCtrl'
+        })
 
-    .state('attractions', {
-        url: "/games/:id",
-        templateUrl: "views/template.html",
-        controller: 'AttractionCtrl'
-    })
+        .state('attractions', {
+            url: "/games/:id",
+            templateUrl: "views/template.html",
+            controller: 'AttractionCtrl'
+        })
 
-    .state('account', {
-        url: "/account",
-        templateUrl: "views/template.html",
-        controller: 'AccountCtrl'
-    })
+        .state('account', {
+            url: "/account",
+            templateUrl: "views/template.html",
+            controller: 'AccountCtrl'
+        })
 
-    .state('leader', {
+        .state('leader', {
             url: "/leader",
             templateUrl: "views/template.html",
             controller: 'LeaderCtrl'
@@ -230,9 +230,9 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             url: "/host-a-party",
             templateUrl: "views/template.html",
             controller: 'HostCtrl',
-        params: {
-        id:"host-a-party"
-        }
+            params: {
+                id: "host-a-party"
+            }
         })
         .state('birthday-parties', {
             url: "/birthday-parties/:id",
@@ -240,78 +240,78 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'BirthdayCtrl'
         })
 
-    .state('smaaash-cricket', {
-        url: "/smaaash-cricket",
-        templateUrl: "views/template.html",
-        controller: 'SportsCtrl'
-    })
+        .state('smaaash-cricket', {
+            url: "/smaaash-cricket",
+            templateUrl: "views/template.html",
+            controller: 'SportsCtrl'
+        })
 
-    .state('sponsor', {
-        url: "/sponsor",
-        templateUrl: "views/template.html",
-        controller: 'SponsorCtrl'
-    })
+        .state('sponsor', {
+            url: "/sponsor",
+            templateUrl: "views/template.html",
+            controller: 'SponsorCtrl'
+        })
 
-    .state('contact', {
-        url: "/contact",
-        templateUrl: "views/template.html",
-        controller: 'ContactCtrl'
-    })
+        .state('contact', {
+            url: "/contact",
+            templateUrl: "views/template.html",
+            controller: 'ContactCtrl'
+        })
 
-    .state('benefit', {
-        url: "/benefit",
-        templateUrl: "views/template.html",
-        controller: 'BenefitCtrl'
-    })
+        .state('benefit', {
+            url: "/benefit",
+            templateUrl: "views/template.html",
+            controller: 'BenefitCtrl'
+        })
 
-    .state('explore', {
-        url: "/explore/:id",
-        templateUrl: "views/template.html",
-        controller: 'ExploreCtrl'
-    })
+        .state('explore', {
+            url: "/explore/:id",
+            templateUrl: "views/template.html",
+            controller: 'ExploreCtrl'
+        })
 
-    .state('buy', {
-        url: "/buy",
-        templateUrl: "views/template.html",
-        controller: 'BuyCtrl'
-    })
+        .state('buy', {
+            url: "/buy",
+            templateUrl: "views/template.html",
+            controller: 'BuyCtrl'
+        })
 
-    .state('about', {
-        url: "/about",
-        templateUrl: "views/template.html",
-        controller: 'AboutCtrl'
-    })
+        .state('about', {
+            url: "/about",
+            templateUrl: "views/template.html",
+            controller: 'AboutCtrl'
+        })
 
-    .state('profile', {
-        url: "/profile",
-        templateUrl: "views/template.html",
-        controller: 'ProfileCtrl'
-    })
+        .state('profile', {
+            url: "/profile",
+            templateUrl: "views/template.html",
+            controller: 'ProfileCtrl'
+        })
 
-    .state('recharge', {
-        url: "/recharge",
-        templateUrl: "views/template.html",
-        controller: 'RechargeCtrl'
-    })
+        .state('recharge', {
+            url: "/recharge",
+            templateUrl: "views/template.html",
+            controller: 'RechargeCtrl'
+        })
 
-    .state('careers', {
-        url: "/careers",
-        templateUrl: "views/template.html",
-        controller: 'CareersCtrl'
-    })
-   .state('marketing-franchisee', {
-        url: "/marketing-franchisee",
-        templateUrl: "views/template.html",
-        controller: 'MarketingFranchiseeCtrl'
-    })
+        .state('careers', {
+            url: "/careers",
+            templateUrl: "views/template.html",
+            controller: 'CareersCtrl'
+        })
+        .state('marketing-franchisee', {
+            url: "/marketing-franchisee",
+            templateUrl: "views/template.html",
+            controller: 'MarketingFranchiseeCtrl'
+        })
 
-    .state('gift', {
-        url: "/giftcards",
-        templateUrl: "views/template.html",
-        controller: 'GiftCtrl'
-    })
+        .state('gift', {
+            url: "/giftcards",
+            templateUrl: "views/template.html",
+            controller: 'GiftCtrl'
+        })
 
-    .state('coming-soon', {
+        .state('coming-soon', {
             url: "/coming-soon",
             templateUrl: "views/template.html",
             controller: 'ComingCtrl'
@@ -324,7 +324,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 
 
 
-    .state('blog-inside', {
+        .state('blog-inside', {
             url: "/blogInside/:id",
             templateUrl: "views/template.html",
             controller: 'BlogInsideCtrl'
@@ -346,11 +346,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 });
 
 
-firstapp.directive('fancyboxBox', function($document) {
+firstapp.directive('fancyboxBox', function ($document) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function(scope, element, attr) {
+        link: function (scope, element, attr) {
             var $element = $(element);
             var target;
             if (attr.rel) {
@@ -372,12 +372,12 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 })
 
-firstapp.directive('fancyboxThumb', function($document) {
+firstapp.directive('fancyboxThumb', function ($document) {
 
     return {
         restrict: 'EA',
         replace: false,
-        link: function(scope, element, attr) {
+        link: function (scope, element, attr) {
             var $element = $(element);
             var target;
             if (attr.rel) {
@@ -405,14 +405,14 @@ firstapp.directive('fancyboxThumb', function($document) {
 })
 
 
-firstapp.directive('autoHeight', function($compile, $parse) {
+firstapp.directive('autoHeight', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             var windowHeight = $(window).height();
-            var addHeight = function() {
+            var addHeight = function () {
                 $element.css("min-height", windowHeight);
             };
             addHeight();
@@ -420,11 +420,11 @@ firstapp.directive('autoHeight', function($compile, $parse) {
     };
 });
 
-firstapp.directive('noDrag', function($compile, $parse) {
+firstapp.directive('noDrag', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             $element.context.draggable = false;
         }
@@ -432,11 +432,11 @@ firstapp.directive('noDrag', function($compile, $parse) {
 });
 
 
-firstapp.directive('imageonload', function() {
+firstapp.directive('imageonload', function () {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
-            element.bind('load', function() {
+        link: function (scope, element, attrs) {
+            element.bind('load', function () {
                 scope.$apply(attrs.imageonload);
             });
         }
@@ -447,9 +447,9 @@ firstapp.directive('allowPattern', [allowPatternDirective]);
 function allowPatternDirective() {
     return {
         restrict: "A",
-        compile: function(tElement, tAttrs) {
-            return function(scope, element, attrs) {
-                element.bind("keypress", function(event) {
+        compile: function (tElement, tAttrs) {
+            return function (scope, element, attrs) {
+                element.bind("keypress", function (event) {
                     var keyCode = event.which || event.keyCode;
                     var keyCodeChar = String.fromCharCode(keyCode);
                     if (!keyCodeChar.match(new RegExp(attrs.allowPattern, "i"))) {
@@ -463,14 +463,14 @@ function allowPatternDirective() {
     };
 }
 
-firstapp.directive('uploadImage', function($http, $filter) {
+firstapp.directive('uploadImage', function ($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
             model: '=ngModel',
             callback: "=ngCallback"
         },
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             $scope.isMultiple = false;
             $scope.inObject = false;
             if (attrs.multiple || attrs.multiple === "") {
@@ -483,7 +483,7 @@ firstapp.directive('uploadImage', function($http, $filter) {
             if ($scope.model) {
                 if (_.isArray($scope.model)) {
                     $scope.image = [];
-                    _.each($scope.model, function(n) {
+                    _.each($scope.model, function (n) {
                         $scope.image.push({
                             url: $filter("uploadpath")(n)
                         });
@@ -494,10 +494,10 @@ firstapp.directive('uploadImage', function($http, $filter) {
             if (attrs.inobj || attrs.inobj === "") {
                 $scope.inObject = true;
             }
-            $scope.clearOld = function() {
+            $scope.clearOld = function () {
                 $scope.model = [];
             };
-            $scope.uploadNow = function(image) {
+            $scope.uploadNow = function (image) {
                 var Template = this;
                 image.hide = true;
                 var formData = new FormData();
@@ -507,7 +507,7 @@ firstapp.directive('uploadImage', function($http, $filter) {
                         'Content-Type': undefined
                     },
                     transformRequest: angular.identity
-                }).success(function(data) {
+                }).success(function (data) {
                     console.log("success");
                     if ($scope.callback) {
                         $scope.callback(data);
@@ -530,18 +530,18 @@ firstapp.directive('uploadImage', function($http, $filter) {
     };
 });
 
-firstapp.directive('img', function($compile, $parse) {
+firstapp.directive('img', function ($compile, $parse) {
 
     return {
         restrict: 'E',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
 
             if (!attrs.noloading) {
                 // $element.after("<img src='img/loading.gif' class='loading' />");
                 var $loading = $element.next(".loading");
-                $element.load(function() {
+                $element.load(function () {
                     $loading.remove();
                     $(this).addClass("doneLoading");
                 });
@@ -553,19 +553,19 @@ firstapp.directive('img', function($compile, $parse) {
 });
 
 
-firstapp.directive('noPaste', function($filter) {
+firstapp.directive('noPaste', function ($filter) {
     return {
         scope: {},
-        link: function(scope, element) {
-            element.on('cut copy paste', function(event) {
+        link: function (scope, element) {
+            element.on('cut copy paste', function (event) {
                 event.preventDefault();
             });
         }
     };
 });
 
-firstapp.filter('uploadpath', function() {
-    return function(input, width, height, style) {
+firstapp.filter('uploadpath', function () {
+    return function (input, width, height, style) {
         var other = "";
         if (width && width != "") {
             console.log('input', input, width);
@@ -599,8 +599,8 @@ firstapp.filter('uploadpath', function() {
         }
     };
 });
-firstapp.filter('uploadprofilepicture', function() {
-    return function(input, width, height, style) {
+firstapp.filter('uploadprofilepicture', function () {
+    return function (input, width, height, style) {
 
         var other = "";
         if (width && width != "") {
@@ -625,8 +625,8 @@ firstapp.filter('uploadprofilepicture', function() {
         }
     };
 });
-firstapp.filter('shorten', function() {
-    return function(value, limit) {
+firstapp.filter('shorten', function () {
+    return function (value, limit) {
         if (value)
             if (value.length < limit) {
                 return value;
@@ -639,16 +639,16 @@ firstapp.filter('shorten', function() {
 });
 
 
-firstapp.config(function($translateProvider) {
+firstapp.config(function ($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);
     $translateProvider.translations('hi', LanguageHindi);
     $translateProvider.preferredLanguage('en');
 });
-firstapp.directive('onlyDigits', function() {
+firstapp.directive('onlyDigits', function () {
     return {
         require: 'ngModel',
         restrict: 'A',
-        link: function(scope, element, attr, ctrl) {
+        link: function (scope, element, attr, ctrl) {
             var digits;
 
             function inputValue(val) {
@@ -673,16 +673,16 @@ firstapp.directive('onlyDigits', function() {
     };
 });
 
-firstapp.directive('scrolldown', function($compile, $parse) {
+firstapp.directive('scrolldown', function ($compile, $parse) {
 
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             //  var height = 200;
             // var windowHeight = $(window).height();
-            $scope.scrollDown = function() {
+            $scope.scrollDown = function () {
                 $scope.startVideo = false;
                 $('html,body').animate({
                         scrollTop: $(".second").offset().top
@@ -693,8 +693,8 @@ firstapp.directive('scrolldown', function($compile, $parse) {
     };
 });
 
-firstapp.filter('rmvStartEndSpace', function() {
-    return function(input) {
+firstapp.filter('rmvStartEndSpace', function () {
+    return function (input) {
         if (input) {
             console.log(input);
             return input.toString().trim();
@@ -708,8 +708,8 @@ firstapp.filter('rmvStartEndSpace', function() {
 //         }
 //     };
 // });
-firstapp.filter('youtubethumb', function() {
-    return function(input, onlyid) {
+firstapp.filter('youtubethumb', function () {
+    return function (input, onlyid) {
         if (input) {
 
             var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
@@ -733,22 +733,22 @@ firstapp.filter('youtubethumb', function() {
 });
 
 firstapp.filter('rawHtml', ['$sce',
-    function($sce) {
-        return function(val) {
+    function ($sce) {
+        return function (val) {
             console.log(val);
             return $sce.trustAsHtml(val);
         };
     }
 ]);
-firstapp.filter('trusted', ['$sce', function($sce) {
-    return function(url) {
+firstapp.filter('trusted', ['$sce', function ($sce) {
+    return function (url) {
         return $sce.trustAsResourceUrl(url);
     };
 }]);
 
 
-firstapp.filter('shorten', function() {
-    return function(value, limit) {
+firstapp.filter('shorten', function () {
+    return function (value, limit) {
         if (value)
             if (value.length < limit) {
                 return value;
@@ -759,16 +759,16 @@ firstapp.filter('shorten', function() {
 
     }
 });
-firstapp.filter('htmlToPlaintext', function() {
-    return function(text) {
+firstapp.filter('htmlToPlaintext', function () {
+    return function (text) {
         return text ? String(text).replace(/<[^>]+>/gm, '') : '';
     };
 });
 
-firstapp.directive('aplhaOnly', function() {
+firstapp.directive('aplhaOnly', function () {
     return {
         require: 'ngModel',
-        link: function(scope, element, attr, ngModelCtrl) {
+        link: function (scope, element, attr, ngModelCtrl) {
             function fromUser(text) {
                 var transformedInput = text.replace(/[^a-zA-Z\.\s]/g, '');
                 if (transformedInput !== text) {
@@ -781,20 +781,20 @@ firstapp.directive('aplhaOnly', function() {
         }
     };
 });
-firstapp.filter('urlEncode', [function() {
+firstapp.filter('urlEncode', [function () {
     return window.encodeURIComponent;
 }]);
 
-firstapp.filter('englishNumeralDate', function() {
-    return function(value) {
+firstapp.filter('englishNumeralDate', function () {
+    return function (value) {
         if (value) {
             console.log(angular.isDate(value));
             return moment(new Date(value)).format("Do MMMM YYYY");
         }
     };
 });
-firstapp.filter('englishNumeralTime', function() {
-    return function(value) {
+firstapp.filter('englishNumeralTime', function () {
+    return function (value) {
         if (value) {
             console.log(angular.isDate(value));
             return moment(new Date(value)).format("h:mm a");
