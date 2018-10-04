@@ -330,7 +330,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             controller: 'BlogInsideCtrl'
         })
         .state('event-inner', {
-            url: "/event/:id",
+            url: "/deals-promotions/:id",
             templateUrl: "views/template.html",
             controller: 'EventInnerCtrl',
         })
