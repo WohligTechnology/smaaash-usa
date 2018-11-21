@@ -45,7 +45,7 @@
                                     <div class="race relative margno">
                                           <div class="img-bg">
                                                 <a ui-sref="drink-party({id:s.id})" ng-if="s.id === 'food-and-beverages'">
-                                                     
+
                                                       <figure>
                                                             <img src="{{s.img}}" class="img-responsive" alt="">
                                                       </figure </a>
@@ -64,7 +64,7 @@
 
                                                       </a>
                                                       <a ui-sref="snow-rush({name:s.pagename,id:s.id})" ng-if="s.id === 'sky-karting'">
-                                          
+
                                                             <figure>
                                                                   <img src="{{s.img}}" class="img-responsive" alt="sky karting">
                                                             </figure>
@@ -126,17 +126,18 @@
             <div class="col-md-6">
                   <div class="updates arrow-no">
                         <div class="slant-box pad0">
-                              <!-- <p class=" capitalize brand-white border-bot" ui-sref="attractions({id:attraction[0].type._id})">view all</p> -->   
+                              <!-- <p class=" capitalize brand-white border-bot" ui-sref="attractions({id:attraction[0].type._id})">view all</p> -->
                               <h2 class="brand-white text-shadow">games</h2>
-                              <div class="mover extra">                                   
+                              <div class="mover extra">
                                     <flex-slider ng-if="attraction" class="carousel relative" item-margin="0" flex-slide="s in attraction track by $index" slideshow="false"
                                           animation="slide" animationLoop="true" prev-text="" next-text="">
                                           <li>
                                                 <a ui-sref="attractions({id:s.type.myslug})">
                                                       <!-- <a ui-sref="attractions({id:s.type._id})"> -->
-                                                  <img ng-if="s.image && s.myslug=='sky-karting'" noloading="true" ng-src="{{s.image|uploadpath}}" alt="sky-karting">
-                                                   <img ng-if="s.image && s.myslug=='finger-coaster'" noloading="true" ng-src="{{s.image|uploadpath}}" alt="finger coaster">
-                                                   <img ng-if="s.image && s.myslug!='sky-karting'&&s.myslug!='finger-coaster'" noloading="true" ng-src="{{s.image|uploadpath}}" alt="">
+                                                      <img ng-if="s.image && s.myslug=='sky-karting'" noloading="true" ng-src="{{s.image|uploadpath}}" alt="sky-karting">
+                                                      <img ng-if="s.image && s.myslug=='finger-coaster'" noloading="true" ng-src="{{s.image|uploadpath}}" alt="finger coaster">
+                                                      <img ng-if="s.image && s.myslug!='sky-karting'&&s.myslug!='finger-coaster'" noloading="true" ng-src="{{s.image|uploadpath}}"
+                                                            alt="">
                                                 </a>
                                                 <a fancybox-box data-fancybox-type="iframe" href="https://www.youtube.com/embed/{{s.video |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"
                                                       class="pink-button"><img src="img/home/button.png" class="img-responsive" alt="" ng-if="s.video"></a>
@@ -360,7 +361,9 @@
                               <h2 class="brand-white">Instagram</h2>
                               <div class="wdget">
                                     <!-- old Instagram link -->
-                                    <iframe src="//lightwidget.com/widgets/bb5274adf45858d1813c93146f971147.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"
+                                    <!-- LightWidget WIDGET -->
+                                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                                    <iframe src="//lightwidget.com/widgets/e30299b09558537ba96e583541494fed.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"
                                           style="width: 100%; border: 0; overflow: hidden;"></iframe>
                                     <!-- old Instagram link -->
                                     <!--<iframe src="//lightwidget.com/widgets/ddcb00a004a85bdaba015156d03e5e15.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>-->
