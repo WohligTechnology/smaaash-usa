@@ -2648,6 +2648,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // $scope.menutitle = NavigationService.makeactive("Drink Party");
         // TemplateService.title = $scope.menutitle;
 
+
+
         $scope.menutitle = NavigationService.makeactive("SMAAASH – The Home of Awesome Parties in Minnesota");
 
         TemplateService.title = $scope.menutitle;
@@ -2683,6 +2685,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             TemplateService.removeLoader();
         });
 
+        $scope.menuModal = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'views/modal/food-menu.html',
+                size: 'lg',
+            });
+        }
+
 
 
         $scope.gotFunction = function (id) {
@@ -2690,6 +2700,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $state.go('host-party', {
                     id: 'host-a-party'
                 });
+            }
+            if (id === '57e130c4d32ecf3237dcf2f2') {
+                $scope.menuModal();
             }
         }
         $scope.readMore = function (id) {

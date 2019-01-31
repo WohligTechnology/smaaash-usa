@@ -87,9 +87,16 @@
                             <div class="button-sets inline-block" ng-if="data.pdf">
                                 <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);">Menu</button>
                             </div>
+
+                            <div class="button-sets inline-block" ng-if="data._id==='57e130c4d32ecf3237dcf2f2'">
+                                <button class="uppercase larger green" ng-click="gotFunction(data._id)">know more</button>
+                            </div>
+
                             <div class="button-sets inline-block" ng-if="data._id==='57e13248d32ecf3237dcf36a'">
                                 <button class="uppercase larger green" ng-click="gotFunction(data._id)">know more</button>
                             </div>
+
+
                             <!-- <div class="button-sets inline-block">
                                <button class="uppercase large green" ng-click="bookings();">reservations</button>
                                <button class="uppercase larger green" ng-click="pdfmodal(data.pdf);" ng-if="data.pdf">Menu</button>
@@ -114,6 +121,7 @@
 
 
                                 </div> -->
+
                             </div>
                             <div ng-if="data.hometext!=='Food' && data.hometext!=='Drinks'">
                                 <!-- <div class="static-p" style="visibility:hidden">

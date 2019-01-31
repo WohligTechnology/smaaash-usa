@@ -27,6 +27,7 @@ $brand-purply: #662d91 !default;
 $brand-bluey: #293685 !default;
 $brand-orangy: #fc5626 !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
 @font-face {
     font-family: 'American Purpose';
     src: url('../fonts/AmericanPurpose.ttf') format("truetype"), url('../fonts/AmericanPurpose.otf') format("opentype"), url('../fonts/AmericanPurpose.eot') format("embedded-opentype");
@@ -55,6 +56,7 @@ $color) {
 
 $body-font: "American Purpose" !default;
 $head-font: "Galano Grotesque" !default;
+
 body {
     font-family: "$head-font", Helvetica, Arial, sans-serif;
 }
@@ -184,6 +186,7 @@ body {
 
 .min-hi {
     min-height: 30px;
+
     h3 {
         margin: 0 !important;
     }
@@ -285,6 +288,7 @@ a {
 //*main banner ends*//
 //*slider starts *//
 $menu-height: 80px !default;
+
 .dropdowns {
     height: $menu-height;
     position: relative;
@@ -293,12 +297,14 @@ $menu-height: 80px !default;
     z-index: 3;
     background-position: left;
     background-repeat: no-repeat;
+
     &.affix {
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 999;
     }
+
     .cities {
         @include position(absolute,
         46px null null 5px);
@@ -307,20 +313,24 @@ $menu-height: 80px !default;
         box-shadow: -3px 3px #000, 1px 0 #000;
         cursor: pointer;
     }
+
     .menu {
         @include position(absolute,
         0 80px null null);
         cursor: pointer;
+
         img {
             height: $menu-height + 5px;
             width: auto;
         }
     }
+
     .woman-menu {
         @include position(absolute,
         0 0 null null);
         height: $menu-height - 5px;
         cursor: pointer;
+
         img {
             width: auto;
             height: 100%;
@@ -331,14 +341,17 @@ $menu-height: 80px !default;
 .smaash-drops {
     margin-bottom: 0;
     position: relative;
+
     .slidings {
         a {
             display: block;
         }
+
         .custom-pagination {
             @include position(absolute,
             null 20px 0px null);
             margin: 0;
+
             li {
                 float: left;
                 padding: 10px;
@@ -354,12 +367,14 @@ $menu-height: 80px !default;
                 @include transition(all 300ms ease);
                 margin: 0 5px;
                 border-radius: 0;
+
                 &.flex-active,
                 &:active,
                 &:hover {
                     background-color: $brand-red;
                     color: white;
                 }
+
                 &.flex-active {
                     padding: 12.5px 10px;
                     margin-top: -5px;
@@ -367,6 +382,7 @@ $menu-height: 80px !default;
                 }
             }
         }
+
         .flexslider {
             margin: 0;
             border: none;
@@ -390,6 +406,7 @@ $menu-height: 80px !default;
     display: block;
     text-align: center;
     border-radius: 8px;
+
     button {
         border: none;
         color: #fff;
@@ -419,7 +436,7 @@ $menu-height: 80px !default;
 
 .flex-control-nav {
     width: 100%;
-    @include position( absolute,
+    @include position(absolute,
     null null 39% null);
     text-align: center;
     z-index: 3;
@@ -429,9 +446,11 @@ $menu-height: 80px !default;
     display: block;
     color: #000;
     text-align: center;
+
     &:hover {
         color: #000;
     }
+
     &:focus {
         outline: 0;
     }
@@ -442,6 +461,7 @@ $menu-height: 80px !default;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
     a,
     p {
         display: block;
@@ -449,6 +469,7 @@ $menu-height: 80px !default;
         color: #fff;
         opacity: 1;
     }
+
     button {
         background-color: transparent;
     }
@@ -464,9 +485,11 @@ $menu-height: 80px !default;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
     p {
         color: #fff;
     }
+
     button {
         background-color: transparent;
         margin: 0 auto;
@@ -476,6 +499,7 @@ $menu-height: 80px !default;
         padding: 10px 20px;
         color: #fff;
     }
+
     .form-group {
         width: 50%;
         margin: 20px auto;
@@ -496,6 +520,7 @@ $menu-height: 80px !default;
 
 .recharge-main {
     background-image: none;
+
     .dollar {
         position: absolute;
         top: 11px;
@@ -509,10 +534,11 @@ $menu-height: 80px !default;
 }
 
 .logo-smaash {
-    @include position( absolute,
+    @include position(absolute,
     -30px null null 20px);
     z-index: 999;
     height: 150px;
+
     img {
         width: auto;
         height: 100%;
@@ -540,14 +566,16 @@ $menu-height: 80px !default;
 }
 
 .arrow-down {
-    @include position( absolute,
+    @include position(absolute,
     null null 13% 48%);
     color: #fff;
     font-size: 17px;
+
     span {
         display: block;
         text-align: center;
     }
+
     &:hover {
         color: #000;
     }
@@ -611,6 +639,7 @@ $menu-height: 80px !default;
 //*home page ends*//
 .social-media {
     margin-bottom: 15px;
+
     h2 {
         padding: 10px;
         font-family: "American Purpose";
@@ -632,6 +661,7 @@ $menu-height: 80px !default;
     background-color: #fff;
     padding: 10px 0 0;
     margin: 10px 0;
+
     h4 {
         color: #000;
         font-size: 14px;
@@ -642,6 +672,7 @@ $menu-height: 80px !default;
 .new-link {
     text-decoration: none !important;
     color: white !important;
+
     &:hover {
         color: white !important;
     }
@@ -661,9 +692,11 @@ $menu-height: 80px !default;
     flex: 1;
     display: block;
     width: 100%;
+
     +.col-flexing {
         padding-left: 5px;
     }
+
     h3 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -675,25 +708,30 @@ $menu-height: 80px !default;
 
 .foot-list {
     padding: 0;
+
     .bold {
         margin: 0 0 10px;
         color: #fff;
         font-size: 14px;
         text-transform: uppercase;
     }
+
     li {
         list-style-type: none;
         line-height: 180%;
+
         a {
             font-family: $head-font;
             color: #666;
             text-decoration: none;
             font-size: 12px;
             display: inline-block;
+
             &:hover {
                 color: #fff;
             }
         }
+
         img {
             width: 100%;
         }
@@ -712,6 +750,7 @@ $menu-height: 80px !default;
 .hash {
     font-size: 12px;
     color: #666;
+
     &:hover {
         color: #fff;
     }
@@ -729,6 +768,7 @@ $menu-height: 80px !default;
     width: 100%;
     margin: 0;
     padding: 0;
+
     li {
         display: table-cell;
     }
@@ -736,42 +776,51 @@ $menu-height: 80px !default;
 
 .slant-in {
     position: relative;
+
     +.slant-in {
         margin-top: 20px;
     }
+
     &:before {
         width: 50%;
         height: 100%;
         @include position(absolute,
         null -20% null null);
     }
+
     &.brand-darkblue {
         &:before {
             background-color: $brand-darkblue;
         }
     }
+
     .slant-box {
         padding: 15px 3% 0;
+
         .slidings {
             .flexslider {
                 background: transparent;
                 border-color: transparent;
+
                 .flex-control-nav,
                 .flex-direction-nav .flex-prev {
                     display: none;
                 }
+
                 .flex-next,
                 .flex-prev {
                     display: block;
                     height: 50px;
                     width: 50px;
                 }
+
                 .flex-direction-nav a.flex-next:before {
                     content: "";
                     @include square(100%);
                     background: url("../img/home/arrow.png")no-repeat;
                     background-size: contain;
                 }
+
                 .flex-direction-nav a.flex-prev:before {
                     content: "";
                     @include square(100%);
@@ -789,12 +838,14 @@ $menu-height: 80px !default;
     @include position (absolute,
     70% null null 30%);
     transform: translate(-50%, -50%);
+
     &:hover {
         color: $brand-yellow;
     }
 }
 
 .slant-box {
+
     h1,
     h2 {
         font-family: $body-font;
@@ -802,9 +853,11 @@ $menu-height: 80px !default;
         margin: 0;
         display: inline-block;
     }
+
     .mover {
         display: block;
     }
+
     .margno {
         margin: 0;
     }
@@ -815,22 +868,26 @@ $menu-height: 80px !default;
         right: 0;
         left: auto;
     }
+
     .slant-col {
         z-index: 1;
+
         .rays {
             background-image: url('../img/home/yellow-rays.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            @include position( absolute,
+            @include position(absolute,
             0 0 0 0);
         }
+
         &.brand-yellow {
             &:before {
                 background-color: $brand-yellow;
             }
         }
     }
+
     .slant-in {
         &.brand-blue {
             &:before {
@@ -838,22 +895,27 @@ $menu-height: 80px !default;
             }
         }
     }
+
     .form {
         .form-group {
             width: 80%;
             margin: 30px 0 0;
         }
+
         button {
             border-radius: 6px;
             padding: 10px 20px;
             border: 1px solid #000;
             margin: 0 10px;
+
             &:hover {
                 background-color: $brand-green;
             }
+
             &:active {
                 background-color: $brand-green;
             }
+
             &:focus {
                 outline: 0;
             }
@@ -873,6 +935,7 @@ $menu-height: 80px !default;
 .half-height {
     height: 211px;
     overflow: hidden;
+
     .wdget {
         overflow: auto;
         height: 150px;
@@ -892,14 +955,17 @@ $menu-height: 80px !default;
 .tabs-about {
     padding: 20px 0;
     margin: 0;
+
     li {
         padding: 0 7px;
         border-right: 2px solid #000;
+
         a {
             font-size: 16px;
             color: #666;
         }
     }
+
     li:last-child {
         border-right: none;
     }
@@ -911,15 +977,18 @@ $menu-height: 80px !default;
         background-color: transparent;
         border: none;
         margin: 0;
+
         .flex-control-nav,
         .flex-direction-nav .flex-prev {
             display: none;
         }
+
         .flex-next {
             display: block;
             height: 50px;
             width: 50px;
         }
+
         .flex-direction-nav a.flex-next:before {
             content: "";
             @include square(100%);
@@ -953,6 +1022,7 @@ $menu-height: 80px !default;
     45px 9px null null);
     z-index: 9;
     border-radius: 5px;
+
     &:before {
         content: "";
         width: 0;
@@ -966,6 +1036,7 @@ $menu-height: 80px !default;
 }
 
 .footers-list {
+
     .ng-cloak,
     .ng-hide:not(.ng-hide-animate),
     .x-ng-cloak,
@@ -975,6 +1046,7 @@ $menu-height: 80px !default;
     [x-ng-cloak] {
         display: block !important;
     }
+
     .icon {
         @include square(15px);
         border-radius: 100%;
@@ -983,6 +1055,7 @@ $menu-height: 80px !default;
         text-align: center;
         display: none;
     }
+
     .fa-angle-down.fa-angle-up:before {
         content: "\f106";
     }
@@ -997,6 +1070,7 @@ $menu-height: 80px !default;
     position: relative;
     width: 49%;
     float: left;
+
     &.brand-blue {
         &:before {
             background-color: $brand-blue;
@@ -1013,6 +1087,7 @@ $menu-height: 80px !default;
     margin-top: -38px;
     min-height: 650px;
     background-size: cover !important;
+
     .karting-banner {
         max-width: 1170px;
         @include position(absolute,
@@ -1073,11 +1148,13 @@ img.fancybox-image {
 
 .checker {
     margin: 0 10px;
+
     [type="checkbox"]:checked,
     [type="checkbox"]:not(:checked) {
         position: absolute;
         left: -9999px;
     }
+
     [type="checkbox"]:checked+label,
     [type="checkbox"]:not(:checked)+label {
         position: relative;
@@ -1085,6 +1162,7 @@ img.fancybox-image {
         cursor: pointer;
         font-size: 18px;
     }
+
     /* checkbox aspect */
     [type="checkbox"]:checked+label:before,
     [type="checkbox"]:not(:checked)+label:before {
@@ -1100,6 +1178,7 @@ img.fancybox-image {
         border-radius: 5px;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
     }
+
     /* checked mark aspect */
     [type="checkbox"]:checked+label:after,
     [type="checkbox"]:not(:checked)+label:after {
@@ -1112,11 +1191,13 @@ img.fancybox-image {
         color: #000;
         transition: all 0.2s;
     }
+
     /* checked mark aspect changes */
     [type="checkbox"]:not(:checked)+label:after {
         opacity: 0;
         transform: scale(0);
     }
+
     [type="checkbox"]:checked+label:after {
         opacity: 1;
         transform: scale(1);
@@ -1126,6 +1207,7 @@ img.fancybox-image {
 //leadership
 .enquiry-form {
     padding: 20px;
+
     textarea {
         resize: none;
         height: 70px;
@@ -1133,13 +1215,16 @@ img.fancybox-image {
         border-radius: 10px;
         border: 2px solid #000;
         padding: 5px;
+
         &:focus {
             outline: 0;
         }
     }
+
     select {
         -webkit-appearance: none;
     }
+
     a {
         position: absolute;
         right: 10px;
@@ -1176,6 +1261,7 @@ img.fancybox-image {
 .overlays {
     height: 100vh;
     background: rgba(0, 0, 0, 0.0);
+
     a {
         margin-right: 20px;
     }
@@ -1186,8 +1272,10 @@ img.fancybox-image {
         background-image: url("../img/new/banner.png");
         background-size: cover;
     }
+
     ul {
         margin: 0;
+
         li {
             a {
                 .fa {
@@ -1198,6 +1286,7 @@ img.fancybox-image {
             }
         }
     }
+
     .more {
         button {
             background-color: $brand-green;
@@ -1206,93 +1295,115 @@ img.fancybox-image {
             border-radius: 5px;
             margin-left: 25px;
             color: #fff;
+
             .fa {
                 margin: 0 5px;
             }
         }
     }
+
     .brand-orangy {
         background-color: $brand-orangy !important;
         margin-left: 0 !important;
     }
+
     .karting1 {
         .uib-datepicker-popup.dropdown-menu {
             left: 50px !important;
             height: 80px;
             overflow: scroll;
         }
+
         .slant-col {
             width: 51%;
+
             &:before {
                 height: 312px;
             }
         }
+
         .slant-box {
             p {
                 font-size: 14px;
             }
         }
+
         .slant-column {
             width: 47%;
         }
+
         .full-height,
         .half-height {
             height: 280px;
         }
+
         .slant-column:before {
             height: 312px;
         }
+
         .form-group {
             margin-bottom: 10px;
         }
+
         .form-control {
             height: 35px;
             background-color: #ebebeb;
             box-shadow: 0px 3px 1px #ccc inset;
             border: none;
         }
+
         .button-set {
             padding-top: 50px;
         }
+
         .required {
             @include position (absolute,
             5px 10px null null);
             font-size: 10px;
             color: $brand-red;
         }
+
         .down {
             @include position (absolute,
             10px 10px null null);
             color: #000;
         }
+
         .prize-name {
             margin-top: 5px;
+
             p {
                 vertical-align: top;
                 margin: 0;
             }
         }
+
         .blue {
             background-color: $brand-primary;
         }
+
         .prize-value {
             p {
                 vertical-align: bottom;
                 margin: 0;
             }
         }
+
         .orange {
             color: $brand-orangy;
             font-size: 16px;
             font-weight: 600;
         }
+
         .button-sets {
             margin-top: 4px;
+
             button+button {
                 margin-left: 15px;
             }
         }
     }
+
     .button-sets {
         button {
             background-color: #32b544;
@@ -1301,6 +1412,7 @@ img.fancybox-image {
             border-radius: 5px;
             color: #fff;
         }
+
         button+button {
             background-color: $brand-orangy;
         }
@@ -1312,9 +1424,11 @@ img.fancybox-image {
         background-image: url("../img/new/newdeals.png");
         background-size: cover;
     }
+
     .deals-details {
         ul {
             margin: 0;
+
             li {
                 a {
                     .fa {
@@ -1325,6 +1439,7 @@ img.fancybox-image {
                 }
             }
         }
+
         .more {
             button {
                 background-color: $brand-green;
@@ -1333,6 +1448,7 @@ img.fancybox-image {
                 border-radius: 5px;
                 margin-left: 25px;
                 color: #fff;
+
                 .fa {
                     margin: 0 5px;
                 }
@@ -1349,6 +1465,7 @@ img.fancybox-image {
         background-size: 100% 100%;
         margin-top: -8px; // height: 70px;
     }
+
     .nav-name {
         padding: 35px 0 0;
         font-size: 30px;
@@ -1361,6 +1478,7 @@ img.fancybox-image {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin-top: -8px;
+
     .nav-name {
         padding: 35px 0 0;
         font-size: 30px;
@@ -1400,6 +1518,7 @@ img.fancybox-image {
     h3 {
         font-size: 28px !important;
     }
+
     .new-detail {
         min-height: 200px;
     }
@@ -1449,6 +1568,7 @@ img.fancybox-image {
                 display: block;
                 height: 40px;
                 width: 40px;
+
                 &:before {
                     content: "";
                     @include square(100%);
@@ -1458,6 +1578,7 @@ img.fancybox-image {
             }
         }
     }
+
     .flexslider {
         .flex-control-nav {
             display: none;
@@ -1468,6 +1589,7 @@ img.fancybox-image {
 .updated,
 .updates {
     .slant-box {
+
         h1,
         h2,
         p {
@@ -1475,13 +1597,16 @@ img.fancybox-image {
             z-index: 99;
             top: 10px;
         }
+
         h1,
         h2 {
             left: 10px;
         }
+
         p {
             right: 10px;
         }
+
         .flexslider {
             li {
                 a {
@@ -1495,10 +1620,12 @@ img.fancybox-image {
 
 .updates {
     .slant-box {
+
         h1,
         h2 {
             left: 25px;
         }
+
         p {
             right: 25px;
         }
@@ -1506,15 +1633,18 @@ img.fancybox-image {
 }
 
 .lmchange {
+
     h2,
     p {
         position: absolute;
         z-index: 99;
         top: 20px;
     }
+
     h2 {
         left: 10px;
     }
+
     p {
         right: 10px;
     }
@@ -1529,6 +1659,7 @@ img.fancybox-image {
 
 .contacts {
     margin-bottom: 40px;
+
     h3 {
         margin-top: 0;
         margin-bottom: 5px;
@@ -1538,15 +1669,19 @@ img.fancybox-image {
 .telephone,
 .email {
     margin-top: 5px;
+
     i {
         margin-right: 5px;
     }
+
     span {
         display: inline-block; // margin-right: 5px;
     }
+
     p {
         font-size: 12px;
     }
+
     a {
         color: #000;
     }
@@ -1554,6 +1689,7 @@ img.fancybox-image {
 
 .gallery-grid {
     padding: 10px;
+
     .new {
         padding: 10px;
     }
@@ -1566,6 +1702,7 @@ img.fancybox-image {
 
 .chef-img {
     position: relative;
+
     img {
         width: auto;
         position: absolute;
@@ -1586,6 +1723,7 @@ img.fancybox-image {
 
 .point-image {
     padding: 5px 14px;
+
     img {
         width: 100%;
         border: 2px solid #000;
@@ -1597,6 +1735,7 @@ img.fancybox-image {
     padding: 0;
     border: 2px solid #000;
     height: 172px;
+
     img {
         width: 100%;
     }
@@ -1615,14 +1754,17 @@ img.fancybox-image {
 
 .avatar {
     padding: 25px 10px 10px;
+
     .close {
         @include position (absolute,
         -24px -24px null null);
         opacity: 1;
     }
+
     background-image:url("../img/profile/about-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
+
     .avatars,
     .avatarss,
     .avatars1,
@@ -1639,25 +1781,32 @@ img.fancybox-image {
         border: 1px solid #fff;
         box-sizing: border-box;
     }
+
     .avatars1 {
         background-image: url("../img/avatar/flyman.png");
     }
+
     .avatars2 {
         background-image: url("../img/avatar/smaillady.png");
     }
+
     .avatarss {
         background-image: url("../img/avatar/sach.png");
     }
+
     .avatarss1 {
         background-image: url("../img/avatar/flylady.png");
     }
+
     .avatarss2 {
         background-image: url("../img/avatar/smileman.png");
     }
+
     .row-flex {
         @include display(flex);
         width: 100%;
     }
+
     .col-flex {
         @include flex(1);
         display: block;
@@ -1677,28 +1826,34 @@ img.fancybox-image {
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     .row-flex {
         @include display(flex);
         width: 100%;
     }
+
     .col-flex {
         @include flex(1);
         display: block;
         width: 100%;
     }
+
     .tab {
         ul {
             border: 1px solid #000;
+
             li {
                 padding: 10px 0;
                 text-align: center;
                 cursor: pointer;
             }
+
             li+li {
                 border-left: 1px solid #000;
             }
         }
     }
+
     .tab-item p,
     .profile-detail p,
     th {
@@ -1707,10 +1862,12 @@ img.fancybox-image {
         margin: 0;
         color: #000 !important;
     }
+
     .profile-detail p {
         color: #fff !important;
         font-size: 30px;
     }
+
     .profile-detail p:last-child {
         font-size: 20px;
     }
@@ -1718,6 +1875,7 @@ img.fancybox-image {
 
 .go {
     display: block;
+
     img {
         margin: 0 auto;
     }
@@ -1735,6 +1893,7 @@ img.fancybox-image {
 
 .reward-table {
     margin-top: 20px;
+
     .table {
         thead {
             tr {
@@ -1760,6 +1919,7 @@ img.fancybox-image {
     .flexslider {
         margin: 0 0 30px;
     }
+
     .flex-direction-nav a.flex-next:before {
         content: "";
         width: 100%;
@@ -1767,6 +1927,7 @@ img.fancybox-image {
         background: url(../img/home/arrow.png) no-repeat;
         background-size: contain;
     }
+
     .flex-control-nav {
         display: none;
     }
@@ -1778,6 +1939,7 @@ img.fancybox-image {
             display: block;
             margin-left: 33px;
         }
+
         img {
             background-color: #ccc;
             border: 5px solid #000;
@@ -1797,39 +1959,49 @@ img.fancybox-image {
             margin: 0 auto;
         }
     }
+
     .race-eve {
         margin-bottom: 10px;
     }
+
     .race-text {
         @include position (absolute,
         null 0px 0px 0px);
         background-color: rgba(0, 0, 0, 0.56);
         padding: 10px;
+
         h3 {
             font-size: 20px !important;
         }
     }
+
     .new-detail {
         min-height: 0px !important;
+
         span {
             padding: 0 10px 0 0;
         }
+
         span+span {
             border-left: 2px solid #ccc;
             padding-left: 10px;
         }
     }
+
     .social-ico {
         border-bottom: 2px solid #ccc;
         padding-bottom: 20px;
         margin-bottom: 20px;
+
         ul {
             text-align: center;
             margin: 0;
             padding: 5px 0;
+
             li {
                 padding-left: 10px;
                 padding-right: 10px;
+
                 .fa {
                     &:hover {
                         color: #ccc !important;
@@ -1838,11 +2010,13 @@ img.fancybox-image {
             }
         }
     }
+
     .social-icos {
         border-bottom: 2px solid #ccc;
         padding-bottom: 20px;
         margin-top: 20px;
     }
+
     .first-imgdetail {
         padding: 20px 0;
     }
@@ -1873,6 +2047,7 @@ img.fancybox-image {
 .cams,
 .cam {
     padding: 10px 0;
+
     .symbols {
         padding: 5px 0;
         border-bottom: 1px solid #ccc;
@@ -1884,14 +2059,17 @@ img.fancybox-image {
     p {
         border-bottom: 2px solid #000;
     }
+
     .symbols {
         bottom: 0;
         right: 15px;
         border: none;
+
         span {
             margin: 0;
         }
     }
+
     button {
         background-color: $brand-pink;
         border: none;
@@ -1902,6 +2080,7 @@ img.fancybox-image {
 }
 
 .blog-slider {
+
     // .flex-nav-prev{
     //     display: none;
     // }
@@ -1913,6 +2092,7 @@ img.fancybox-image {
 .blog-slider {
     padding: 30px 0;
     border-bottom: 2px solid #ccc;
+
     .flexslider {
         margin: 0;
     }
@@ -1938,6 +2118,7 @@ img.fancybox-image {
     background-color: $brand-purple;
     box-shadow: 4px 3px #000;
     border-radius: 5px;
+
     i {
         color: rgba(0, 0, 0, 0.64);
         font-size: 2em;
@@ -1947,6 +2128,7 @@ img.fancybox-image {
 .points {
     .btn-primary {
         border: none;
+
         &:hover {
             background-color: $brand-purple !important;
         }
@@ -1957,6 +2139,7 @@ img.fancybox-image {
     .btn-primary {
         opacity: 0;
         padding: 10px;
+
         &:hover {
             background-color: $brand-purple !important;
         }
@@ -1968,10 +2151,12 @@ img.fancybox-image {
         width: 100%;
         height: auto;
         overflow: hidden;
+
         img {
             transition: all 800ms ease;
         }
     }
+
     figure:hover img {
         -webkit-transform: scale3d(1.2, 1.2, 1);
         transform: scale3d(1.2, 1.2, 1);
@@ -1981,6 +2166,7 @@ img.fancybox-image {
 //new buy
 .buyol {
     .race {
+
         .pink-button,
         .buy-button {
             height: auto;
@@ -1990,13 +2176,16 @@ img.fancybox-image {
             right: 0%;
             transform: translate(-50%, -50%);
         }
+
         .buy-button {
             height: auto;
             width: 76px;
         }
+
         .race-text {
             background-color: #000;
             padding: 15px 10px 0;
+
             h3 {
                 font-family: $body-font;
                 font-size: 20px;
@@ -2016,11 +2205,13 @@ img.fancybox-image {
     .flex-control-nav {
         bottom: 0;
     }
+
     a {
         position: relative;
         height: 100px;
         width: 200px;
         display: block;
+
         img {
             position: absolute;
             top: 50%;
@@ -2037,6 +2228,7 @@ img.fancybox-image {
         border: 2px solid #000;
         padding: 10px 20px !important;
     }
+
     .half-height {
         height: 250px;
         overflow: hidden;
@@ -2052,6 +2244,7 @@ img.fancybox-image {
                 a {
                     display: block;
                     height: 271px;
+
                     img {
                         height: 100%;
                     }
@@ -2059,15 +2252,18 @@ img.fancybox-image {
             }
         }
     }
+
     .mover {
         bottom: 0;
     }
+
     .brand-red {
         .half-height {
             height: 151px;
             margin-top: 20px;
         }
     }
+
     .brand-green {
         .half-height {
             height: 271px;
@@ -2087,6 +2283,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
     input {
         background: white;
     }
+
     input:-webkit-autofill {
         -webkit-box-shadow: inset 0 0 0px 9999px white;
     }
@@ -2106,6 +2303,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
     .min-heights {
         min-height: 286px;
     }
+
     h3 {
         min-height: 80px;
     }
@@ -2134,6 +2332,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
 
 .teleo {
     margin-left: 5px;
+
     .fa {
         font-size: 12px;
     }
@@ -2141,10 +2340,12 @@ input[type="password"].form-control::-webkit-input-placeholder {
 
 .first-know {
     margin: 0px 0px 30px 5px;
+
     .title-know {
         margin: 10px 0px 0px;
         font-size: 23px;
     }
+
     .subscribe {
         width: 270px;
         border-radius: 12px;
@@ -2165,6 +2366,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
 
 .usp {
     margin-bottom: 15px;
+
     img {
         width: 100%;
         height: auto;
@@ -2180,17 +2382,21 @@ input[type="password"].form-control::-webkit-input-placeholder {
     .flex-control-nav {
         bottom: -30px;
     }
+
     .flexslider {
         margin: 0 0 30px;
         border: none;
     }
+
     .flex-direction-nav {
         display: none;
     }
+
     .testimonial-border {
         border: 1px solid #29a8df;
         padding: 20px;
     }
+
     .testo-text {
         display: inline-block;
         border: 1px solid #29a8df;
@@ -2199,10 +2405,12 @@ input[type="password"].form-control::-webkit-input-placeholder {
         padding: 0 10px;
         font-family: "American Purpose";
         font-size: 30px;
+
         h3 {
             margin: 10px 0 0 0;
         }
     }
+
     .quotes-top {
         position: absolute;
         top: -15px;
@@ -2210,6 +2418,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
         width: 18px;
         font-size: 20px;
     }
+
     .quotes-bottom {
         position: absolute;
         bottom: -15px;
@@ -2217,8 +2426,10 @@ input[type="password"].form-control::-webkit-input-placeholder {
         width: 18px;
         font-size: 20px;
     }
+
     .test-desc {
         position: relative;
+
         p {
             height: 64px;
             width: 350px;
@@ -2228,9 +2439,11 @@ input[type="password"].form-control::-webkit-input-placeholder {
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+
             &:before {
                 content: url(../img/quote-top.png);
             }
+
             &:after {
                 content: url(../img/quote-bottom.png);
                 position: absolute;
@@ -2238,6 +2451,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
             }
         }
     }
+
     .test-title {
         background-color: #29a8df !important;
         color: #fff;
@@ -2245,6 +2459,7 @@ input[type="password"].form-control::-webkit-input-placeholder {
         display: block;
         text-align: center;
         border-radius: 8px;
+
         p {
             margin: 5px;
             font-weight: 600;
@@ -2252,6 +2467,21 @@ input[type="password"].form-control::-webkit-input-placeholder {
         }
     }
 }
+
+.menu-close {
+    position: absolute;
+    top: 6px;
+    right: 13px;
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 1;
+    filter: alpha(opacity=20);
+}
+
 
 @import "ruchira";
 @import "mobile";
