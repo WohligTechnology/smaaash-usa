@@ -2468,28 +2468,30 @@ input[type="password"].form-control::-webkit-input-placeholder {
     }
 }
 
-.menu-close {
-    position: absolute;
-    top: 6px;
-    right: 13px;
-    float: right;
-    font-size: 21px;
-    font-weight: bold;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: 1;
-    filter: alpha(opacity=20);
+.menu-close-btn {
 
-    a {
-        text-decoration: none;
+    .menu-close {
+        position: absolute;
+        top: 13px;
+        right: 25px;
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        color: #fff;
+        text-shadow: 0 1px 0 #fff;
+        opacity: 1;
+        filter: alpha(opacity=20);
 
-        &:hover {
-            color: white;
+        a {
+            text-decoration: none;
+
+            &:hover {
+                color: white;
+            }
         }
     }
 }
-
 
 @import "ruchira";
 @import "mobile";
