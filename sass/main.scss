@@ -2480,6 +2480,14 @@ input[type="password"].form-control::-webkit-input-placeholder {
     text-shadow: 0 1px 0 #fff;
     opacity: 1;
     filter: alpha(opacity=20);
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
 
 
