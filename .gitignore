@@ -3,6 +3,5 @@ node_modules/
 .sass-cache/
 *.tar
 *.zip
-css/
 img2/
 w/
