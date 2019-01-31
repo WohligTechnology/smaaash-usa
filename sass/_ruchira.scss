@@ -3928,3 +3928,28 @@ button {
 .events1 .new-detail {
   min-height: 275px;
 }
+
+.menu-close-btn {
+
+  .menu-close {
+    position: absolute;
+    top: 13px;
+    right: 25px;
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 1;
+    filter: alpha(opacity=20);
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
