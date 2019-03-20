@@ -1,5 +1,5 @@
 // var adminurl = "http://104.155.129.33:82/"; //India server
-var adminurl = "https://api.smaaashusa.com/"; //US server
+var adminurl = "https://apiv2.smaaashusa.com/"; //US server
 // var adminurl1 ="http://192.168.2.37:1337/"; //local
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
