@@ -3,7 +3,7 @@ var adminurl = "https://api.smaaashusa.com/"; //US server
 // var adminurl1 ="http://192.168.2.37:1337/"; //local
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
-var pdfpath = "https://api.smaaash.in/upload/readFile?file";
+var pdfpath = "https://test.smaaash.in/upload/readFile?file";
 var imgpathPdf = imgurl + "smaaashUsa";
 
 var uploadurl = imgurl;
